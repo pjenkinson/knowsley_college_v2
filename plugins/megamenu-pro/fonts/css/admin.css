@@ -1,0 +1,9 @@
+ul.mega-font-selector {
+	height: 200px; 
+	overflow-y: auto; 
+	border: 1px solid #ccc; 
+	padding: 10px;
+}
+ul.mega-font-selector li {
+	clear: both;
+}

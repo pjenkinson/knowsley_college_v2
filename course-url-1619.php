@@ -1,0 +1,1 @@
+<a href="/?page_id=460&factsheet=<?=$course->id?>">Course information</a>

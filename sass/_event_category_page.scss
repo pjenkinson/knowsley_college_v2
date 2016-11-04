@@ -1,0 +1,15 @@
+.event-date {
+float: left;
+font-size: 1.17em;
+}
+.event-date-right{
+float: right;
+font-size: 1.17em;
+}
+.news-item-full-width .event-date-right i {
+margin-right: 0px;
+}
+.news-item-full-width .event-date  i {
+margin-right: gutter();	
+}
+

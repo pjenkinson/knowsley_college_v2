@@ -1,0 +1,77 @@
+
+#cboxContent .mm-picker-container .sp-replacer {
+	margin: 0;
+	float: left;
+}
+
+#cboxContent .mm-picker-container .sp-replacer .sp-preview {
+	border: 0;
+	height: 26px;
+	width: 26px;
+	margin: 0;
+}
+#cboxContent .mm-picker-container input.mm_colorpicker {
+	float: left;
+	border: 0;
+	height: 23px;
+	box-shadow: 0 0 0;
+	margin: 0;
+}
+
+#cboxContent .mm-picker-container {
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.08);
+	border: 1px solid #ccc;
+	font-size: 0.9em;
+	margin-right: 20px;
+	float: left;
+}
+
+#cboxContent .mm-picker-container div.chosen-color {
+	background: #f7f7f7;
+	-webkit-border-radius: 0 2px 2px 0;
+	border-radius: 0 2px 2px 0;
+	border-left: 1px solid #ccc;
+	color: #555;
+	font-size: 11px;
+	line-height: 26px;
+	padding: 0 6px;
+	text-align: center;
+	-webkit-box-shadow: inset 0 1px 0 #fff;
+	box-shadow: inset 0 1px 0 #fff;
+	float: left;
+	cursor: default;
+}
+
+#cboxContent .mm_content.styling .mega-name {
+	width: 33%;
+}
+#cboxContent .mm_content.styling .mega-enable {
+	width: 1%;
+}
+
+#cboxContent .mm_content.styling td.mega-enable:after {
+	display: none;
+}
+#cboxContent .mm_content.styling .mega-enabled td:after {
+	display: none;
+}
+#cboxContent .mm_content.styling table {
+	border-collapse: collapse;
+}
+#cboxContent .mm_content.styling td {
+	position: relative;
+	padding: 10px;
+	border-bottom: 5px solid white;
+}
+#cboxContent .mm_content.styling td:after {
+	background: #999;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	content: "";
+	opacity: 0.3;
+}

@@ -1,0 +1,90 @@
+/* PDFs */
+.single-pdf {
+ max-width: 168px;
+ min-width: 110px;
+ float: left;
+ clear: both;
+ padding: gutter();
+ background: $off-white;
+ margin-bottom: gutter();
+}
+
+.pdf-grid-container {
+ @include span (12 of 12);
+ padding: gutter();
+ margin-bottom: gutter();
+ background: $off-white;
+ position: relative;
+ clear: both;
+}
+
+.pdf-item {
+ @include gallery (4 of 12 before);
+ margin-bottom: gutter();
+}
+
+.pdf-cover {
+ float: left;
+}
+
+.pdf-cover i {
+	padding: 0.5em 0 0.5em 0;
+}
+
+.pdf-title {
+margin-top: gutter();
+clear: both;
+}
+.pdf-grid-group-title {
+ position: relative;
+ top: 0;
+ left: 0;
+ background: $secondary-color;
+ padding: gutter();
+ clear: both;
+}
+
+.pdf-grid-group-title h2 {
+ color: white;
+ margin: 0px;
+}
+
+.owl-carousel {
+	float: left;
+	clear: both;
+	background: $off-white;
+}
+
+.owl-stage-outer {
+	padding-left: 10%;
+	margin-top: gutter();
+}
+
+// COURSE FACTSHEET SNIPPETS
+
+.factsheet-snippet {
+	background: white;
+	padding: gutter();
+	margin-bottom: gutter();
+}
+
+// FULL WIDTH GOOGLE MAP
+
+.map-links {
+background: $secondary-color;
+padding: 1em;
+}
+.map-link {
+float: left;
+display: inline-block;
+color: white;
+}
+
+.map-link img {
+margin: 0.5em;
+margin-bottom: 0px;
+}
+
+.map-link a:link, .map-link a:visited  {
+color: white;
+}

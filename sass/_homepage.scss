@@ -1,0 +1,353 @@
+// Learner section
+ //This applies from 1080px onwards 
+@include breakpoint ($larger_desktop) {
+
+.learners-container {
+	@include span (12 of 12);
+	clear: both;
+}
+
+.learner-item {
+	@include gallery(3 of 12);
+   position: relative;
+   overflow: hidden;
+}
+
+.learner-item img:hover {
+	opacity: 0.7;
+	-webkit-transition: opacity 2s; /* Safari */
+  transition: opacity 2s;
+  -webkit-backface-visibility: hidden;
+}
+
+.section-image-container img:hover, .home-section-3col img:hover {
+	opacity: 0.7;
+	-webkit-transition: opacity 2s; /* Safari */
+  transition: opacity 2s;
+  -webkit-backface-visibility: hidden;
+}
+
+@include breakpoint ($desktop) {
+
+.learner-item img {
+	max-height: 148px;
+	height: auto;
+}
+
+}
+
+// Homepage sections 
+
+.section-image-container {
+	overflow: hidden;
+}
+
+.section-image-container img {
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.metaslider .caption {
+	font-size: 1em;
+}
+
+}
+// Homepaege sections
+
+.about-section, .news-section, .resources-section, .courses-section, .employers-section, .resources-section {
+	background: $off-white;
+	border-top: 2px solid $grey;
+}
+
+.download-prospectus h2, .download-prospectus p, .employers-section h2, .employers-section p {
+	color: $primary-color;
+}
+
+.white-background {
+	background: white;
+}
+
+// Homepage sections
+
+h2.section-heading {
+	border-bottom: 1px solid $primary-color;
+	font-size: 2em;
+}
+
+.employers-section h2.section-heading, .download-prospectus, h2.section-heading {
+	border-bottom: 1px solid white;
+}
+
+.news-section .section-heading, .services-section {
+	text-align: center;
+}
+
+.courses-section p, .news-section p {
+	text-align: center;
+}
+
+.section-sub-heading {
+	text-align: center;
+	font-size: 1.17em;
+	color: $primary-color;
+}
+
+.featured-news-container {
+	@include span (12 of 12);
+	clear: both;
+}
+
+.featured-news-container img {
+	display: block;
+	height: auto;
+}
+
+.featured-post-date {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+
+.featured-post-date p {
+	display: inline-block;
+}
+
+.homepage-featured-news-image {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+
+.homepage-featured-news-image img:hover {
+	opacity: 0.7;
+	-webkit-transition: opacity 2s; /* Safari */
+  transition: opacity 2s;
+}
+
+// Featured Events
+
+.featured-events .event-snippet-detail {
+		@include span (12 of 12);
+		clear: both;
+	}
+
+.featured-events .event-snippet-detail, .events-list .event-snippet {
+	padding: 0px;
+	background: white;
+}
+
+.featured-events .event-snippet-image {
+	display: none;
+}
+
+.featured-events .event-snippet-detail h2 {
+	padding-top: 0px;
+}
+
+.featured-events .event-snippet-detail p.event-time {
+	display: none;
+}
+
+.featured-events .event-snippet-detail h2 {
+	margin-top: 0px;
+}
+.resources-container {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.resources-section h2 {
+	font-size: 2em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.resources-snippet .cover-image {
+ width: 100%;
+ float: left;
+}
+.resources-snippet .title {
+	width: 100%;
+	float: left;
+	background: $secondary-color;
+}
+
+
+// Homepage 3 Col Snippets
+
+
+// Slider container
+
+.slider-container {
+	background: $off-white;
+}
+
+.slider {
+	float: left;
+	max-height: 400px !important; // Includes dot navigation
+}
+
+.metaslider {
+    position: relative;
+    z-index: 0;
+}
+
+.metaslider  .caption {
+	padding: 0px !important;
+	line-height: normal!important;
+}
+.metaslider .caption-wrap {
+	  font-size: 2.2em !important; 
+	  padding: 0.5em !important;
+	  background: none !important;
+    max-width: 80% !important;
+    bottom: auto;
+    position: absolute;
+    left: 0;
+    color: $secondary-color;
+    margin: 0;
+    display: block;
+    opacity: 1 !important;
+}
+
+.metaslider .caption-wrap:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(153, 204, 102, 1);
+  border-bottom: 10px solid $secondary-color !important;
+  -webkit-transform: skew(-8deg);
+    transform: skew(-8deg);
+    -ms-transform: skew(-8deg, 0);
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: -10px;
+  z-index: 1000;
+ }
+
+.metaslider .caption {
+	padding: 0px;
+	word-wrap: break-word;
+  z-index: 2000;
+  position: relative;
+  color: $primary-color;
+}
+
+.metaslider .caption a:link, .metaslider .caption a:visited, .metaslider .caption a:focus {
+ text-decoration: none;
+ color: white;
+}
+
+.metaslider .caption a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.flex-control-nav {
+	width: auto !important;
+	text-align: right !important;
+	right: 0 !important;
+	bottom: 0px !important;
+	line-height: 0px !important;
+	z-index: 100 !important;
+	padding-right: 1em !important;
+	background: $primary-color;
+	padding: 0.5em !important;
+	border: solid 2px $secondary-color !important;
+}
+
+.flex-control-nav li a {
+	text-indent: 9999px !important;
+}
+
+.flex-control-paging li a.flex-active {
+	background: $secondary-color !important;
+}
+
+.slides li img:hover {
+	opacity: 0.7;
+	-webkit-transition: opacity 2s; /* Safari */
+  transition: opacity 2s;
+}
+.top-nav-content {
+	float: right;
+	width: auto;
+	height: auto;
+}
+
+.top-nav-contact {
+	float: left;
+	width: auto;
+}
+
+.top-nav-contact ul li {
+	float: left;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.top-nav-contact ul li a:link, .top-nav-contact ul li a:hover, .top-nav-contact ul li a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.top-nav-contact ul li a:hover {
+	text-decoration: underline;
+}
+
+.top-nav-contact .fa-phone:before, .top-nav-contact .fa-envelope-o:before {
+	padding-right: 10px;
+}
+
+.resources h2 a:link, .resources h2 a:hover, .resources h2 a:visited {
+	color: $primary-color;
+}
+// Download Prospectus
+
+
+.download-prospectus p {
+	margin: 0px;
+}
+
+.two-col-section-main h2.section-heading {
+	text-align: left;
+}
+
+.two-col-section-prospectus-description h2.section-heading {
+	text-align: left;
+}
+
+.prospectus-container img {
+	width: auto;
+}
+
+.download-button {
+  background: $primary-color;
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  border: 2px solid $secondary-color;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.download-button a, .download-button a:link, .download-button a:visited  {
+	color: white;
+}
+
+.download-button:hover {
+	background: $secondary-color;
+}
+.prospectus-container img:hover {
+  border: 2px solid $secondary-color;
+}
+
+.site-homepage .owl-carousel {
+	background: white;
+}

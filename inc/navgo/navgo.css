@@ -1,0 +1,85 @@
+.quick-links-container {
+    margin-top: 1em;
+}
+
+.quick-links, .quick-links ul, .quick-links li {
+    list-style: none;
+}
+
+.quick-links ul {
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links {
+    padding: 4px;
+    margin: 0px;
+    background: #e73f97;
+    color: white;
+    font-size: 14px;
+}
+
+.quick-links > li {
+    margin: 4px 0;
+}
+
+.quick-links > li li {
+    margin: 10px 0;
+}
+
+.quick-links a {
+    color: white;
+    display: block;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.quick-links a:link, .quick-links a:visited {
+    color: white !important;
+}
+
+.quick-links li > a > span {
+    float: right;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.quick-links li > a:hover > span,  {
+    color: #fff;
+}
+
+.quick-links li > a > span:after {
+    content: '\25be';
+}
+.quick-links li.open > a > span:after {
+    content: '\25b4';
+}
+
+.quick-links a:hover, .quick-links li.active > a {
+    background-color: #e73f97;
+    color: #fff !important;
+}
+
+.quick-links > li.active > a  {
+    background-color: #3d203b;
+}
+
+.quick-links li a {
+    font-size: 1.2em;
+    line-height: 18px;
+    padding: 0px 0px 0px 25px;
+}
+
+.quick-links > li > a {
+    font-size: 1.2em;
+    line-height: 20px;
+    padding: 0px 0px 0px 25px;
+}
+
+.quick-links li a i {
+    float: left;
+    padding-right: 0.6em;
+}

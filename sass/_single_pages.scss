@@ -1,0 +1,845 @@
+.clearLeft {
+	float: left;
+}
+
+// Apprenticeship Vacancies
+
+.apprenticeship-image {
+	width: 50%;
+	float: right;
+	margin: 1em;
+}
+
+.apprenticeship-image img {
+	width: 100%;
+	height: auto;
+}
+
+// Secondary Page
+
+.service-number {  
+	position: absolute;
+  top: -50px;
+  color: white;
+  background: #ee1199;
+  padding: 1em;
+}
+
+.featured-banner {
+	position: relative;
+	overflow: hidden;
+	float: left;
+ 	width: 100%;
+ 	clear: both;
+ 	max-height: 500px;
+}
+
+.featured-banner-child {
+	max-height: 350px;
+}
+
+.featured-banner-parent .banner-heading h1.has-parent {
+	padding-left: 0px;
+}
+
+.featured-banner-child .banner-heading {
+margin-bottom: 0px;
+}
+
+.featured-banner img {
+	height: auto;
+	width: 100%;
+}
+
+.secondary-page p:first-of-type {
+	margin-top: 0px;
+}
+
+// News page 
+
+@media (max-width: 1149px) {
+
+.news-page .featured-banner {
+	margin-bottom: 2em;
+}
+
+}
+
+// Featured Image Page Banner
+
+.banner-heading {
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background: $secondary-color;
+}
+
+@include breakpoint ($larger_desktop) {
+
+.banner-heading {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: $secondary-color-trans-fallback;
+	background: $secondary-color-trans;
+}
+
+}
+
+.banner-heading img {
+	display: block;
+	height: auto;
+}
+
+.featured-banner .banner-heading h1 {
+	font-size: 2.6em;
+	color: white;
+	padding: 0.5em 0.5em 0.5em 0em;
+	margin: 0px;
+}
+.featured-banner-strapline {
+	font-size: 1.8em;
+}
+
+.featured-banner-location {
+	font-size: 1em;
+}
+
+.banner-heading p {
+	padding: 0px;
+  margin: 0px;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  color: white;
+}
+
+// Single Pages
+
+.share-this-top {
+	display: inline-block;
+	position: relative;
+	float: right;
+	padding-bottom: 2px;
+}
+
+.st_sharethis_large {
+	position: absolute;
+	right: 0;
+	top: -5px;
+}
+
+.st_sharethis_large_right {
+	position: relative;
+	float: right;
+}
+
+.content-page section, .single-news-page article, .single-news-page aside {
+  background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: gutter();
+  margin-bottom: 2em;
+}
+
+@include breakpoint ($desktop) {
+	.content-page section, .single-news-page aside {
+  margin-top: 2em;
+  }
+}
+
+// Single News Page
+
+article.single-article img.auto {
+	width: auto !important;
+}
+
+.single-news-page section {
+	padding-top: 0px;
+}
+
+.single-news-page p {
+	font-size: 1.1em;
+}
+.single-news-page, .vacancies-page, .alumni-page, .factsheet-page {
+	background: $off-white;
+}
+.single-news-page .featured-banner {
+ float: left;
+ width: 100%;
+ position: relative;
+ max-height: 350px;
+ overflow: hidden;
+ clear: both;
+}
+
+// Single News Page - Responsive 
+
+@media (min-width: 1150px) {
+	.single-news-page section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+	}
+
+	.single-news-page aside {
+		margin-top: 2em;
+	}
+
+}
+.single-news-page aside h2:first-of-type {
+	margin-top: 0px;
+}
+
+.single-event {
+	background: $off-white;
+}
+
+// Single Events Page 
+
+.single-event section {
+	background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  padding: gutter();
+  margin: 2em 0px;
+}
+
+// Events page
+
+.single-event-content {
+	@include span (12 of 12);
+	clear: both;
+}
+
+.event-details {
+	@include span (12 of 12);
+	clear: both;
+}
+
+.event-details ul li {
+	display: inline-block;
+	padding-right: 0.5em;
+}
+
+.event-details ul li:first-of-type {
+	padding-right: 0px;
+}
+
+// Single Events Page
+
+h1.single-events-title {
+	margin-bottom: 0px;
+}
+
+.single-events-details p {
+	display: inline-block;
+	margin-right: gutter();
+}
+
+// Content Modules
+
+.secondary-page .quote-box  p:first-of-type {
+	padding: 1em;
+}
+
+.quote-box {
+	width: 100%;
+	float: left;
+	background: $secondary-color;
+	font-size: 1.4em;
+	padding: 0px;
+	margin: 0px;
+	color: white;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.quote-box p {
+	color: white;
+	padding: 1em; 
+	margin: 0px;
+	font-size: 0.9em;
+}
+.quote-box p i {
+	padding-right: 0.5em;
+}
+.quote-box p i:last-of-type {	padding-left: 0.5em;
+}
+
+// Scroll up Nav 
+
+#scrollUp {
+  bottom: -10px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  padding: 1em;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  background: $secondary-color;
+  color: white;
+  text-decoration: none;
+}
+
+// Services
+
+.services-page .services-contact {
+	background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: gutter();
+  clear: both;
+}
+
+.services-contact h2 {
+	margin-top: gutter();
+}
+
+.services-contact ul li {
+	list-style-type: none;
+	padding-bottom: 0.5em;
+}
+
+.services-contact h2:first-of-type {
+	margin-top: 0px;
+}
+
+.service-section {
+	border-bottom: 1px solid $off-white;
+}
+
+.service-section:first-of-type {
+	padding-top: 0px;
+}
+
+.service-section:last-of-type {
+	border-bottom: none;
+	padding-bottom: 0px;
+}
+
+.nivo-caption {
+	display: none !important;
+}
+
+// Alumni 
+
+article.content-block {
+	float: left;
+	width: 100%;
+	clear: both;
+	position: relative;
+	background: white;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-bottom: gutter();
+  padding: gutter();
+}
+
+.alumni-intro {
+	@include span (12 of 12);
+}
+
+.alumni-intro p {
+	margin: 0px;
+}
+
+.alumni-container {
+	@include span (12 of 12);
+}
+
+.alumni-profile {
+	@include span (12 of 12);
+}
+
+.alumni-image img {
+	height: auto;
+	width: 100%;
+}
+
+.alumni-image {
+	@include span (3 of 12);
+}
+
+.alumni-excerpt {
+	@include span (9 of 12 last);
+}
+
+// Partners and Services
+
+.partners-image {
+	height: auto;
+	overflow: hidden;
+	padding: gutter();
+	padding-left: 0px;
+}
+
+.partners-image img {
+ width: 100%;
+}
+
+.service-section {
+	padding: 2em 0px;
+}
+.service-section img {
+	width: 100%;
+}
+
+// Vacancies
+
+
+// Single Vacancies
+
+.vacancy-summary p {
+	display: inline-block;
+	margin-right: 1em;
+	margin-top: 0px;
+}
+
+.vacancy-details {
+	border-bottom: $off-white 1px solid;
+}
+
+.vacancy-details ul li {
+	list-style-type: none;
+}
+
+.single-vacancy-page section {
+  @include span (12 of 12);
+  padding-bottom: 2em;
+}
+
+.info-section h2 {
+	padding-bottom: 0px;
+	border-bottom: 0px;
+}
+
+.info-section ul {
+	margin-top: 1em;
+}
+
+.info-section {
+	background: $off-white;
+	margin-bottom: gutter();
+}
+
+.info-section h2 {
+	display: inline-block;
+	background: $secondary-color;
+	padding: 0.5em;
+	color: white;
+	margin-bottom: 0px;
+}
+
+.info-section-content {
+	padding: gutter();
+	padding-top: 0px;
+}
+
+.info-section:last-of-type {
+	margin-bottom: 0px;
+}
+
+.content-highlight .pdf-document a {
+font-size: 1.2em;
+}
+
+.pdf-document a i {
+	padding-right: 0.5em;
+}
+
+// Vacancies Archive
+
+article.vacancies {
+	float: left;
+	width: 100%;
+	clear: both;
+	position: relative;
+	background: white;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-bottom: gutter();
+  padding: gutter();
+}
+
+.vacancies .title {
+	float: left;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid $off-white;
+}
+
+.vacancies .title p:first-of-type {
+	padding-bottom: 0.5em;
+}
+
+.vacancies .title h1 {
+	font-size: 1.2em;
+	color: $secondary-color;
+}
+
+.vacancies .title h1, .vacancies .title p {
+	color: $primary-color;
+	margin: 0px;
+}
+
+.vacancies .title h1 a:link, .vacancies .title h1 a:hover, .vacancies .title h1 a:active, .vacancies .title h1 a:visited {
+	color: $primary-color;
+}
+
+.vacancies .description {
+	float: left;
+}
+
+article p.apply a {
+	position: relative;
+	background: $secondary-color;
+	padding: 1em;
+	color: white;
+}
+
+// Mega Menu - Secondary Navigation 
+
+#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item:last-of-type {
+	border-bottom: none;
+}
+
+#mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-about-menu #mega-menu-about-menu.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item {
+	border-bottom: 2px solid $off-white;
+}
+
+#mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {
+	border-bottom: none;
+}
+
+// Contact 
+
+.responsive-google-map iframe {
+	max-height: 350px;
+}
+
+@include breakpoint ($tablet_small_desktop) {
+
+.responsive-google-map iframe {
+	min-height: 350px;
+	max-height: 350px;
+}
+
+}
+
+// Resources aside 
+.resources-container {
+	padding: gutter();
+	border-bottom: 1px solid $primary-color;
+}
+
+.resources-list li {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+.resources-list li:last-of-type {
+	padding-bottom: 1em;
+}
+
+.resources-list li img {
+	width: auto;
+	padding-top: 0.5em;
+	height: auto;
+}
+
+// Search page 
+
+.entry-summary {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid $off-white;
+}
+
+// Application page 
+
+section.application-form-section {
+	@include span (12 of 12);
+}
+
+.application-progress-bar {
+	@include span (12 of 12);
+	color: white;
+	background: $primary-color;
+	margin-bottom: gutter();
+}
+.steps {
+	padding: 1em;
+}
+
+.step-active {
+	background: $secondary-color;
+}
+
+form.app-form .declaration {
+	float: left;
+	width: 90%
+}
+
+form.app-form .marketing {
+	float: left;
+	width: 90%
+}
+
+form.app-form .feedback {
+	float: left;
+	width: 90%
+}
+
+input[type=checkbox] {
+	clear: both;
+	margin: 0px;
+}
+
+// Contact Page 
+
+// Contact sections
+
+.contact-sections {
+	float: left;
+	background: white;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+}
+
+.contact-sections-profile img {
+	display: block;
+	height: auto;
+}
+
+.contact-sections-intro {
+	@include span (12 of 12);
+}
+
+.contact-sections-intro p {
+	margin: 0px;
+}
+
+.contact-sections .page-description {
+	width: 100%;
+	float: left;
+	background: white;
+}
+
+.contact-sections .page-description p {
+	padding: 0px 1em;
+}
+
+.contact-sections .page-description address {
+	padding: 0.5em 1em;
+
+}
+
+.contact-sections .page-image {
+	width: 100%;
+	float: left;
+	position: relative;
+	max-height: 150px;
+	overflow: hidden;
+}
+
+.contact-sections .page-image img{
+	height: auto;
+}
+
+.contact-sections .heading {
+	width: 100%;
+	float: left;
+	background: $secondary-color-trans-fallback;
+	background: $secondary-color-trans;
+	padding: gutter();
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.contact-sections .heading h2, .contact-sections  .heading h3 {
+	color: white;
+	margin-bottom: 0px;
+	font-size: 1em;
+}
+
+.contact-sections .page-description .sub-heading {
+	width: 100%;
+	float: left;
+	padding: gutter();
+}
+
+.contact-sections a:link, .page-sections a:visited, .page-sections a:hover {
+	color: white;
+}
+
+.contact-sections .page-description p a:link, .page-sections .page-description p a:visited, .page-sections .page-description p a:hover  {
+	color: $primary-color;
+}
+
+.contact-sections .page-description .heading h3 {
+	color: white;
+	margin-bottom: 0px;
+}
+
+.contact-sections {
+	background: white;
+}
+
+.contact-sections .page-description p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.opening-hours {
+	clear: both;
+}
+.opening-hours ul li {
+	list-style-position: inside;
+}
+.more-campus {
+	background: $primary-color;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.more-campus p {
+	margin: 0px;
+	color: white;
+	padding: 0.5em;
+	font-size: 1em;
+}
+.contact-sections .more-campus a {
+	color: white;
+	float: left;
+	width: 100%;
+}
+
+.more-campus:hover {
+	background: $secondary-color;
+}
+
+// SLT - Meet the team page
+
+.slt-profile-1col {
+	@include span (12 of 12);
+}
+
+.slt-profile {
+	overflow: hidden;
+	background: white;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-top: gutter();
+}
+
+.slt-profile:first-of-type {
+	margin-top: 0px;
+}
+
+.slt-image {
+	position: relative;
+	z-index: 100;
+}
+
+.slt-image img {
+	width: 100%;
+	height: auto;
+	border: none;
+}
+
+.slt-info {
+	position: relative;
+	z-index: 9999;
+	padding: gutter();
+	padding-bottom: 0px;
+}
+
+.slt-member-name {
+	color: white;
+	position: absolute;
+	background: $secondary-color-trans-fallback;
+	background: $secondary-color-trans;
+	padding: gutter();
+	font-size: 1.6em;
+	top: 0;
+	left: 0;
+}
+
+.slt-member-title {
+	color: $primary-color;
+	font-size: 1.6em;
+}
+
+// Search page
+
+.search-result {
+	margin-top: gutter();
+}
+
+// Subject intro 
+
+.subject-intro {
+	margin-bottom: gutter();
+}
+
+.subject-download {
+	width: 100.594px;
+	height: 140.016px;
+	display: inline-block;
+  vertical-align: top;
+}
+
+.overlay {
+  position: relative;
+}
+
+.overlay:after {
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+
+.overlay:hover:after  {
+  opacity: .7;
+}
+
+.overlay-red:after {
+  background-color: $secondary-color;
+}
+
+.subject-download a {
+	width: 100%;
+	height: auto;
+}
+
+.subject-download img {
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  width: 100%;
+}
+.subject-download img:hover {
+  background: $secondary-color;
+  cursor: pointer;
+}
+
+.higher-education hr.dotted {
+  border-style: dashed;
+  color: $higher-education;
+  margin-bottom: 2em;
+}
+
+.lee-stafford  hr.dotted {
+  border-style: dashed;
+  color: $lee-stafford;
+  margin-bottom: 2em;
+}
+
+.section-panels-bg {
+	background: $off-white;
+}

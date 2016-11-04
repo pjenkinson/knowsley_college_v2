@@ -1,0 +1,129 @@
+.default-page section.news-section {
+	@include span (12 of 12);
+}
+
+.news-page {
+	background: $off-white;
+}
+
+.new-campus-highlight {
+	background: $new-secondary-color;
+}
+.new-campus-highlight p, .new-campus-highlight h1 {
+	color: white;
+}
+
+.new-campus-item {
+	background: $new-secondary-color !important;
+}
+
+.news-item-container {
+width: 100%;
+float: left;
+clear: both;
+}
+
+.featured-news-image {
+	float: left;
+	width: 100%;
+	position: relative;
+	max-height: 350px;
+	overflow: hidden;
+	clear: both;
+}
+
+.featured-news-image i {
+	padding-left: gutter();
+	float: right;
+}
+
+.featured-news-article-date {
+	margin-bottom: gutter();
+}
+
+.latest-news-snippet h3 {
+	padding-top: 0px;
+}
+
+.featured-news-image span{
+	font-size: 1.5em;
+	display: inline-block;
+	position: absolute;
+	padding: gutter();
+	background: $secondary-color-trans-fallback;
+	background: $secondary-color-trans;
+	color: white;
+	left: 0;
+	bottom: 0;
+	margin: 0px;
+}
+
+.single-news-page h1 {
+	border-bottom: 1px solid $primary-color;
+	padding-bottom: 0.6em;
+}
+
+.latest-news-snippet-container {
+	float: left;
+	width: 100%;
+	clear: both;
+}
+
+.latest-news-snippet-image {
+	float: left;
+	width: 100%;
+	max-height: 250px;
+}
+
+.latest-news-snippet-title {
+	float: left;
+	width: 100%;
+}
+
+.latest-news-snippet-title h3 {
+	margin-bottom: 0px;
+}
+.latest-news-snippet-title p {
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+.news-posts-container {
+	@include span (12 of 12);
+}
+
+.news-item {
+	margin-bottom: gutter();
+	background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.prev-next-posts {
+	clear: both;
+}
+
+.small-news-thumb img {
+	width: 100%;
+	height: auto;
+}
+
+.small-news-thumb img:hover {
+	opacity: 0.7;
+	-webkit-transition: opacity 2s; /* Safari */
+  transition: opacity 2s;
+  -webkit-backface-visibility: hidden;
+}
+
+.small-news-thumb {
+ @include span (12 of 12);
+}
+
+.small-news-content {
+	@include span (12 of 12 last);
+	padding: gutter();
+}
+
+.small-news-content h1 {
+	font-size: 1em;
+}

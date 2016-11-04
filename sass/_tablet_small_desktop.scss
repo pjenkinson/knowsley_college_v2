@@ -1,0 +1,254 @@
+
+
+ //This applies from 1080px onwards 
+@include breakpoint ($tablet-small-desktop) {
+
+// GRIDS & CONTAINERS
+
+// Homepage
+
+.featured-news {
+	@include span (12 of 12);
+}
+
+.featured-news-snippet {
+	@include span (4 of 12);
+}
+
+.latest-news-snippet-container {
+	@include span (12 of 12);
+}
+
+.two-col-section-main {
+	@include span (6 of 12);
+}
+
+.two-col-section-side {
+	@include span (6 of 12 last);
+}
+
+.pdf-feature-content {
+	@include span (8 of 12);
+}
+
+.pdf-feature-img {
+	@include span (4 of 12 last);
+}
+
+.home-section-3col .resources {
+	@include span (4 of 12);
+}
+
+.home-section-3col .alumni {
+	@include span (4 of 12);
+}
+
+.home-section-3col .extra {
+	@include span (4 of 12 last);
+}
+
+.metaslider .caption {
+	font-size: 1em;
+}
+
+
+
+// Secondary Homepage 
+
+.intro-6-col {
+	@include span (12 of 12);
+}
+
+.intro-6-col-last {
+	@include span (6 of 12 last);
+}
+
+// Secondary Homepage 
+
+.vacancy-detail {
+	@include gallery (6 of 12 before);
+	margin-bottom: gutter();
+	position: relative;
+	overflow: hidden;
+	gutter-position: after;
+}
+
+// Partners
+
+.partner-section {
+	@include span (12 of 12);
+}
+
+.partner-info {
+	@include gallery (6 of 12);
+}
+
+// SLT Page
+
+.slt-image {
+	@include span (6 of 12);
+}
+
+.slt-info {
+	@include span (6 of 12 last);
+}
+
+// Page Sections 
+.page-sections-3col {
+	@include gallery (4 of 12);
+}
+
+.page-sections-4col {
+	@include gallery (3 of 12);
+}
+
+.factsheet-page section {
+ @include span (12 of 12);
+}
+
+.factsheet-page aside {
+ @include span (12 of 12);
+}
+
+// FOOTER
+
+.footer-logo {
+	@include span (3 of 12);
+}
+.footer-sitemap {
+	@include span (4 of 12);
+}
+.footer-contact {
+	@include span (4 of 12);
+}
+.footer-last {
+	@include span (4 of 12 last);
+}
+
+}
+
+// Mobile and Tablet
+
+@media (min-width: 700px) and (max-width: 1149px) {
+
+// Homepage 
+
+.extra, .alumni, .resources {
+	padding-top: 0px;
+}
+
+.employers-section .section-heading {
+	margin-top: 0px;
+}
+
+// Single News Page 
+
+.latest-news-snippet-container {
+	@include span (12 of 12);
+}
+
+// Resources aside
+
+.two-col-content {
+ @include span (6 of 12);
+}
+
+.two-col-aside {
+ @include span (6 of 12 last);
+ margin-bottom: gutter();
+}
+
+.news-item-2col {
+	@include gallery (6 of 12 before);
+}
+
+.news-item-3col {
+	@include gallery (6 of 12 before);
+}
+
+.contact-sections {
+	@include gallery (6 of 12 before);
+}
+
+.featured-news-snippet {
+	@include span (12 of 12);
+}
+
+}
+
+// Tablet
+
+@media (min-width: 700px) and (max-width: 940px) {
+
+.page-sections-3col {
+	@include gallery (6 of 12 before);
+}
+
+}
+
+
+@media (max-width: 699px) {
+
+.services-contact {
+		margin-top: gutter();
+}
+
+.featured-news-snippet {
+	@include span (12 of 12);
+}
+
+.featured-news-snippet:last-of-type {
+		@include span (12 of 12 last);
+}
+
+}
+
+// Desktop only 
+
+@media (max-width: 1149px) {
+
+.qaa-quality-mark {
+	display: none;
+}
+
+}
+
+@media (min-width: 581px) {
+
+.subject-description {
+	@include span (10 of 12);
+}
+
+.subject-download {
+	@include span (2 of 12 last);	
+}
+
+.subject-buttons {
+	clear: none;
+}
+
+}
+
+// Do Not display on mobile
+
+@media (max-width: 600px) {
+
+	.top-nav-content {
+		display: none;
+	}
+
+
+}
+
+@media (min-width: 957px) {
+
+	.learner-item {
+	@include gallery(3 of 12);
+   margin-bottom: 0px;
+   position: relative;
+   overflow: hidden;
+}
+
+}
+
+

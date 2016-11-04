@@ -1,0 +1,338 @@
+// Susy Layouts
+@include border-box-sizing;
+
+$susy: (
+  columns: 12,
+  gutters: 3/4,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  clearfix: true,
+);
+
+// GRIDS & CONTAINERS
+
+$larger_desktop: 1180px;
+
+main section {
+	padding-top: 2em;
+}
+
+
+@include breakpoint ($larger_desktop) {
+
+	.fixed-container {
+		@include container (1140px);
+		clear: both;
+	}
+
+// Primary Navigation
+
+nav.primary {
+	float: right;
+  margin-top: 15px;
+}
+
+main .fixed-container {
+	width: 100%;
+	max-width: 1140px;
+	margin: auto;
+}
+
+// Slider 
+
+.slider-container .fixed-container {
+ max-width: 1140px;
+}
+// Course page text list
+
+li.course-text-list-item {
+	display: inline-block;
+	@include gallery (4 of 12);
+	margin-bottom: gutter(12);
+}
+
+// Default page
+
+.default-page section {
+ @include span (8 of 12);
+}
+
+.default-page aside {
+ @include span (4 of 12 last);
+}
+
+// News page 
+
+.news-item-2col {
+	@include gallery (6 of 12 before);
+}
+
+.news-item-3col {
+	@include gallery (4 of 12 before);
+}
+
+// Single news post - Large featured image
+
+.single-news-page section {
+ @include span (8 of 12);
+}
+
+.single-news-page aside {
+ @include span (4 of 12 last);
+}
+
+// Homepage News and Events
+
+.featured-news-snippet {
+	@include span (4 of 12);
+	margin-bottom: 0px;
+}
+
+.featured-news-snippet:last-of-type {
+	@include span (4 of 12 last);
+}
+
+// Homepage sections 
+
+.home-section-3col {
+	@include span (12 of 12);
+}
+
+.home-section-3col .resources {
+	@include span (4 of 12);
+}
+
+.home-section-3col .alumni {
+	@include span (4 of 12);
+}
+
+.home-section-3col .extra {
+	@include span (4 of 12 last);
+}
+
+
+// Homepage Resources snippets
+
+.resources-snippet {
+	@include span (2 of 12);
+	margin-bottom: gutter(12);
+	position: relative;
+	overflow: hidden;
+}
+.resources-snippet:nth-child(6) {
+	margin-right: 0px;
+}
+
+// Header and footer grids
+
+header, footer {
+	color: $text-white;
+	width: 100%;
+	float: left;
+}
+
+// Homepage
+
+.employers-section .section-heading {
+	margin-top: 0px;
+}
+
+.extra, .alumni, .resources {
+	padding-top: 0px;
+}
+
+.section-heading {
+	margin-top: 0px;
+}
+
+.two-col-section-main {
+	@include span (6 of 12);
+}
+
+.two-col-section-side {
+	@include span (6 of 12 last);	
+}
+
+.pdf-feature-content {
+	@include span (10 of 12);
+}
+
+.pdf-feature-img {
+	@include span (2 of 12 last);
+}
+
+
+// Sidebar navigation page
+
+.sidebar-navigation section {
+ @include span (8 of 12);
+ margin-left: span (1 of 12);
+ clear: none;
+}
+
+.sidebar-navigation aside {
+ @include span (3 of 12);
+}
+
+// Events
+
+.large-event-date {
+	@include span (3 of 12);
+	background: $secondary-color;
+	color: white;
+	text-align: center;
+	font-size: 2em;
+}
+.event-detail {
+	@include span (9 of 12);
+	display: inline-block;
+	padding: gutter();
+	float: right;
+}
+
+// Secondary navigation page
+
+.secondary-page aside {
+ @include span (3 of 12);
+ padding-top: 2em;
+}
+
+.secondary-page section {
+ @include span (9 of 12 last);
+}
+
+.intro-6-col {
+	@include span (6 of 12);
+}
+
+.intro-6-col-last {
+	@include span (6 of 12 last);
+}
+
+// Factsheet page 
+
+.factsheet-page section {
+ @include span (7.5 of 12);
+}
+
+.factsheet-page aside {
+ @include span (4.5 of 12 last);
+ padding-top: 2em;
+}
+
+// Alumni Section
+
+.alumni-container {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.profile-block {
+	@include gallery (6 of 12);
+	margin-bottom: gutter(12);
+	position: relative;
+	overflow: hidden;
+}
+
+// Secondary Page
+
+// Page Sections 
+
+.page-sections-3col {
+	@include gallery (4 of 12 before);
+}
+
+.page-sections-4col {
+	@include gallery (3 of 12 before);
+}
+
+.contact-sections {
+	@include gallery (4 of 12 before);
+}
+
+// Apprenticeship Vacancies
+
+// Page Sections
+	.vacancy-detail {
+	@include gallery (6 of 12 before);
+	margin-bottom: gutter(12);
+	position: relative;
+	overflow: hidden;
+	gutter-position: after;
+}
+
+// Secondary Page - Two Col
+
+.two-col-content {
+ @include span (8 of 12);
+}
+
+.two-col-aside {
+ @include span (4 of 12 last);
+ margin-bottom: gutter();
+}
+
+// FOOTER
+
+.footer-logo {
+	@include span (3 of 12);
+}
+.footer-sitemap {
+	@include span (3 of 12);
+}
+.footer-contact {
+	@include span (3 of 12);
+}
+.footer-last {
+	@include span (3 at 10 of 12);
+}
+
+// Contact Forms
+
+.contact-form-half {
+	@include span (6 of 12);
+}
+.contact-form-half-last {
+	@include span (6 of 12 last);
+}
+
+.step1 {
+	@include span (3 of 12);
+	background: $primary-color;
+}
+.step2 {
+	@include span (3 of 12);
+	background: $primary-color;
+}
+.step3 {
+	@include span (3 of 12);
+	background: $primary-color;
+}
+.step4 {
+	@include span (3 of 12 last);
+	background: $primary-color;
+}
+
+// SLT page 
+
+.slt-image  {
+	@include span (6 of 12);
+}
+
+.slt-info {
+	@include span (6 of 12 last);
+}
+
+// Subject intro
+
+.subject-description {
+	@include span (10 of 12);
+}
+
+.subject-download {
+	@include span (2 of 12 last);	
+}
+
+} // END OF LARGER DESKTOP MEDIA QUERY

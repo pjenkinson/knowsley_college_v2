@@ -1,0 +1,634 @@
+// Breakpoints
+
+@import "breakpoint";
+$tablet-small-desktop: 700px;
+$desktop: 1149px;
+
+// Hompage Learners Sections
+
+.content-page section, .single-news-page aside {
+	margin-top: 0px;
+}
+
+.single-news-page section {
+	margin-top: 2em;
+}
+
+.learners-container {
+	@include span (12 of 12);
+	clear: both;
+}
+
+@media (max-width: 699px) {
+	@include span (12 of 12);
+   position: relative;
+   overflow: hidden;
+   clear: both;
+}
+
+@media (min-width: 600px)  and (max-width: 956px) {
+
+.learner-item {
+	@include gallery (6 of 12);
+   position: relative;
+   overflow: hidden;
+   clear: both;
+}
+
+}
+
+.learner-item {
+	margin-bottom: gutter();
+}
+
+.learner-item h3 {
+	position: relative;
+	display: block;
+	background: $off-white;
+	padding: 1em;
+	margin: 0px;
+	color: $primary-color;
+}
+
+.featured-news {
+	@include span (12 of 12);
+}
+
+.featured-news-snippet {
+	@include span (12 of 12);
+	margin-bottom: gutter();
+}
+
+.featured-news-snippet:last-of-type {
+		@include span (12 of 12 last);
+		margin-bottom: 0px;
+}
+
+.featured-news-snippet, .featured-events-snippet {
+	background: white;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.featured-news-heading {
+	float: left;
+	width: 100%;
+	padding: 0px gutter();
+}
+
+.featured-news-heading h3 {
+	margin-top: gutter();
+}
+
+// Homepage sections 
+
+.employers-section .section-heading {
+	margin-top: 1em;
+}
+
+.home-section-3col {
+	margin-bottom: 2em;
+}
+
+.extra, .alumni {
+	padding-top: 2em;
+}
+
+.resources {
+	padding-top: 0px;
+}
+
+.resources-section {
+	padding-bottom: 0px;
+}
+
+.site-homepage section {
+	padding-top: 2em;
+}
+
+.pdf-feature-content {
+	@include span (7 of 12);
+}
+
+.pdf-feature-img {
+	@include span (5 of 12 last);
+}
+
+.home-section-3col, .home-section-3col .resources, .home-section-3col .alumni, .two-col-section-main {
+	@include span (12 of 12);
+}
+
+.home-section-3col .extra, .two-col-section-side {
+	@include span (12 of 12 last);
+}
+
+@media (max-width: 699px) {
+
+.two-col-section-image {
+	display: none;
+}
+
+}
+// Mobile Slider 
+
+.slider-container .fixed-container {
+ max-width: 100%;
+}
+
+.slider .metaslider {
+	max-width: 1140px; // Stretches beyond fixed width of 1080px
+}
+
+.metaslider .flexslider {
+	margin-bottom: 0px !important;
+}
+
+.metaslider .caption {
+	font-size: 0.5em;
+}
+
+.metaslider {
+	margin-bottom: 0px;
+	clear: both;
+}
+
+// Secondary Homepage 
+
+.page-sections-container {
+	@include span (12 of 12);
+	clear: both;
+}
+.page-sections-3col, .page-sections-4col {
+	@include span (12 of 12);
+}
+
+.page-sections {
+	margin-bottom: 1em;
+	position: relative;
+	overflow: hidden;
+	font-weight: normal;
+}
+
+.page-sections img {
+ width: 100%;
+}
+
+.page-sections:last-of-type {
+	margin-bottom: 0px;
+}
+
+.intro-12-col {
+	@include span (12 of 12);
+}
+
+// Resources aside
+
+.two-col-content {
+ @include span (12 of 12);
+}
+
+.two-col-aside {
+ @include span (12 of 12 last);
+ margin-bottom: gutter();
+}
+
+// News
+
+.news-item-2col {
+	@include span (12 of 12);
+}
+
+.news-item-3col {
+	@include span (12 of 12);
+}
+
+// Single News Page
+
+.single-news-page section {
+ @include span (12 of 12);
+}
+
+.single-news-page aside {
+ @include span (12 of 12);
+ margin-bottom: 2em;
+}
+
+.aside-news-container {
+	@include span (12 of 12);
+}
+
+.latest-news-snippet-container {
+	@include span (12 of 12);
+	overflow: hidden;
+	margin-bottom: gutter();
+} 
+
+// Apprenticeship Vacancies 
+
+.vacancy-detail {
+	@include span (12 of 12);
+	margin-bottom: gutter();
+	position: relative;
+	overflow: hidden;
+	gutter-position: after;
+}
+
+// Partners Page
+
+.partner-section:first-of-type {
+ border-top: none;
+ padding-top: 0px;
+}
+
+.partner-section:last-of-type {
+ margin-bottom: 0px;
+}
+
+.partner-section {
+	@include span (12 of 12);
+	margin-bottom: gutter();
+	border-top: 1px solid $off-white;
+	padding-top: gutter();
+}
+
+.partner-info {
+	@include span (12 of 12);
+}
+
+// SLT Page
+
+.slt-image {
+	@include span (12 of 12);
+}
+
+.slt-info {
+	@include span (12 of 12 last);
+}
+
+@media (min-width: 0px) and (max-width: 700px) {
+
+.slt-image:before {
+	display: none;
+}
+
+}
+
+.slt-image:before {
+		content: '';
+    background: #fff;
+    position: absolute;
+    left: 95%;
+    right: -95%;
+    top: -50%;
+    bottom: -50%;
+    -webkit-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+
+
+
+// THE LAYOUT
+
+.fixed-margin-both {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+
+// Mobile navigation toggle 
+
+#mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:after {
+	float: left;
+}
+
+#mega-menu-wrap-employers .mega-menu-toggle:before {
+	margin-left: gutter();
+}
+
+#mega-menu-wrap-employers #mega-menu-employers > li.mega-menu-item.mega-menu-item > a {
+	padding: 0px 0px 0px 5%;
+}
+
+@media (min-width: 0px) and (max-width: 1139px) {
+
+.nav-secondary .mega-menu-toggle {
+	background: white !important;
+}
+
+.nav-home .mega-menu-toggle {
+	background: $off-white !important;
+}
+
+}
+
+#mega-menu-wrap-higher-education {
+	background: $off-white !important;
+}
+
+// Breadcrumbs
+
+#breadcrumbs {
+	float: left;
+	width: 100%;
+	background: $off-white;
+}
+
+// Slider 
+
+.slider {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+#page-container {
+	@include container (100%);
+}
+
+.full-width-container {
+	@include container (100%);
+	@include span (12 of 12);
+}
+
+.fixed-container {
+	@include container (90%);
+}
+
+main section {
+	padding-bottom: 2em;
+	padding-top: 0px;
+}
+
+.secondary-page section {
+	@include span (12 of 12);
+}
+
+main .fixed-container {
+	width: 100%;
+	max-width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+footer {
+float: left;
+background: $primary-color;
+color: white;
+}
+
+// Mobile Navigation Fixes
+
+#mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle {
+	text-align: left;
+}
+
+#mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before
+ {
+	float: right !important;
+}
+
+
+#mega-menu-wrap-about-menu .mega-menu-toggle:after {
+content: "About" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-student-support-menu .mega-menu-toggle:after {
+content: "Student Support" !important;
+float: left;
+}
+
+#mega-menu-wrap-16-19 .mega-menu-toggle:after {
+content: "School Leavers" !important;
+float: left;
+}
+
+#mega-menu-wrap-16-19-subject .mega-menu-toggle:after {
+content: "School Leavers Courses" !important;
+float: left;
+}
+
+#mega-menu-wrap-employers .mega-menu-toggle:after {
+content: "Employers" !important;
+float: left;
+}
+
+#mega-menu-wrap-adults .mega-menu-toggle:after {
+content: "Adults" !important;
+float: left;
+}
+
+#mega-menu-wrap-apprenticeships .mega-menu-toggle:after {
+content: "Apprentices" !important;
+float: left;
+}
+
+#mega-menu-wrap-higher-education .mega-menu-toggle:after {
+content: "Higher Education" !important;
+float: left;
+}
+
+#mega-menu-wrap-contact .mega-menu-toggle:after {
+content: "Contact" !important;
+float: left;
+}
+
+#mega-menu-wrap-external-access .mega-menu-toggle {
+	background: $secondary-color !important;
+}
+
+#mega-menu-wrap-vacancies .mega-menu-toggle:after {
+content: "Vacancies" !important;
+float: left;
+}
+
+#mega-menu-wrap-workworld .mega-menu-toggle:after {
+content: "WorkWorld" !important;
+float: left;
+}
+
+#mega-menu-wrap-governors .mega-menu-toggle:after {
+content: "Governance" !important;
+float: left;
+}
+
+#mega-menu-wrap-policies .mega-menu-toggle:after {
+content: "College Policies" !important;
+float: left;
+}
+#mega-menu-wrap-campus .mega-menu-toggle:after {
+content: "Campuses" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-services .mega-menu-toggle:after {
+content: "Services Menu" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-partners .mega-menu-toggle:after {
+content: "Partners Menu" !important;
+float: left;
+}
+
+// FOOTER
+
+.footer-details {
+	@include span (12 of 12);
+}
+	.footer-logo {
+		@include span (3 of 12);
+	}
+	.footer-sitemap {
+		@include span (12 of 12);
+	}
+	.footer-contact {
+		@include span (12 of 12);
+	}
+	.footer-last {
+		@include span (12 of 12);
+	}
+// Application page
+
+// Application progress bar
+
+.step1 {
+	@include span (12 of 12);
+	background: $primary-color;
+}
+.step2 {
+	@include span (12 of 12);
+	background: $primary-color;
+}
+.step3 {
+	@include span (12 of 12);
+	background: $primary-color;
+}
+.step4 {
+	@include span (12 of 12 last);
+	background: $primary-color;
+}
+
+// Subject 
+
+.subject-description {
+	@include span (8 of 12);
+}
+
+.subject-download {
+	@include span (4 of 12 last);	
+}
+
+.subject-buttons {
+	clear: both;
+	float: left;
+}
+
+.subject-buttons .button-default:first-of-type {
+	margin-bottom: 10px;
+}
+
+.factsheet-page section {
+ @include span (12 of 12);
+}
+
+.factsheet-page aside {
+ @include span (12 of 12);
+}
+
+.two-col-section-prospectus-description {
+	@include span (12 of 12);
+}
+
+.two-col-section-prospectus-download {
+	@include span (12 of 12 last);
+}
+
+.prospectus-container {
+	@include span (12 of 12);
+	margin-top: 1em;
+}
+
+.prospectus-cover {
+	@include span (4 of 12);
+}
+.prospectus-description {
+	@include span (8 of 12 last);
+}
+
+$prospectus-breakp0: 420px; 
+
+@include breakpoint($prospectus-breakp0) {
+
+	.prospectus-cover {
+	@include span (3 of 12);
+}
+.prospectus-description {
+	@include span (9 of 12 last);
+}
+
+}
+
+$prospectus-breakp1: 600px;
+
+@include breakpoint($prospectus-breakp1) {
+
+.prospectus-container {
+	@include gallery (6 of 12);
+	margin-top: 0.5em;
+}
+
+.prospectus-cover {
+	@include span (4 of 12);
+	margin-top: 0.5em;
+}
+.prospectus-description {
+	@include span (8 of 12 last);
+}
+
+
+}
+
+$prospectus-breakp2: 930px;
+
+@include breakpoint($prospectus-breakp2) {
+
+.prospectus-container {
+	@include gallery (6 of 12);
+}
+
+.prospectus-cover {
+	@include span (3 of 12);
+}
+.prospectus-description {
+	@include span (9 of 12 last);
+}
+
+}
+
+$prospectus-breakp3: 970px;
+
+@include breakpoint($prospectus-breakp3) {
+
+.two-col-section-prospectus-description {
+	@include gallery (6 of 12);
+}
+
+.two-col-section-prospectus-download {
+	@include gallery (6 of 12);
+}
+
+.prospectus-container {
+	@include gallery (6 of 12);
+}
+
+.prospectus-cover {
+	@include span (6 of 12);
+}
+.prospectus-description {
+	@include span (6 of 12 last);
+}
+
+}
+

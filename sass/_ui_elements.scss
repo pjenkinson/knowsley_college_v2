@@ -1,0 +1,410 @@
+.button-default {
+	display: inline-block;
+	width: auto;
+	position: relative;
+	padding: 10px 0px;
+	-webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+}
+.section-margin-top {
+	margin-top: 1em;
+}
+.button-default a:link, .button-default a:visited {
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+   border-radius: 5px; 
+}
+
+.button-default a:hover, .button-default a:focus  {
+	-webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+}
+
+.button-primary a:link, .button-primary a:visited {
+	background: $primary-color;
+}
+.button-primary a:hover, .button-primary a:focus  {
+	background: $secondary-color;
+}
+
+#owl-demo .item{
+  margin: 1.69492%;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// WPCF7 Contact Form 7
+div.wpcf7 {
+	background: $off-white;
+	padding: gutter() !important;
+	float: left;
+}
+
+.wpcf7-form {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.wpcf7-form br {
+	display: none;
+}
+
+.wpcf7-form fieldset {
+	margin-bottom: gutter();
+}
+
+.wpcf7-text {
+	float: left;
+	width: 100%;
+}
+
+.wpcf7-submit {
+	padding: 1em;
+	border: 1px solid $secondary-color-tint;
+	border-radius: 3px;
+	background: $secondary-color;
+	color: white;
+	margin: 0px;
+}
+
+.wpcf7-form fieldset label {
+	padding-top: 1em !important;
+	padding-bottom: 1em !important;
+	float: left !important;
+}
+
+.ajax-loader {
+	display: none;
+}
+
+.contact-form-half {
+	@include span (12 of 12);
+}
+.contact-form-half-last {
+	@include span (12 of 12 last);
+}
+
+// Application form
+
+.app-form label {
+	float: left;
+	clear: both;
+	display: block;
+	width: 200px;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+.app-form input {
+	display: block;
+	float: left;
+}
+
+.app-form label.course-choice {
+	width: 100%;
+}
+
+.app-form input.input-inline {
+	margin-bottom: 1em;
+	float: left;
+	min-width: 200px;
+}
+
+.app-form select.select-inline {
+	width: 50%;
+	margin-bottom: 1em;
+	float: left;
+}
+
+.app-form .submit {
+	display: inline-block;
+}
+
+.app-form fieldset {
+	margin-bottom: 1em;
+}
+
+.app-form .quali-row {
+	border-bottom: 1px solid $off-white;
+	margin-bottom: 1em;
+}
+
+.postcodeout, .postcodein {
+	display: inline-block;
+	float: left;
+}
+
+.postcodeout {
+	margin-right: 0.5em;
+	width: 60px;
+}
+
+.postcodein {
+	width: 50px;
+}
+
+select.schoollist {
+	text-transform: uppercase !important;
+}
+
+// Parsley Validation
+
+.parsley-errors-list {
+	display: inline-block;
+	list-style-type: none;
+}
+
+.parsley-errors-list li {
+	float: left;
+	display: block;
+	margin-left: 10px;
+}
+
+input.parsley-error {
+	background: $secondary-color;
+}
+
+.parsley-required {
+	color: $secondary-color;
+	float: left;
+}
+
+.highlight-hover {
+	background: $secondary-color;
+}
+
+.page-section-hover-title {
+	background: $secondary-color !important;
+}
+
+.page-section-hover-title h3 {
+	color: white !important; 
+}
+
+.new-qualification-row {
+	float: left;
+	display: inline-block;
+	clear: both;
+}
+
+// Live Search
+
+#live-search {
+	width: 100%;
+	float: left;
+	font-size: 2em;
+	padding: 1em;
+}
+
+.ui-menu {
+	padding: 2em;
+}
+
+.ui-menu .ui-menu-item {
+	font-size: 1.4em;
+	list-style-type: none;
+	padding: 1em;
+}
+
+// UI Datepicker
+
+.ui-datepicker-header {
+	background: $secondary-color;
+	float: left;
+	padding: 1em;
+}
+
+.ui-datepicker-calendar tbody {
+	border: 1px solid $primary-color;
+} 
+
+.ui-datepicker-calendar thead {
+	border: 1px solid $primary-color;
+}
+
+.ui-datepicker-title {
+	float: left;
+}
+
+.ui-datepicker-calendar .ui-state-default, .ui-datepicker-calendar .ui-state-default a, .ui-datepicker-calendar .ui-state-default a:visited {
+	color: $primary-color;
+}
+
+.ui-icon {
+	background: $primary-color;
+	color: white;
+	float: left;
+	margin-right: 0.5em;
+	padding: 0.5em;
+}
+
+.ui-icon:hover {
+	cursor: pointer;
+}
+
+#menu-posts-vacancies {
+	display: none;
+}
+
+.enquire-button {
+	float: left;
+	width: 100%;
+	text-align: center;
+	background: $off-white;
+	padding: 1em;
+}
+
+.enquire-button a:link {
+	padding: 0.5em;
+	background: $secondary-color;
+	float: left;
+	width: 100%;
+	color: white;
+}
+
+.enquire-button a:hover {
+	font-weight: bold;
+	color: white;
+}
+
+.newsletter-signup {
+	float: left;
+	background: $primary-color;
+	margin-bottom: 1em 0px;
+}
+
+.newsletter-form-signup-bar label {
+ font-size: 2em;
+ color: white;
+}
+
+.newsletter-form-signup-bar .email-input {
+	height: 2em;
+	margin-left: gutter();
+	width: 35%;
+}
+
+.newsletter-form-signup-bar .submit {
+	padding: 0.5em;
+	background: $secondary-color;
+	color: white;
+}
+
+.newsletter-signup .parsley-errors-list li {
+	color: white;
+	position: absolute;
+  right: 50px;
+  width: 250px;
+  top: -2em;
+}
+
+.newsletter-signup ul.parsley-errors-list {
+	position: relative;
+}
+
+// Featured PDF
+
+.pdf-container {
+	display: inline-block;
+	clear: both;
+	background: $off-white;
+	padding: 0.5em;
+}
+
+$issuu: 645px;
+
+.issuu-pdf-viewer .issuuembed {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+@include breakpoint($issuu) {
+
+.issuu-pdf-viewer .issuuembed {
+ width: 525px;
+ height: 373px; 
+}
+
+}
+
+// jQuery UI Accordion - Custom Style
+
+#accordion  {
+float: left;
+width: 100%;
+clear: both;
+margin-bottom: 2em;
+}
+
+#accordion * {
+ font-weight: normal;
+}
+
+ #accordion  * { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+#accordion h3 {
+	padding: 1em;
+}
+
+#accordion h3 span {
+	padding: 0px;
+}
+
+#accordion h3:hover {
+	cursor: pointer;
+}
+
+  #accordion .ui-accordion-content {
+    width: 100%;
+    background-color: $off-white;
+    color: #777;
+    font-size: 10pt;
+    line-height: 16pt;
+    padding: 1em;
+}
+
+#accordion .ui-accordion-content > * {
+    margin: 0;
+    padding: 0px;
+}
+
+#accordion .ui-accordion-content a {
+    color: #777;
+}
+
+#accordion .ui-accordion-content ul li a {
+	color: $primary-color;
+}
+
+#accordion .ui-accordion-header {
+    background-color: $primary-color;
+    color: white;
+    margin: 0px;
+}
+
+#accordion .ui-accordion-header a {
+    color: white;
+    line-height: 42px;
+    display: block;
+    font-size: 12pt;
+    width: 100%;
+    text-indent: 10px;
+}
+.quick-links {
+	background: $off-white;
+	padding: 1em;
+	margin-bottom: 1em;
+}

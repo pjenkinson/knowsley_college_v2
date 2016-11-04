@@ -1,0 +1,26 @@
+footer {
+	width: 100%;
+}
+footer ul li {
+	list-style-type: none;
+}
+footer h3 {
+	font-size: 1.3em;
+}
+.footer-details address {
+	margin-bottom: 1em;
+	float: left;
+	clear: both;
+}
+.college-info-partnerships {
+	background: white;
+	padding: 1em 0px;
+}
+.college-info-partnerships img, .footer-logo img  {
+	width: 100%;
+}
+@media (max-width: 1149px) {
+	.footer-logo {
+		display: none;
+	}
+}

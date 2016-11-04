@@ -1,0 +1,1 @@
+<a href="/kcc_wordpress/wordpress/?page_id=246&factsheet=<?=$course->id?>">Click Me!</a>

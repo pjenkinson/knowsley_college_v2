@@ -1,0 +1,22 @@
+#breadcrumbs {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	background: white !important;
+}
+
+.primary-breadcrumbs {
+	float: left;
+	width: 100%;
+	background: white;
+	border-bottom: 1px solid $off-white;
+}
+.breadcrumbs {
+	color: $primary-color;
+}
+
+.breadcrumbs a:link, #breadcrumbs a:visited,  {
+	color: $primary-color;
+}
+.breadcrumbs span {
+	padding-right: 0.2em;
+}

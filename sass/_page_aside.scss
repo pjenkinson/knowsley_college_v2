@@ -1,0 +1,53 @@
+.default-page aside ul li {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.default-page aside {
+	padding-top: 2em;
+}
+
+.default-page aside ul li {
+	list-style: none;
+}
+
+.default-page aside ul li:last-of-type {
+	border-bottom: none;
+}
+
+aside li span.more-news-date {
+	display: block;
+	font-size: 0.8em;
+}
+
+aside .default-page h2, .default-page h3 {
+	border: none;
+}
+
+// Apply box
+
+aside .contact-apply {
+	width: 100%;
+	float: left;
+	margin-top: gutter();
+	padding: gutter();
+	background: $secondary-color;
+}
+
+aside .contact-apply h3{
+	color: white;
+}
+
+aside .contact-apply ul li {
+	width: 100%;
+	float: left;
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+}
+
+.more-news {
+	float: left;
+	width: 100%;
+	clear: both;
+}

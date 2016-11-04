@@ -1,0 +1,340 @@
+
+body {
+	font-size: 16px;
+}
+
+ul, section {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul {
+	margin-bottom: 1em;
+}
+
+ul.two-col {
+	columns: 2;
+   -webkit-columns: 2;
+   -moz-columns: 2;
+}
+ul li {
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 0.4em;
+	list-style-type: square;
+	list-style-position: inside;
+	line-height: 1.4em;
+}
+
+.opening-hours ul li {
+	margin-left: 1em;
+}
+
+ul.no-list-style li {
+	list-style-type: none;
+}
+
+ul.accordion-list li {
+	list-style-type: circle;
+	list-style-position: outside;
+	color: #373737;
+	margin-left: 1em;
+}
+
+ul.tab-links-list li:first-of-type {
+	margin-left: 0px;
+}
+
+ul.vacancy-details-list li {
+	margin-left: 0px;
+}
+
+.wp-content ul li {
+ margin-left: 1em;
+ list-style-position: outside;
+}
+
+// Text Resizer
+
+ul.textresizer
+{
+   list-style: none;
+   display: inline;
+   margin: 0px;
+   padding: 0px;
+}
+   ul.textresizer li
+   {
+      display: inline;
+      margin: 0px;
+      margin-right: 5px;
+      padding: 0px;
+   }
+ 
+   ul.textresizer a
+   {
+      border: solid 1px #999;
+      padding: 2px 3px;
+      font-weight: bold;
+      text-decoration: none;
+   }
+     
+   ul.textresizer a:hover
+   {
+      background: #e5e5e5;
+      border: solid 1px #cccccc;
+         
+   }
+ 
+   ul.textresizer .small-text
+   {
+      font-size: normal;
+   }
+
+   .Small {
+   		font-size: normal;
+   }
+
+   .Medium {
+   		font-size: medium;
+   }
+
+   .Large {
+   		font-size: large;
+   }
+
+   .Larger {
+   		font-size: larger;
+   }
+    
+   ul.textresizer .medium-text
+   {
+      font-size: medium;
+   }
+    
+   ul.textresizer .large-text
+   {
+      font-size: large;
+   }
+    
+   ul.textresizer .larger-text
+   {
+      font-size: x-large;
+   }
+ 
+   ul.textresizer a.textresizer-active
+   {
+      border: solid 1px #2B562B;
+      background: #FFCA6F;
+      color: #000000;            
+   }
+
+p {
+margin-top: 1em;
+margin-bottom: 1em;
+color: #373737;
+}
+
+p strong {
+color: $primary-color;
+}
+
+h1, h2, h3, h4 {
+margin-top: 0px;
+font-weight: normal;
+}
+
+.link-text {
+	display: none;
+}
+
+header a:link, a:visited, a:active {
+	color: white;
+}
+body {
+	background: $body-background;
+}
+
+body {
+margin: 0px;
+// font-family: Georgia, Times, 'Times New Roman', serif;
+font-family:'helvetica-light',Arial,sans-serif;
+font-weight: normal;
+}
+
+main a:link {
+    // color: $aubergine-tint1;
+    color: $links;
+    text-decoration: none;
+}
+
+main a:visited {
+    color: $links;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+}
+
+main a:active {
+    color: $secondary-color;
+}
+
+footer a:link, footer a:visited, footer a:hover, footer a:active  {
+		color: white;
+    text-decoration: none;
+}
+
+img {
+	display: block;
+}
+.primary-navigation img, .site-homepage img, .secondary-home-page img {
+	/* Full width responsive images */
+	width: 100%;
+}
+
+.wp-page img {
+/* Max width responsive images for WYSIWYG editor */
+max-width: 100%;
+height: auto;
+}
+
+table {
+ max-width: 100%;
+ clear: both;
+}
+// WP Content - Image alignment
+
+img.alignright {
+ float: right;
+ margin: 0px 0.5em;
+}
+
+img.alignleft {
+ float: left;
+ margin: 0px 0.5em;
+} 
+
+img.align-margin {
+  margin: 0.5em;
+}
+
+img.align-nomargintop {
+ margin-top: 0px;
+}
+
+img.align-marginbottom {
+ margin-bottom: 1em;
+}
+
+img.align-margintop {
+ margin-bottom: 0.5em;
+}
+
+$wpAlignRight: max-width 600px;
+
+@include breakpoint($wpAlignRight) {
+	img.alignright, img.alignleft {
+	 float: left;
+	 margin: 0px 0px;
+	 margin-bottom: 1em;
+	 width: 100%;
+	 height: auto;
+	}
+ }
+
+
+
+
+address {
+display: inline-block;
+text-decoration: none;
+font-style: normal;
+margin-bottom: gutter();
+}
+
+.wp-content {
+	margin-bottom: 0px;
+}
+
+a.tel {
+	cursor: none;
+}
+
+.top-nav a:link, .top-nav a:visited, .top-nav a:active {
+	color: $primary-color;
+}
+
+.top-nav a:hover {
+	color: white;
+}
+
+.address-line {
+	float: left;
+	clear: both;
+}
+.address-postcode {
+	float: left;
+	clear: both;
+}
+
+.factsheet-feature img, .course-category-snippet img {
+	display: block;
+	height: auto;
+	border: none;
+}
+
+// Font awesome styles
+
+.link-arrow {
+	padding-left: 0.5em;
+}
+
+.fa {
+	padding-right: 0.5em;
+}
+
+// Simple Share Buttons - Whatsapp fix 
+
+@media (min-width: 400px) and (max-width: 9000px) {
+
+div.ssbp-container ul.ssbp-list  li.ssbp-li--whatsapp  {
+	display: none !important;
+}
+
+}
+.single-featured-image  {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: gutter();
+}
+.single-featured-image img {
+	width: 100%;
+}
+
+.single-featured-image img {
+	height: auto;
+}
+
+.content-tagline {
+	font-weight: bold;
+	color: $primary-color;
+}
+
+.wp-content .metaslider-flex {
+	margin-bottom: 1em;
+}
+
+.primary-error {
+	color: $primary-color;
+}
+
+.the-content i.fa {
+  padding-right: 0px;
+}
+
+.relative-container {
+  position: relative;
+}

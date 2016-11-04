@@ -1,0 +1,106 @@
+.secondary-homepage-intro {
+	@include span (12 of 12);
+	background: white;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+	clear: both;
+	padding: gutter();
+	margin-bottom: 2em;
+}
+
+.secondary-homepage-intro .tagline, .secondary-homepage-intro-content .tagline {
+	font-size: 1.5em;
+	color: $primary-color;
+}
+
+.tagline {
+	font-size: 1.5em;
+	color: $primary-color;
+}
+
+.page-section {
+	@include gallery (6 of 12 before);
+	margin-bottom: gutter(12);
+	position: relative;
+	overflow: hidden;
+	gutter-position: after;
+}
+
+.page-sections-profile img {
+	display: block;
+	height: auto;
+}
+
+.page-sections-intro {
+	@include span (12 of 12);
+}
+
+.page-sections-intro p {
+	margin: 0px;
+}
+
+.page-sections .page-description {
+	width: 100%;
+	float: left;
+	background: $off-white;
+}
+
+.page-sections .page-description p {
+	padding: 0px 1em;
+}
+
+.page-sections .page-description address {
+	padding: 1em 1em;
+
+}
+
+.page-sections .page-image {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.page-sections .page-image img:hover {
+	opacity: 0.7;
+ -webkit-transition: opacity 2s;
+}
+
+.page-sections .page-description .heading {
+	width: 100%;
+	float: left;
+	background: white;
+	padding: gutter();
+}
+
+.page-sections .page-description .heading h2, .page-sections .page-description .heading h3 {
+	color: $primary-color;
+	margin-bottom: 0px;
+	font-size: 1em;
+}
+
+.page-sections .page-description .sub-heading {
+	width: 100%;
+	float: left;
+	padding: gutter();
+}
+
+.page-sections a:link, .page-sections a:visited, .page-sections a:hover {
+	color: white;
+}
+
+.page-sections .page-description p a:link, .page-sections .page-description p a:visited, .page-sections .page-description p a:hover  {
+	color: $primary-color;
+}
+// Higher Education 
+
+.qaa-quality-mark {
+	padding: gutter();
+	margin-bottom: 2em;
+	background: white;
+}
+
+.knowsley-university-centre-logo {
+	background: white;
+	margin-bottom: gutter();
+	padding: 10px;
+}
