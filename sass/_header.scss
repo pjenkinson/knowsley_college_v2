@@ -166,7 +166,13 @@ a.skip-link:hover, a.skip-link:focus {
 }
 
 .top-nav-apply-button a:link, .top-nav-apply-button a:visited {
-	color: $links;
+	color: white;
+	background: $secondary-color;
+}
+
+.top-nav-apply-button a:focus, .top-nav-apply-button a:hover {
+ color: white;
+ background: $primary-color;
 }
 
 @media (min-width: 600px) {
