@@ -93,7 +93,7 @@
               </address>
 
               <address>
-              <span class="address-line"><strong><a href="<?php the_field('princess_drive_campus_link', 'option'); ?>" title="Institute of Advanced Manufacturing and Technology">Institute of Advanced Manufacturing and Technology</a></strong></span>
+              <span class="address-line"><strong><a href="<?php the_field('princess_drive_campus_link', 'option'); ?>" title="Main Campus: Institute of Advanced Manufacturing and Technology">Main Campus: Institute of Advanced Manufacturing and Technology</a></strong></span>
               <span class="address-line">Princess Drive</span> 
               <span class="address-line">Liverpool</span> 
               <span class="address-postcode">L14 9ND</span>

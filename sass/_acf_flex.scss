@@ -18,10 +18,31 @@
  clear: both;
 }
 
+
+.pdf-item {
+ @include span (12 of 12);
+ margin-bottom: gutter();
+}
+
+
+@include breakpoint ($tablet-small-desktop) {
+
+.pdf-item {
+ @include gallery (6 of 12 before);
+ margin-bottom: gutter();
+}
+
+}
+
+@include breakpoint ($larger_desktop) {
+
 .pdf-item {
  @include gallery (4 of 12 before);
  margin-bottom: gutter();
 }
+
+}
+
 
 .pdf-cover {
  float: left;

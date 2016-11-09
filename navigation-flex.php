@@ -88,6 +88,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'workworld' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Alumni' ): ?>
+	<nav class="nav-home alumni">
+	<?php wp_nav_menu( array( 'theme_location' => 'alumni-menu' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 
