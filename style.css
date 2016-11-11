@@ -1,10 +1,10 @@
 /*
 Theme Name: knowsley_college
 Theme URI: http://www.knowsleycollege.ac.uk/
-Author: Underscores.me
+Author: Paul Jenkinson
 Author URI: http://www.knowsleycollege.ac.uk/
 Description: Description
-Version: 1.0.0
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: knowsley_college
@@ -2417,129 +2417,141 @@ footer {
 }
 
 /* line 382, sass/_mobile.scss */
-#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-wrap-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
+#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-higher-education #mega-menu-higher-education > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-employers #mega-menu-employers > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
   background: #666666 !important;
   color: #FFFFFF !important;
 }
 
 /* line 387, sass/_mobile.scss */
-#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-wrap-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
+#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-wrap-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
   background: #99cc66 !important;
   color: #FFFFFF !important;
 }
 
 /* line 392, sass/_mobile.scss */
+#mega-menu-wrap-higher-education #mega-menu-wrap-higher-education > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
+  background: #68478d !important;
+  color: #FFFFFF !important;
+}
+
+/* line 397, sass/_mobile.scss */
+#mega-menu-wrap-employers #mega-menu-wrap-employers > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
+  background: #4a0d66 !important;
+  color: #FFFFFF !important;
+}
+
+/* line 402, sass/_mobile.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle {
   text-align: left;
 }
 
-/* line 396, sass/_mobile.scss */
+/* line 406, sass/_mobile.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before {
   float: right !important;
 }
 
-/* line 402, sass/_mobile.scss */
+/* line 412, sass/_mobile.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle:after {
   content: "About" !important;
   float: left;
 }
 
-/* line 407, sass/_mobile.scss */
+/* line 417, sass/_mobile.scss */
 #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:after {
   content: "Student Support" !important;
   float: left;
 }
 
-/* line 412, sass/_mobile.scss */
+/* line 422, sass/_mobile.scss */
 #mega-menu-wrap-16-19 .mega-menu-toggle:after {
   content: "School Leavers" !important;
   float: left;
 }
 
-/* line 417, sass/_mobile.scss */
+/* line 427, sass/_mobile.scss */
 #mega-menu-wrap-16-19-subject .mega-menu-toggle:after {
   content: "School Leavers Courses" !important;
   float: left;
 }
 
-/* line 422, sass/_mobile.scss */
+/* line 432, sass/_mobile.scss */
 #mega-menu-wrap-employers .mega-menu-toggle:after {
   content: "Employers" !important;
   float: left;
 }
 
-/* line 427, sass/_mobile.scss */
+/* line 437, sass/_mobile.scss */
 #mega-menu-wrap-adults .mega-menu-toggle:after {
   content: "Adults" !important;
   float: left;
 }
 
-/* line 432, sass/_mobile.scss */
+/* line 442, sass/_mobile.scss */
 #mega-menu-wrap-apprenticeships .mega-menu-toggle:after {
   content: "Apprentices" !important;
   float: left;
 }
 
-/* line 437, sass/_mobile.scss */
+/* line 447, sass/_mobile.scss */
 #mega-menu-wrap-higher-education .mega-menu-toggle:after {
   content: "Higher Education" !important;
   float: left;
 }
 
-/* line 442, sass/_mobile.scss */
+/* line 452, sass/_mobile.scss */
 #mega-menu-wrap-contact .mega-menu-toggle:after {
   content: "Contact" !important;
   float: left;
 }
 
-/* line 447, sass/_mobile.scss */
+/* line 457, sass/_mobile.scss */
 #mega-menu-wrap-external-access .mega-menu-toggle {
   background: #99cc66 !important;
 }
 
-/* line 451, sass/_mobile.scss */
+/* line 461, sass/_mobile.scss */
 #mega-menu-wrap-vacancies .mega-menu-toggle:after {
   content: "Vacancies" !important;
   float: left;
 }
 
-/* line 456, sass/_mobile.scss */
+/* line 466, sass/_mobile.scss */
 #mega-menu-wrap-workworld .mega-menu-toggle:after {
   content: "WorkWorld" !important;
   float: left;
 }
 
-/* line 461, sass/_mobile.scss */
+/* line 471, sass/_mobile.scss */
 #mega-menu-wrap-governors .mega-menu-toggle:after {
   content: "Governance" !important;
   float: left;
 }
 
-/* line 466, sass/_mobile.scss */
+/* line 476, sass/_mobile.scss */
 #mega-menu-wrap-policies .mega-menu-toggle:after {
   content: "College Policies" !important;
   float: left;
 }
 
-/* line 470, sass/_mobile.scss */
+/* line 480, sass/_mobile.scss */
 #mega-menu-wrap-campus .mega-menu-toggle:after {
   content: "Campuses" !important;
   float: left;
 }
 
-/* line 475, sass/_mobile.scss */
+/* line 485, sass/_mobile.scss */
 #mega-menu-wrap-about-services .mega-menu-toggle:after {
   content: "Services Menu" !important;
   float: left;
 }
 
-/* line 480, sass/_mobile.scss */
+/* line 490, sass/_mobile.scss */
 #mega-menu-wrap-about-partners .mega-menu-toggle:after {
   content: "Partners Menu" !important;
   float: left;
 }
 
-/* line 487, sass/_mobile.scss */
+/* line 497, sass/_mobile.scss */
 .footer-details {
   width: 100%;
   float: left;
@@ -2547,14 +2559,14 @@ footer {
   margin-right: 0;
 }
 
-/* line 490, sass/_mobile.scss */
+/* line 500, sass/_mobile.scss */
 .footer-logo {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 493, sass/_mobile.scss */
+/* line 503, sass/_mobile.scss */
 .footer-sitemap {
   width: 100%;
   float: left;
@@ -2562,7 +2574,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 496, sass/_mobile.scss */
+/* line 506, sass/_mobile.scss */
 .footer-contact {
   width: 100%;
   float: left;
@@ -2570,7 +2582,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 499, sass/_mobile.scss */
+/* line 509, sass/_mobile.scss */
 .footer-last {
   width: 100%;
   float: left;
@@ -2578,7 +2590,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 506, sass/_mobile.scss */
+/* line 516, sass/_mobile.scss */
 .step1 {
   width: 100%;
   float: left;
@@ -2587,7 +2599,7 @@ footer {
   background: #4d4d4c;
 }
 
-/* line 510, sass/_mobile.scss */
+/* line 520, sass/_mobile.scss */
 .step2 {
   width: 100%;
   float: left;
@@ -2596,7 +2608,7 @@ footer {
   background: #4d4d4c;
 }
 
-/* line 514, sass/_mobile.scss */
+/* line 524, sass/_mobile.scss */
 .step3 {
   width: 100%;
   float: left;
@@ -2605,7 +2617,7 @@ footer {
   background: #4d4d4c;
 }
 
-/* line 518, sass/_mobile.scss */
+/* line 528, sass/_mobile.scss */
 .step4 {
   width: 100%;
   float: right;
@@ -2613,32 +2625,32 @@ footer {
   background: #4d4d4c;
 }
 
-/* line 525, sass/_mobile.scss */
+/* line 535, sass/_mobile.scss */
 .subject-description {
   width: 66.10169%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 529, sass/_mobile.scss */
+/* line 539, sass/_mobile.scss */
 .subject-download {
   width: 32.20339%;
   float: right;
   margin-right: 0;
 }
 
-/* line 533, sass/_mobile.scss */
+/* line 543, sass/_mobile.scss */
 .subject-buttons {
   clear: both;
   float: left;
 }
 
-/* line 538, sass/_mobile.scss */
+/* line 548, sass/_mobile.scss */
 .subject-buttons .button-default:first-of-type {
   margin-bottom: 10px;
 }
 
-/* line 542, sass/_mobile.scss */
+/* line 552, sass/_mobile.scss */
 .factsheet-page section {
   width: 100%;
   float: left;
@@ -2646,7 +2658,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 546, sass/_mobile.scss */
+/* line 556, sass/_mobile.scss */
 .factsheet-page aside {
   width: 100%;
   float: left;
@@ -2654,7 +2666,7 @@ footer {
   margin-right: 0;
 }
 
-/* line 550, sass/_mobile.scss */
+/* line 560, sass/_mobile.scss */
 .two-col-section-prospectus-description {
   width: 100%;
   float: left;
@@ -2662,14 +2674,14 @@ footer {
   margin-right: 0;
 }
 
-/* line 554, sass/_mobile.scss */
+/* line 564, sass/_mobile.scss */
 .two-col-section-prospectus-download {
   width: 100%;
   float: right;
   margin-right: 0;
 }
 
-/* line 558, sass/_mobile.scss */
+/* line 568, sass/_mobile.scss */
 .prospectus-container {
   width: 100%;
   float: left;
@@ -2678,14 +2690,14 @@ footer {
   margin-top: 1em;
 }
 
-/* line 563, sass/_mobile.scss */
+/* line 573, sass/_mobile.scss */
 .prospectus-cover {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 566, sass/_mobile.scss */
+/* line 576, sass/_mobile.scss */
 .prospectus-description {
   width: 66.10169%;
   float: right;
@@ -2693,14 +2705,14 @@ footer {
 }
 
 @media (min-width: 420px) {
-  /* line 574, sass/_mobile.scss */
+  /* line 584, sass/_mobile.scss */
   .prospectus-cover {
     width: 23.72881%;
     float: left;
     margin-right: 1.69492%;
   }
 
-  /* line 577, sass/_mobile.scss */
+  /* line 587, sass/_mobile.scss */
   .prospectus-description {
     width: 74.57627%;
     float: right;
@@ -2708,7 +2720,7 @@ footer {
   }
 }
 @media (min-width: 600px) {
-  /* line 587, sass/_mobile.scss */
+  /* line 597, sass/_mobile.scss */
   .prospectus-container {
     width: 49.15254%;
     float: left;
@@ -2728,7 +2740,7 @@ footer {
     clear: none;
   }
 
-  /* line 592, sass/_mobile.scss */
+  /* line 602, sass/_mobile.scss */
   .prospectus-cover {
     width: 32.20339%;
     float: left;
@@ -2736,7 +2748,7 @@ footer {
     margin-top: 0.5em;
   }
 
-  /* line 596, sass/_mobile.scss */
+  /* line 606, sass/_mobile.scss */
   .prospectus-description {
     width: 66.10169%;
     float: right;
@@ -2744,7 +2756,7 @@ footer {
   }
 }
 @media (min-width: 930px) {
-  /* line 607, sass/_mobile.scss */
+  /* line 617, sass/_mobile.scss */
   .prospectus-container {
     width: 49.15254%;
     float: left;
@@ -2763,14 +2775,14 @@ footer {
     clear: none;
   }
 
-  /* line 611, sass/_mobile.scss */
+  /* line 621, sass/_mobile.scss */
   .prospectus-cover {
     width: 23.72881%;
     float: left;
     margin-right: 1.69492%;
   }
 
-  /* line 614, sass/_mobile.scss */
+  /* line 624, sass/_mobile.scss */
   .prospectus-description {
     width: 74.57627%;
     float: right;
@@ -2778,7 +2790,7 @@ footer {
   }
 }
 @media (min-width: 970px) {
-  /* line 624, sass/_mobile.scss */
+  /* line 634, sass/_mobile.scss */
   .two-col-section-prospectus-description {
     width: 49.15254%;
     float: left;
@@ -2797,7 +2809,7 @@ footer {
     clear: none;
   }
 
-  /* line 628, sass/_mobile.scss */
+  /* line 638, sass/_mobile.scss */
   .two-col-section-prospectus-download {
     width: 49.15254%;
     float: left;
@@ -2816,7 +2828,7 @@ footer {
     clear: none;
   }
 
-  /* line 632, sass/_mobile.scss */
+  /* line 642, sass/_mobile.scss */
   .prospectus-container {
     width: 49.15254%;
     float: left;
@@ -2835,14 +2847,14 @@ footer {
     clear: none;
   }
 
-  /* line 636, sass/_mobile.scss */
+  /* line 646, sass/_mobile.scss */
   .prospectus-cover {
     width: 49.15254%;
     float: left;
     margin-right: 1.69492%;
   }
 
-  /* line 639, sass/_mobile.scss */
+  /* line 649, sass/_mobile.scss */
   .prospectus-description {
     width: 49.15254%;
     float: right;
