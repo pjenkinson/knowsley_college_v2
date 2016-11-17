@@ -126,7 +126,7 @@ if($pageID == '1' || empty($pageID)) {
     $offering = $wpdb->get_results($sql);?>
 
 
-	  <?php get_template_part( 'apply', 'steps1' );?>
+	  <?php get_template_part( 'apply/apply', 'steps1' );?>
 
 	  <?php 
 							$sql = "SELECT DISTINCT programmearea FROM fact_sheets";
@@ -353,7 +353,7 @@ if($pageID == '1' || empty($pageID)) {
 } elseif($pageID == '2') {
 	  ?>
 	  
-<?php get_template_part( 'apply', 'steps2' );?>
+<?php get_template_part( 'apply/apply', 'steps2' );?>
 
 <?php // Pull Schools ?>
 
@@ -411,7 +411,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 } elseif($pageID == '3') {
 		?>
 
-<?php get_template_part( 'apply', 'steps3' );?>
+<?php get_template_part( 'apply/apply', 'steps3' );?>
 
 <div class="the-content">
 
@@ -506,7 +506,7 @@ $sql = "SELECT Grade FROM Grades";
 
 } elseif($pageID == '4') { ?>
 
-<?php get_template_part( 'apply', 'steps4' );?>
+<?php get_template_part( 'apply/apply', 'steps4' );?>
 
 <div class="the-content">
 
