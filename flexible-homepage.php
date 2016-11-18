@@ -1,11 +1,15 @@
 <?php
 /**
 * Template Name: Flexible Homepage
-* Content Page
-*
 * @package knowsley_college
 */
 get_header(); ?>
+
+<script>
+  jQuery( function() {
+    jQuery( "#accordion" ).accordion();
+  } );
+  </script>
 
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

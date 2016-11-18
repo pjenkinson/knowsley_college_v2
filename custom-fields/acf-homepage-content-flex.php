@@ -117,27 +117,22 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 <!-- Test Opening Times-->
 
-<section>
-	<div class="fixed-container">
+<section class="full-width-container">
+	<section class="fixed-container">
 		<div class="two-col-section-main">
 			<h2 class="section-heading section-heading-colour">Opening Times</h2>
 			<ul class="service-opening-times">
-				<li>Monday: 9am - 5pm</li>
-				<li>Tuesday: 9am - 5pm</li>
-				<li>Wednesday: 9am - 5pm</li>
-				<li>Thursday: 9am - 5pm</li>
-				<li>Friday: 9am - 5pm</li>
-				<li>Saturday - Sunday: Closed</li>
+        <?php while ( have_rows('day_and_time') ) : the_row();?>
+				<li><?php the_sub_field('day'); ?>: <?php the_sub_field('opening_time'); ?> - <?php the_sub_field('closing_time'); ?></li>
+        <?php endwhile;?>
 			</ul>
 			</div>
 			<div class="two-col-section-side two-col-section-image">
 			<div class="section-image-container">
-			<a href="<?php the_sub_field('page_link'); ?>" title="<?php the_sub_field('link_title'); ?>">
 			<img src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('link_title'); ?>">
-			</a>
 			</div>
-		</div>
-	</div>
+    </div>
+	</section>
 </section>
 
 <hr class="dotted"></hr>
@@ -404,6 +399,53 @@ function IAMT() {
 
 <hr class="dotted"></hr>
 
+<!-- ACCORDION -->
+
+<?php elseif( get_row_layout() == 'accordion' ):?>
+
+<!-- Accordion Container -->
+
+<section class="full-width-container">
+  <div class="fixed-container">
+<div id="accordion" style="clear:both;">
+
+<!-- 1st Repeater (Accordion Item) -->
+<?php while ( have_rows('accordion_item') ) : the_row();?>
+
+<h3><?php the_sub_field('title')?> <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></h3>
+
+
+    <div class="accordion-content">
+     <div>
+        <ul>
+
+<!-- 2nd Repeater (Accordion Item Content) -->
+<?php if( have_rows('content') ):
+
+  // loop through the rows of data
+    while ( have_rows('content') ) : the_row();?>
+
+
+<p><?php the_sub_field('text')?></p>
+
+<?php  endwhile;?>
+
+<?php endif;?>
+
+ </ul>
+    </div>
+    </div>
+
+<?php     endwhile;?>
+
+</div><!-- End of Accordion Container -->
+
+</section>
+</div>
+
+
+
+</div>
 
 
 <!-- END -->

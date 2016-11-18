@@ -356,6 +356,16 @@ border-bottom: 1px solid $off-white;
 list-style: none;
 }
 
+.lee-stafford #accordion h3 {
+	background: $lee-stafford-secondary;
+}
+.lee-stafford #accordion h3.ui-state-active {
+	background: $lee-stafford;
+}
+.lee-stafford #accordion h3:hover {
+  background: $lee-stafford;
+}
+
 // KCC Live
 
 .kcc-live .featured-banner .banner-heading {

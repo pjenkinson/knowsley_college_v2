@@ -380,9 +380,6 @@ Find out more
 <a href="<?php the_field('carousel_two', 'option'); ?>"><img src="<?php echo get_bloginfo('template_directory');?>/images/services/lee-stafford-education.png" alt="KCC Live">
 </a></div>
 <div class="item">
-<a href="<?php the_field('carousel_three', 'option'); ?>"><img src="<?php echo get_bloginfo('template_directory');?>/images/services/studio-115.png" alt="Studio 115">
-</a></div>
-<div class="item">
 <a href="<?php the_field('carousel_four', 'option'); ?>"><img src="<?php echo get_bloginfo('template_directory');?>/images/services/radio.png" alt="KCC Live">
 </a></div>
 </div>

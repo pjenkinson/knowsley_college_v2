@@ -17,7 +17,7 @@ get_header(); ?>
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'branding-flex-secondary' );?>
+<?php get_template_part( 'branding-flex' );?>
 
 
 <!-- Page content 
