@@ -78,7 +78,8 @@ add_filter('wp_title', 'af_titledespacer');
       'vacancies' => __( 'vacancies' ),
       'workworld' => __( 'workworld' ),
       'campus' => __( 'campus' ),
-      'policies' => __( 'policies' )
+      'policies' => __( 'policies' ),
+      'nla' => __( 'Northern Logistics Academy' )
     )
   );
 }

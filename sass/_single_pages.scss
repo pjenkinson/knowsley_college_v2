@@ -18,11 +18,28 @@
 // Secondary Page
 
 .service-number {  
-	position: absolute;
-  top: -50px;
+	position: relative;
+	float: left;
   color: white;
   background: #ee1199;
   padding: 1em;
+}
+
+.featured-banner {
+	position: relative;
+	float: left;
+ 	width: 100%;
+ 	clear: both;
+}
+
+@include breakpoint ($larger_desktop) {
+
+	.service-number {  
+	position: relative;
+  color: white;
+  background: #ee1199;
+  padding: 1em;
+  margin-right: 0.5em;
 }
 
 .featured-banner {
@@ -33,6 +50,10 @@
  	clear: both;
  	max-height: 500px;
 }
+
+}
+
+
 
 .featured-banner-child {
 	max-height: 350px;
@@ -502,10 +523,6 @@ article p.apply a {
 
 #mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item:last-of-type {
 	border-bottom: none;
-}
-
-#mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-about-menu #mega-menu-about-menu.mega-menu-vertical > li.mega-menu-item, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item {
-	border-bottom: 2px solid $off-white;
 }
 
 #mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {

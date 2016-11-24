@@ -35,19 +35,8 @@ get_header(); ?>
 <?php get_template_part( 'flexible-homepage-banner' );?>
 
 
-
-<?php if( get_field('toggle_service_info') )
-{?>
-    <!-- Service Number
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<div class="fixed-container relative-container">
-	<div class="service-number">
-		<a href="tel:<?php the_field('tel'); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telephone'); ?></a>
-	</div>
-
 </div>
-<?php }?>
+
 
 
 <!-- Breadcrumbs

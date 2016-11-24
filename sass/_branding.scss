@@ -33,6 +33,10 @@ $kcc-live: #202325;
 $kcc-live-secondary: #e72e88;
 $studio-115: #f7941e;
 $studio-115-secondary: #bd2029;
+$nla: #cb204d;
+$nla-secondary: #1d1d1b;
+
+
 // Fonts
 
 h1, h2, h3, h4 {
@@ -78,7 +82,6 @@ footer h1, footer h2, footer h3, footer h4 {
 $primary-padding: 2em;
 
 // Tables
-
 table {
 	float: left;
 	clear: both;
@@ -317,8 +320,9 @@ color: $higher-education-secondary;
 	color: $higher-education !important;
 }
 
-
-
+.mega-menu-toggle .mega-toggle-block-1:after, .mega-menu-toggle .mega-toggle-block-1:before   {
+ color: #666666 !important;
+}
 
 // LEE STAFFORD
 
@@ -444,8 +448,6 @@ color: $studio-115;
 }
 
 
-
-
 // EMPLOYERS
 
 .employers .featured-banner .banner-heading {
@@ -468,12 +470,7 @@ color: $employers-secondary;
 footer.employers a:active, footer.employers a:hover {
 color: $employers-secondary;
 }
-.employers .button-default {
-	background: $employers-secondary;
-}
-.employers .button-default a:hover {
-  background: $employers;
-}
+
 .employers #accordion h3 {
 	background: $employers-secondary;
 }
@@ -678,3 +675,58 @@ color: $iamt;
 	background: $iamt !important;
 }
 
+// NORTHERN LOGISTICS ACADEMY
+
+.nla .featured-banner .banner-heading {
+	background: rgba(203, 32, 77, 0.9);
+  border-top: solid 2px $nla-secondary;
+}
+
+footer.nla {
+ border-top: 40px solid $nla-secondary;
+ background: $nla;
+}
+
+footer.nla address a:link, footer address a:visited {
+text-decoration: none;
+}
+footer.nla address a:active, footer address a:hover {
+color: $nla;
+}
+
+footer.nla a:active, footer.employers a:hover {
+color: $nla;
+}
+
+.nla #accordion h3 {
+	background: $nla-secondary;
+}
+.nla #accordion h3.ui-state-active {
+	background: $nla;
+}
+.nla #accordion h3:hover {
+  background: $nla;
+}
+
+.nla .quote-box {
+	background: $nla;
+	border: 2px solid $nla-secondary;
+}
+
+.nla .service-number {
+	background: white;
+}
+
+.nla .service-number a:link, .nla .service-number a:active, .nla .service-number a:visited {
+	color: $nla;
+}
+
+.nla .button-default a {
+	background: $nla;
+	border: 2px solid $nla-secondary;
+}
+
+.nla .button-default a:hover {
+  background: $nla-secondary;
+}
+	

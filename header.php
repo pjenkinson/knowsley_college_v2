@@ -1,10 +1,7 @@
 <?php
 /**
  * The header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package knowsley_college
+  * @package knowsley_college
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -56,6 +53,12 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "b018ceee-b502-4f45-8a6f-58da868c1cf4", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <?php } else {}?>
+
+<?php if ( is_front_page() ) { ?>
+<?php get_template_part( 'script', 'owlcarousel' );?>
+<?php get_template_part( 'navigation', 'scroll' );?>
+<?php }
+?>
 </head>
 <body>
 

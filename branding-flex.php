@@ -52,6 +52,12 @@
 	
 <?php endif; ?>
 
+<?php if( get_field('branding') == 'Northern Logistics Academy' ): ?>
+
+<main id="main" class="site-main nla" role="main">
+	
+<?php endif; ?>
+
 
 
 

@@ -93,6 +93,12 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'alumni-menu' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Northern Logistics Academy' ): ?>
+	<nav class="nav-home alumni">
+	<?php wp_nav_menu( array( 'theme_location' => 'nla' ) ); ?>
+</nav>
+<?php endif; ?>
+
 
 
 

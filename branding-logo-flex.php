@@ -39,6 +39,9 @@
 
 <img class="desktop-logo" src="<?php echo get_bloginfo('template_directory');?>/images/kcc-logo-studio-115.svg" alt="Knowsley Community College">
 
+<?php elseif( get_field('branding') == 'Northern Logistics Academy' ): ?>
+
+<img class="desktop-logo" src="<?php echo get_bloginfo('template_directory');?>/images/kcc-logo-nla.svg" alt="Knowsley Community College">
 
 <?php else: {?>
 	<img class="desktop-logo" src="<?php echo get_bloginfo('template_directory');?>/images/kcc-logo.svg" alt="Knowsley Community College">

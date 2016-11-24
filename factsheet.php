@@ -364,7 +364,7 @@ jQuery("li.last-tab a").unbind('click');
 
   <div id="units" class="tab-section">
 
-  <h2>Units</h2>
+  <h2>Units you will study include:</h2>
   
   <ul>
     <li><?=$factsheet->unit1?></li>

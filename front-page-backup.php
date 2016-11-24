@@ -7,6 +7,21 @@ get_header(); ?>
 
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'script', 'owlcarousel' );?>
+<?php get_template_part( 'navigation', 'scroll' );?>
+
+<!-- Slider
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<?php // get_template_part( 'homepage-slider/slider');?>
+
+<section class="full-width-container slider-container">
+<div class="fixed-container">
+<div class="slider">
+<?php 
+    echo do_shortcode("[metaslider id=1536]"); 
+?>
+</div>
 
 <script>
 jQuery(function() {
@@ -18,20 +33,9 @@ jQuery(function() {
 });
 </script>
 
-<!-- Slider
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<section class="full-width-container slider-container">
-<div class="fixed-container">
-<div class="slider">
-<?php 
-    echo do_shortcode("[metaslider id=1536]"); 
-?>
-</div>
+</header>
 </div>
 </section>
-</header>
-
 
 
 <!-- Main content
