@@ -18,18 +18,168 @@ jQuery(function() {
 });
 </script>
 
+<script>
+
+jQuery(document).ready(function( $ ) {
+	
+	$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true,
+  draggable: false,
+  autoPlay: 6000,
+  pauseAutoPlayOnHover: true,
+ 
+});
+	
+});
+
+jQuery(document).ready(function( $ ) {
+
+$carousel.on( 'select.flickity', function() {
+
+$( ".carousel-caption" ).addClass( "carousel-animation" );
+
+})
+
+});
+
+</script>
+
+
+<style>
+
+.slider-container {
+	overflow: hidden;
+	clear: both;
+	min-height: 500px;
+	max-height: 500px;
+}
+
+.carousel-cell {
+  width: 100%; /* full width */
+  height: auto; /* height of carousel */
+  margin-right: 10px;
+}
+
+.carousel-cell img {
+	width: 100%;
+	height: auto;
+}
+
+.is-selected .carousel-caption {
+	opacity: 1 !important;	
+	top: 50px !important;
+}
+
+.carousel-content {
+	position: relative;
+}
+
+
+.carousel-caption {
+	position: absolute;
+	top: -1000px;
+	background: rgba(146, 195, 98, 0.9);
+	padding: 2em;
+	width: 70%;
+	opacity: 0;
+		-webkit-transition: all 2.5s ease;
+  -moz-transition:    all 2.5s ease;
+  -o-transition:      all 2.5s ease;
+
+}
+
+.carousel-caption h2 {
+	font-size: 3em;
+	color: white;
+	border-bottom: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.carousel-caption p {
+	color: white;
+}
+
+.carousel-caption .button-default {
+  
+}
+
+.carousel-caption .button-default a {
+	color: #4d4d4c;
+	background: white;
+}
+
+.carousel-caption .button-default a:hover {
+	color: white;
+	background: #4d4d4c;
+}
+
+/* smaller, dark, rounded square */
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #333;
+}
+
+</style>
+
+
+
 <!-- Slider
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <section class="full-width-container slider-container">
-<div class="fixed-container">
-<div class="slider">
-<?php 
-    echo do_shortcode("[metaslider id=1536]"); 
-?>
-</div>
-</div>
+
+<div class="main-carousel">
+
+  <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+  		<div class="carousel-caption">
+  			<h2>Knowsley Community College is the best local college in Liverpool</h2>
+  			<p>Additional text can go here...</p><div class="button-default"><a href="">Find out more</a></div>
+      </div>
+    </div>
+    <img alt="" src="https://images.pexels.com/photos/200431/pexels-photo-200431.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb">
+  </div>
+
+   <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+  		<div class="carousel-caption">
+  			<h2>Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage.</h2>
+  			<p>Additional text can go here...</p>
+      </div>
+    </div>
+    <img alt="" src="https://images.pexels.com/photos/91988/pexels-photo-91988.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb">
+  </div>
+
+   <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+  		<div class="carousel-caption">
+  			<h2>Knowsley Community College is the best local college in Liverpool</h2>
+  			<p>Additional text can go here...</p>
+      </div>
+    </div>
+    <img alt="" src="https://images.pexels.com/photos/31049/pexels-photo-31049.jpg?w=1260&h=750&auto=compress&cs=tinysrgb">
+  </div>
+
+  <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+  		<div class="carousel-caption">
+  			<h2>Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage. Another line is definitely too long for this webpage. This is definitely too far! Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage.</h2>
+  			<p>Additional text can go here...</p>
+      </div>
+    </div>
+    <img alt="" src="https://images.pexels.com/photos/31049/pexels-photo-31049.jpg?w=1260&h=750&auto=compress&cs=tinysrgb">
+  </div>
+
+
+
 </section>
+
+
 </header>
 
 

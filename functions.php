@@ -152,6 +152,9 @@ function knowsley_college_scripts() {
 
 	wp_enqueue_script( 'knowsley_college-scrollup', get_template_directory_uri() . '/inc/scrollup/scrollUp.min.js', array('jquery'), '20130116', true );
 
+	wp_enqueue_style( 'flickity_style', get_template_directory_uri() . '/inc/flickity/flickity.css' );
+	wp_enqueue_script( 'flickity_carousel', get_template_directory_uri() . '/inc/flickity/flickity.js', array('jquery'), '2013023556', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -193,36 +196,6 @@ function conditional_script_mega_menu_ui() {
 add_action('wp_enqueue_scripts', 'conditional_script_mega_menu_ui');
 
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Add support for featured thumbnails in posts.
- */
-
-add_theme_support( 'post-thumbnails' ); 
 
 /**
  * Add support for custom single news post

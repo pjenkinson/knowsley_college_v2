@@ -54,9 +54,9 @@ jQuery(function() {
 
 <article class="news-item news-item-3col">
 
-			<a href="http://www.knowsleycollege.ac.uk/new-campus-2016/" title="<?php the_title(); ?>">
+			<a href="https://www.knowsleycollege.ac.uk/new-campus-2016/" title="<?php the_title(); ?>">
 			<div class="small-news-thumb">
-				<img src="http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/03/kcc-new-campus-2016.jpg" alt="New Campus Blog 2016" />
+				<img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2016/03/kcc-new-campus-2016.jpg" alt="New Campus Blog 2016" />
 			</div>
 			
 			<div class="small-news-content">
@@ -89,7 +89,7 @@ $wp_query = new WP_Query('posts_per_page=8&paged=' . $paged . '&category_name=ne
 				<?php if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 				} else { ?>
-				<img src="http://www.knowsleycollege.ac.uk/wp-content/uploads/2015/06/the-latest.png" alt="<?php the_title(); ?>" />
+				<img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2015/06/the-latest.png" alt="<?php the_title(); ?>" />
 				<?php } ?>
 			</div>
 			

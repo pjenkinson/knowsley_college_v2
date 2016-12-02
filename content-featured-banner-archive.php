@@ -9,5 +9,5 @@
 </div>
 </div>
 </div>
-<img src="http://www.knowsleycollege.ac.uk/wp-content/uploads/2015/07/kcc-main-campus.jpg" alt="<?php post_type_archive_title(); ?>"> 
+<img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2015/07/kcc-main-campus.jpg" alt="<?php post_type_archive_title(); ?>"> 
 </div>

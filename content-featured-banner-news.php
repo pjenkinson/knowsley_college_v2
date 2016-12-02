@@ -4,6 +4,6 @@
 	 echo 'KCC News';
 	echo '</h1>';
 	echo '</div>';
-	echo '<img src="http://www.knowsleycollege.ac.uk/wp-content/uploads/2015/07/students-kcc.jpg" alt="Vacancies" />';
+	echo '<img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2015/07/students-kcc.jpg" alt="Vacancies" />';
 	echo '</div>';
 ?>
