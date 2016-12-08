@@ -100,6 +100,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'nla' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Leisure Courses' ): ?>
+	<nav class="nav-secondary leisure-courses">
+	<?php wp_nav_menu( array( 'theme_location' => 'leisure-courses' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 

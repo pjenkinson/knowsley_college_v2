@@ -94,8 +94,13 @@
 </nav>
 <?php endif; ?>
 <?php if( get_field('navigation') == 'Northern Logistics Academy' ): ?>
-	<nav class="nav-home alumni">
+	<nav class="nav-home northern-logistics-academy">
 	<?php wp_nav_menu( array( 'theme_location' => 'nla' ) ); ?>
+</nav>
+<?php endif; ?>
+<?php if( get_field('navigation') == 'Leisure Courses' ): ?>
+	<nav class="nav-home leisure-courses">
+	<?php wp_nav_menu( array( 'theme_location' => 'leisure-courses' ) ); ?>
 </nav>
 <?php endif; ?>
 

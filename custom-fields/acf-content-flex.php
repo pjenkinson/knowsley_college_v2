@@ -214,6 +214,33 @@ jQuery(document).ready(function(){
 <?php  endif;?>
 
 
+<?php elseif( get_row_layout() == 'eventbrite_course' ):?>
+
+ <div class="eventbrite-course">
+ 	<h2><a href="http://www.eventbrite.co.uk/e/introduction-to-textiles-and-home-furnishings-4-week-course-tickets-29985218596?ref=ebtn" target="_blank">Course Title</a></h2>
+ 	<p>Date | Time | £50</p>
+ 	<p>Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description Course description.</p>
+
+ 	<div class="Eventbrite-button">
+ 		<a href="http://www.eventbrite.co.uk/e/introduction-to-textiles-and-home-furnishings-4-week-course-tickets-29985218596?ref=ebtn" target="_blank"><img src="https://www.eventbrite.co.uk/custombutton?eid=29985218596" alt="Eventbrite - Introduction to Textiles and Home Furnishings (4 Week Course)" /></a>
+ 	</div>
+
+ </div>
+
+ <div class="eventbrite-course">
+ 	<h2><a href="http://www.eventbrite.co.uk/e/introduction-to-textiles-and-home-furnishings-4-week-course-tickets-29985218596?ref=ebtn" target="_blank">Course Title</a></h2>
+ 	<p>Date | Time | £50</p>
+ 	<p>Description</p>
+
+ 	<div class="Eventbrite-button">
+ 		<a href="http://www.eventbrite.co.uk/e/introduction-to-textiles-and-home-furnishings-4-week-course-tickets-29985218596?ref=ebtn" target="_blank"><img src="https://www.eventbrite.co.uk/custombutton?eid=29985218596" alt="Eventbrite - Introduction to Textiles and Home Furnishings (4 Week Course)" /></a>
+ 	</div>
+
+ </div>
+
+
+
+
 
 
 

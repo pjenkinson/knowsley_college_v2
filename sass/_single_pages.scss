@@ -860,3 +860,10 @@ input[type=checkbox] {
 .section-panels-bg {
 	background: $off-white;
 }
+
+// Eventbrite 
+.eventbrite-course {
+	margin-bottom: gutter();
+	background: white;
+	padding: 1em;
+}

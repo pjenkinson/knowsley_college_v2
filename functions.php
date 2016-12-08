@@ -79,7 +79,8 @@ add_filter('wp_title', 'af_titledespacer');
       'workworld' => __( 'workworld' ),
       'campus' => __( 'campus' ),
       'policies' => __( 'policies' ),
-      'nla' => __( 'Northern Logistics Academy' )
+      'nla' => __( 'Northern Logistics Academy' ),
+      'leisure-courses' => __( 'Leisure Courses' )
     )
   );
 }
@@ -189,7 +190,7 @@ add_action('wp_enqueue_scripts', 'conditional_script_loading_factsheet');
 /* Mega Menu UI */
 
 function conditional_script_mega_menu_ui() {
-    if (is_page_template('flexible-content-page.php') || is_archive() || is_page_template('flexible-course-page.php') || is_page_template('flexible-course-page-sport-pub.php') || is_page_template('flexible-course-page-adult.php') || is_page_template('flexible-course-page-adult-sport-pub.php') || is_page_template('flexible-course-page-adult-access.php') || is_page_template('flexible-course-page-higher-education.php')  ) {
+    if (is_page_template('flexible-content-page.php') || is_archive() || is_page_template('flexible-course-page.php') || is_page_template('flexible-content-page-eventbrite.php') || is_page_template('flexible-course-page-sport-pub.php') || is_page_template('flexible-course-page-adult.php') || is_page_template('flexible-course-page-adult-sport-pub.php') || is_page_template('flexible-course-page-adult-access.php') || is_page_template('flexible-course-page-higher-education.php')  ) {
         wp_enqueue_script( 'mega_menu_ui', get_template_directory_uri() . '/inc/mega-menu-ui.js', array('jquery'), '1000000', true );
     } 
 }
@@ -293,3 +294,9 @@ function wpb_password_post_filter( $where = '' ) {
     return $where;
 }
 add_filter( 'posts_where', 'wpb_password_post_filter' );
+
+/**
+ * Add support for featured thumbnails in posts.
+ */
+
+add_theme_support( 'post-thumbnails' ); 
