@@ -29,6 +29,8 @@ jQuery(document).ready(function( $ ) {
   draggable: false,
   autoPlay: 6000,
   pauseAutoPlayOnHover: true,
+  prevNextButtons: true,
+  pageDots: true
  
 });
 	
@@ -124,6 +126,55 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
   background: #333;
 }
 
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #333;
+}
+.flickity-prev-next-button:hover {
+  background: #99cc66;;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+  top: 250px;
+  left: 2em;
+  position: absolute;
+}
+.flickity-prev-next-button.next {
+  top: 250px;
+  right: 2em;
+  position: absolute;
+}
+
+.flickity-page-dots {
+  top: 0px;
+  right: 0px;
+  padding-right: 2em;
+  position: absolute;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
 </style>
 
 
@@ -133,7 +184,7 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
 
 <section class="full-width-container slider-container">
 
-<div class="main-carousel">
+<div class="main-carousel" style="position:relative;">
 
   <div class="carousel-cell">
   	<div class="fixed-container carousel-content">
