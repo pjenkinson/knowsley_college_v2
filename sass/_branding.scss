@@ -153,9 +153,11 @@ footer.footer-primary address a:active, footer address a:hover {
 	color: $secondary-color;
 }
 
-// Footer
-
 // KCC PRIMARY
+
+.kcc-primary .sub-brand-logo {
+display: none;
+}
 
 .primary-breadcrumbs {
 border-top: solid 2px $off-white; 
