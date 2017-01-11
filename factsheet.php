@@ -235,7 +235,7 @@ jQuery("li.last-tab a").unbind('click');
   <?php if ($factsheet->id == '14758') { $careerid = '' ;} // Diploma in Advanced Professional Cookery?>
   <?php if ($factsheet->id == '14762') { $careerid = '756881' ;}?>
   <?php if ($factsheet->id == '14765') { $careerid = '756857' ;}?>
-  <?php if ($factsheet->id == '14766') { $careerid = '756854' ;}?>
+  <?php if ($factsheet->id == '14995') { $careerid = '756854' ;} // Access to Higher Education - Health Professions?>
   <?php if ($factsheet->id == '14767') { $careerid = '756851' ;}?>
   <?php if ($factsheet->id == '14772') { $careerid = '' ;} // Certificate in Understanding the Care and Management of Diabetes?>
   <?php if ($factsheet->id == '14773') { $careerid = '' ;} // Certificate in the Principles of the Prevention and Control of Infection in Health Care Settings?>
@@ -276,7 +276,7 @@ jQuery("li.last-tab a").unbind('click');
   <?php if ($factsheet->id == '14849') { $careerid = '' ;} // HND Diploma in Sport  (Coaching and Development)?>
   <?php if ($factsheet->id == '14850') { $careerid = '' ;} // HNC in Sport  (Coaching and Development)?>
   <?php if ($factsheet->id == '14852') { $careerid = '' ;} // HNC Diploma in Advanced Practice in Early Years Education?>
-  <?php if ($factsheet->id == '14853') { $careerid = '756971' ;}?>
+  <?php if ($factsheet->id == '14912') { $careerid = '756971' ;}?>
   <?php if ($factsheet->id == '14854') { $careerid = '' ;} // HNC Diploma in Creative Media Production?>
   <?php if ($factsheet->id == '14855') { $careerid = '' ;} // HNC Diploma in Hospitality Management?>
   <?php if ($factsheet->id == '14856') { $careerid = '' ;} // HNC Diploma in Music?>
