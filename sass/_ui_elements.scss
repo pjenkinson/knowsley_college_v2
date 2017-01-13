@@ -158,13 +158,12 @@ select.schoollist {
 // Parsley Validation
 
 .parsley-errors-list {
-	display: inline-block;
 	list-style-type: none;
 }
 
 .parsley-errors-list li {
 	float: left;
-	display: block;
+	display: inline-block;
 	margin-left: 10px;
 }
 

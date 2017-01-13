@@ -153,6 +153,9 @@ function knowsley_college_scripts() {
 
 	wp_enqueue_script( 'knowsley_college-scrollup', get_template_directory_uri() . '/inc/scrollup/scrollUp.min.js', array('jquery'), '20130116', true );
 
+	wp_enqueue_style( 'flickity_style', get_template_directory_uri() . '/inc/flickity/flickity.css' );
+	wp_enqueue_script( 'flickity_carousel', get_template_directory_uri() . '/inc/flickity/flickity.js', array('jquery'), '2013023556', true );
+
 	wp_enqueue_style( 'time_picker_style', get_template_directory_uri() . '/inc/jquery.timepicker.css' );
 	wp_enqueue_script( 'time_picker', get_template_directory_uri() . '/inc/jquery.timepicker.min.js', array('jquery'), '2013024556', true );
 

@@ -10,8 +10,8 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'scroll' );?>
 <style>
 
-th.ui-datepicker-week-end:last {
-	display: none !important;
+.ui-datepicker-week-end {
+	display: none;
 }
 
 </style>
@@ -27,9 +27,31 @@ function bindDatePicker() {
         changeMonth: true,
         changeYear: true,
         yearRange: '2017:2020',
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'dd-mm-yy',
+        beforeShowDay: jQuery.datepicker.noWeekends
     });
 }
+</script>
+
+<script>
+	jQuery( document ).ready(function() {
+
+	jQuery('#timePickerFrom').timepicker({
+		'minTime': '6:00pm',
+    'maxTime': '9:00pm',
+    'step': 60,
+     disableTextInput: true
+	});
+
+	jQuery('#timePickerTo').timepicker({
+		'minTime': '7:00pm',
+    'maxTime': '9:00pm',
+    'step': 60,
+     disableTextInput: true
+	});
+
+ });
+	
 </script>
 
 <style>
@@ -103,6 +125,10 @@ input[type=checkbox] {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+	if (empty($_POST["enquiryDate"])) { 
+	  $errors['enquiryDate'] = "Missing";	 
+	} else {$enquiryDate = $_POST['enquiryDate'];}
+
 	if (empty($_POST["facility"])) { 
 	  $errors['facility'] = "Missing";	 
 	} else {$facility = $_POST['facility'];}
@@ -111,9 +137,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $errors['hireDate'] = "Missing";	 
 	} else {$hireDate = $_POST['hireDate'];}
 
-	if (empty($_POST["timeSlot"])) { 
-	  $errors['timeSlot'] = "Missing";	 
-	} else {$timeSlot = $_POST['timeSlot'];}
+	if (empty($_POST["timeFrom"])) { 
+	  $errors['timeFrom'] = "Missing";	 
+	} else {$timeFrom = $_POST['timeFrom'];}
+
+	if (empty($_POST["timeTo"])) { 
+	  $errors['timeTo'] = "Missing";	 
+	} else {$timeTo = $_POST['timeTo'];}
 
 	if (empty($_POST["firstName"])) { 
 	  $errors['firstName'] = "Missing";	 
@@ -151,6 +181,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $errors['email'] = "Missing";	 
 	} else {$email = $_POST['email'];}
 
+	if (empty($_POST["age"])) { 
+	  $errors['age'] = "Missing";	 
+	} else {$age = $_POST['age'];}
+
 }
 
 
@@ -160,6 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form class="app-form" method="POST" action="" data-parsley-validate>
 
+	<legend>Booking Enquiry</legend>
 	<fieldset>
 		 <label for="facility"><span class="required-ast" style="color:#e64799;">*</span> Facility:</label>
 			  	<select class="select-inline" type="text" required="" name="facility" required>
@@ -171,30 +206,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   						<option value="Classroom Hire">Classroom Hire</option>
 			  	</select>
 
-	<label for="hireDate">Date of hire:</label>
-			  <input class="input-inline datepicker" type="text" name="hireDate"surnam required/>
+	<label for="hireDate"><span class="required-ast" style="color:#e64799;">*</span> Date of hire:</label>
+			  <input class="input-inline datepicker" type="text" name="hireDate" required/>
 
-	<label for="timeSlot"><span class="required-ast" style="color:#e64799;">*</span> Preferred time slot (Available Mon-Fri 5pm-9pm):</label>
-	<input class="input-inline" type="text" name="timeSlot" placeholder="5-6pm" required>
-			  	 
-	<legend>Your details</legend>
+	<label for="timeFrom"><span class="required-ast" style="color:#e64799;">*</span>  From:</label>
+
+	<input id="timePickerFrom" type="text" class="time ui-timepicker-input" name="timeFrom" autocomplete="off" required>
+
+	<label for="timeto"><span class="required-ast" style="color:#e64799;">*</span>  To:</label>
+
+	<input id="timePickerTo" type="text" class="time ui-timepicker-input" name="timeTo" autocomplete="off" required>
+
+	</fieldset>		  	 
+	<legend>Your Details</legend>
+	<fieldset>
 	<label for="firstName"><span class="required-ast" style="color:#e64799;">*</span> First Name:</label>
 	<input class="input-inline" type="text" name="firstName" required>
 	<label for="surname"><span class="required-ast" style="color:#e64799;">*</span> Surname:</label>
 	<input class="input-inline" type="text" name="surname" required>
-	<label for="address1">Address line 1</label><input class="input-inline" type="text" name="address1"/>
+	<label for="address1"><span class="required-ast" style="color:#e64799;">*</span> Address line 1</label><input class="input-inline" type="text" name="address1" required/>
 	<label for="address2">Address line 2</label><input class="input-inline" type="text" name="address2"/>
 	<label for="address3">Address line 3</label><input class="input-inline" type="text" name="address3"/>
 	<label for="address4">Address line 4</label><input class="input-inline" type="text" name="address4"/>
-	<label for="postCode">Post code</label><input class="input-inline"  name="postCode" maxlength="8"/>
+	<label for="postCode"><span class="required-ast" style="color:#e64799;">*</span> Post code:</label><input class="input-inline"  name="postCode" maxlength="8" required/>
     <label for="telephoneNumber"><span class="required-ast" style="color:#e64799;">*</span> Telephone Number:</label>
     <input class="input-inline" type="text" name="telephoneNumber" required>
 	<label for="email"><span class="required-ast" style="color:#e64799;">*</span> Email Address:</label>
 	<input class="input-inline" type="text" name="email" required>
 
-	</fieldset>
-	
+	<label for="ageGroup">Age group:</label>
+			  	<select class="select-inline" type="text" name="age">
+			  			<option value="">Select age group</option>
+  						<option value="16-19">16-19</option>
+  						<option value="20-30">20-30</option>
+  						<option value="30-40">30-40</option>
+  						<option value="40-50">40-50</option>
+  						<option value="50-65">50-65</option>
+  						<option value="65+">65+</option>
+			  	</select>
 
+	</fieldset>
 
 <input class="submit" type="submit" name="submit" value="Send form" style="clear:both; margin-bottom:1em;">
 
@@ -213,9 +264,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['submit'])) {
 
  $sql ="INSERT INTO `enquiryForm`
-			(`facility`,
+			(
+			`enquiryDate`,
+			`facility`,
 			`hireDate`,
-			`timeSlot`,
+			`timeFrom`,
+			`timeTo`,
 			`firstName`,
 			`surname`,
 			`address1`,
@@ -224,12 +278,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			`address4`,
 			`postCode`,
 			`telephoneNumber`,
-			`email`
+			`email`,
+			`age`
 			)
 VALUES
-			('$facility',
+			(NOW(),
+			'$facility',
 			'$hireDate',
-			'$timeSlot',
+			'$timeFrom',
+			'$timeTo',
 			'$firstName',
 			'$surname',
 			'$address1',
@@ -238,24 +295,28 @@ VALUES
 			'$address4',
 			'$postCode',
 			'$telephoneNumber',
-			'$email'
+			'$email',
+			'$age'
 			)";
 
 $wpdb->query($sql);?>
 
 <?php 
 $to = 'facilities@knowsleycollege.ac.uk';
-$subject = 'The subject';
+$subject = 'Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo;
 $body = '<html><body>';
-$body .= '<h1>Facility Hire</h1>';
-$body .= '<p>Facility:</p>' . $facility ;
-$body .= '<p>Date of Hire:</p>' . $hireDate ;
-$body .= '<p>Time Slot:</p>' . $timeSlot ;
-$body .= '<p>First Name:</p>' . $firstName ;
-$body .= '<p>Surname:</p>' . $surname ;
-$body .= '<p>Email:</p>' . $email ;
-$body .= '<p>Telephone:</p>' . $telephoneNumber ;
-$body .= '<p>Address:</p>' . $address1 . ',' .  $address2 . ',' . $address3 . ',' . $address4 . ',' . $postCode ;
+$body .= '<h2>Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo . '</h2>';
+$body .= '<p>Facility: ' . $facility . '</p>'  ;
+$body .= '<p>Date of hire: ' . $hireDate . '</p>'  ;
+$body .= '<p>Time from: ' . $timeFrom . '</p>'  ;
+$body .= '<p>Time to: ' . $timeTo . '</p>'  ;
+$body .= '<p>First Name: ' . $firstName . '</p>'  ;
+$body .= '<p>Surname: ' . $surname . '</p>'  ;
+$body .= '<p>Age: ' . $age . '</p>'  ;
+$body .= '<p>Email: ' . $email . '</p>'  ;
+$body .= '<p>Telephone: ' . $telephoneNumber . '</p>'  ;
+$body .= '<p>Address: ' . $address1 . ',' .  $address2 . ',' . $address3 . ',' . $address4 . '</p>' ;
+$body .= '<p>Postcode: ' . $postCode . '</p>'  ;
 
 $body .= '</body></html>';
 $headers = array('Content-Type: text/html; charset=UTF-8');
@@ -265,18 +326,21 @@ wp_mail( $to, $subject, $body, $headers );
 
 <?php 
 $to = $email;
-$subject = 'The subject';
+$subject = 'Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo;
 $body = '<html><body>';
 $body .= '<h1>Facility Hire</h1>';
-$body .= '<p>Hi ' . $firstName . ', thank you for your facility hire enquiry. We will contact you to confirm your facility hire date and cost.</p>' ;
-$body .= '<h2>Enquiry Details:</h2>';
-$body .= '<p>Facility:</p>' . $facility ;
-$body .= '<p>Date of Hire:</p>' . $hireDate ;
-$body .= '<p>Time Slot:</p>' . $timeSlot ;
-$body .= '<p>Email:</p>' . $email ;
-$body .= '<p>Telephone:</p>' . $telephoneNumber ;
-$body .= '<p>Address:</p>' . $address1 . ', ' .  $address2 . ', ' . $address3 . ', ' . $address4 . ', ' . $postCode ;
-
+$body .= '<p>Hi ' . $firstName . ', thank you for your facility hire enquiry. We will contact you to confirm your facility hire date, time and cost. All bookings are subject to our <a href="https://www.knowsleycollege.ac.uk/wp-content/uploads/2016/12/Facility-Hire.pdf" title="Facility Hire Terms and Conditions | KCC" target="_blank">facility hire terms and conditions</a></p>' ;
+$body .= '<h2>Your Enquiry Details:</h2>';
+$body .= '<p>Facility: ' . $facility . '</p>' ;
+$body .= '<p>Date of hire: ' . $hireDate . '</p>'  ;
+$body .= '<p>Time from: ' . $timeFrom . '</p>'  ;
+$body .= '<p>Time to: ' . $timeTo . '</p>'  ;
+$body .= '<p>Email: ' . $email . '</p>'  ;
+$body .= '<p>Telephone: ' . $telephoneNumber . '</p>'  ;
+$body .= '<p>Address: ' . $address1 . ', ' .  $address2 . ', ' . $address3 . ', ' . $address4 . '</p>' ;
+$body .= '<p>Postcode: ' . $postCode . '</p>'  ;
+$body .= '<br>';
+$body .= '<p><a href="https://www.knowsleycollege.ac.uk">www.knowsleycollege.ac.uk</a></p>';
 $body .= '</body></html>';
 $headers = array('Content-Type: text/html; charset=UTF-8');
  
