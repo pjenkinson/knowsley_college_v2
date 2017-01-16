@@ -183,112 +183,40 @@ jQuery("li.last-tab a").unbind('click');
 
   <?php $careerid = 0;?>
 
-  <?php if ($factsheet->id == '14676') { $careerid = '756896' ;}?>
-  <?php if ($factsheet->id == '14677') { $careerid = '756893' ;}?>
-  <?php if ($factsheet->id == '14678') { $careerid = '756863' ;}?>
-  <?php if ($factsheet->id == '14679') { $careerid = '756869' ;}?>
-  <?php if ($factsheet->id == '14680') { $careerid = '756914' ;}?>
-  <?php if ($factsheet->id == '14681') { $careerid = '756983' ;}?>
-  <?php if ($factsheet->id == '14682') { $careerid = '757004' ;}?>
-  <?php if ($factsheet->id == '14683') { $careerid = '757007' ;}?>
-  <?php if ($factsheet->id == '14685') { $careerid = '757028' ;}?>
-  <?php if ($factsheet->id == '14694') { $careerid = '756884' ;}?>
-  <?php if ($factsheet->id == '14695') { $careerid = '756890' ;}?>
-  <?php if ($factsheet->id == '14696') { $careerid = '756908' ;}?>
-  <?php if ($factsheet->id == '14697') { $careerid = '756938' ;}?>
-  <?php if ($factsheet->id == '14704') { $careerid = '756905' ;}?>
-  <?php if ($factsheet->id == '14705') { $careerid = '757001' ;}?>
-  <?php if ($factsheet->id == '14708') { $careerid = '756935' ;}?>
-  <?php if ($factsheet->id == '14711') { $careerid = '756866' ;}?>
-  <?php if ($factsheet->id == '14713') { $careerid = '756887' ;}?>
-  <?php if ($factsheet->id == '14716') { $careerid = '756911' ;}?>
-  <?php if ($factsheet->id == '14718') { $careerid = '756980' ;}?>
-  <?php if ($factsheet->id == '14719') { $careerid = '756986' ;}?>
-  <?php if ($factsheet->id == '14720') { $careerid = '756998' ;}?>
-  <?php if ($factsheet->id == '14721') { $careerid = '' ;} //Certificate in youth work practice?>
-  <?php if ($factsheet->id == '14724') { $careerid = '757046' ;}?>
-  <?php if ($factsheet->id == '14725') { $careerid = '756992' ;}?>
-  <?php if ($factsheet->id == '14726') { $careerid = '757052' ;}?>
-  <?php if ($factsheet->id == '14727') { $careerid = '757049' ;}?>
-  <?php if ($factsheet->id == '14729') { $careerid = '756872' ;}?>
-  <?php if ($factsheet->id == '14730') { $careerid = '756878' ;}?>
-  <?php if ($factsheet->id == '14731') { $careerid = '756899' ;}?>
-  <?php if ($factsheet->id == '14732') { $careerid = '757022' ;}?>
-  <?php if ($factsheet->id == '14734') { $careerid = '756875' ;}?>
-  <?php if ($factsheet->id == '14735') { $careerid = '756902' ;}?>
-  <?php if ($factsheet->id == '14737') { $careerid = '756932' ;}?>
-  <?php if ($factsheet->id == '14738') { $careerid = '756989' ;}?>
-  <?php if ($factsheet->id == '14739') { $careerid = '757013' ;}?>
-  <?php if ($factsheet->id == '14740') { $careerid = '757016' ;}?>
-  <?php if ($factsheet->id == '14741') { $careerid = '757019' ;}?>
-  <?php if ($factsheet->id == '14742') { $careerid = '757025' ;}?>
-  <?php if ($factsheet->id == '14743') { $careerid = '' ;} // NVQ Diploma in Engineering Maintenance?>
-  <?php if ($factsheet->id == '14744') { $careerid = '' ;} // NVQ Diploma in Engineering Manufacture?>
-  <?php if ($factsheet->id == '14746') { $careerid = '756926' ;}?>
-  <?php if ($factsheet->id == '14747') { $careerid = '756968' ;}?>
-  <?php if ($factsheet->id == '14748') { $careerid = '756860' ;}?>
-  <?php if ($factsheet->id == '14750') { $careerid = '' ;} // GCSE Maths?>
-  <?php if ($factsheet->id == '14752') { $careerid = '756977' ;}?>
-  <?php if ($factsheet->id == '14753') { $careerid = '756929' ;}?>
-  <?php if ($factsheet->id == '14754') { $careerid = '757031' ;}?>
-  <?php if ($factsheet->id == '14757') { $careerid = '757043' ;}?>
-  <?php if ($factsheet->id == '14758') { $careerid = '' ;} // Diploma in Advanced Professional Cookery?>
-  <?php if ($factsheet->id == '14762') { $careerid = '756881' ;}?>
-  <?php if ($factsheet->id == '14765') { $careerid = '756857' ;}?>
-  <?php if ($factsheet->id == '14995') { $careerid = '756854' ;} // Access to Higher Education - Health Professions?>
-  <?php if ($factsheet->id == '14767') { $careerid = '756851' ;}?>
-  <?php if ($factsheet->id == '14772') { $careerid = '' ;} // Certificate in Understanding the Care and Management of Diabetes?>
-  <?php if ($factsheet->id == '14773') { $careerid = '' ;} // Certificate in the Principles of the Prevention and Control of Infection in Health Care Settings?>
-  <?php if ($factsheet->id == '14774') { $careerid = '' ;} // Certificate in the Principles of Dementia Care?>
-  <?php if ($factsheet->id == '14775') { $careerid = '' ;} // Certificate in Understanding Dignity and Safeguarding in Adult Health and Social Care?>
-  <?php if ($factsheet->id == '14776') { $careerid = '' ;} // Certificate in Understanding the Safe Handling of Medicines?>
-  <?php if ($factsheet->id == '14777') { $careerid = '' ;} // Certificate in Principles of Working with Individuals with Learning Disabilities?>
-  <?php if ($factsheet->id == '14778') { $careerid = '757037' ;}?>
-  <?php if ($factsheet->id == '14779') { $careerid = '757034' ;}?>
-  <?php if ($factsheet->id == '14780') { $careerid = '757040' ;}?>
-  <?php if ($factsheet->id == '14783') { $careerid = '756956' ;}?>
-  <?php if ($factsheet->id == '14786') { $careerid = '756941' ;}?>
-  <?php if ($factsheet->id == '14788') { $careerid = '756959' ;}?>
-  <?php if ($factsheet->id == '14789') { $careerid = '757064' ;}?>
-  <?php if ($factsheet->id == '14790') { $careerid = '757010' ;}?>
-  <?php if ($factsheet->id == '14791') { $careerid = '756917' ;}?>
-  <?php if ($factsheet->id == '14792') { $careerid = '756962' ;}?>
-  <?php if ($factsheet->id == '14793') { $careerid = '757067' ;}?>
-  <?php if ($factsheet->id == '14794') { $careerid = '756947' ;}?>
-  <?php if ($factsheet->id == '14795') { $careerid = '756944' ;}?>
-  <?php if ($factsheet->id == '14796') { $careerid = '' ;} // Certificate in Cleaning and Support Services Skills}?>
-  <?php if ($factsheet->id == '14797') { $careerid = '756920' ;}?>
-  <?php if ($factsheet->id == '14798') { $careerid = '756950' ;}?>
-  <?php if ($factsheet->id == '14799') { $careerid = '756953' ;}?>
-  <?php if ($factsheet->id == '14801') { $careerid = '756923' ;}?>
-  <?php if ($factsheet->id == '14811') { $careerid = '757085' ;}?>
-  <?php if ($factsheet->id == '14812') { $careerid = '756965' ;}?>
-  <?php if ($factsheet->id == '14816') { $careerid = '' ;} // Pathway to Employment - Entry 2?>
-  <?php if ($factsheet->id == '14817') { $careerid = '757082' ;}?>
-  <?php if ($factsheet->id == '14822') { $careerid = '756995' ;}?>
-  <?php if ($factsheet->id == '14823') { $careerid = '756974' ;}?>
-  <?php if ($factsheet->id == '14824') { $careerid = '757064' ;}?>
-  <?php if ($factsheet->id == '14830') { $careerid = '757073' ;}?>
-  <?php if ($factsheet->id == '14837') { $careerid = '757076' ;}?>
-  <?php if ($factsheet->id == '14838') { $careerid = '757070' ;}?>
-  <?php if ($factsheet->id == '14839') { $careerid = '757061' ;}?>
-  <?php if ($factsheet->id == '14847') { $careerid = '' ;} // Pathway to Employment - Entry 3?>
-  <?php if ($factsheet->id == '14849') { $careerid = '' ;} // HND Diploma in Sport  (Coaching and Development)?>
-  <?php if ($factsheet->id == '14850') { $careerid = '' ;} // HNC in Sport  (Coaching and Development)?>
-  <?php if ($factsheet->id == '14852') { $careerid = '' ;} // HNC Diploma in Advanced Practice in Early Years Education?>
-  <?php if ($factsheet->id == '14912') { $careerid = '756971' ;}?>
-  <?php if ($factsheet->id == '14854') { $careerid = '' ;} // HNC Diploma in Creative Media Production?>
-  <?php if ($factsheet->id == '14855') { $careerid = '' ;} // HNC Diploma in Hospitality Management?>
-  <?php if ($factsheet->id == '14856') { $careerid = '' ;} // HNC Diploma in Music?>
-  <?php if ($factsheet->id == '14857') { $careerid = '' ;} // HND Diploma in Creative Media Production?>
-  <?php if ($factsheet->id == '14858') { $careerid = '' ;} // HNC Diploma in Biological Sciences for Industry?>
-  <?php if ($factsheet->id == '14859') { $careerid = '' ;} // HNC Diploma in Computing and Systems Development?>
-  <?php if ($factsheet->id == '14860') { $careerid = '' ;} // HNC Diploma in Manufacturing Engineering?>
-  <?php if ($factsheet->id == '14861') { $careerid = '757067' ;}?>
-  <?php if ($factsheet->id == '14862') { $careerid = '' ;} // HNC Diploma in Electrical and Electronic Engineering?>
-  <?php if ($factsheet->id == '14863') { $careerid = '' ;} // HNC Diploma in Mechanical Engineering?>
-  <?php if ($factsheet->id == '14865') { $careerid = '756998' ;}?>
-  <?php if ($factsheet->id == '14866') { $careerid = '' ;} // HNC Diploma in Performing Arts?>
+  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
+  <?php if ($factsheet->id == '14967') { $careerid = '756926' ;} // BTEC Nationals in Art & Design ?>
+  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
+  <?php if ($factsheet->id == '14986') { $careerid = '757043' ;} // Level 2 - City & Guilds NVQ Diploma in Professional Cookery ?>
+  <?php if ($factsheet->id == '15018') { $careerid = '756956' ;} // BTEC First Extended Certificate in Information and Creative Technology ?>
+  <?php if ($factsheet->id == '14908') { $careerid = '756938' ;} // BTEC Nationals in IT ?>
+
+  <?php if ($factsheet->id == '14942') { $careerid = '756992' ;} // City & Guilds Extended Certificate in Construction Skills ?>
+  <?php if ($factsheet->id == '14974') { $careerid = '756977' ;} // BTEC Diploma in Creative Media Production ?>
+  <?php if ($factsheet->id == '14975') { $careerid = '756929' ;} // BTEC Nationals in Creative Media Production ?>
+  <?php if ($factsheet->id == '14932') { $careerid = '756986' ;} // CACHE Certificate in an Introduction to Early Years Education and Care ?>
+  <?php if ($factsheet->id == '14936') { $careerid = '757001' ;} // CACHE Certificate in Childcare and Education ?>
+  <?php if ($factsheet->id == '14956') { $careerid = '757013' ;} // Level 1 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14957') { $careerid = '757016' ;} // Level 2 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14958') { $careerid = '757019' ;} // Level 3 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14955') { $careerid = '756989' ;} // EAL Certificate in Engineering and Technology ?>
+  <?php if ($factsheet->id == '14949') { $careerid = '757022' ;} // EAL Diploma in Engineering and Technology - Mechanical ?>
+  <?php if ($factsheet->id == '14959') { $careerid = '757025' ;} // EAL Diploma in Engineering Technology - Fabrication and Welding  ?>
+  <?php if ($factsheet->id == '14954') { $careerid = '756932' ;} // EAL Diplomas in Engineering Technologies  ?>
+  <?php if ($factsheet->id == '14976') { $careerid = '757073' ;} // VTCT Diploma in Hairdressing  ?>
+  <?php if ($factsheet->id == '14978') { $careerid = '757076' ;} // Level 3 - VTCT Diploma in Hairdressing ?>
+  <?php if ($factsheet->id == '15015') { $careerid = '757040' ;} // CACHE Diploma in Introduction to Health, Social Care and Children’s and Young People’s Settings ?>
+  <?php if ($factsheet->id == '15014') { $careerid = '757034' ;} // Level 2 - CACHE Diploma in Health and Social Care ?>
+  <?php if ($factsheet->id == '14921') { $careerid = '756935' ;} // BTEC Nationals in Health and Social Care ?>
+  <?php if ($factsheet->id == '15013') { $careerid = '757037' ;} // Level 3 - CACHE Diploma in Health and Social Care ?>
+  <?php if ($factsheet->id == '15029') { $careerid = '756959' ;} // BTEC First Extended Certificate in Music ?>
+  <?php if ($factsheet->id == '15027') { $careerid = '756941' ;} // BTEC Nationals in Music Performance ?>
+  <?php if ($factsheet->id == '15034') { $careerid = '756962' ;} // BTEC First Extended Certificate in Performing Arts, Level 2 ?>
+  <?php if ($factsheet->id == '15038') { $careerid = '757067' ;} // Higher National Diploma in Performing Arts ?>
+
+  <?php if ($factsheet->id == '15052') { $careerid = '757085' ;} // BTEC Combined Sport and Public Services ?>
+  <?php if ($factsheet->id == '15041') { $careerid = '756920' ;} // BTEC Extended Certificate Public Service ?>
+
+  <?php if ($factsheet->id == '14866') { $careerid = '' ;} // HNC Diploma in Performing Arts ?>
 
   <?php } else echo ''?>
 
