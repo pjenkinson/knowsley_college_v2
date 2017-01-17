@@ -189,7 +189,6 @@ jQuery("li.last-tab a").unbind('click');
   <?php if ($factsheet->id == '14986') { $careerid = '757043' ;} // Level 2 - City & Guilds NVQ Diploma in Professional Cookery ?>
   <?php if ($factsheet->id == '15018') { $careerid = '756956' ;} // BTEC First Extended Certificate in Information and Creative Technology ?>
   <?php if ($factsheet->id == '14908') { $careerid = '756938' ;} // BTEC Nationals in IT ?>
-
   <?php if ($factsheet->id == '14942') { $careerid = '756992' ;} // City & Guilds Extended Certificate in Construction Skills ?>
   <?php if ($factsheet->id == '14974') { $careerid = '756977' ;} // BTEC Diploma in Creative Media Production ?>
   <?php if ($factsheet->id == '14975') { $careerid = '756929' ;} // BTEC Nationals in Creative Media Production ?>
@@ -212,11 +211,22 @@ jQuery("li.last-tab a").unbind('click');
   <?php if ($factsheet->id == '15027') { $careerid = '756941' ;} // BTEC Nationals in Music Performance ?>
   <?php if ($factsheet->id == '15034') { $careerid = '756962' ;} // BTEC First Extended Certificate in Performing Arts, Level 2 ?>
   <?php if ($factsheet->id == '15038') { $careerid = '757067' ;} // Higher National Diploma in Performing Arts ?>
-
   <?php if ($factsheet->id == '15052') { $careerid = '757085' ;} // BTEC Combined Sport and Public Services ?>
   <?php if ($factsheet->id == '15041') { $careerid = '756920' ;} // BTEC Extended Certificate Public Service ?>
-
-  <?php if ($factsheet->id == '14866') { $careerid = '' ;} // HNC Diploma in Performing Arts ?>
+  <?php if ($factsheet->id == '15041') { $careerid = '756923' ;} //  ?>
+  <?php if ($factsheet->id == '15053') { $careerid = '756965' ;} // BTEC First Extended Certificate in Sport  ?>
+  <?php if ($factsheet->id == '15043') { $careerid = '756953' ;} // BTEC Nationals in Sport  ?>
+  <?php if ($factsheet->id == '15062') { $careerid = '757079' ;} // Entry Level 1 - ASDAN Certificate in Employability  ?>
+  <?php if ($factsheet->id == '15064') { $careerid = '757082' ;} // ASDAN Certificate in Personal Progress  ?>
+  <?php if ($factsheet->id == '14943') { $careerid = '757052' ;} // City & Guilds Diploma in Travel and Tourism Level 2 ?>
+  <?php if ($factsheet->id == '14944') { $careerid = '757049' ;} // City & Guilds Diplomas in Travel and Tourism Level 3 ?>
+  <?php if ($factsheet->id == '14912') { $careerid = '756971' ;} //  HND Diploma in Business  ?>
+  <?php if ($factsheet->id == '15020') { $careerid = '756974' ;} // BTEC HND Diploma in Computing and Systems Development   ?>
+  <?php if ($factsheet->id == '15030') { $careerid = '757064' ;} // HND in Music  ?>
+  <?php if ($factsheet->id == '14995') { $careerid = '756854' ;} // Access to Higher Education - Health Professions ?>
+  <?php if ($factsheet->id == '14969') { $careerid = '756860' ;} // Access to Higher Education - Humanities ?>
+  <?php if ($factsheet->id == '14994') { $careerid = '756857' ;} // Access to Higher Education - Health Sciences ?>
+  <?php if ($factsheet->id == '14996') { $careerid = '756851' ;} // Access to Higher Education - Health and Physiotherapy ?>
 
   <?php } else echo ''?>
 

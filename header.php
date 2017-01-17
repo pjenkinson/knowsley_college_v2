@@ -10,7 +10,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php if ( is_front_page() ) {echo'Knowsley Community College ';} else { wp_title(''); } echo' | KCC'?></title>
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE; IE=9; IE=8; IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge; IE=9; IE=8; IE=7" />
 <meta name="description" content="<?php if ( is_front_page() ) { echo'We are an innovative and dynamic Further Education College based in the Liverpool region. Our track record of high quality education and training from our two main campuses, as well as our partner and employer locations, makes us the bustling hub of learning and employment in the area.';} else
 if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?php else: ?><?php the_title();?><?php endif; ?>">
 <meta name="author" content="Knowsley Community College">
