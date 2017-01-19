@@ -80,7 +80,8 @@ add_filter('wp_title', 'af_titledespacer');
       'campus' => __( 'campus' ),
       'policies' => __( 'policies' ),
       'nla' => __( 'Northern Logistics Academy' ),
-      'leisure-courses' => __( 'Leisure Courses' )
+      'leisure-courses' => __( 'Leisure Courses' ),
+      'employers-courses' => __( 'Employers Courses' )
     )
   );
 }

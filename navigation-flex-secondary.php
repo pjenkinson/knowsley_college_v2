@@ -105,6 +105,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'leisure-courses' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Employers Courses' ): ?>
+	<nav class="nav-secondary employers-courses">
+	<?php wp_nav_menu( array( 'theme_location' => 'employers-courses' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 
