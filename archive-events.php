@@ -26,12 +26,14 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <div class="full-width-container secondary-page">
-<div class="fixed-container">
 
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<?php get_template_part( 'content', 'featured-banner-events' );?>
+<?php get_template_part( 'content', 'featured-banner-archive' );?>
+
+<div class="fixed-container">
+
 
 <aside>
 <!-- Secondary Navigation

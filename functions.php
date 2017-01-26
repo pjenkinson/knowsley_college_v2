@@ -278,14 +278,6 @@ function filter_ptags_on_images($content){
 
 add_filter('the_content', 'filter_ptags_on_images');
 
-// SVG Support
-
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'cc_mime_types');
-
 // Hide password protected posts 
 
 function wpb_password_post_filter( $where = '' ) {

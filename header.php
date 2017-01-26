@@ -1,8 +1,5 @@
 <?php
-/**
- * The header for our theme.
-  * @package knowsley_college
- */
+/** Header */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,10 +20,7 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- JS
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<script src="<?php echo get_bloginfo('template_directory');?>/js/modernizr.custom.64847.js"></script>
+<!-- JS -->
 
 <!--[if lt IE 9]>
 
@@ -34,6 +28,8 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <script src="<?php echo get_bloginfo('template_directory');?>/inc/html5shiv/html5shiv-printshiv.min.js"></script>
 
 <![endif]-->
+
+<!-- Google Maps -->
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwwjXh9emEaz5Av5yZtDkKPzVIxb4DKfM&callback=initMap">
@@ -53,6 +49,8 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <script type="text/javascript" src="http://ws.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "b018ceee-b502-4f45-8a6f-58da868c1cf4", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <?php } else {}?>
+
+<!-- Homepage scripts -->
 
 <?php if ( is_front_page() ) { ?>
 <?php get_template_part( 'script', 'owlcarousel' );?>

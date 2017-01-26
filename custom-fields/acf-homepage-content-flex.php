@@ -285,7 +285,7 @@ function IAMT() {
  
 
 
-<div class="map-container full-width-container" style="width:100%; height:500px;">
+<div class="map-container full-width-container">
 
 
    

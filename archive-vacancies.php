@@ -56,7 +56,6 @@ get_header(); ?>
 		
 		<p><?php the_field('type'); ?></p>
 		<p>Salary: <?php the_field('salary'); ?></p>
-
 	
 		</div>
 
@@ -72,9 +71,6 @@ get_header(); ?>
 <?php endwhile; else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-
-
-
 
 
 </div>
