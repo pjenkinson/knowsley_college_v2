@@ -407,3 +407,118 @@ margin-bottom: 2em;
 	padding: 1em;
 	margin-bottom: 1em;
 }
+
+// Mobile Navigation Fixes
+
+#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-higher-education #mega-menu-higher-education > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-employers #mega-menu-employers > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
+	background: #666666 !important;
+	color: #FFFFFF !important;
+}
+
+#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link , #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link , #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-wrap-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
+	background: #99cc66 !important;
+	color: #FFFFFF !important;
+}
+
+#mega-menu-wrap-higher-education #mega-menu-wrap-higher-education > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link  {
+	background: $higher-education !important;
+	color: #FFFFFF !important;
+}
+
+#mega-menu-wrap-employers #mega-menu-wrap-employers > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link  {
+	background: $employers !important;
+	color: #FFFFFF !important;
+}
+
+#mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle {
+	text-align: left;
+}
+
+#mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before
+ {
+	float: right !important;
+}
+
+
+#mega-menu-wrap-about-menu .mega-menu-toggle:after {
+content: "About" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-student-support-menu .mega-menu-toggle:after {
+content: "Student Support" !important;
+float: left;
+}
+
+#mega-menu-wrap-16-19 .mega-menu-toggle:after {
+content: "School Leavers" !important;
+float: left;
+}
+
+#mega-menu-wrap-16-19-subject .mega-menu-toggle:after {
+content: "School Leavers Courses" !important;
+float: left;
+}
+
+#mega-menu-wrap-employers .mega-menu-toggle:after {
+content: "Employers" !important;
+float: left;
+}
+
+#mega-menu-wrap-adults .mega-menu-toggle:after {
+content: "Adults" !important;
+float: left;
+}
+
+#mega-menu-wrap-apprenticeships .mega-menu-toggle:after {
+content: "Apprentices" !important;
+float: left;
+}
+
+#mega-menu-wrap-higher-education .mega-menu-toggle:after {
+content: "Higher Education" !important;
+float: left;
+}
+
+#mega-menu-wrap-contact .mega-menu-toggle:after {
+content: "Contact" !important;
+float: left;
+}
+
+#mega-menu-wrap-external-access .mega-menu-toggle {
+	background: $secondary-color !important;
+}
+
+#mega-menu-wrap-vacancies .mega-menu-toggle:after {
+content: "Vacancies" !important;
+float: left;
+}
+
+#mega-menu-wrap-workworld .mega-menu-toggle:after {
+content: "WorkWorld" !important;
+float: left;
+}
+
+#mega-menu-wrap-governors .mega-menu-toggle:after {
+content: "Governance" !important;
+float: left;
+}
+
+#mega-menu-wrap-policies .mega-menu-toggle:after {
+content: "College Policies" !important;
+float: left;
+}
+#mega-menu-wrap-campus .mega-menu-toggle:after {
+content: "Campuses" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-services .mega-menu-toggle:after {
+content: "Services Menu" !important;
+float: left;
+}
+
+#mega-menu-wrap-about-partners .mega-menu-toggle:after {
+content: "Partners Menu" !important;
+float: left;
+}

@@ -33,12 +33,14 @@ jQuery(function() {
 <!-- Page content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="full-width-container default-page news-page">
-<div class="fixed-container">
+
 
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <?php get_template_part( 'content', 'featured-banner-news' );?>
+
+<div class="fixed-container">
 
 	<section class="news-section">
 
@@ -50,32 +52,12 @@ jQuery(function() {
 
 <div class="news-posts-container">
 
-
-
-<article class="news-item news-item-3col">
-
-			<a href="https://www.knowsleycollege.ac.uk/new-campus-2016/" title="<?php the_title(); ?>">
-			<div class="small-news-thumb">
-				<img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2016/03/kcc-new-campus-2016.jpg" alt="New Campus Blog 2016" />
-			</div>
-			
-			<div class="small-news-content">
-				<h1>New Campus Blog</h1>
-				<p>Latest updates on the progress of our new campus.</p>
-			</div>
-			</a>
-
-      </article>
-
-
-
-
 <?php 
 if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }
 elseif ( get_query_var( 'page' ) ) { $paged = get_query_var( 'page' ); }
 else { $paged = 1; }
 
-$wp_query = new WP_Query('posts_per_page=8&paged=' . $paged . '&category_name=news')
+$wp_query = new WP_Query('posts_per_page=9&paged=' . $paged . '&category_name=news')
 ?>	
 
 <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); // run the loop ?>
@@ -83,7 +65,6 @@ $wp_query = new WP_Query('posts_per_page=8&paged=' . $paged . '&category_name=ne
 
   	<article class="news-item news-item-3col">
 		
-
 			<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
 			<div class="small-news-thumb">
 				<?php if ( has_post_thumbnail() ) {
