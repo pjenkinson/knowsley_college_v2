@@ -83,32 +83,21 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 
 			<div class="top-nav-content">
 
-				<div class="top-nav-apply-button"><a href="<?php echo site_url(); ?>/apply">Apply</a></div>
+				<div class="kcc-logo-container">
+					<div class="kcc-logo">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
+
+							<?php get_template_part( 'branding-logo-flex' );?>
+		 
+						</a>
+					</div>
+				</div>
 
 					<div class="external-access">
-					<?php wp_nav_menu( array( 'theme_location' => 'external-access' ) ); ?>
-					</div>
-
-						<div class="search-media-container">
-
-							<div class="social-media-buttons">
-
-								<ul class="social-media">
-								<li><a href="https://www.instagram.com/knowsleycollege" title="Instagram - KCC"><i class="fa fa-instagram"></i><span class="link-text">Instagram - Knowsley College</span></a></li>
-								<li><a href="https://www.facebook.com/knowsleycollege" title="Facebook - KCC"><i class="fa fa-facebook"></i><span class="link-text">Facebook - Knowsley College</span></a></li>
-								<li><a href="https://twitter.com/knowsleycollege" title="Twitter - KCC"><i class="fa fa-twitter"></i><span class="link-text">Twitter - Knowsley College</span></a></li>
-								<li><a href="https://www.youtube.com/user/KnowsleyCollege" title="YouTube - KCC"><i class="fa fa-youtube"></i><span class="link-text">YouTube - Knowsley College</span></a></li>
-								</ul>
-
+								<?php wp_nav_menu( array( 'theme_location' => 'external-access' ) ); ?>
 							</div>
+		</div>
 
-							<div class="search-form-wp">
-
-								<?php get_search_form(); ?>
-
-							</div>
-
-						</div>
 					</div>
 				</div>
 			</div>
@@ -120,16 +109,6 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <div class="full-width-container primary-navigation">
 
 	<div class="fixed-container">
-
-		<div class="kcc-logo-container">
-			<div class="kcc-logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
-
-					<?php get_template_part( 'branding-logo-flex' );?>
- 
-				</a>
-			</div>
-		</div>
 
 		<nav class="primary">
 		<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>

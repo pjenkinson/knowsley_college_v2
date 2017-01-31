@@ -129,10 +129,37 @@
 </div>
 
 
-<!-- GOOGLE MAPS API -->
-
-
 <?php wp_footer(); ?>
+
+<script>
+
+jQuery(document).ready(function( $ ) {
+  
+  $('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true,
+  draggable: false,
+  autoPlay: 6000,
+  pauseAutoPlayOnHover: true,
+  prevNextButtons: true,
+  pageDots: true
+ 
+});
+  
+});
+
+jQuery(document).ready(function( $ ) {
+
+$carousel.on( 'select.flickity', function() {
+
+$( ".carousel-caption" ).addClass( "carousel-animation" );
+
+})
+
+});
+
+</script>
 
 
 </body>

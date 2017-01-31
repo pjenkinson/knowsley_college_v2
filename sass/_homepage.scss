@@ -273,35 +273,8 @@ h2.section-heading {
 	-webkit-transition: opacity 2s; /* Safari */
   transition: opacity 2s;
 }
-.top-nav-content {
-	float: right;
-	width: auto;
-	height: auto;
-}
 
-.top-nav-contact {
-	float: left;
-	width: auto;
-}
 
-.top-nav-contact ul li {
-	float: left;
-	display: inline-block;
-	padding-right: 10px;
-}
-
-.top-nav-contact ul li a:link, .top-nav-contact ul li a:hover, .top-nav-contact ul li a:visited {
-	color: white;
-	text-decoration: none;
-}
-
-.top-nav-contact ul li a:hover {
-	text-decoration: underline;
-}
-
-.top-nav-contact .fa-phone:before, .top-nav-contact .fa-envelope-o:before {
-	padding-right: 10px;
-}
 
 .resources h2 a:link, .resources h2 a:hover, .resources h2 a:visited {
 	color: $primary-color;

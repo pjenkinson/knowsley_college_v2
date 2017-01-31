@@ -18,35 +18,7 @@ jQuery(function() {
 });
 </script>
 
-<script>
 
-jQuery(document).ready(function( $ ) {
-	
-	$('.main-carousel').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true,
-  draggable: false,
-  autoPlay: 6000,
-  pauseAutoPlayOnHover: true,
-  prevNextButtons: true,
-  pageDots: true
- 
-});
-	
-});
-
-jQuery(document).ready(function( $ ) {
-
-$carousel.on( 'select.flickity', function() {
-
-$( ".carousel-caption" ).addClass( "carousel-animation" );
-
-})
-
-});
-
-</script>
 
 
 <style>
@@ -54,8 +26,7 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
 .slider-container {
 	overflow: hidden;
 	clear: both;
-	min-height: 500px;
-	max-height: 500px;
+	max-height: 600px;
 }
 
 .carousel-cell {
@@ -82,14 +53,17 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
 .carousel-caption {
 	position: absolute;
 	top: -1000px;
-	background: rgba(146, 195, 98, 0.9);
+	background: rgba(146, 195, 98, 0.9);/* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Fx 3.6-15*/
+  background: linear-gradient(to rgba(146, 195, 98, 0.9), rgba(137, 183, 91, 0.9)); /*Standard*/
 	padding: 2em;
 	width: 70%;
 	opacity: 0;
-		-webkit-transition: all 2.5s ease;
-  -moz-transition:    all 2.5s ease;
-  -o-transition:      all 2.5s ease;
-
+		-webkit-transition: all 2s ease;
+  -moz-transition:    all 2s ease;
+  -o-transition:      all 2s ease;
 }
 
 .carousel-caption h2 {
@@ -123,22 +97,27 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background: #333;
+  background: #99cc66;
 }
 
 .flickity-prev-next-button {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background: #333;
+  background: #99cc66;
 }
 .flickity-prev-next-button:hover {
-  background: #99cc66;;
+  background: white;
 }
 /* arrow color */
 .flickity-prev-next-button .arrow {
   fill: white;
 }
+
+.flickity-prev-next-button:hover .arrow {
+  fill: #99cc66;
+}
+
 .flickity-prev-next-button.no-svg {
   color: white;
 }
@@ -165,14 +144,25 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
   width: 12px;
   height: 12px;
   opacity: 1;
-  background: transparent;
-  border: 2px solid white;
+  background: white;
   list-style-type: none;
   margin-bottom: 8px;
 }
 /* fill-in selected dot */
 .flickity-page-dots .dot.is-selected {
   background: white;
+}
+
+.flickity-page-dots .dot.is-selected {
+	background: rgba(146, 195, 98, 0.9);
+}
+
+.flickity-page-dots li:hover {
+	cursor: pointer;
+}
+
+.button-default a:hover {
+ cursor: pointer;
 }
 
 </style>
@@ -193,7 +183,7 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
   			<p>Additional text can go here...</p><div class="button-default"><a href="">Find out more</a></div>
       </div>
     </div>
-    <img alt="" src="https://images.pexels.com/photos/200431/pexels-photo-200431.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb">
+    <img alt="" src="http://i.huffpost.com/gen/1956165/images/o-SMILING-STUDENTS-facebook.jpg">
   </div>
 
    <div class="carousel-cell">
@@ -493,29 +483,6 @@ endif;
 </section>
 -->
 
-<!-- Careers Coach -->
-<section class="full-width-container employers-section">
-	<div class="fixed-container">
-
-		<div class="two-col-section-main two-col-section-image">
-			<div class="section-image-container">
-				<a href="<?php the_field('career_coach_page_link', 'option'); ?>" title="<?php the_field('career_coach_title', 'option'); ?>">
-				<img src="<?php the_field('career_coach_thumbnail', 'option'); ?>" alt="<?php the_field('career_coach_title', 'option'); ?>">
-				</a>
-			</div>
-		</div>
-			<div class="two-col-section-side right-float">
-			<h2 class="section-heading"><?php the_field('career_coach_title', 'option'); ?></h2>
-			<p><?php the_field('career_coach_description', 'option'); ?></p>
-
-			<div class="button-default section-margin-top button-primary">
-			<a title="Careers Coach Knowsley Community College" href="<?php the_field('career_coach_page_link', 'option'); ?>" title="Find out more">
-			Find out more
-			</a>
-			</div>
-		</div>
-	</div>
-</section>
 
 <!-- Student support section -->
 <section class="full-width-container students-section white-background">
