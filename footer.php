@@ -143,8 +143,10 @@ jQuery(document).ready(function( $ ) {
   autoPlay: 6000,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
-  pageDots: true
- 
+  pageDots: true,
+  lazyLoad: true,
+  selectedAttraction: 0.01,
+  friction: 0.2
 });
   
 });

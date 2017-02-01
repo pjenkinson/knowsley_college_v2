@@ -61,9 +61,9 @@ jQuery(function() {
 	padding: 2em;
 	width: 70%;
 	opacity: 0;
-		-webkit-transition: all 2s ease;
-  -moz-transition:    all 2s ease;
-  -o-transition:      all 2s ease;
+		-webkit-transition: all 1.7s ease;
+  -moz-transition:    all 1.7s ease;
+  -o-transition:      all 1.7s ease;
 }
 
 .carousel-caption h2 {
@@ -94,33 +94,34 @@ jQuery(function() {
 
 /* smaller, dark, rounded square */
 .flickity-prev-next-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  background: #99cc66;
+  width: 40px;
+  height: 40px;
+  background: white;
 }
 
 .flickity-prev-next-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  background: #99cc66;
+  width: 40px;
+  height: 40px;
+  background: white;
 }
 .flickity-prev-next-button:hover {
-  background: white;
+  background: #99cc66;
 }
 /* arrow color */
 .flickity-prev-next-button .arrow {
-  fill: white;
 }
 
 .flickity-prev-next-button:hover .arrow {
-  fill: #99cc66;
 }
 
 .flickity-prev-next-button.no-svg {
   color: white;
 }
+
+.flickity-prev-next-button.previous svg, .flickity-prev-next-button.next svg {
+	display: none;
+}
+
 /* position outside */
 .flickity-prev-next-button.previous {
   top: 250px;
@@ -163,6 +164,14 @@ jQuery(function() {
 
 .button-default a:hover {
  cursor: pointer;
+}
+
+@media (max-width: 956px) {
+
+.slider-container {
+	display: none;
+}
+
 }
 
 </style>

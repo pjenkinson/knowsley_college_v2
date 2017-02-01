@@ -201,11 +201,15 @@
 
 }
 
-// Desktop only 
+// DESKTOP ONLY
 
 @media (max-width: 1149px) {
 
 .qaa-quality-mark {
+	display: none;
+}
+
+.external-access {
 	display: none;
 }
 
@@ -227,16 +231,6 @@
 
 }
 
-// Do Not display on mobile
-
-@media (max-width: 600px) {
-
-	.top-nav-content {
-		display: none;
-	}
-
-
-}
 
 @media (min-width: 957px) {
 

@@ -84,13 +84,11 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 			<div class="top-nav-content">
 
 				<div class="kcc-logo-container">
-					<div class="kcc-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
 
 							<?php get_template_part( 'branding-logo-flex' );?>
 		 
 						</a>
-					</div>
 				</div>
 
 					<div class="external-access">

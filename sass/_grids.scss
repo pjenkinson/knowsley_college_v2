@@ -26,6 +26,12 @@ main section {
 		clear: both;
 	}
 
+	main .fixed-container {
+	width: 100%;
+	max-width: 1140px;
+	margin: auto;
+}
+
 // Slider 
 
 .slider-container .fixed-container {

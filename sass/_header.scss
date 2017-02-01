@@ -8,12 +8,6 @@ nav.primary {
   margin-top: 15px;
 }
 
-main .fixed-container {
-	width: 100%;
-	max-width: 1140px;
-	margin: auto;
-}
-
 .top-nav-container {
 	height: auto;
 	padding: 10px 0px 0px 0px;
@@ -24,6 +18,18 @@ main .fixed-container {
 	width: 100%;
 	background: white;
 	padding: 0em;
+	border-top: 2px solid #EDEDED;
+}
+
+@media (max-width: 956px) {
+  .primary-navigation {
+  	border-top: none;
+  }
+  img.desktop-logo { 
+ 		position: absolute;
+ 		z-index: 1000;
+ 		padding-bottom: 10px;
+ }
 }
 
 .kcc-logo-container {
@@ -33,8 +39,6 @@ main .fixed-container {
 	padding: 1em 0em;
 }
 
-// External Links
-
 .social-media-buttons {
 	float: right;
 }
@@ -42,10 +46,10 @@ main .fixed-container {
 .search-form-wp {
 	float: right;
 }
-
 .external-access {
 	position: relative;
 	float: right;
+	padding-top: 63px;
 }
 
 .social-media {
@@ -97,12 +101,11 @@ a.skip-link:hover, a.skip-link:focus {
 }
 
 // Top navigation bar 
-
 .top-nav {
 	float: left;
 	width: 100%;
 	height: auto;
-	background: $primary-color;
+	background: white;
 	clear: both;
 }
 .top-nav-content {
