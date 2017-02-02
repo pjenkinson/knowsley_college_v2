@@ -18,217 +18,19 @@ jQuery(function() {
 });
 </script>
 
-
-
-
 <style>
 
-.slider-container {
-	overflow: hidden;
-	clear: both;
-	max-height: 600px;
-}
 
-.carousel-cell {
-  width: 100%; /* full width */
-  height: auto; /* height of carousel */
-  margin-right: 10px;
-}
-
-.carousel-cell img {
-	width: 100%;
-	height: auto;
-}
-
-.is-selected .carousel-caption {
-	opacity: 1 !important;	
-	top: 50px !important;
-}
-
-.carousel-content {
-	position: relative;
-}
-
-
-.carousel-caption {
-	position: absolute;
-	top: -1000px;
-	background: rgba(146, 195, 98, 0.9);/* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Fx 3.6-15*/
-  background: linear-gradient(to rgba(146, 195, 98, 0.9), rgba(137, 183, 91, 0.9)); /*Standard*/
-	padding: 2em;
-	width: 70%;
-	opacity: 0;
-		-webkit-transition: all 1.7s ease;
-  -moz-transition:    all 1.7s ease;
-  -o-transition:      all 1.7s ease;
-}
-
-.carousel-caption h2 {
-	font-size: 3em;
-	color: white;
-	border-bottom: none;
-	padding: 0px;
-	margin: 0px;
-}
-
-.carousel-caption p {
-	color: white;
-}
-
-.carousel-caption .button-default {
-  
-}
-
-.carousel-caption .button-default a {
-	color: #4d4d4c;
-	background: white;
-}
-
-.carousel-caption .button-default a:hover {
-	color: white;
-	background: #4d4d4c;
-}
-
-/* smaller, dark, rounded square */
-.flickity-prev-next-button {
-  width: 40px;
-  height: 40px;
-  background: white;
-}
-
-.flickity-prev-next-button {
-  width: 40px;
-  height: 40px;
-  background: white;
-}
-.flickity-prev-next-button:hover {
-  background: #99cc66;
-}
-/* arrow color */
-.flickity-prev-next-button .arrow {
-}
-
-.flickity-prev-next-button:hover .arrow {
-}
-
-.flickity-prev-next-button.no-svg {
-  color: white;
-}
-
-.flickity-prev-next-button.previous svg, .flickity-prev-next-button.next svg {
-	display: none;
-}
-
-/* position outside */
-.flickity-prev-next-button.previous {
-  top: 250px;
-  left: 2em;
-  position: absolute;
-}
-.flickity-prev-next-button.next {
-  top: 250px;
-  right: 2em;
-  position: absolute;
-}
-
-.flickity-page-dots {
-  top: 0px;
-  right: 0px;
-  padding-right: 2em;
-  position: absolute;
-}
-/* white circles */
-.flickity-page-dots .dot {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background: white;
-  list-style-type: none;
-  margin-bottom: 8px;
-}
-/* fill-in selected dot */
-.flickity-page-dots .dot.is-selected {
-  background: white;
-}
-
-.flickity-page-dots .dot.is-selected {
-	background: rgba(146, 195, 98, 0.9);
-}
-
-.flickity-page-dots li:hover {
-	cursor: pointer;
-}
-
-.button-default a:hover {
- cursor: pointer;
-}
-
-@media (max-width: 956px) {
-
-.slider-container {
-	display: none;
-}
-
-}
 
 </style>
 
 
 
-<!-- Slider
+
+
+
+<!-- END HEADER
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<section class="full-width-container slider-container">
-
-<div class="main-carousel" style="position:relative;">
-
-  <div class="carousel-cell">
-  	<div class="fixed-container carousel-content">
-  		<div class="carousel-caption">
-  			<h2>Knowsley Community College is the best local college in Liverpool</h2>
-  			<p>Additional text can go here...</p><div class="button-default"><a href="">Find out more</a></div>
-      </div>
-    </div>
-    <img alt="" src="http://i.huffpost.com/gen/1956165/images/o-SMILING-STUDENTS-facebook.jpg">
-  </div>
-
-   <div class="carousel-cell">
-  	<div class="fixed-container carousel-content">
-  		<div class="carousel-caption">
-  			<h2>Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage.</h2>
-  			<p>Additional text can go here...</p>
-      </div>
-    </div>
-    <img alt="" src="https://images.pexels.com/photos/91988/pexels-photo-91988.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb">
-  </div>
-
-   <div class="carousel-cell">
-  	<div class="fixed-container carousel-content">
-  		<div class="carousel-caption">
-  			<h2>Knowsley Community College is the best local college in Liverpool</h2>
-  			<p>Additional text can go here...</p>
-      </div>
-    </div>
-    <img alt="" src="https://images.pexels.com/photos/31049/pexels-photo-31049.jpg?w=1260&h=750&auto=compress&cs=tinysrgb">
-  </div>
-
-  <div class="carousel-cell">
-  	<div class="fixed-container carousel-content">
-  		<div class="carousel-caption">
-  			<h2>Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage. Another line is definitely too long for this webpage. This is definitely too far! Knowsley Community College is the best local college in Liverpool - Another line might be too big for this webpage.</h2>
-  			<p>Additional text can go here...</p>
-      </div>
-    </div>
-    <img alt="" src="https://images.pexels.com/photos/31049/pexels-photo-31049.jpg?w=1260&h=750&auto=compress&cs=tinysrgb">
-  </div>
-
-
-
-</section>
-
 
 </header>
 
@@ -241,6 +43,40 @@ jQuery(function() {
 $currentID = get_the_ID();
 $currentCategory = get_the_category();
 ?>
+
+<!-- SlIDER
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<?php if( have_rows('homepage_slides', 'option') ): ?>
+
+
+
+<section class="full-width-container slider-container">
+
+<div class="main-carousel" style="position:relative;">
+
+<?php while( have_rows('homepage_slides', 'option') ): the_row(); ?>
+
+  <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+
+  		<div class="carousel-caption">
+  			<h2><a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>"><?php the_sub_field('slide_title'); ?></a></h2>
+  			<p><?php the_sub_field('slide_paragraph'); ?></p><div class="button-default"><a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>">Find out more</a></div>
+      </div>
+    </div>
+    <img src="<?php the_sub_field('slide_image'); ?>" alt="<?php the_sub_field('slide_title'); ?>" title="<?php the_sub_field('slide_title'); ?>">
+
+
+  </div>
+
+<?php endwhile; ?>
+
+
+
+</section>
+
+<?php endif; ?>
 
 <!-- Courses section
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -421,10 +257,6 @@ Find out more
 </section>
 
 
-
-
-
-
 <section class="full-width-container download-prospectus">
 
 <div class="fixed-container">
@@ -476,22 +308,6 @@ endif;
 </div>
 
 </section>
-
-<!--
-<section class="full-width-container newsletter-signup">
-
-<div class="fixed-container">
-<form class="newsletter-form-signup-bar" method="POST" action="" data-parsley-validate>
-	<label>Sign up to our newsletter</label>
-	<input class="email-input" name="email" placeholder="Enter your email address" email></input>
-	<input class="submit" name="submit" type="submit" value="Sign up"></input>
-</form>
-
-</div>
-
-</section>
--->
-
 
 <!-- Student support section -->
 <section class="full-width-container students-section white-background">

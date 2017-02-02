@@ -39,6 +39,38 @@ nav.primary {
 	padding: 1em 0em;
 }
 
+
+// KCC Logo SVG Fallback
+
+.no-svgasimg .primary-logo {
+ background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/kcc-logo.png") no-repeat;
+ background-repeat: no-repeat;
+ width: 0px;
+ height: 0px;
+ padding:71px 0 0 150px;/* image width (150px) and height (71px) */
+}
+.no-svgasimg .he-logo {
+ background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/he-logo.png") no-repeat;
+ background-repeat: no-repeat;
+ width: 0px;
+ height: 0px;
+ padding:71px 0 0 150px;/* image width (150px) and height (71px) */
+}
+.no-svgasimg .employers-logo {
+ background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/employers-logo.png") no-repeat;
+ background-repeat: no-repeat;
+ width: 0px;
+ height: 0px;
+ padding:71px 0 0 150px;/* image width (150px) and height (71px) */
+}
+.no-svgasimg .workworld-logo {
+ background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/workworld-logo.png") no-repeat;
+ background-repeat: no-repeat;
+ width: 0px;
+ height: 0px;
+ padding:71px 0 0 150px;/* image width (150px) and height (71px) */
+}
+
 .social-media-buttons {
 	float: right;
 }
@@ -278,6 +310,181 @@ padding-top: 1em;
 .sub-brand-logo img {
 	max-width: 350px;
 	margin-bottom: 1em;
+}
+
+}
+
+// HOMEPAGE SLIDER
+
+.slider-container {
+	padding: 0;
+	overflow: hidden;
+	clear: both;
+	max-height: 600px;
+}
+
+.carousel-cell {
+  width: 100%; /* full width */
+  height: auto; /* height of carousel */
+  margin-right: 0;
+}
+
+.carousel-cell img {
+	width: 100%;
+	height: auto;
+}
+
+.is-selected .carousel-caption {
+	opacity: 1 !important;	
+	top: 50px !important;
+}
+
+.carousel-content {
+	position: relative;
+}
+
+
+.carousel-caption {
+	position: absolute;
+	top: -1000px;
+	background: rgba(146, 195, 98, 0.9);/* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(rgba(146, 195, 98, 0.9),rgba(137, 183, 91, 0.9)); /*Fx 3.6-15*/
+  background: linear-gradient(to rgba(146, 195, 98, 0.9), rgba(137, 183, 91, 0.9)); /*Standard*/
+	padding: 2em;
+	width: 70%;
+	opacity: 0;
+		-webkit-transition: all 1.7s ease;
+  -moz-transition:    all 1.7s ease;
+  -o-transition:      all 1.7s ease;
+}
+
+.carousel-caption h2 {
+	font-size: 3em;
+	color: white;
+	border-bottom: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.carousel-caption h2 a {
+	color: white;
+}
+
+.carousel-caption p {
+	color: white;
+	font-size: 1.4em;
+}
+
+.carousel-caption .button-default a {
+	color: #4d4d4c;
+	background: white;
+}
+
+.carousel-caption .button-default a:hover {
+	color: white;
+	background: #4d4d4c;
+}
+
+.flickity-prev-next-button {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.flickity-prev-next-button svg {
+	margin-top: 4px;
+}
+
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+
+.flickity-prev-next-button:hover .arrow {
+  fill: green;
+}
+
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* position outside */
+.flickity-prev-next-button.previous {
+  top: 250px;
+  left: 2em;
+  position: absolute;
+}
+.flickity-prev-next-button.next {
+  top: 250px;
+  right: 2em;
+  position: absolute;
+}
+
+.no-inlinesvg .flickity-prev-next-button.next svg {
+display: none;
+}
+
+.no-inlinesvg .flickity-prev-next-button.next {
+background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/next.png") no-repeat;
+width: 50px;
+height: 50px;
+background-position: 10px 8px; 
+}
+
+.no-inlinesvg .flickity-prev-next-button.previous svg {
+display: none;
+}
+
+.no-inlinesvg .flickity-prev-next-button.previous {
+background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/back.png") no-repeat;
+width: 50px;
+height: 50px;
+background-position: 5px 8px; 
+}
+
+.flickity-page-dots {
+  top: 0px;
+  right: 0px;
+  padding-right: 2em;
+  position: absolute;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: white;
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+.flickity-page-dots .dot.is-selected {
+	background: rgba(146, 195, 98, 0.9);
+}
+
+.flickity-page-dots li:hover {
+	cursor: pointer;
+}
+
+.button-default a:hover {
+ cursor: pointer;
+}
+
+@media (max-width: 956px) {
+
+.slider-container {
+	display: none;
 }
 
 }

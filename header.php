@@ -33,7 +33,7 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwwjXh9emEaz5Av5yZtDkKPzVIxb4DKfM&callback=initMap">
-    </script>
+</script>
 
 
 <!-- Favicon
@@ -84,7 +84,7 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 			<div class="top-nav-content">
 
 				<div class="kcc-logo-container">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Knowsley Community College">
 
 							<?php get_template_part( 'branding-logo-flex' );?>
 		 

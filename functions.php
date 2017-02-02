@@ -160,6 +160,8 @@ function knowsley_college_scripts() {
 	wp_enqueue_style( 'time_picker_style', get_template_directory_uri() . '/inc/jquery.timepicker.css' );
 	wp_enqueue_script( 'time_picker', get_template_directory_uri() . '/inc/jquery.timepicker.min.js', array('jquery'), '2013024556', true );
 
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/inc/modernizr-svgasimg.js', array('jquery'), '2013024576', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
