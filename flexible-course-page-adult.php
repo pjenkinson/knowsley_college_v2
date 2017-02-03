@@ -104,7 +104,6 @@ $courses = $wpdb->get_results($sql);
 
 ?>
 
-
 <?php
 
 foreach($courses AS $course) {

@@ -39,6 +39,15 @@ nav.primary {
 	padding: 1em 0em;
 }
 
+.mega-apply-nav a.mega-menu-link {
+	background: $primary-color !important;
+	color: white !important;
+}
+
+.mega-apply-nav a:hover.mega-menu-link {
+	background: $secondary-color !important;
+	color: white !important;
+}
 
 // KCC Logo SVG Fallback
 
@@ -355,7 +364,7 @@ padding-top: 1em;
 	padding: 2em;
 	width: 70%;
 	opacity: 0;
-		-webkit-transition: all 1.7s ease;
+	-webkit-transition: all 1.7s ease;
   -moz-transition:    all 1.7s ease;
   -o-transition:      all 1.7s ease;
 }
