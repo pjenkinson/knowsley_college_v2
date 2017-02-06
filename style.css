@@ -539,279 +539,290 @@ footer.employers a:active, footer.employers a:hover {
   border: 2px solid #cd25b0;
 }
 
-/* line 493, sass/_branding.scss */
+/* line 490, sass/_branding.scss */
+.employers .button-default a {
+  background: #4a0d66;
+  border: 2px solid #cd25b0;
+}
+
+/* line 495, sass/_branding.scss */
+.employers .button-default a:hover {
+  background: #cd25b0;
+}
+
+/* line 501, sass/_branding.scss */
 .employers .nav-home {
   background: #ededed !important;
 }
 
-/* line 497, sass/_branding.scss */
+/* line 505, sass/_branding.scss */
 .employers .nav-home .mega-menu-toggle #mega-toggle-block-1:before {
   color: #4a0d66 !important;
 }
 
-/* line 501, sass/_branding.scss */
+/* line 509, sass/_branding.scss */
 .employers .nav-home .mega-menu-toggle #mega-toggle-block-1:after {
   color: #4a0d66 !important;
 }
 
-/* line 505, sass/_branding.scss */
+/* line 513, sass/_branding.scss */
 .employers .mega-menu-toggle .mega-toggle-block-1:before, .employers .mega-menu-toggle .mega-toggle-block-1:after {
   color: #4a0d66 !important;
 }
 
-/* line 511, sass/_branding.scss */
+/* line 519, sass/_branding.scss */
 .the-bistro .featured-banner .banner-heading {
   background: rgba(87, 87, 86, 0.8);
   border-top: solid 2px #f7ce3c;
 }
 
-/* line 516, sass/_branding.scss */
+/* line 524, sass/_branding.scss */
 .the-bistro .service-number {
   background: #f7ce3c;
 }
 
-/* line 520, sass/_branding.scss */
+/* line 528, sass/_branding.scss */
 .the-bistro .quote-box {
   background: #575756;
   border: 2px solid #f7ce3c;
 }
 
-/* line 525, sass/_branding.scss */
+/* line 533, sass/_branding.scss */
 .the-bistro .flex-control-paging li a.flex-active {
   background: #f7ce3c !important;
 }
 
-/* line 529, sass/_branding.scss */
+/* line 537, sass/_branding.scss */
 .the-bistro .button-default a {
   background: #575756;
   border: 2px solid #f7ce3c;
 }
 
-/* line 534, sass/_branding.scss */
+/* line 542, sass/_branding.scss */
 .the-bistro .button-default a:hover {
   background: #f7ce3c;
 }
 
-/* line 541, sass/_branding.scss */
+/* line 548, sass/_branding.scss */
 .the-bistro #mega-menu-wrap-about-services .mega-menu-toggle .mega-toggle-block-1:after {
   color: #575756 !important;
 }
 
-/* line 545, sass/_branding.scss */
+/* line 552, sass/_branding.scss */
 .the-bistro #mega-menu-wrap-about-services .mega-menu-toggle .mega-toggle-block-1:before {
   color: #f7ce3c !important;
 }
 
-/* line 549, sass/_branding.scss */
+/* line 556, sass/_branding.scss */
 footer.the-bistro {
   border-top: 40px solid #f7ce3c;
   background: #575756;
 }
 
-/* line 554, sass/_branding.scss */
+/* line 561, sass/_branding.scss */
 footer.the-bistro address a:link, footer address a:visited {
   text-decoration: none;
 }
 
-/* line 557, sass/_branding.scss */
+/* line 564, sass/_branding.scss */
 footer.the-bistro address a:active, footer address a:hover {
   color: #f7ce3c;
 }
 
-/* line 561, sass/_branding.scss */
+/* line 568, sass/_branding.scss */
 footer.the-bistro a:active, footer.the-bistro a:hover {
   color: #f7ce3c;
 }
 
-/* line 567, sass/_branding.scss */
+/* line 574, sass/_branding.scss */
 .the-bistro .flex-control-nav {
   border: solid 2px #f7ce3c !important;
 }
 
-/* line 571, sass/_branding.scss */
+/* line 578, sass/_branding.scss */
 .the-bistro .flex-control-paging li a.flex-active {
   background: #575756 !important;
 }
 
-/* line 577, sass/_branding.scss */
+/* line 584, sass/_branding.scss */
 .workworld .featured-banner .banner-heading {
   background: rgba(34, 30, 114, 0.8);
   border-top: solid 2px #e13087;
 }
 
-/* line 582, sass/_branding.scss */
+/* line 589, sass/_branding.scss */
 .workworld .quote-box {
   background: #221e72;
 }
 
-/* line 586, sass/_branding.scss */
+/* line 593, sass/_branding.scss */
 footer.workworld {
   border-top: 40px solid #e13087;
   background: #221e72;
 }
 
-/* line 591, sass/_branding.scss */
+/* line 598, sass/_branding.scss */
 footer.workworld address a:link, footer address a:visited {
   text-decoration: none;
 }
 
-/* line 594, sass/_branding.scss */
+/* line 601, sass/_branding.scss */
 footer.workworld address a:active, footer address a:hover {
   color: #e13087;
 }
 
-/* line 598, sass/_branding.scss */
+/* line 605, sass/_branding.scss */
 footer.workworld a:active, footer.workworld a:hover {
   color: #e13087;
 }
 
-/* line 604, sass/_branding.scss */
+/* line 611, sass/_branding.scss */
 .workworld .nav-home {
   background: #ededed !important;
 }
 
-/* line 608, sass/_branding.scss */
+/* line 615, sass/_branding.scss */
 .workworld .nav-home .mega-menu-toggle #mega-toggle-block-1:before {
   color: #221e72 !important;
 }
 
-/* line 612, sass/_branding.scss */
+/* line 619, sass/_branding.scss */
 .workworld .nav-home .mega-menu-toggle #mega-toggle-block-1:after {
   color: #221e72 !important;
 }
 
-/* line 618, sass/_branding.scss */
+/* line 625, sass/_branding.scss */
 .workworld .flex-control-nav {
   border: solid 2px #221e72 !important;
 }
 
-/* line 622, sass/_branding.scss */
+/* line 629, sass/_branding.scss */
 .workworld .flex-control-paging li a.flex-active {
   background: #e13087 !important;
 }
 
-/* line 630, sass/_branding.scss */
+/* line 637, sass/_branding.scss */
 #mega-menu-wrap-about-services {
   background: #ededed !important;
 }
 
-/* line 634, sass/_branding.scss */
+/* line 641, sass/_branding.scss */
 #mega-menu-wrap-about-services .mega-menu-toggle #mega-toggle-block-1:before {
   color: #4c4c4b !important;
 }
 
-/* line 638, sass/_branding.scss */
+/* line 645, sass/_branding.scss */
 #mega-menu-wrap-about-services .mega-menu-toggle #mega-toggle-block-1:after {
   color: #4c4c4b !important;
 }
 
-/* line 644, sass/_branding.scss */
+/* line 651, sass/_branding.scss */
 .iamt .featured-banner .banner-heading h1 {
   color: #0055b8;
 }
 
-/* line 648, sass/_branding.scss */
+/* line 655, sass/_branding.scss */
 .iamt .featured-banner .banner-heading {
   background: rgba(255, 255, 255, 0.8);
   border-top: solid 2px #0055b8;
 }
 
-/* line 653, sass/_branding.scss */
+/* line 660, sass/_branding.scss */
 footer.iamt {
   border-top: 40px solid #4d4d4c;
   background: #0055b8;
 }
 
-/* line 658, sass/_branding.scss */
+/* line 665, sass/_branding.scss */
 footer.iamt address a:link, footer address a:visited {
   text-decoration: none;
 }
 
-/* line 661, sass/_branding.scss */
+/* line 668, sass/_branding.scss */
 footer.iamt address a:active, footer address a:hover {
   color: #0055b8;
 }
 
-/* line 665, sass/_branding.scss */
+/* line 672, sass/_branding.scss */
 footer.iamt a:active, footer.iamt a:hover {
   color: #0055b8;
 }
 
-/* line 671, sass/_branding.scss */
+/* line 678, sass/_branding.scss */
 .iamt .flex-control-nav {
   border: solid 2px #0055b8 !important;
 }
 
-/* line 675, sass/_branding.scss */
+/* line 682, sass/_branding.scss */
 .iamt .flex-control-paging li a.flex-active {
   background: #0055b8 !important;
 }
 
-/* line 681, sass/_branding.scss */
+/* line 688, sass/_branding.scss */
 .nla .featured-banner .banner-heading {
   background: rgba(203, 32, 77, 0.9);
   border-top: solid 2px #1d1d1b;
 }
 
-/* line 686, sass/_branding.scss */
+/* line 693, sass/_branding.scss */
 footer.nla {
   border-top: 40px solid #1d1d1b;
   background: #cb204d;
 }
 
-/* line 691, sass/_branding.scss */
+/* line 698, sass/_branding.scss */
 footer.nla address a:link, footer address a:visited {
   text-decoration: none;
 }
 
-/* line 694, sass/_branding.scss */
+/* line 701, sass/_branding.scss */
 footer.nla address a:active, footer address a:hover {
   color: #cb204d;
 }
 
-/* line 698, sass/_branding.scss */
+/* line 705, sass/_branding.scss */
 footer.nla a:active, footer.employers a:hover {
   color: #cb204d;
 }
 
-/* line 702, sass/_branding.scss */
+/* line 709, sass/_branding.scss */
 .nla #accordion h3 {
   background: #1d1d1b;
 }
 
-/* line 705, sass/_branding.scss */
+/* line 712, sass/_branding.scss */
 .nla #accordion h3.ui-state-active {
   background: #cb204d;
 }
 
-/* line 708, sass/_branding.scss */
+/* line 715, sass/_branding.scss */
 .nla #accordion h3:hover {
   background: #cb204d;
 }
 
-/* line 712, sass/_branding.scss */
+/* line 719, sass/_branding.scss */
 .nla .quote-box {
   background: #cb204d;
   border: 2px solid #1d1d1b;
 }
 
-/* line 717, sass/_branding.scss */
+/* line 724, sass/_branding.scss */
 .nla .service-number {
   background: white;
 }
 
-/* line 721, sass/_branding.scss */
+/* line 728, sass/_branding.scss */
 .nla .service-number a:link, .nla .service-number a:active, .nla .service-number a:visited {
   color: #cb204d;
 }
 
-/* line 725, sass/_branding.scss */
+/* line 732, sass/_branding.scss */
 .nla .button-default a {
   background: #cb204d;
   border: 2px solid #1d1d1b;
 }
 
-/* line 730, sass/_branding.scss */
+/* line 737, sass/_branding.scss */
 .nla .button-default a:hover {
   background: #1d1d1b;
 }
@@ -4018,19 +4029,7 @@ nav.primary {
   padding: 1em 0em;
 }
 
-/* line 42, sass/_header.scss */
-.mega-apply-nav a.mega-menu-link {
-  background: #4d4d4c !important;
-  color: white !important;
-}
-
-/* line 47, sass/_header.scss */
-.mega-apply-nav a:hover.mega-menu-link {
-  background: #99cc66 !important;
-  color: white !important;
-}
-
-/* line 54, sass/_header.scss */
+/* line 44, sass/_header.scss */
 .no-svgasimg .primary-logo {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/kcc-logo.png") no-repeat;
   background-repeat: no-repeat;
@@ -4040,7 +4039,7 @@ nav.primary {
   /* image width (150px) and height (71px) */
 }
 
-/* line 61, sass/_header.scss */
+/* line 51, sass/_header.scss */
 .no-svgasimg .he-logo {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/he-logo.png") no-repeat;
   background-repeat: no-repeat;
@@ -4050,7 +4049,7 @@ nav.primary {
   /* image width (150px) and height (71px) */
 }
 
-/* line 68, sass/_header.scss */
+/* line 58, sass/_header.scss */
 .no-svgasimg .employers-logo {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/employers-logo.png") no-repeat;
   background-repeat: no-repeat;
@@ -4060,7 +4059,7 @@ nav.primary {
   /* image width (150px) and height (71px) */
 }
 
-/* line 75, sass/_header.scss */
+/* line 65, sass/_header.scss */
 .no-svgasimg .workworld-logo {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/workworld-logo.png") no-repeat;
   background-repeat: no-repeat;
@@ -4070,41 +4069,41 @@ nav.primary {
   /* image width (150px) and height (71px) */
 }
 
-/* line 83, sass/_header.scss */
+/* line 73, sass/_header.scss */
 .social-media-buttons {
   float: right;
 }
 
-/* line 87, sass/_header.scss */
+/* line 77, sass/_header.scss */
 .search-form-wp {
   float: right;
 }
 
-/* line 90, sass/_header.scss */
+/* line 80, sass/_header.scss */
 .external-access {
   position: relative;
   float: right;
   padding-top: 63px;
 }
 
-/* line 96, sass/_header.scss */
+/* line 86, sass/_header.scss */
 .social-media {
   float: right;
 }
 
-/* line 100, sass/_header.scss */
+/* line 90, sass/_header.scss */
 .social-media li {
   display: inline-block;
   float: left;
   list-style-type: none;
 }
 
-/* line 107, sass/_header.scss */
+/* line 97, sass/_header.scss */
 ul.social-media {
   float: left;
 }
 
-/* line 111, sass/_header.scss */
+/* line 101, sass/_header.scss */
 ul.social-media li {
   list-style-type: none;
   display: inline-block;
@@ -4112,17 +4111,17 @@ ul.social-media li {
   margin-left: 0px;
 }
 
-/* line 118, sass/_header.scss */
+/* line 108, sass/_header.scss */
 ul.social-media li i {
   color: #4d4d4c;
 }
 
-/* line 122, sass/_header.scss */
+/* line 112, sass/_header.scss */
 ul.social-media li i:hover {
   color: #99cc66;
 }
 
-/* line 128, sass/_header.scss */
+/* line 118, sass/_header.scss */
 a.skip-link:link, a.skip-link:visited {
   position: absolute;
   left: -10000px;
@@ -4132,7 +4131,7 @@ a.skip-link:link, a.skip-link:visited {
   overflow: hidden;
 }
 
-/* line 137, sass/_header.scss */
+/* line 127, sass/_header.scss */
 a.skip-link:hover, a.skip-link:focus {
   position: static;
   width: auto;
@@ -4140,7 +4139,7 @@ a.skip-link:hover, a.skip-link:focus {
   color: white;
 }
 
-/* line 145, sass/_header.scss */
+/* line 135, sass/_header.scss */
 .top-nav {
   float: left;
   width: 100%;
@@ -4149,86 +4148,86 @@ a.skip-link:hover, a.skip-link:focus {
   clear: both;
 }
 
-/* line 152, sass/_header.scss */
+/* line 142, sass/_header.scss */
 .top-nav-content {
   float: left;
   width: 100%;
   height: auto;
 }
 
-/* line 158, sass/_header.scss */
+/* line 148, sass/_header.scss */
 .top-nav-contact {
   float: left;
   width: auto;
 }
 
-/* line 163, sass/_header.scss */
+/* line 153, sass/_header.scss */
 .top-nav-contact ul li {
   float: left;
   display: inline-block;
   padding-right: 10px;
 }
 
-/* line 169, sass/_header.scss */
+/* line 159, sass/_header.scss */
 .top-nav-contact ul li a:link, .top-nav-contact ul li a:hover, .top-nav-contact ul li a:visited {
   color: white;
   text-decoration: none;
 }
 
-/* line 174, sass/_header.scss */
+/* line 164, sass/_header.scss */
 .top-nav-contact ul li a:hover {
   text-decoration: underline;
 }
 
-/* line 178, sass/_header.scss */
+/* line 168, sass/_header.scss */
 .top-nav-contact .fa-phone:before, .top-nav-contact .fa-envelope-o:before {
   padding-right: 10px;
 }
 
-/* line 182, sass/_header.scss */
+/* line 172, sass/_header.scss */
 .search-form {
   float: right;
 }
 
-/* line 185, sass/_header.scss */
+/* line 175, sass/_header.scss */
 .search-form input {
   color: #4d4d4c;
 }
 
-/* line 189, sass/_header.scss */
+/* line 179, sass/_header.scss */
 .top-nav-contact ul li {
   float: left;
   display: inline-block;
   padding-right: 10px;
 }
 
-/* line 195, sass/_header.scss */
+/* line 185, sass/_header.scss */
 .top-nav-contact ul li a:link, .top-nav-contact ul li a:hover, .top-nav-contact ul li a:visited {
   color: white;
   text-decoration: none;
 }
 
-/* line 200, sass/_header.scss */
+/* line 190, sass/_header.scss */
 .top-nav-contact ul li a:hover {
   text-decoration: underline;
 }
 
-/* line 204, sass/_header.scss */
+/* line 194, sass/_header.scss */
 .top-nav-contact .fa-phone:before, .top-nav-contact .fa-envelope-o:before {
   padding-right: 10px;
 }
 
-/* line 208, sass/_header.scss */
+/* line 198, sass/_header.scss */
 .screen-reader-text {
   color: white;
 }
 
-/* line 212, sass/_header.scss */
+/* line 202, sass/_header.scss */
 .top-nav-apply-button {
   float: left;
 }
 
-/* line 216, sass/_header.scss */
+/* line 206, sass/_header.scss */
 .top-nav-apply-button a {
   float: left;
   width: auto;
@@ -4240,63 +4239,63 @@ a.skip-link:hover, a.skip-link:focus {
   border-radius: 2px;
 }
 
-/* line 227, sass/_header.scss */
+/* line 217, sass/_header.scss */
 .top-nav-apply-button a:link, .top-nav-apply-button a:visited {
   color: white;
   background: #99cc66;
 }
 
-/* line 232, sass/_header.scss */
+/* line 222, sass/_header.scss */
 .top-nav-apply-button a:focus, .top-nav-apply-button a:hover {
   color: white;
   background: #4d4d4c;
 }
 
 @media (min-width: 600px) {
-  /* line 239, sass/_header.scss */
+  /* line 229, sass/_header.scss */
   .mega-primary-external-access {
     display: none !important;
   }
 
-  /* line 243, sass/_header.scss */
+  /* line 233, sass/_header.scss */
   .mega-primary-apply {
     display: none !important;
   }
 }
-/* line 248, sass/_header.scss */
+/* line 238, sass/_header.scss */
 .text-contrast {
   float: left;
 }
 
-/* line 253, sass/_header.scss */
+/* line 243, sass/_header.scss */
 .cookie-message-container {
   background: #00a2d3;
 }
 
-/* line 256, sass/_header.scss */
+/* line 246, sass/_header.scss */
 .cookie-message-content {
   width: 100%;
   clear: both;
 }
 
-/* line 260, sass/_header.scss */
+/* line 250, sass/_header.scss */
 .cookie-message-content p {
   color: white;
 }
 
-/* line 263, sass/_header.scss */
+/* line 253, sass/_header.scss */
 .cookie-message-content p a {
   color: white;
   text-decoration: underline;
 }
 
-/* line 268, sass/_header.scss */
+/* line 258, sass/_header.scss */
 .cookie-message-content p i {
   float: left;
   display: inline-block;
 }
 
-/* line 272, sass/_header.scss */
+/* line 262, sass/_header.scss */
 a.cookiebar-close {
   display: inline-block;
   text-align: center;
@@ -4307,7 +4306,7 @@ a.cookiebar-close {
   border: 1px solid white;
 }
 
-/* line 284, sass/_header.scss */
+/* line 274, sass/_header.scss */
 .sub-brand-headline {
   width: 100%;
   float: left;
@@ -4315,7 +4314,7 @@ a.cookiebar-close {
   margin-right: 0;
 }
 
-/* line 288, sass/_header.scss */
+/* line 278, sass/_header.scss */
 .sub-brand-logo {
   width: 100%;
   float: left;
@@ -4324,27 +4323,27 @@ a.cookiebar-close {
   padding-top: 1em;
 }
 
-/* line 293, sass/_header.scss */
+/* line 283, sass/_header.scss */
 .sub-brand-logo img {
   max-width: 350px;
   margin-bottom: 1em;
 }
 
 @media (max-width: 1180px) {
-  /* line 302, sass/_header.scss */
+  /* line 292, sass/_header.scss */
   .featured-banner img {
     display: none;
   }
 }
 @media (min-width: 1180px) {
-  /* line 310, sass/_header.scss */
+  /* line 300, sass/_header.scss */
   .sub-brand-headline {
     width: 65.4321%;
     float: left;
     margin-right: 3.7037%;
   }
 
-  /* line 314, sass/_header.scss */
+  /* line 304, sass/_header.scss */
   .sub-brand-logo {
     width: 30.8642%;
     float: right;
@@ -4352,13 +4351,13 @@ a.cookiebar-close {
     padding-top: 1em;
   }
 
-  /* line 319, sass/_header.scss */
+  /* line 309, sass/_header.scss */
   .sub-brand-logo img {
     max-width: 350px;
     margin-bottom: 1em;
   }
 }
-/* line 328, sass/_header.scss */
+/* line 318, sass/_header.scss */
 .slider-container {
   padding: 0;
   overflow: hidden;
@@ -4366,7 +4365,7 @@ a.cookiebar-close {
   max-height: 600px;
 }
 
-/* line 335, sass/_header.scss */
+/* line 325, sass/_header.scss */
 .carousel-cell {
   width: 100%;
   /* full width */
@@ -4375,24 +4374,24 @@ a.cookiebar-close {
   margin-right: 0;
 }
 
-/* line 341, sass/_header.scss */
+/* line 331, sass/_header.scss */
 .carousel-cell img {
   width: 100%;
   height: auto;
 }
 
-/* line 346, sass/_header.scss */
+/* line 336, sass/_header.scss */
 .is-selected .carousel-caption {
   opacity: 1 !important;
   top: 50px !important;
 }
 
-/* line 351, sass/_header.scss */
+/* line 341, sass/_header.scss */
 .carousel-content {
   position: relative;
 }
 
-/* line 356, sass/_header.scss */
+/* line 346, sass/_header.scss */
 .carousel-caption {
   position: absolute;
   top: -1000px;
@@ -4414,7 +4413,7 @@ a.cookiebar-close {
   -o-transition: all 1.7s ease;
 }
 
-/* line 372, sass/_header.scss */
+/* line 362, sass/_header.scss */
 .carousel-caption h2 {
   font-size: 3em;
   color: white;
@@ -4423,30 +4422,30 @@ a.cookiebar-close {
   margin: 0px;
 }
 
-/* line 380, sass/_header.scss */
+/* line 370, sass/_header.scss */
 .carousel-caption h2 a {
   color: white;
 }
 
-/* line 384, sass/_header.scss */
+/* line 374, sass/_header.scss */
 .carousel-caption p {
   color: white;
   font-size: 1.4em;
 }
 
-/* line 389, sass/_header.scss */
+/* line 379, sass/_header.scss */
 .carousel-caption .button-default a {
   color: #4d4d4c;
   background: white;
 }
 
-/* line 394, sass/_header.scss */
+/* line 384, sass/_header.scss */
 .carousel-caption .button-default a:hover {
   color: white;
   background: #4d4d4c;
 }
 
-/* line 399, sass/_header.scss */
+/* line 389, sass/_header.scss */
 .flickity-prev-next-button {
   width: 40px;
   height: 40px;
@@ -4454,54 +4453,54 @@ a.cookiebar-close {
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-/* line 406, sass/_header.scss */
+/* line 396, sass/_header.scss */
 .flickity-prev-next-button svg {
   margin-top: 4px;
 }
 
 /* arrow color */
-/* line 411, sass/_header.scss */
+/* line 401, sass/_header.scss */
 .flickity-prev-next-button .arrow {
   fill: white;
 }
 
-/* line 415, sass/_header.scss */
+/* line 405, sass/_header.scss */
 .flickity-prev-next-button:hover .arrow {
   fill: green;
 }
 
-/* line 419, sass/_header.scss */
+/* line 409, sass/_header.scss */
 .flickity-prev-next-button.no-svg {
   color: white;
 }
 
 /* hide disabled button */
-/* line 423, sass/_header.scss */
+/* line 413, sass/_header.scss */
 .flickity-prev-next-button:disabled {
   display: none;
 }
 
 /* position outside */
-/* line 428, sass/_header.scss */
+/* line 418, sass/_header.scss */
 .flickity-prev-next-button.previous {
   top: 250px;
   left: 2em;
   position: absolute;
 }
 
-/* line 433, sass/_header.scss */
+/* line 423, sass/_header.scss */
 .flickity-prev-next-button.next {
   top: 250px;
   right: 2em;
   position: absolute;
 }
 
-/* line 439, sass/_header.scss */
+/* line 429, sass/_header.scss */
 .no-inlinesvg .flickity-prev-next-button.next svg {
   display: none;
 }
 
-/* line 443, sass/_header.scss */
+/* line 433, sass/_header.scss */
 .no-inlinesvg .flickity-prev-next-button.next {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/next.png") no-repeat;
   width: 50px;
@@ -4509,12 +4508,12 @@ a.cookiebar-close {
   background-position: 10px 8px;
 }
 
-/* line 450, sass/_header.scss */
+/* line 440, sass/_header.scss */
 .no-inlinesvg .flickity-prev-next-button.previous svg {
   display: none;
 }
 
-/* line 454, sass/_header.scss */
+/* line 444, sass/_header.scss */
 .no-inlinesvg .flickity-prev-next-button.previous {
   background: url("https://www.knowsleycollege.ac.uk/wp-content/uploads/2017/02/back.png") no-repeat;
   width: 50px;
@@ -4522,7 +4521,7 @@ a.cookiebar-close {
   background-position: 5px 8px;
 }
 
-/* line 461, sass/_header.scss */
+/* line 451, sass/_header.scss */
 .flickity-page-dots {
   top: 0px;
   right: 0px;
@@ -4531,7 +4530,7 @@ a.cookiebar-close {
 }
 
 /* white circles */
-/* line 468, sass/_header.scss */
+/* line 458, sass/_header.scss */
 .flickity-page-dots .dot {
   width: 12px;
   height: 12px;
@@ -4542,28 +4541,28 @@ a.cookiebar-close {
 }
 
 /* fill-in selected dot */
-/* line 477, sass/_header.scss */
+/* line 467, sass/_header.scss */
 .flickity-page-dots .dot.is-selected {
   background: white;
 }
 
-/* line 481, sass/_header.scss */
+/* line 471, sass/_header.scss */
 .flickity-page-dots .dot.is-selected {
   background: rgba(146, 195, 98, 0.9);
 }
 
-/* line 485, sass/_header.scss */
+/* line 475, sass/_header.scss */
 .flickity-page-dots li:hover {
   cursor: pointer;
 }
 
-/* line 489, sass/_header.scss */
+/* line 479, sass/_header.scss */
 .button-default a:hover {
   cursor: pointer;
 }
 
 @media (max-width: 956px) {
-  /* line 495, sass/_header.scss */
+  /* line 485, sass/_header.scss */
   .slider-container {
     display: none;
   }

@@ -487,6 +487,14 @@ color: $employers-secondary;
 	border: 2px solid $employers-secondary;
 }
 
+.employers .button-default a {
+	background: $employers;
+	border: 2px solid $employers-secondary;
+}
+
+.employers .button-default a:hover {
+  background: $employers-secondary;
+}
 
 // Menu
 
@@ -534,7 +542,6 @@ color: $employers-secondary;
 .the-bistro .button-default a:hover {
   background: $the-bistro;
 }
-
 
 // Mega Menu Toggle
 
