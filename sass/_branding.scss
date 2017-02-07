@@ -630,6 +630,17 @@ color: $workworld-secondary;
 	background: $workworld-secondary !important;
 }
 
+// Buttons
+
+.workworld .button-default a {
+	background: $workworld;
+	border: 2px solid $workworld-secondary;
+}
+
+.workworld .button-default a:hover {
+  background: $workworld-secondary;
+}
+
 // SERVICES 
 
 // Menu
