@@ -177,58 +177,6 @@ jQuery("li.last-tab a").unbind('click');
   <?php if ($factsheet->id == '14863') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-mechanical-engineering.pdf' ;}?>  
   <?php }?>
 
-  <!-- Career Coach -->
-
-  <?php if ($factsheet->id ==  '14676' or '14677' or '14678' or '14679' or '14680' or '14681' or '14682' or '14683' or '14685' or '14694' or '14695' or '14696' or '14697' or '14704' or '14705' or '14708' or '14711' or '14713' or '14716' or '14718' or '14719' or '14720' or '14721' or '14724' or '14725' or '14726' or '14727' or '14729' or '14730' or '14731' or '14732' or '14734' or '14735' or '14737' or '14738' or '14739' or '14740' or '14741' or '14742' or '14743' or '14744' or '14746' or '14747' or '14748' or '14750' or '14752' or '14753' or '14754' or '14757' or '14758' or '14762' or '14765' or '14766' or '14767' or '14772' or '14773' or '14774' or '14775' or '14776' or '14777' or '14778' or '14779' or '14780' or '14783' or '14786' or '14788' or '14789' or '14790' or '14791' or '14792' or '14793' or '14794' or '14795' or '14796' or '14797' or '14798' or '14799' or '14801' or '14811' or '14812' or '14816' or '14817' or '14822' or '14823' or '14824' or '14830' or '14837' or '14838' or '14839' or '14847' or '14849' or '14850' or '14852' or '14853' or '14854' or '14855' or '14856' or '14857' or '14858' or '14859' or '14860' or '14861' or '14862' or '14863' or '14865' or '14866') {?>
-
-  <?php $careerid = 0;?>
-
-  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
-  <?php if ($factsheet->id == '14967') { $careerid = '756926' ;} // BTEC Nationals in Art & Design ?>
-  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
-  <?php if ($factsheet->id == '14986') { $careerid = '757043' ;} // Level 2 - City & Guilds NVQ Diploma in Professional Cookery ?>
-  <?php if ($factsheet->id == '15018') { $careerid = '756956' ;} // BTEC First Extended Certificate in Information and Creative Technology ?>
-  <?php if ($factsheet->id == '14908') { $careerid = '756938' ;} // BTEC Nationals in IT ?>
-  <?php if ($factsheet->id == '14942') { $careerid = '756992' ;} // City & Guilds Extended Certificate in Construction Skills ?>
-  <?php if ($factsheet->id == '14974') { $careerid = '756977' ;} // BTEC Diploma in Creative Media Production ?>
-  <?php if ($factsheet->id == '14975') { $careerid = '756929' ;} // BTEC Nationals in Creative Media Production ?>
-  <?php if ($factsheet->id == '14932') { $careerid = '756986' ;} // CACHE Certificate in an Introduction to Early Years Education and Care ?>
-  <?php if ($factsheet->id == '14936') { $careerid = '757001' ;} // CACHE Certificate in Childcare and Education ?>
-  <?php if ($factsheet->id == '14956') { $careerid = '757013' ;} // Level 1 - EAL Diploma in Electrical Installation ?>
-  <?php if ($factsheet->id == '14957') { $careerid = '757016' ;} // Level 2 - EAL Diploma in Electrical Installation ?>
-  <?php if ($factsheet->id == '14958') { $careerid = '757019' ;} // Level 3 - EAL Diploma in Electrical Installation ?>
-  <?php if ($factsheet->id == '14955') { $careerid = '756989' ;} // EAL Certificate in Engineering and Technology ?>
-  <?php if ($factsheet->id == '14949') { $careerid = '757022' ;} // EAL Diploma in Engineering and Technology - Mechanical ?>
-  <?php if ($factsheet->id == '14959') { $careerid = '757025' ;} // EAL Diploma in Engineering Technology - Fabrication and Welding  ?>
-  <?php if ($factsheet->id == '14954') { $careerid = '756932' ;} // EAL Diplomas in Engineering Technologies  ?>
-  <?php if ($factsheet->id == '14976') { $careerid = '757073' ;} // VTCT Diploma in Hairdressing  ?>
-  <?php if ($factsheet->id == '14978') { $careerid = '757076' ;} // Level 3 - VTCT Diploma in Hairdressing ?>
-  <?php if ($factsheet->id == '15015') { $careerid = '757040' ;} // CACHE Diploma in Introduction to Health, Social Care and Children’s and Young People’s Settings ?>
-  <?php if ($factsheet->id == '15014') { $careerid = '757034' ;} // Level 2 - CACHE Diploma in Health and Social Care ?>
-  <?php if ($factsheet->id == '14921') { $careerid = '756935' ;} // BTEC Nationals in Health and Social Care ?>
-  <?php if ($factsheet->id == '15013') { $careerid = '757037' ;} // Level 3 - CACHE Diploma in Health and Social Care ?>
-  <?php if ($factsheet->id == '15029') { $careerid = '756959' ;} // BTEC First Extended Certificate in Music ?>
-  <?php if ($factsheet->id == '15027') { $careerid = '756941' ;} // BTEC Nationals in Music Performance ?>
-  <?php if ($factsheet->id == '15034') { $careerid = '756962' ;} // BTEC First Extended Certificate in Performing Arts, Level 2 ?>
-  <?php if ($factsheet->id == '15038') { $careerid = '757067' ;} // Higher National Diploma in Performing Arts ?>
-  <?php if ($factsheet->id == '15052') { $careerid = '757085' ;} // BTEC Combined Sport and Public Services ?>
-  <?php if ($factsheet->id == '15041') { $careerid = '756920' ;} // BTEC Extended Certificate Public Service ?>
-  <?php if ($factsheet->id == '15041') { $careerid = '756923' ;} //  ?>
-  <?php if ($factsheet->id == '15053') { $careerid = '756965' ;} // BTEC First Extended Certificate in Sport  ?>
-  <?php if ($factsheet->id == '15043') { $careerid = '756953' ;} // BTEC Nationals in Sport  ?>
-  <?php if ($factsheet->id == '15062') { $careerid = '757079' ;} // Entry Level 1 - ASDAN Certificate in Employability  ?>
-  <?php if ($factsheet->id == '15064') { $careerid = '757082' ;} // ASDAN Certificate in Personal Progress  ?>
-  <?php if ($factsheet->id == '14943') { $careerid = '757052' ;} // City & Guilds Diploma in Travel and Tourism Level 2 ?>
-  <?php if ($factsheet->id == '14944') { $careerid = '757049' ;} // City & Guilds Diplomas in Travel and Tourism Level 3 ?>
-  <?php if ($factsheet->id == '14912') { $careerid = '756971' ;} //  HND Diploma in Business  ?>
-  <?php if ($factsheet->id == '15020') { $careerid = '756974' ;} // BTEC HND Diploma in Computing and Systems Development   ?>
-  <?php if ($factsheet->id == '15030') { $careerid = '757064' ;} // HND in Music  ?>
-  <?php if ($factsheet->id == '14995') { $careerid = '756854' ;} // Access to Higher Education - Health Professions ?>
-  <?php if ($factsheet->id == '14969') { $careerid = '756860' ;} // Access to Higher Education - Humanities ?>
-  <?php if ($factsheet->id == '14994') { $careerid = '756857' ;} // Access to Higher Education - Health Sciences ?>
-  <?php if ($factsheet->id == '14996') { $careerid = '756851' ;} // Access to Higher Education - Health and Physiotherapy ?>
-
-  <?php } else echo ''?>
 
   <!-- Factsheet tabs -->
 
@@ -487,14 +435,6 @@ jQuery("li.last-tab a").unbind('click');
 
   
 <?php } ?>
-
-<?php if (!empty($careerid)) {?>
-<div class="emsi-widget">
-
-<iframe id="ge_<?php echo $careerid ?>" scrolling="auto" frameborder="0" border="0"  width="100%" src="https://knowsleycollege.emsicareercoach.co.uk/coursewidgets/?CourseID=<?php echo $careerid ?>" ></iframe>
-
-</div>
-<?php }?>
 
 </aside>
 

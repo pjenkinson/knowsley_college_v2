@@ -1,4 +1,6 @@
+
 <?php
+
 /**
 * Template Name: New Factsheet
 * Content Page
@@ -7,16 +9,34 @@
 */
 get_header(); ?>
 
+
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>
 
 <script>
+(function (d) {
+"use strict";
+var widgetScript = d.createElement('script');
+widgetScript.id = 'unistats-widget-script';
+widgetScript.src = 'http://widget.unistats.ac.uk/js/unistats.widget.js';
+var scriptTags = d.getElementsByTagName('script')[0];
+if (d.getElementById('unistats-widget-script')) { return; }
+scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
+} (document));
+</script>
+
+<script>
+
 jQuery(function() {
     jQuery( "#tabs" ).tabs();
   }); 
+
+jQuery("li.last-tab a").unbind('click');
+
 </script>
-	
+
+
 </header>
 
 <!-- Breadcrumbs
@@ -32,7 +52,7 @@ jQuery(function() {
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div class="full-width-container factsheet-page content-page">
+<div class="full-width-container factsheet-page">
 
 	<div class="fixed-container">
 
@@ -73,6 +93,8 @@ jQuery(function() {
   $sql = "SELECT id, 
                  factsheetname AS name, 
                  courseabout,
+                 cost,
+                 equipment,
                  entryrequirements,
                  duration,
                  assessment,
@@ -83,7 +105,8 @@ jQuery(function() {
                  unit1,
                  unit2,
                  unit3,
-                 unit4
+                 unit4,
+                 kiscode
             FROM fact_sheets
            WHERE id = '".$factsheetID."'";
 
@@ -91,21 +114,23 @@ jQuery(function() {
 
   $factsheet = $factsheet[0];
 
+
   $sql = "SELECT unit
             FROM fact_sheet_units
            WHERE CourseInformationID = '".$factsheetID."'";
 
-  $units = $wpdb->get_results($sql);
 
-  $units = $units[0];
+  $units = $wpdb->get_results($sql);         
+
   ?>
+
+ 
+
 
 
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
-
-  <img src="<?php echo get_bloginfo('template_directory');?>/images/course-factsheets/music.jpg" alt=""></img>
 
   <div class="factsheet-title">
     <h1><?=$factsheet->name?></h1>
@@ -115,8 +140,6 @@ jQuery(function() {
   </div>
 
    <div class="share-bar">
-
-
 
     <ul>
       <li><a href="#">Share this page</a></li>
@@ -128,8 +151,84 @@ jQuery(function() {
 
   </div>
 
-
   </div>
+
+  <!-- PDFs -->
+
+  <?php if ($factsheet->id == '14852' or '14856' or '14858' or '14853' or '14855' or '14859' or '14854' or '14862' or '14863' or '14860' or '14850' or '14824' or '14823' or '14857' or '14849' or '14789' ) {?>
+
+  <?php $HEpdf = 0;?>
+
+  <?php if ($factsheet->id == '14852') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-early-years.pdf' ;}?>
+  <?php if ($factsheet->id == '14858') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-biological-sciences.pdf' ;}?>
+  <?php if ($factsheet->id == '14853') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-business.pdf'; }?>
+  <?php if ($factsheet->id == '14859') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-computing-systems-development.pdf' ;}?>
+  <?php if ($factsheet->id == '14854') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-creative-media.pdf' ;}?>
+  <?php if ($factsheet->id == '14862') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-electrical-engineering.pdf' ;}?>
+  <?php if ($factsheet->id == '14860') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-manufacturing-engineering.pdf' ;}?>
+  <?php if ($factsheet->id == '14850') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-sport.pdf' ;}?>
+  <?php if ($factsheet->id == '14824') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-business.pdf' ;}?>
+  <?php if ($factsheet->id == '14823') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-computing-systems-development.pdf' ;}?>
+  <?php if ($factsheet->id == '14855') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-hospitality-management.pdf' ;}?>
+  <?php if ($factsheet->id == '14856') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-music.pdf' ;}?>
+  <?php if ($factsheet->id == '14857') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-creative-media.pdf' ;}?>
+  <?php if ($factsheet->id == '14849') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-sport.pdf' ;}?>
+  <?php if ($factsheet->id == '14789') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-music.pdf' ;}?>
+  <?php if ($factsheet->id == '14863') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-mechanical-engineering.pdf' ;}?>  
+  <?php }?>
+
+  <!-- Career Coach -->
+
+  <?php if ($factsheet->id ==  '14676' or '14677' or '14678' or '14679' or '14680' or '14681' or '14682' or '14683' or '14685' or '14694' or '14695' or '14696' or '14697' or '14704' or '14705' or '14708' or '14711' or '14713' or '14716' or '14718' or '14719' or '14720' or '14721' or '14724' or '14725' or '14726' or '14727' or '14729' or '14730' or '14731' or '14732' or '14734' or '14735' or '14737' or '14738' or '14739' or '14740' or '14741' or '14742' or '14743' or '14744' or '14746' or '14747' or '14748' or '14750' or '14752' or '14753' or '14754' or '14757' or '14758' or '14762' or '14765' or '14766' or '14767' or '14772' or '14773' or '14774' or '14775' or '14776' or '14777' or '14778' or '14779' or '14780' or '14783' or '14786' or '14788' or '14789' or '14790' or '14791' or '14792' or '14793' or '14794' or '14795' or '14796' or '14797' or '14798' or '14799' or '14801' or '14811' or '14812' or '14816' or '14817' or '14822' or '14823' or '14824' or '14830' or '14837' or '14838' or '14839' or '14847' or '14849' or '14850' or '14852' or '14853' or '14854' or '14855' or '14856' or '14857' or '14858' or '14859' or '14860' or '14861' or '14862' or '14863' or '14865' or '14866') {?>
+
+  <?php $careerid = 0;?>
+
+  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
+  <?php if ($factsheet->id == '14967') { $careerid = '756926' ;} // BTEC Nationals in Art & Design ?>
+  <?php if ($factsheet->id == '14968') { $careerid = '756968' ;} // BTEC Foundation Diploma in Art and Design ?>
+  <?php if ($factsheet->id == '14986') { $careerid = '757043' ;} // Level 2 - City & Guilds NVQ Diploma in Professional Cookery ?>
+  <?php if ($factsheet->id == '15018') { $careerid = '756956' ;} // BTEC First Extended Certificate in Information and Creative Technology ?>
+  <?php if ($factsheet->id == '14908') { $careerid = '756938' ;} // BTEC Nationals in IT ?>
+  <?php if ($factsheet->id == '14942') { $careerid = '756992' ;} // City & Guilds Extended Certificate in Construction Skills ?>
+  <?php if ($factsheet->id == '14974') { $careerid = '756977' ;} // BTEC Diploma in Creative Media Production ?>
+  <?php if ($factsheet->id == '14975') { $careerid = '756929' ;} // BTEC Nationals in Creative Media Production ?>
+  <?php if ($factsheet->id == '14932') { $careerid = '756986' ;} // CACHE Certificate in an Introduction to Early Years Education and Care ?>
+  <?php if ($factsheet->id == '14936') { $careerid = '757001' ;} // CACHE Certificate in Childcare and Education ?>
+  <?php if ($factsheet->id == '14956') { $careerid = '757013' ;} // Level 1 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14957') { $careerid = '757016' ;} // Level 2 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14958') { $careerid = '757019' ;} // Level 3 - EAL Diploma in Electrical Installation ?>
+  <?php if ($factsheet->id == '14955') { $careerid = '756989' ;} // EAL Certificate in Engineering and Technology ?>
+  <?php if ($factsheet->id == '14949') { $careerid = '757022' ;} // EAL Diploma in Engineering and Technology - Mechanical ?>
+  <?php if ($factsheet->id == '14959') { $careerid = '757025' ;} // EAL Diploma in Engineering Technology - Fabrication and Welding  ?>
+  <?php if ($factsheet->id == '14954') { $careerid = '756932' ;} // EAL Diplomas in Engineering Technologies  ?>
+  <?php if ($factsheet->id == '14976') { $careerid = '757073' ;} // VTCT Diploma in Hairdressing  ?>
+  <?php if ($factsheet->id == '14978') { $careerid = '757076' ;} // Level 3 - VTCT Diploma in Hairdressing ?>
+  <?php if ($factsheet->id == '15015') { $careerid = '757040' ;} // CACHE Diploma in Introduction to Health, Social Care and Children’s and Young People’s Settings ?>
+  <?php if ($factsheet->id == '15014') { $careerid = '757034' ;} // Level 2 - CACHE Diploma in Health and Social Care ?>
+  <?php if ($factsheet->id == '14921') { $careerid = '756935' ;} // BTEC Nationals in Health and Social Care ?>
+  <?php if ($factsheet->id == '15013') { $careerid = '757037' ;} // Level 3 - CACHE Diploma in Health and Social Care ?>
+  <?php if ($factsheet->id == '15029') { $careerid = '756959' ;} // BTEC First Extended Certificate in Music ?>
+  <?php if ($factsheet->id == '15027') { $careerid = '756941' ;} // BTEC Nationals in Music Performance ?>
+  <?php if ($factsheet->id == '15034') { $careerid = '756962' ;} // BTEC First Extended Certificate in Performing Arts, Level 2 ?>
+  <?php if ($factsheet->id == '15038') { $careerid = '757067' ;} // Higher National Diploma in Performing Arts ?>
+  <?php if ($factsheet->id == '15052') { $careerid = '757085' ;} // BTEC Combined Sport and Public Services ?>
+  <?php if ($factsheet->id == '15041') { $careerid = '756920' ;} // BTEC Extended Certificate Public Service ?>
+  <?php if ($factsheet->id == '15041') { $careerid = '756923' ;} //  ?>
+  <?php if ($factsheet->id == '15053') { $careerid = '756965' ;} // BTEC First Extended Certificate in Sport  ?>
+  <?php if ($factsheet->id == '15043') { $careerid = '756953' ;} // BTEC Nationals in Sport  ?>
+  <?php if ($factsheet->id == '15062') { $careerid = '757079' ;} // Entry Level 1 - ASDAN Certificate in Employability  ?>
+  <?php if ($factsheet->id == '15064') { $careerid = '757082' ;} // ASDAN Certificate in Personal Progress  ?>
+  <?php if ($factsheet->id == '14943') { $careerid = '757052' ;} // City & Guilds Diploma in Travel and Tourism Level 2 ?>
+  <?php if ($factsheet->id == '14944') { $careerid = '757049' ;} // City & Guilds Diplomas in Travel and Tourism Level 3 ?>
+  <?php if ($factsheet->id == '14912') { $careerid = '756971' ;} //  HND Diploma in Business  ?>
+  <?php if ($factsheet->id == '15020') { $careerid = '756974' ;} // BTEC HND Diploma in Computing and Systems Development   ?>
+  <?php if ($factsheet->id == '15030') { $careerid = '757064' ;} // HND in Music  ?>
+  <?php if ($factsheet->id == '14995') { $careerid = '756854' ;} // Access to Higher Education - Health Professions ?>
+  <?php if ($factsheet->id == '14969') { $careerid = '756860' ;} // Access to Higher Education - Humanities ?>
+  <?php if ($factsheet->id == '14994') { $careerid = '756857' ;} // Access to Higher Education - Health Sciences ?>
+  <?php if ($factsheet->id == '14996') { $careerid = '756851' ;} // Access to Higher Education - Health and Physiotherapy ?>
+
+  <?php } else echo ''?>
 
   <!-- Factsheet tabs -->
 
@@ -139,60 +238,71 @@ jQuery(function() {
   <ul class="tab-links-list">
     <li><a href="#about">Course information</a></li>
     <li><a href="#units">Units</a></li>
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
+  </ul>
+  <ul class="tab-links-last">
+    <?php if ($HEpdf === 0) {?> <?php } else {?>
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
+    <?php } ?></li>
   </ul>
   </div>
 
   <div id="about" class="tab-section">
-    <h3>About</h3>
+
+    <?php if (!empty($factsheet->courseabout)) {?>
+
+    <h2>About</h2>
     <p><?=$factsheet->courseabout?></p>
 
-    <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+    <?php } else {}; ?>
 
-        <?php 
-} else {?>
+    <?php if (!empty($factsheet->entryrequirements)) {?>
 
-    <h3>Entry requirements</h3>
+    <h2>Entry requirements</h2>
     <p><?=$factsheet->entryrequirements?></p>
-<?php }?>
 
-    <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+    <?php } else {}; ?>
 
-        <?php 
-} else {?>
+    <?php if (!empty($factsheet->duration)) {?>
 
-    <h3>Duration</h3>
+    <h2>Duration</h2>
     <p><?=$factsheet->duration?></p>
-<?php }?>
 
-    <h3>Assessment</h3>
-    <p><?=$factsheet->assessment?></p>
+    <?php } else {}; ?>
 
-    <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+    <?php if (!empty($factsheet->progression)) {?>
 
-
-    <?php 
-} else {?>
-
-  <h3>Progression and Careers</h3>
+      <h2>Progression and Careers</h2>
     <p><?=$factsheet->progression?></p>
-  
-<?php }?>
 
-<?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+    <?php } else {}; ?>
 
+    <?php if (!empty($factsheet->location)) {?>
 
-    <?php 
-} else {?>
-
-    <h3>Study location</h3>
+    <h2>Study location</h2>
     <p><?=$factsheet->location?></p>
-<?php }?>
+
+    <?php } else {}; ?>
+
+    <?php if (!empty($factsheet->cost)) {?>
+
+    <h2>Cost</h2>
+    <p><?=$factsheet->cost?></p>
+
+    <?php } else {}; ?>
+
+    <?php if (!empty($factsheet->equipment)) {?>
+
+    <h2>Equipment</h2>
+    <p><?=$factsheet->equipment?></p>
+
+    <?php } else {}; ?>
 
   </div>
 
   <div id="units" class="tab-section">
 
-  <h3>Units</h3>
+  <h2>Units you will study include:</h2>
   
   <ul>
     <li><?=$factsheet->unit1?></li>
@@ -203,7 +313,25 @@ jQuery(function() {
 
   </div>
 
-  </div> 
+  <?php if ($factsheet->programmearea == 'Higher Education') {?>
+
+  <div id="unistats" class="tab-section">
+   
+   <h2>Unistats</h2>
+   <p>The Key Information Set (KIS) contains the information which students nationally have said they find most useful when making choices about which course to study. Some of the items are measures of student satisfaction from the National Student Survey (NSS), others are from the Destination of Leavers from Higher Education (DLHE) which surveys students who gained a qualification from a university or college, six months after they left.</p>
+
+   <p>Where applicable you can see the KIS data directly on our course pages. You may however choose to use the information on <a href="https://unistats.direct.gov.uk/Institutions/Details/10003708/ReturnTo/Institutions" title="Unistats - Knowsley Community College">Unistats</a> – which allows you to compare data from different Universities and Colleges.</p>
+<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
+<div class="kis-widget" data-institution="10003708FT" data-course="<?=$factsheet->kiscode?>" data-orientation="horizontal" data-language="en-GB"></div>
+
+    <?php 
+} else {
+  
+}?>
+ </div>
+
+ <?php } else {}; ?>
+
   <!-- End of tabbed content -->
 
   <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
@@ -259,12 +387,12 @@ jQuery(function() {
   
 }?>
 
-    <?php if ($factsheet->programmearea == 'Higher Education') {?>
+<?php if ($factsheet->id == '14861') {?>
    
     <a href="<?php the_field('performance_qualifications_link', 'option'); ?>" title="Performance Qualifications">
     <div class="higher-education-promo the-content">
 
-     <img src="<?php the_field('performance_qualifications', 'option'); ?>" alt="Performance Qualifications">
+     <img width="100%" src="<?php the_field('performance_qualifications', 'option'); ?>" alt="Performance Qualifications">
 
     </div>
     </a>
@@ -277,55 +405,37 @@ jQuery(function() {
   
 }?>
 
+    
+
 <!-- Subject Information -->
 
-  <?php if ($factsheet->programmearea == 'Access') {
-   
-// echo 'Access';
-    
-} ?>
+<?php if ($factsheet->programmearea == 'Hairdressing & Barbering') {?>
 
-  <?php if ($factsheet->programmearea == 'Accounting') {
-   
-// echo 'Accounting';
-    
-} ?>
+<div class="aside-videos">
 
- <?php if ($factsheet->programmearea == 'Apprenticeships') {
-   
-// echo 'Apprenticeships';
-    
-} ?>
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/3gtArMLtKN0?rel=0" frameborder="0" allowfullscreen></iframe>
+</div> 
 
- <?php if ($factsheet->programmearea == 'Art & Design') {
-   
-// echo 'Art & Design';
+</div>
     
-} ?>
+<?php } ?>
 
- <?php if ($factsheet->programmearea == 'Beauty Therapy') {
-   
-// echo 'Beauty Therapy';
-    
-} ?>
+<?php if ($factsheet->programmearea == 'Construction') {?>
 
- <?php if ($factsheet->programmearea == 'Catering & Hospitality') {
-   
-// echo 'Catering & Hospitality';
-    
-} ?>
+<div class="aside-videos">
 
-<?php if ($factsheet->programmearea == 'Computing & IT') {
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/lgUwqQ6GsjY?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
    
-// echo 'Computing & IT';
-    
-} ?>
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
-<?php if ($factsheet->programmearea == 'Construction') {
-   
-// echo 'Construction';
-    
-} ?>
+</div>
+
+<?php } ?>
 
 <?php if ($factsheet->programmearea == 'Creative Media') {
    
@@ -339,98 +449,54 @@ jQuery(function() {
     
 } ?>
 
-<?php if ($factsheet->programmearea == 'Electrical Engineering') {
-   
-// echo 'Electrical Engineering';
+<?php if ($factsheet->programmearea == 'Electrical Engineering') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">   
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/oL8tpP3oOyM?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
     
-} ?>
+<?php } ?>
 
-<?php if ($factsheet->programmearea == 'Engineering & Manufacturing') {
-   
-// echo 'Engineering & Manufacturing';
+<?php if ($factsheet->programmearea == 'Engineering & Manufacturing') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/uNa7EJI6IdA?rel=0" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
     
-} ?>
+<?php } ?>
 
-<?php if ($factsheet->programmearea == 'English & Maths') {
+<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
    
-// echo 'English & Maths';
-    
-} ?>
+<div class="kis-widget" data-institution="10003708FT" data-course="<?=$factsheet->kiscode?>" data-orientation="vertical" data-language="en-GB"></div>
 
-<?php if ($factsheet->programmearea == 'GCSEs') {
-   
-// echo 'GCSEs';
-    
-} ?>
+  
+<?php } ?>
 
-<?php if ($factsheet->programmearea == 'Hairdressing & Barbering') {
-   
-// echo 'Hairdressing & Barbering';
-    
-} ?>
+<?php if (!empty($careerid)) {?>
+<div class="emsi-widget">
 
-<?php if ($factsheet->programmearea == 'Health & Social Care') {
-   
-// echo 'Health & Social Care';
-    
-} ?>
+<iframe id="ge_<?php echo $careerid ?>" scrolling="auto" frameborder="0" border="0"  width="100%" src="https://knowsleycollege.emsicareercoach.co.uk/coursewidgets/?CourseID=<?php echo $careerid ?>" ></iframe>
 
-<?php if ($factsheet->programmearea == 'Higher Education') {
-   
-// echo 'Higher Education';
-    
-} ?>
+</div>
+<?php }?>
 
-<?php if ($factsheet->programmearea == 'Music') {
-   
-// echo 'Music';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Performing Arts') {
-   
-// echo 'Performing Arts';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Public Services') {
-   
-// echo 'Public Services';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Science') {
-   
-// echo 'Science';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Sport') {
-   
-// echo 'Sport';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Supported Learning') {
-   
-// echo 'Supported Learning';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Travel and Tourism') {
-   
-// echo 'Travel and Tourism';
-    
-} ?>
-
-<?php if ($factsheet->programmearea == 'Workforce Training') {
-   
-// echo 'Workforce Training';
-    
-} ?>
-
-	</aside>
-
+</aside>
 
 
 		
@@ -440,8 +506,7 @@ jQuery(function() {
 
 </div>
 
-
-
+  
 
 
 </main><!-- #main -->
