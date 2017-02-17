@@ -14,10 +14,6 @@ $susy: (
 
 $larger_desktop: 1180px;
 
-main section {
-	padding-top: 2em;
-}
-
 
 @include breakpoint ($larger_desktop) {
 

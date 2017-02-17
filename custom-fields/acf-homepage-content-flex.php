@@ -14,7 +14,7 @@ if( have_rows('flexible_homepage') ):
 ?>
 
 
-        <section class="full-width-container students-section white-background">
+        <section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
 			<div class="fixed-container">
 <div class="two-col-section-main">
 <h2 class="section-heading section-heading-colour"><?php the_sub_field('heading'); ?></h2>
@@ -35,8 +35,6 @@ Find out more
 </div>
 </section>
 
-<hr class="dotted"></hr>
-
 <?php
 
 endwhile;
@@ -47,7 +45,7 @@ elseif( get_row_layout() == 'content_snippet_right' ):
 
         while ( have_rows('content_snippet_right') ) : the_row();?>
 
-<section class="full-width-container students-section white-background">
+<section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
 
 
 <div class="fixed-container">
@@ -73,16 +71,13 @@ elseif( get_row_layout() == 'content_snippet_right' ):
 
 	</section>
 
-<hr class="dotted"></hr>
-
-
 <?php endwhile;
 
 elseif( get_row_layout() == 'page_grid' ):?>
 
      	</div>
 
-<section class="full-width-container section-panels-bg">
+<section class="full-width-container section-panels-bg <?php the_sub_field('grid_background'); ?>">
 		<section class="fixed-container">
 	<div class="page-sections-container">
 
@@ -134,9 +129,6 @@ elseif( get_row_layout() == 'page_grid' ):?>
     </div>
 	</section>
 </section>
-
-<hr class="dotted"></hr>
-
 
 <?php elseif( get_row_layout() == 'course_list' ):?>
 
@@ -377,7 +369,7 @@ function IAMT() {
 <?php elseif( get_row_layout() == 'pdf_feature_left' ):?>
 
 
-<section class="full-width-container students-section white-background">
+<section class="full-width-container white-background">
 <div class="fixed-container">
 <div class="pdf-feature-content">
 <h2 class="section-heading section-heading-colour"><?php the_sub_field('heading'); ?></h2>
@@ -396,8 +388,6 @@ function IAMT() {
 </div>
 </div>
 </section>
-
-<hr class="dotted"></hr>
 
 <!-- ACCORDION -->
 

@@ -177,15 +177,6 @@ function conditional_script_loading_he_hover () {
 }
 add_action('wp_enqueue_scripts', 'conditional_script_loading_he_hover');
 
-
-function conditional_script_loading() {
-    if ( is_page_template( 'flexible-content-page.php') || is_home() ) {
-        wp_enqueue_style( 'carousel-style', get_template_directory_uri() . '/inc/owl-carousel/owl.carousel.css' );
-		wp_enqueue_script( 'knowsley_college-carousel', get_template_directory_uri() . '/inc/owl-carousel/owl.carousel.min.js', array('jquery'), '20130117', true );
-    } 
-}
-add_action('wp_enqueue_scripts', 'conditional_script_loading');
-
 function conditional_script_loading_factsheet() {
     if ( is_page( array('factsheet', 'course-factsheet') ) ){
         wp_enqueue_script( 'jquery-ui-tabs', array( 'jquery' ));

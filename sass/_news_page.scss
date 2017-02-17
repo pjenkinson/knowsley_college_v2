@@ -6,17 +6,6 @@
 	background: $off-white;
 }
 
-.new-campus-highlight {
-	background: $new-secondary-color;
-}
-.new-campus-highlight p, .new-campus-highlight h1 {
-	color: white;
-}
-
-.new-campus-item {
-	background: $new-secondary-color !important;
-}
-
 .news-item-container {
 width: 100%;
 float: left;
@@ -50,8 +39,7 @@ clear: both;
 	display: inline-block;
 	position: absolute;
 	padding: gutter();
-	background: $secondary-color-trans-fallback;
-	background: $secondary-color-trans;
+	background: $secondary-color;
 	color: white;
 	left: 0;
 	bottom: 0;

@@ -54,17 +54,13 @@
 }
 
 // Homepaege sections
-.about-section, .news-section, .resources-section, .courses-section, .employers-section, .resources-section, .download-prospectus {
+.about-section, .news-section, .employers-section, .resources-section, .download-prospectus {
 	background: $off-white;
 	border-top: 2px solid $grey;
 }
 
 .download-prospectus h2, .download-prospectus p, .employers-section h2, .employers-section p {
 	color: $primary-color;
-}
-
-.white-background {
-	background: white;
 }
 
 // Homepage sections
@@ -124,33 +120,8 @@ h2.section-heading {
   transition: opacity 2s;
 }
 
-// Featured Events
 
-.featured-events .event-snippet-detail {
-		@include span (12 of 12);
-		clear: both;
-	}
 
-.featured-events .event-snippet-detail, .events-list .event-snippet {
-	padding: 0px;
-	background: white;
-}
-
-.featured-events .event-snippet-image {
-	display: none;
-}
-
-.featured-events .event-snippet-detail h2 {
-	padding-top: 0px;
-}
-
-.featured-events .event-snippet-detail p.event-time {
-	display: none;
-}
-
-.featured-events .event-snippet-detail h2 {
-	margin-top: 0px;
-}
 .resources-container {
 	width: 100%;
 	float: left;
@@ -159,8 +130,8 @@ h2.section-heading {
 
 .resources-section h2 {
 	font-size: 2em;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 .resources-snippet .cover-image {
@@ -172,10 +143,6 @@ h2.section-heading {
 	float: left;
 	background: $secondary-color;
 }
-
-
-// Homepage 3 Col Snippets
-
 
 // Slider container
 
@@ -322,4 +289,11 @@ h2.section-heading {
 
 .site-homepage .owl-carousel {
 	background: white;
+}
+.grid-section-white {
+ background: white;
+}
+
+.grid-section-white .page-sections .page-description .heading {
+ background: $off-white;
 }

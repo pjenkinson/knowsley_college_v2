@@ -54,23 +54,14 @@ get_header(); ?>
 </div>
 
 
-<div class="fixed-container">
-
-<!-- Page content 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<!-- Start of loop
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
 <section class="full-width-container white-background">
 
-<!-- Content Snippet Sections -->
-
+<div class="fixed-container">
 <?php get_template_part( 'custom-fields/acf', 'homepage-content-flex' );?>
+</div>
 
-<!-- END Snippet Sections -->
 
 <!-- WP Content -->
 
@@ -87,11 +78,7 @@ get_header(); ?>
 </section>
 
 
-	</div> <!-- End of fixed container -->
-
-	<!-- End of full width container -->
-
-</div> <!-- End of full width container -->
+</div>
 
 
 

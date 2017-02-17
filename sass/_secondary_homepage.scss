@@ -1,3 +1,16 @@
+// FLEXIBLE HOMEPAGE 
+
+// Content Snippets
+
+.content-snippet {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.content-snippet-separator {
+	border-bottom: 1px solid $primary-color;
+}
+
 .secondary-homepage-intro {
 	@include span (12 of 12);
 	background: white;
@@ -110,7 +123,6 @@
 .map-container {
 width: 100%;
 height: 500px;
-padding-top: 2em;
 }
 
 // Campus Info

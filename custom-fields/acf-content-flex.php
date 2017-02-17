@@ -213,6 +213,45 @@ jQuery(document).ready(function(){
 
 <?php  endif;?>
 
+<!-- -->
+
+<?php elseif( get_row_layout() == 'slider' ):?>
+
+<script>
+jQuery(document).ready(function(){
+		jQuery('.slider').flickity({
+  	// options
+  	cellAlign: 'left',
+  	contain: true
+	});
+});
+</script>
+
+<style>
+
+
+</style>
+
+
+<div class="slider">
+<?php // check current row layout
+if( get_row_layout() == 'slider' ):
+
+// loop through the rows of data
+while ( have_rows('slide') ) : the_row();?>
+
+<div class="carousel-cell"><img src="<?php the_sub_field('image');?>" alt="" title=""></div>
+
+<?php  endwhile;?>
+</div>
+
+
+</div>
+
+<?php  endif;?>
+
+<!-- -->
+
 
 <?php elseif( get_row_layout() == 'eventbrite_course' ):?>
 
@@ -237,17 +276,6 @@ jQuery(document).ready(function(){
  	</div>
 
  </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

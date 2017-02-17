@@ -1,21 +1,17 @@
 // Branding
 // ============
 
-$new-primary-color:  #e64799;  // Pink
-$new-secondary-color: #3d203b; // Aubergine
-$primary-color: #4d4d4c; // Slate
+$primary-color: #3d3d3c; // Slate
 $secondary-color: #99cc66; // Green
 $higher-education: #68478d; // Higher Education
 $higher-education-secondary: #df8250; // Higher Education Secondary
 $links: #6d9837; // Green links
 $secondary-color-tint: #d83a89;
-$secondary-color-trans-fallback: rgba(153, 204, 102, 1);
-$secondary-color-trans: rgba(153, 204, 102, 0.9);
 $box-shadow: 0 4px 6px 1px rgba(50, 50, 50, 0.14);
 $pink-tint1: #7F2755;
 $pink-tint2: #40142A;
 $aubergine-tint1: #7F437B;
-$off-white: #ededed;
+$off-white: #d7d7d7;
 $body-background: #FFF; // White
 $text-white: #FFF; // White
 $grey: #E9E9E9; // Grey background
@@ -35,8 +31,6 @@ $studio-115: #f7941e;
 $studio-115-secondary: #bd2029;
 $nla: #cb204d;
 $nla-secondary: #1d1d1b;
-
-// Fonts
 
 h1, h2, h3, h4 {
 	color: $primary-color;
@@ -65,16 +59,6 @@ footer h1, footer h2, footer h3, footer h4 {
 	color: white;
 }
 
-// Employers Section
-
-.employers-section {
-	background: $primary-color;
-	color: white;
-}
-
-.employers-section h1, .employers-section h2, .employers-section h3, .employers-section h4, .employers-section p {
-	color: white;
-}
 
 // Padding/Spacing
 
@@ -153,6 +137,23 @@ footer.footer-primary address a:active, footer address a:hover {
 }
 
 // KCC PRIMARY
+
+section.kcc-primary h2.section-heading {
+ border-bottom: 1px solid $primary-color;
+}
+
+section.separator {
+ border-bottom: 1px solid $primary-color;
+}
+
+.kcc-primary .featured-banner .banner-heading h1 {
+	color: $secondary-color
+}
+
+.kcc-primary .featured-banner .banner-heading {
+background: rgba(61, 61, 60, 0.9);
+border-top: solid 2px $secondary-color;
+}
 
 .kcc-primary .sub-brand-logo {
 display: none;
@@ -260,7 +261,8 @@ color: $secondary-color;
 .secondary-page, .body-background, .single-vacancy-page {
 	background: $off-white;
 }
-// HIGHER EDUCATION
+
+// HIGHER EDUCATION (KNOWSLEY UNIVERSITY CENTRE) ---------------------------------------------------->
 
 .higher-education .featured-banner .banner-heading {
 background:rgba(104, 71, 141, 0.9);
@@ -325,7 +327,7 @@ color: $higher-education-secondary;
  color: #666666 !important;
 }
 
-// LEE STAFFORD
+// LEE STAFFORD ---------------------------------------------------->
 
 .lee-stafford .featured-banner .banner-heading {
 background: rgba(238, 17, 153, 0.8);
@@ -371,7 +373,7 @@ list-style: none;
   background: $lee-stafford;
 }
 
-// KCC Live
+// KCC LIVE ---------------------------------------------------->
 
 .kcc-live .featured-banner .banner-heading {
 background: rgba(32, 35, 37, 0.8);
@@ -401,7 +403,8 @@ color: $kcc-live-secondary;
 footer.kcc-live a:active, footer.kcc-live a:hover {
 color: $kcc-live-secondary;
 }
-// Studio 115
+
+// STUDIO 115 ---------------------------------------------------->
 
 .studio-115 .featured-banner .banner-heading {
 background: rgba(247, 148, 30, 0.9);
@@ -448,8 +451,27 @@ color: $studio-115;
 	background: $studio-115-secondary !important;
 }
 
+// EMPLOYERS ---------------------------------------------------->
 
-// EMPLOYERS
+// Content Snippets
+
+section.employers {
+	background: $employers;
+}
+
+section.employers .button-default a {
+	background: $employers;
+	border: 2px solid $employers-secondary;
+}
+
+section.employers .button-default a:hover {
+  background: $employers-secondary;
+}
+
+section.employers h2, section.employers p {
+	color: white;
+}
+
 
 .employers .featured-banner .banner-heading {
 	background: rgba(74, 13, 102, 0.8);
@@ -514,7 +536,7 @@ color: $employers-secondary;
 	color: $employers !important;
 }
 
-// THE BISTRO
+// THE BISTRO ---------------------------------------------------->
 
 .the-bistro .featured-banner .banner-heading {
 	background: rgba(87, 87, 86, 0.8);
@@ -579,7 +601,30 @@ color: $the-bistro;
 	background: $the-bistro-secondary !important;
 }
 
-//WORKWORLD
+// WORKWORLD ---------------------------------------------------->
+
+// Featured Content Snippets
+
+section.workworld {
+	background: $workworld;
+}
+
+section.workworld .button-default a {
+	border: 2px solid white;
+	color: white;
+}
+
+section.workworld .button-default a:hover {
+  background: $workworld-secondary;
+  color: white;
+  border: 2px solid $workworld-secondary;
+}
+
+section.workworld h2, section.workworld p {
+	color: white;
+}
+
+// Banner
 
 .workworld .featured-banner .banner-heading {
 	background: rgba(34, 30, 114, 0.8);
@@ -641,7 +686,7 @@ color: $workworld-secondary;
   background: $workworld-secondary;
 }
 
-// SERVICES 
+// SERVICES ---------------------------------------------------->
 
 // Menu
 
@@ -657,7 +702,29 @@ color: $workworld-secondary;
 	color: $services !important;
 }
 
-// IAMT 
+// IAMT ---------------------------------------------------->
+
+// Featured Content Snippets
+
+section.iamt {
+	background: $iamt;
+}
+
+section.iamt .button-default a {
+	border: 2px solid white;
+	color: white;
+}
+
+section.iamt .button-default a:hover {
+  background: white;
+  color: $iamt;
+}
+
+section.iamt h2, section.iamt p {
+	color: white;
+}
+
+// Banner
 
 .iamt .featured-banner .banner-heading h1 {
 	color: $iamt;
@@ -694,7 +761,27 @@ color: $iamt;
 	background: $iamt !important;
 }
 
-// NORTHERN LOGISTICS ACADEMY
+// NLA ---------------------------------------------------->
+
+// Featured Content Snippets
+
+section.nla {
+	background: $nla;
+}
+
+section.nla .button-default a {
+	border: 2px solid white;
+	color: white;
+}
+
+section.nla .button-default a:hover {
+  background: white;
+  color: $nla;
+}
+
+section.nla h2, section.nla p {
+	color: white;
+}
 
 .nla .featured-banner .banner-heading {
 	background: rgba(203, 32, 77, 0.9);
@@ -748,4 +835,3 @@ color: $nla;
 .nla .button-default a:hover {
   background: $nla-secondary;
 }
-	

@@ -93,7 +93,7 @@ margin-bottom: 0px;
 	width: 100%;
 	bottom: 0;
 	left: 0;
-	background: $secondary-color;
+	background: $primary-color;
 }
 
 @include breakpoint ($larger_desktop) {
@@ -102,8 +102,6 @@ margin-bottom: 0px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: $secondary-color-trans-fallback;
-	background: $secondary-color-trans;
 }
 
 }
@@ -119,6 +117,7 @@ margin-bottom: 0px;
 	padding: 0.5em 0.5em 0.5em 0em;
 	margin: 0px;
 }
+
 .featured-banner-strapline {
 	font-size: 1.8em;
 }
@@ -667,8 +666,7 @@ input[type=checkbox] {
 .contact-sections .heading {
 	width: 100%;
 	float: left;
-	background: $secondary-color-trans-fallback;
-	background: $secondary-color-trans;
+	background: $primary-color;
 	padding: gutter();
 	position: absolute;
 	bottom: 0;
@@ -774,10 +772,9 @@ input[type=checkbox] {
 }
 
 .slt-member-name {
-	color: white;
+	color: $secondary-color;
 	position: absolute;
-	background: $secondary-color-trans-fallback;
-	background: $secondary-color-trans;
+	background: $primary-color;
 	padding: gutter();
 	font-size: 1.6em;
 	top: 0;
@@ -866,4 +863,66 @@ input[type=checkbox] {
 	margin-bottom: gutter();
 	background: white;
 	padding: 1em;
+}
+
+// FLEX MODULES
+
+@media screen and (max-width: 956px) {
+.slider .flickity-prev-next-button {
+	display: none;
+}
+}
+
+.slider {
+	position: relative;
+}
+
+.slider .carousel-cell {
+   width: 100%; /* full width */
+  height: auto; /* height of carousel */
+  margin-right: 10px;
+}
+
+.slider .flickity-prev-next-button {
+  width: 40px;
+  height: 40px;
+  background: $secondary-color;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.slider .flickity-prev-next-button:hover {
+	background: transparent;
+}
+
+.slider .flickity-prev-next-button svg {
+	margin-top: 4px;
+}
+
+/* arrow color */
+.slider .flickity-prev-next-button .arrow {
+  fill: white;
+}
+
+.slider .flickity-prev-next-button:hover .arrow {
+  fill: $secondary-color;
+}
+
+.slider .flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* hide disabled button */
+.slider .flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* position outside */
+.slider .flickity-prev-next-button.previous {
+  top: 170px;
+  left: 2em;
+  position: absolute;
+}
+.slider .flickity-prev-next-button.next {
+  top: 170px;
+  right: 2em;
+  position: absolute;
 }
