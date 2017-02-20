@@ -115,9 +115,6 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 <div class="fixed-container" style="overflow:hidden;">
 
-<div class="section-overlap" style="padding-top: 1em; background: white;"></div>
-
-
 <div class="promo-carousel" style="position:relative;">
 
 <?php while( have_rows('promo_slide') ): the_row(); ?>
