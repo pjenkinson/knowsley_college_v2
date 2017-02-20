@@ -54,7 +54,7 @@
 }
 
 // Homepaege sections
-.about-section, .news-section, .employers-section, .resources-section, .download-prospectus {
+.about-section, .employers-section, .resources-section, .download-prospectus {
 	background: $off-white;
 	border-top: 2px solid $grey;
 }
@@ -76,6 +76,10 @@ h2.section-heading {
 
 .news-section .section-heading, .services-section {
 	text-align: center;
+}
+
+.news-section {
+	border-top: 1px solid $off-white;
 }
 
 .courses-section p, .news-section p {
@@ -145,6 +149,10 @@ h2.section-heading {
 }
 
 // Slider container
+.promo-slider-container {
+	max-height: 400px;
+	overflow: hidden;
+}
 
 .slider-container {
 	background: $off-white;

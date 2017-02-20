@@ -148,6 +148,7 @@ $desktop: 1149px;
 
 .page-sections-container {
 	@include span (12 of 12);
+	margin-top: 2em;
 	clear: both;
 }
 .page-sections-3col, .page-sections-4col {
@@ -155,10 +156,9 @@ $desktop: 1149px;
 }
 
 .page-sections {
-	margin-bottom: 1em;
 	position: relative;
 	overflow: hidden;
-	font-weight: normal;
+	margin-bottom: 2em;
 }
 
 .page-sections img {
@@ -184,7 +184,17 @@ $desktop: 1149px;
  margin-bottom: gutter();
 }
 
+// Courses Section 
+
+.courses-section {
+	margin: 2em 0;
+}
+
 // News
+
+.featured-news-container {
+	margin: 2em 0;
+}
 
 .news-item-2col {
 	@include span (12 of 12);

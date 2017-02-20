@@ -107,6 +107,41 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 	</section>
 	</section>
+
+<?php elseif( get_row_layout() == 'promo_slider' ):?>
+
+
+<section class="full-width-container promo-slider-container">
+
+<div class="fixed-container" style="overflow:hidden;">
+
+<div class="section-overlap" style="padding-top: 1em; background: white;"></div>
+
+
+<div class="promo-carousel" style="position:relative;">
+
+<?php while( have_rows('promo_slide') ): the_row(); ?>
+
+  <div class="carousel-cell">
+  	<div class="fixed-container carousel-content">
+
+    </div>
+    <a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>"><img src="<?php the_sub_field('slide_image'); ?>" alt="<?php the_sub_field('slide_title'); ?>" title="<?php the_sub_field('slide_title'); ?>"></a>
+
+
+  </div>
+
+
+ <?php endwhile;?>
+
+  </div>
+
+
+
+	</section>
+	</section>
+
+
 	</div>
 
 

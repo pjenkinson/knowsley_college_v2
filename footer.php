@@ -148,6 +148,20 @@ jQuery(document).ready(function( $ ) {
   selectedAttraction: 0.01,
   friction: 0.2
 });
+
+    $('.promo-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true,
+  draggable: false,
+  autoPlay: 6000,
+  pauseAutoPlayOnHover: true,
+  prevNextButtons: true,
+  pageDots: true,
+  lazyLoad: true,
+  selectedAttraction: 0.01,
+  friction: 0.2
+});
   
 });
 
@@ -160,7 +174,6 @@ $( ".carousel-caption" ).addClass( "carousel-animation" );
 })
 
 });
-
 </script>
 
 

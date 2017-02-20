@@ -78,6 +78,7 @@ clear: both;
 
 .news-posts-container {
 	@include span (12 of 12);
+	margin-top: 2em;
 }
 
 .news-item {
@@ -89,6 +90,17 @@ clear: both;
 
 .prev-next-posts {
 	clear: both;
+	margin: gutter() 0;
+	text-align: center;
+}
+.prev-next-posts a {
+	color: white;
+}
+
+.prev-posts-link, .next-posts-link  {
+	display: inline-block;
+	background: $primary-color;
+	padding: 1em
 }
 
 .small-news-thumb img {

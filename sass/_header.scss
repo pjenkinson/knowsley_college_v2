@@ -312,9 +312,7 @@ padding-top: 1em;
 }
 
 }
-
 // HOMEPAGE SLIDER
-
 .slider-container {
 	padding: 0;
 	overflow: hidden;
@@ -342,6 +340,34 @@ padding-top: 1em;
 	position: relative;
 }
 
+.promo-carousel .caption {
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	width: auto;
+	background: $primary-color;
+	left: 50%;
+	top: 300px;
+}
+
+.promo-carousel .caption {
+	padding: 10px;
+	-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid $secondary-color;
+}
+
+.promo-carousel .caption a {
+	color: white;
+}
+
+.promo-carousel .flickity-prev-next-button.previous {
+	top: 160px;
+}
+.promo-carousel .flickity-prev-next-button.next {
+	top: 160px;
+}
 
 .carousel-caption {
 	position: absolute;
