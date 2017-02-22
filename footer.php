@@ -154,7 +154,7 @@ jQuery(document).ready(function( $ ) {
   cellAlign: 'left',
   contain: true,
   draggable: false,
-  autoPlay: 6000,
+  autoPlay: false,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
   pageDots: true,

@@ -54,80 +54,7 @@ ul.vacancy-details-list li {
  list-style-position: outside;
 }
 
-// Text Resizer
 
-ul.textresizer
-{
-   list-style: none;
-   display: inline;
-   margin: 0px;
-   padding: 0px;
-}
-   ul.textresizer li
-   {
-      display: inline;
-      margin: 0px;
-      margin-right: 5px;
-      padding: 0px;
-   }
- 
-   ul.textresizer a
-   {
-      border: solid 1px #999;
-      padding: 2px 3px;
-      font-weight: bold;
-      text-decoration: none;
-   }
-     
-   ul.textresizer a:hover
-   {
-      background: #e5e5e5;
-      border: solid 1px #cccccc;
-         
-   }
- 
-   ul.textresizer .small-text
-   {
-      font-size: normal;
-   }
-
-   .Small {
-   		font-size: normal;
-   }
-
-   .Medium {
-   		font-size: medium;
-   }
-
-   .Large {
-   		font-size: large;
-   }
-
-   .Larger {
-   		font-size: larger;
-   }
-    
-   ul.textresizer .medium-text
-   {
-      font-size: medium;
-   }
-    
-   ul.textresizer .large-text
-   {
-      font-size: large;
-   }
-    
-   ul.textresizer .larger-text
-   {
-      font-size: x-large;
-   }
- 
-   ul.textresizer a.textresizer-active
-   {
-      border: solid 1px #2B562B;
-      background: #FFCA6F;
-      color: #000000;            
-   }
 
 p {
 margin-top: 1em;
@@ -164,22 +91,23 @@ font-weight: normal;
 
 main a:link {
     // color: $aubergine-tint1;
-    color: $links;
+    color: $primary-color;
     text-decoration: none;
+    cursor: pointer;
 }
 
 main a:visited {
-    color: $links;
+    color: $secondary-color;
     text-decoration: none;
 }
 
 main a:hover {
-    color: $secondary-color;
+    color: $primary-color;
     text-decoration: underline;
 }
 
 main a:active {
-    color: $secondary-color;
+    color: $primary-color;
 }
 
 footer a:link, footer a:visited, footer a:hover, footer a:active  {
@@ -244,8 +172,6 @@ $wpAlignRight: max-width 600px;
 	 height: auto;
 	}
  }
-
-
 
 
 address {

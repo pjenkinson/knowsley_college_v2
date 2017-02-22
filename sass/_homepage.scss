@@ -154,6 +154,34 @@ h2.section-heading {
 	overflow: hidden;
 }
 
+.promo-slider-overlap .fixed-container {
+	position: relative;
+	height: 2em;
+	clear: both;
+}
+
+.promo-slider-overlap .fixed-container::after {
+  content: '';
+  background: #ffffff;
+  padding: 2em 4em;
+  display: inline-block;
+  float: left;
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+
+.promo-slider-overlap .fixed-container::before {
+	content: '';
+  background: #ffffff;
+  padding: 2em 4em;
+  display: inline-block;
+  float: left;
+  position: absolute;
+  right: -40px;
+  top: 0;
+}
+
 .slider-container {
 	background: $off-white;
 }

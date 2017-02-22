@@ -110,10 +110,15 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 <?php elseif( get_row_layout() == 'promo_slider' ):?>
 
+<div class="promo-slider-overlap full-width-container" style="background:<?php the_sub_field('promo-slider-overlap-bg'); ?>;">
+ <div class="fixed-container" style="background: white; height: 2em;">
+
+ </div>
+</div>
 
 <section class="full-width-container promo-slider-container">
 
-<div class="fixed-container" style="overflow:hidden;">
+<div class="fixed-container promo-fixed-container" style="overflow:hidden;">
 
 <div class="promo-carousel" style="position:relative;">
 
@@ -121,9 +126,14 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
   <div class="carousel-cell">
   	<div class="fixed-container carousel-content">
+  		<div class="button-promo-slider">
+  		<a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>">
+  		 Find out more
+  		</a>
+  		</div>
 
     </div>
-    <a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>"><img src="<?php the_sub_field('slide_image'); ?>" alt="<?php the_sub_field('slide_title'); ?>" title="<?php the_sub_field('slide_title'); ?>"></a>
+    <img src="<?php the_sub_field('slide_image'); ?>" alt="<?php the_sub_field('slide_title'); ?>" title="<?php the_sub_field('slide_title'); ?>">
 
 
   </div>

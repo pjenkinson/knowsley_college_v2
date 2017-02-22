@@ -17,6 +17,45 @@ jQuery(function() {
 });
 </script>
 
+ <!-- Factsheet section -->
+
+  <?php
+  $factsheetID = filter_var($_GET['factsheet'], FILTER_SANITIZE_NUMBER_INT);
+
+  $sql = "SELECT id, 
+                 factsheetname AS name, 
+                 courseabout,
+                 cost,
+                 equipment,
+                 entryrequirements,
+                 duration,
+                 assessment,
+                 level,
+                 progression, 
+                 programmearea,
+                 location,
+                 unit1,
+                 unit2,
+                 unit3,
+                 unit4,
+                 kiscode
+            FROM fact_sheets
+           WHERE id = '".$factsheetID."'";
+
+  $factsheet = $wpdb->get_results($sql);
+
+  $factsheet = $factsheet[0];
+
+
+  $sql = "SELECT unit
+            FROM fact_sheet_units
+           WHERE CourseInformationID = '".$factsheetID."'";
+
+
+  $units = $wpdb->get_results($sql);         
+
+  ?>
+
 
 
 <!-- END HEADER

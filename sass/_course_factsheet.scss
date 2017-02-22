@@ -124,6 +124,10 @@
 	color: white !important;
 }
 
+.ui-tabs-anchor {
+	border: 1px solid white;
+}
+
 .tab-section {
 	float: left;
 	width: 100%;
@@ -222,12 +226,13 @@
 
 .apply-box p a {
 	text-decoration: none;
+	color: white;
 }
 
-.apply-box-button {
+.apply-box-button, .apply-box p {
 	color: white;
 	padding: 0.5em;
-	background: $secondary-color;
+	background: $primary-color;
 }
 
 // YouTube Videos

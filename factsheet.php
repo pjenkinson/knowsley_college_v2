@@ -184,7 +184,7 @@ jQuery("li.last-tab a").unbind('click');
 
   <div class="tab-links">  
   <ul class="tab-links-list">
-    <li><a href="#about">Course information</a></li>
+    <li><a href="#about">Course Information</a></li>
     <li><a href="#units">Units</a></li>
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
   </ul>
@@ -308,7 +308,7 @@ jQuery("li.last-tab a").unbind('click');
     <div class="the-content">
       <div class="apply-box">
       <h3>Apply online or call</h3>
-      <a href="<?php the_field('enquiry'); ?>"><p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i> Apply</p></a>
+      <p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i><a href="<?php the_field('enquiry'); ?>"> Apply</a></p>
       <p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775757"> 0151 477 5757</a></p>
       </div>
     </div>

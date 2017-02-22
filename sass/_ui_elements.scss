@@ -7,6 +7,39 @@
   -moz-border-radius: 5px; 
   border-radius: 5px; 
 }
+
+.button-promo-slider {
+	width: 124px;
+	height: 41px;
+	display: inline-block;
+	position: absolute;
+	top: 650px; left: 0; bottom: 0; right: 0;
+	margin: auto;
+  opacity: 0.9;
+}
+
+.button-promo-slider a:link, .button-promo-slider a:visited {
+	color: white;
+	width: 124px;
+	height: 41px;
+	display: inline-block;
+	background: $primary-color;
+	-webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  border: 2px solid white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.button-promo-slider a:hover {
+	background: white;
+	width: 124px;
+	height: 41px;
+	display: inline-block;
+	color: $secondary-color;
+}
+
 .section-margin-top {
 	margin-top: 1em;
 }
@@ -18,7 +51,6 @@
   -moz-border-radius: 5px; 
    border-radius: 5px; 
 }
-
 .button-default a:hover, .button-default a:focus  {
 	-webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
@@ -93,7 +125,6 @@ div.wpcf7 {
 }
 
 // Application form
-
 .app-form label {
 	float: left;
 	clear: both;
