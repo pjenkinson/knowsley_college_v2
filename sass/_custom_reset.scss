@@ -59,6 +59,7 @@ ul.vacancy-details-list li {
 p {
 margin-top: 1em;
 margin-bottom: 1em;
+font-size: 1.1em;
 color: #373737;
 }
 
@@ -89,25 +90,15 @@ font-family:'helvetica-light',Arial,sans-serif;
 font-weight: normal;
 }
 
-main a:link {
-    // color: $aubergine-tint1;
+main a:link, main a:visited  {
     color: $primary-color;
     text-decoration: none;
     cursor: pointer;
 }
 
-main a:visited {
-    color: $secondary-color;
-    text-decoration: none;
-}
-
-main a:hover {
+main a:hover, main a:active {
     color: $primary-color;
     text-decoration: underline;
-}
-
-main a:active {
-    color: $primary-color;
 }
 
 footer a:link, footer a:visited, footer a:hover, footer a:active  {
@@ -172,7 +163,6 @@ $wpAlignRight: max-width 600px;
 	 height: auto;
 	}
  }
-
 
 address {
 display: inline-block;

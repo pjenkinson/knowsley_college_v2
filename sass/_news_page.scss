@@ -1,7 +1,6 @@
 .default-page section.news-section {
 	@include span (12 of 12);
 }
-
 .news-page {
 	background: $off-white;
 }
@@ -93,8 +92,12 @@ clear: both;
 	margin: gutter() 0;
 	text-align: center;
 }
-.prev-next-posts a {
+.prev-next-posts a:link, .prev-next-posts a:visited  {
 	color: white;
+}
+
+.prev-next-posts a:focus {
+ color: $secondary-color;
 }
 
 .prev-posts-link, .next-posts-link  {
@@ -106,13 +109,13 @@ clear: both;
 .small-news-thumb img {
 	width: 100%;
 	height: auto;
+	-webkit-backface-visibility: hidden;
 }
 
 .small-news-thumb img:hover {
 	opacity: 0.7;
 	-webkit-transition: opacity 2s; /* Safari */
   transition: opacity 2s;
-  -webkit-backface-visibility: hidden;
 }
 
 .small-news-thumb {
@@ -125,5 +128,5 @@ clear: both;
 }
 
 .small-news-content h1 {
-	font-size: 1em;
+	font-size: 1.3em;
 }

@@ -35,11 +35,6 @@ jQuery(function() {
 <div class="full-width-container default-page news-page">
 <div class="fixed-container">
 
-<!-- Featured banner
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<?php get_template_part( 'content', 'featured-banner-news' );?>
-
 	<section class="news-section">
 
 <!-- Featured news -->

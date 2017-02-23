@@ -36,12 +36,12 @@ get_header(); ?>
 
 
 <aside>
-<!-- Secondary Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'about' );?>
+<nav class="nav-secondary about-nav">
+	<?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
+</nav>
 </aside>
 
-<section>
+<section class="archive-events">
 
 <!-- Events - * update to sort by date *
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -62,7 +62,6 @@ get_header(); ?>
 		<p class="slt-member-info"><?php the_field('event_excerpt')?></p>
 		<p class="slt-member-info"><i class="fa fa-clock-o"></i> <?php the_field('event_time')?></p>
 	</div>
-
 </article>
 
 

@@ -1,3 +1,8 @@
+.homepage-live-search input[type="search"] {
+	text-align: center;
+	font-size: 2em;
+}
+
 .button-default {
 	display: inline-block;
 	width: auto;
@@ -375,6 +380,16 @@ clear: both;
 margin-bottom: 2em;
 }
 
+#accordion a:link, #accordion a:visited {
+	text-decoration: underline;
+	color: $para-text;
+}
+
+#accordion ul li {
+ font-size: 1rem;
+ color: $para-text;
+}
+
 #accordion * {
  font-weight: normal;
 }
@@ -395,6 +410,10 @@ margin-bottom: 2em;
 
 #accordion h3:hover {
 	cursor: pointer;
+}
+
+#accordion p {
+	font-size: 1.1rem;
 }
 
   #accordion .ui-accordion-content {

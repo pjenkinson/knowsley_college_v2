@@ -1,8 +1,8 @@
-// Branding
-// ============
+// BRANDING
 
 $primary-color: #3d3d3c; // Slate
 $secondary-color: #99cc66; // Green
+$para-text: #373737; // Paragraph Text
 $higher-education: #68478d; // Higher Education
 $higher-education-secondary: #df8250; // Higher Education Secondary
 $links: #6d9837; // Green links
@@ -59,7 +59,6 @@ footer h1, footer h2, footer h3, footer h4 {
 	color: white;
 }
 
-
 // Padding/Spacing
 
 $primary-padding: 2em;
@@ -72,27 +71,15 @@ table {
 	border-spacing: 0; 
 	width: 100%;
 	margin-bottom: 1em;
+	border: none;
 }
 
-table.full-width-table tbody tr a:link, table.full-width-table tbody tr a:visited {
- color: $primary-color;
-}
-
-table.full-width-table tbody tr a:hover, table.full-width-table tbody tr a:focus {
- color: $secondary-color;
+table td, table th {
+	text-align: center;
 }
 
 table.apprenticeship-vacancies {
 	width: 100%;
-}
-
-table.full-width-table tbody tr.table-heading {
-	background: $primary-color;
-	color: white;
-}
-
-table.full-width-table tbody th {
-	font-weight: normal;
 }
 
 thead tr {
@@ -101,7 +88,7 @@ thead tr {
 }
 
 tbody tr:nth-child(even) {
-	background: #D8D8D8;
+	background: #ededed;
 }
 
 tbody tr:nth-child(odd) {

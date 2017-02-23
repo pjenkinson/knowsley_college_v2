@@ -124,8 +124,6 @@ h2.section-heading {
   transition: opacity 2s;
 }
 
-
-
 .resources-container {
 	width: 100%;
 	float: left;
@@ -276,8 +274,6 @@ h2.section-heading {
   transition: opacity 2s;
 }
 
-
-
 .resources h2 a:link, .resources h2 a:hover, .resources h2 a:visited {
 	color: $primary-color;
 }
@@ -332,4 +328,16 @@ h2.section-heading {
 
 .grid-section-white .page-sections .page-description .heading {
  background: $off-white;
+}
+
+.content-snippet-intro a:link, .content-snippet-intro a:visited, .content-snippet-intro a:focus {
+ text-decoration: underline;
+}
+
+.homepage-live-search {
+	background: $off-white;
+}
+
+.homepage-live-search-container {
+	height: 200px;
 }

@@ -172,6 +172,14 @@ add_action( 'wp_enqueue_scripts', 'knowsley_college_scripts' );
 
 /* Hover Effects */
 
+function conditional_script_loading_flickity() {
+    if ( is_front_page() ){
+       wp_enqueue_script( 'flickity_homepage', get_template_directory_uri() . '/inc/flickity/flickity-homepage.js', array('jquery'), '20130245', true );
+    } 
+}
+add_action('wp_enqueue_scripts', 'conditional_script_loading_flickity');
+
+
 function conditional_script_loading_he_hover () {
     wp_enqueue_script( 'knowsley_college-he-hover', get_template_directory_uri() . '/inc/hover-effects.js', array('jquery'), '20130119', true );
 }

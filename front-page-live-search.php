@@ -10,7 +10,6 @@ get_header(); ?>
 <?php get_template_part( 'script', 'owlcarousel' );?>
 <?php get_template_part( 'navigation', 'scroll' );?>
 
-
 <!-- Slider
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <section class="full-width-container slider-container">
