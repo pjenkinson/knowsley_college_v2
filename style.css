@@ -4643,11 +4643,17 @@ aside .contact-apply ul li {
 }
 
 /* line 1, sass/_course_factsheet.scss */
+.factsheet-feature img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 5, sass/_course_factsheet.scss */
 .factsheet-page section {
   margin-bottom: 3em;
 }
 
-/* line 4, sass/_course_factsheet.scss */
+/* line 8, sass/_course_factsheet.scss */
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
   background: white;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
@@ -4661,25 +4667,25 @@ aside .contact-apply ul li {
   margin-right: 0;
 }
 
-/* line 13, sass/_course_factsheet.scss */
+/* line 17, sass/_course_factsheet.scss */
 #tabs h3:first-of-type {
   padding-top: 1em;
 }
 
-/* line 17, sass/_course_factsheet.scss */
+/* line 21, sass/_course_factsheet.scss */
 .factsheet-header {
   float: left;
   width: 100%;
   background: #d7d7d7;
 }
 
-/* line 22, sass/_course_factsheet.scss */
+/* line 26, sass/_course_factsheet.scss */
 .factsheet-header {
   float: left;
   width: 100%;
 }
 
-/* line 27, sass/_course_factsheet.scss */
+/* line 31, sass/_course_factsheet.scss */
 .factsheet-feature {
   float: left;
   width: 100%;
@@ -4689,7 +4695,7 @@ aside .contact-apply ul li {
   background: #99cc66;
 }
 
-/* line 36, sass/_course_factsheet.scss */
+/* line 40, sass/_course_factsheet.scss */
 .factsheet-title {
   position: relative;
   float: left;
@@ -4699,7 +4705,7 @@ aside .contact-apply ul li {
   background: #3d3d3c;
 }
 
-/* line 45, sass/_course_factsheet.scss */
+/* line 49, sass/_course_factsheet.scss */
 .factsheet-title h1 {
   color: #99cc66;
   text-decoration: none;
@@ -4709,7 +4715,7 @@ aside .contact-apply ul li {
   padding-bottom: 0px;
 }
 
-/* line 54, sass/_course_factsheet.scss */
+/* line 58, sass/_course_factsheet.scss */
 .factsheet-title p {
   margin: 0px 1em;
   margin-bottom: 1em;
@@ -4718,31 +4724,31 @@ aside .contact-apply ul li {
   color: white;
 }
 
-/* line 62, sass/_course_factsheet.scss */
+/* line 66, sass/_course_factsheet.scss */
 #tabs {
   width: 100%;
   float: left;
   background: white;
 }
 
-/* line 70, sass/_course_factsheet.scss */
+/* line 74, sass/_course_factsheet.scss */
 .tab-content {
   padding: 1em;
 }
 
-/* line 74, sass/_course_factsheet.scss */
+/* line 78, sass/_course_factsheet.scss */
 .tab-section {
   padding: 1em;
 }
 
-/* line 78, sass/_course_factsheet.scss */
+/* line 82, sass/_course_factsheet.scss */
 .factsheet-content-apply {
   float: left;
   width: 100%;
   position: relative;
 }
 
-/* line 84, sass/_course_factsheet.scss */
+/* line 88, sass/_course_factsheet.scss */
 .factsheet-content-apply a {
   width: 100%;
   background: #99cc66;
@@ -4753,12 +4759,12 @@ aside .contact-apply ul li {
   text-align: center;
 }
 
-/* line 94, sass/_course_factsheet.scss */
+/* line 98, sass/_course_factsheet.scss */
 .factsheet-content-apply a:link, .factsheet-content-apply a:hover, .factsheet-content-apply a:focus, .factsheet-content-apply a:visited {
   color: white !important;
 }
 
-/* line 101, sass/_course_factsheet.scss */
+/* line 105, sass/_course_factsheet.scss */
 .tab-links {
   float: left;
   width: 100%;
@@ -4768,30 +4774,25 @@ aside .contact-apply ul li {
   color: white;
 }
 
-/* line 110, sass/_course_factsheet.scss */
+/* line 114, sass/_course_factsheet.scss */
 .tab-links ul {
   margin-bottom: 0px;
 }
 
-/* line 114, sass/_course_factsheet.scss */
+/* line 118, sass/_course_factsheet.scss */
 .tab-links ul li {
   list-style-type: none;
   display: inline-block;
 }
 
-/* line 119, sass/_course_factsheet.scss */
+/* line 123, sass/_course_factsheet.scss */
 .tab-links ul li a:link, .tab-links ul li a:visited {
   color: white;
 }
 
-/* line 123, sass/_course_factsheet.scss */
+/* line 127, sass/_course_factsheet.scss */
 .ui-tabs-nav li a:link {
   color: white !important;
-}
-
-/* line 127, sass/_course_factsheet.scss */
-.ui-tabs-anchor {
-  border: 1px solid white;
 }
 
 /* line 131, sass/_course_factsheet.scss */

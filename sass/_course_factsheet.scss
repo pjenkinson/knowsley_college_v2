@@ -1,3 +1,7 @@
+.factsheet-feature img {
+	width: 100%;
+	height: auto;
+}
 .factsheet-page section {
 	margin-bottom: 3em;
 }
@@ -122,10 +126,6 @@
 
 .ui-tabs-nav li a:link {
 	color: white !important;
-}
-
-.ui-tabs-anchor {
-	border: 1px solid white;
 }
 
 .tab-section {

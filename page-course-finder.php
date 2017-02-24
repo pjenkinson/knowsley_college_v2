@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: 404
+* Template Name: Course Finder
 *
 * @package knowsley_college
 */
@@ -44,11 +44,7 @@ get_header(); ?>
 
 <article class="the-content">
 
-<h1>404: Page not found <i class="fa fa-thumbs-o-down"></i></h1>
 
-<p>You are on this page because we can't find the page you are looking for. If you typed the address, please check the URL to make sure there are no errors. Otherwise try searching the website or use the website navigation.</p>
-
-<div><?php get_search_form(); ?></div>
 
 
 </article>

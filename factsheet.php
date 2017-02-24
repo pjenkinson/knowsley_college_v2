@@ -1,6 +1,4 @@
-
 <?php
-
 /**
 * Template Name: New Factsheet
 * Content Page
@@ -124,10 +122,6 @@ jQuery("li.last-tab a").unbind('click');
 
   ?>
 
- 
-
-
-
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
@@ -137,17 +131,12 @@ jQuery("li.last-tab a").unbind('click');
     <p><?=$factsheet->level?></p>
   </div>
 
-  </div>
+  <?php $factsheetImg = $factsheet->programmearea ?>
 
-   <div class="share-bar">
+  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
 
-    <ul>
-      <li><a href="#">Share this page</a></li>
-      <li><a href="#"><i class="fa fa-print"></i></a></li>
-      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-    </ul>
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
+
 
   </div>
 

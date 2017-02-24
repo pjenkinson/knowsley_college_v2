@@ -144,7 +144,7 @@ function knowsley_college_scripts() {
 
 	wp_enqueue_script( 'js_cookie', get_template_directory_uri() . '/inc/js.cookie.js', array(), '201401131', true );
 
-	wp_enqueue_script( 'knowsley_college-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'knowsley_college-skip-link-focus-fix', get_template_directory_uri() . '/inc/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'matchHeight', get_template_directory_uri() . '/inc/matchHeight/matchHeight.min.js', array(), '20140116', true );
 
