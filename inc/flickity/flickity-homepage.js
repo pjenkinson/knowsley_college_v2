@@ -1,6 +1,7 @@
-jQuery(document).ready(function( $ ) {
+jQuery(document).ready(function() {
+
   
-  $('.main-carousel').flickity({
+  jQuery('.main-carousel').flickity({
   // options
   cellAlign: 'left',
   contain: true,
@@ -14,7 +15,7 @@ jQuery(document).ready(function( $ ) {
   friction: 0.2
 });
 
-    $('.promo-carousel').flickity({
+    jQuery('.promo-carousel').flickity({
   // options
   cellAlign: 'left',
   contain: true,
@@ -30,11 +31,11 @@ jQuery(document).ready(function( $ ) {
   
 });
 
-jQuery(document).ready(function( $ ) {
+jQuery(document).ready(function() {
 
-$carousel.on( 'select.flickity', function() {
+jQuerycarousel.on( 'select.flickity', function() {
 
-$( ".carousel-caption" ).addClass( "carousel-animation" );
+jQuery( ".carousel-caption" ).addClass( "carousel-animation" );
 
 })
 

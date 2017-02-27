@@ -144,13 +144,13 @@ foreach($courses AS $course) {
 	<div class="button-default"><a title="<?=$course->factsheetname?>" href="/?page_id=1789&factsheet=<?=$course->id?>">Course Factsheet</a></div>
   
 
-  <?php if ( ($course->level == 'Level 4') && ($course->programmearea == 'Higher Education') )  {?>
+  <?php if ( ($course->level == 'Level 5') && ($course->programmearea == 'Higher Education') )  {?>
+    <div class="button-default"><a title="UCAS" href="https://www.ucas.com/">Apply Full Time <i class="fa fa-external-link"></i></a></div>
+    <div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply Part Time</a></div>
+
   <?php if ($HEpdf === 0) {?> <?php } else {?>
  	<div class="button-default"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div> 	
   <?php } ?>
-  <!--<div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply Part Time</a></div>
-	<div class="button-default"><a title="UCAS" href="https://www.ucas.com/">Apply Full Time <i class="fa fa-external-link"></i></a></div>-->
-	<div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
 <?php } 
 
 
@@ -158,7 +158,7 @@ else {?>
    <?php if ($HEpdf === 0) {?> <?php } else {?>
  	<div class="button-default"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div> 	
   <?php } ?>
-	<div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
+  <div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
 <?php }?> 
 
   

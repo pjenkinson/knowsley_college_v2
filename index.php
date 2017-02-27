@@ -1,7 +1,6 @@
 <?php
 /**
 * Index Page
-*
 * @package knowsley_college
 */
 get_header(); ?>
@@ -31,7 +30,6 @@ get_header(); ?>
 
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
 
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

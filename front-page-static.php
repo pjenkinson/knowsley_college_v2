@@ -270,10 +270,6 @@ wp_reset_postdata();
 
 </section>
 
-<section class="full-width-container social">
-
-</section>
-
 <!-- Flexible Content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'custom-fields/acf', 'frontpage-content-flex' );?>

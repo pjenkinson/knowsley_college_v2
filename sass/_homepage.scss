@@ -167,6 +167,19 @@ h2.section-heading {
   position: absolute;
   left: -40px;
   top: 0;
+
+    @media (max-width: 1263px) {
+  	display: none;
+}
+
+}
+
+.promo-slider-overlap  {
+
+	@media (max-width: 1263px) {
+  	background: white !important;
+}
+
 }
 
 .promo-slider-overlap .fixed-container::before {
@@ -178,6 +191,12 @@ h2.section-heading {
   position: absolute;
   right: -40px;
   top: 0;
+
+  @media (max-width: 1263px) {
+  display: none;
+  background: white;
+}
+
 }
 
 .slider-container {

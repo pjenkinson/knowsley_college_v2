@@ -131,12 +131,15 @@ jQuery("li.last-tab a").unbind('click');
     <p><?=$factsheet->level?></p>
   </div>
 
+  <!-- Featured Factsheet IMG 
+
   <?php $factsheetImg = $factsheet->programmearea ?>
 
   <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
 
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
 
+  -->
 
   </div>
 
@@ -290,9 +293,25 @@ jQuery("li.last-tab a").unbind('click');
 	
 	</section>
 
-	<aside>
+<aside>
 
-    <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+
+
+<?php // APPLY BOX
+
+    if ( ($factsheet->level == 'Level 5') && ($factsheet->programmearea == 'Higher Education') )  {?>
+
+    <div class="the-content">
+      <div class="apply-box">
+      <h3>Apply</h3>
+      <a href="/apply/?courseid=<?=$factsheet->id?>"><p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i> Apply</p></a>
+      <p class="apply-box-button" title="UCAS" href="https://www.ucas.com/"><i class="fa fa-hand-pointer-o"></i><a href="http://search.ucas.com/search/results?Vac=1&AvailableIn=2017&ProviderQuery=Knowsley%20Community%20College%2C%20&AcpId=2841&IsFeatherProcessed=True&page=1&providerids=2841"> Apply Full Time</a></p>
+      <p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775757"> 0151 477 5757</a></p>
+      </div>
+    </div>
+
+     <?php 
+} elseif ($factsheet->programmearea == 'Apprenticeships') {?>
 
     <div class="the-content">
       <div class="apply-box">
@@ -303,13 +322,7 @@ jQuery("li.last-tab a").unbind('click');
     </div>
 
     <?php 
-} else {
-
-
-  
-}?>
-
-    <?php if ($factsheet->programmearea != 'Apprenticeships') {?>
+} elseif ($factsheet->programmearea != 'Apprenticeships') {?>
 
 		<div class="the-content">
 			<div class="apply-box">
@@ -318,13 +331,8 @@ jQuery("li.last-tab a").unbind('click');
 			<p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775850"> 0151 477 5850</a></p>
 			</div>
 		</div>
-
-    <?php 
-} else {
-  
-}?>
-
-<?php if ($factsheet->id == '14861') {?>
+<?php }
+   elseif ($factsheet->id == '14861') {?>
    
     <a href="<?php the_field('performance_qualifications_link', 'option'); ?>" title="Performance Qualifications">
     <div class="higher-education-promo the-content">
@@ -336,11 +344,7 @@ jQuery("li.last-tab a").unbind('click');
 
 
     <?php 
-} else {
-
-
-  
-}?>
+} else { }?>
 
     
 
