@@ -14,6 +14,11 @@
   float: left;
   @include span (12 of 12);
 }
+
+.prospectus-subject {
+	margin-top: 2em;
+}
+
 #tabs h3:first-of-type {
 	padding-top: 1em;
 }

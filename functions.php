@@ -1,12 +1,10 @@
 <?php
-/**
+/*
  * knowsley_college functions and definitions
  *
- * @package knowsley_college
- */
-/**
  * Set the content width based on the theme's design and stylesheet.
  */
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
@@ -193,6 +191,13 @@ function conditional_script_mega_menu_ui() {
 }
 add_action('wp_enqueue_scripts', 'conditional_script_mega_menu_ui');
 
+function conditional_script_content_page() {
+    if (is_page_template('flexible-content-page.php') || is_page_template('flexible-homepage.php') )
+		{
+        wp_enqueue_script( 'accordion-ui-pages', get_template_directory_uri() . '/inc/accordion-ui-pages.js', array('jquery'), '14587987', false );
+    } 
+}
+add_action('wp_enqueue_scripts', 'conditional_script_content_page');
 
 
 /**

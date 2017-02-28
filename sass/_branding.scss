@@ -146,10 +146,6 @@ border-top: solid 2px $secondary-color;
 display: none;
 }
 
-.primary-breadcrumbs {
-border-top: solid 2px $off-white; 
-}
-
 .service-number a:link, .service-number a:visited  {
 color: white;
 }
@@ -166,14 +162,6 @@ color: white;
 }
 .kcc-primary #accordion h3:hover {
   background: $secondary-color;
-}
-
-.kcc-primary .button-default {
-	background: $secondary-color;
-}
-
-.kcc-primary .button-default a:hover {
-  background: $primary-color;
 }
 
 .kcc-primary hr {
@@ -213,7 +201,6 @@ color: $secondary-color;
 footer.kcc-home a:active, footer.kcc-home a:hover {
 color: $secondary-color;
 }
-
 
 // Menu
 
@@ -446,7 +433,7 @@ section.employers {
 	background: $employers;
 }
 
-section.employers .button-default a {
+section.employers .button-default a:link {
 	background: $employers;
 	border: 2px solid $employers-secondary;
 }
@@ -496,7 +483,7 @@ color: $employers-secondary;
 	border: 2px solid $employers-secondary;
 }
 
-.employers .button-default a {
+.employers .button-default a:link {
 	background: $employers;
 	border: 2px solid $employers-secondary;
 }
@@ -543,7 +530,7 @@ color: $employers-secondary;
 	background: $the-bistro !important;
 }
 
-.the-bistro .button-default a {
+.the-bistro .button-default a:link {
 	background: $the-bistro-secondary;
 	border: 2px solid $the-bistro;
 }
@@ -596,7 +583,7 @@ section.workworld {
 	background: $workworld;
 }
 
-section.workworld .button-default a {
+section.workworld .button-default a:link {
 	border: 2px solid white;
 	color: white;
 }
@@ -813,11 +800,13 @@ color: $nla;
 	color: $nla;
 }
 
-.nla .button-default a {
-	background: $nla;
-	border: 2px solid $nla-secondary;
+.nla .button-default a:link, .nla .button-default a:visited {
+	background: white;
+	color: $nla-secondary;
+	border: 2px solid $nla;
 }
 
-.nla .button-default a:hover {
-  background: $nla-secondary;
+.nla .button-default a:hover, .nla .button-default a:focus {
+  background: $nla;
+  color: white;
 }

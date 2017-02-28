@@ -1,7 +1,6 @@
 <?php
 /**
  * 16-19 Courses Query
- * @package knowsley_college
  */
 ?>
 

@@ -1,7 +1,6 @@
 <?php
 /**
- * Breadcrumbs.
- * @package knowsley_college
+ * Breadcrumbs
  */
 ?>
 <!-- Breadcrumbs

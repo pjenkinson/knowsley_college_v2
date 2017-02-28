@@ -4,12 +4,6 @@
 */
 get_header(); ?>
 
- <script>
-  jQuery( function() {
-    jQuery( "#accordion" ).accordion();
-  } );
-  </script>
-
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>

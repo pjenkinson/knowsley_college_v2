@@ -1,7 +1,6 @@
 <?php
 /**
  * About Navigation, including quick links.
- * @package knowsley_college
  */
 ?>
 

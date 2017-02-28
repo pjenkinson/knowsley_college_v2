@@ -1,7 +1,6 @@
 <?php
 /**
  * ACF Homepage tagline
- * @package knowsley_college
  */
 ?>
 

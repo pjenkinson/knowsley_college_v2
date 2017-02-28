@@ -3,14 +3,27 @@
 	font-size: 2em;
 }
 
+// Primary Button
+
 .button-default {
 	display: inline-block;
 	width: auto;
 	position: relative;
-	padding: 10px 0px;
+}
+
+.button-default a:link, .button-default a:focus, .button-default a:visited {
+	color: white;
+	background: $primary-color;
+	padding: 10px 10px;
+	border-radius: 5px;
 	-webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
-  border-radius: 5px; 
+   border-radius: 5px; 
+}
+
+.button-default a:hover  {
+	background: $secondary-color;
+	color: white;
 }
 
 .button-promo-slider {
@@ -45,21 +58,14 @@
 	color: $secondary-color;
 }
 
+// Flexible Homepage: More Courses Button
+
+.factsheet-snippet-more-courses {
+ margin-bottom: 2em;
+}
+
 .section-margin-top {
 	margin-top: 1em;
-}
-.button-default a:link, .button-default a:visited {
-	color: white;
-	padding: 10px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-   border-radius: 5px; 
-}
-.button-default a:hover, .button-default a:focus  {
-	-webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
 }
 
 .button-primary a:link, .button-primary a:visited {
@@ -462,14 +468,14 @@ margin-bottom: 2em;
 
 // Ancestor Styles
 
-#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link , #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-higher-education #mega-menu-higher-education > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-employers #mega-menu-employers > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-campus #mega-menu-campus > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link  {
-	background: #666666 !important;
+
+li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
+  background: $primary-color !important;
 	color: #FFFFFF !important;
 }
 
-#mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link , #mega-menu-wrap-alumni-menu #mega-menu-alumni-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link , #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-16-19 #mega-menu-16-19 > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-apprenticeships #mega-menu-wrap-apprenticeships > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-adults #mega-menu-wrap-adults > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-contact #mega-menu-contact > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-campus #mega-menu-campus > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link, #mega-menu-wrap-policies #mega-menu-policies > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
-	background: #99cc66 !important;
-	color: #FFFFFF !important;
+li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
+	background: $secondary-color !important;
 }
 
 // Current item branding
@@ -492,7 +498,6 @@ margin-bottom: 2em;
  {
 	float: right !important;
 }
-
 
 #mega-menu-wrap-about-menu .mega-menu-toggle:after {
 content: "About" !important;

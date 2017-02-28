@@ -227,11 +227,6 @@ jQuery(document).ready(function(){
 });
 </script>
 
-<style>
-
-
-</style>
-
 
 <div class="slider">
 <?php // check current row layout

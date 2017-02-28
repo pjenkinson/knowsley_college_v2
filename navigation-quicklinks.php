@@ -1,7 +1,6 @@
 <?php
 /**
  * Trigger for quick links
- * @package knowsley_college
  */
 ?>
 

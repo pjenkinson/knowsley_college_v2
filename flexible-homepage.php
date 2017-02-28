@@ -1,15 +1,8 @@
 <?php
 /**
 * Template Name: Flexible Homepage
-* @package knowsley_college
 */
 get_header(); ?>
-
-<script>
-  jQuery( function() {
-    jQuery( "#accordion" ).accordion();
-  } );
-  </script>
 
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,8 +20,6 @@ get_header(); ?>
 
 <div class="full-width-container secondary-home-page">
 
-
-
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -36,8 +27,6 @@ get_header(); ?>
 
 
 </div>
-
-
 
 <!-- Breadcrumbs
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

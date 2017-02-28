@@ -3,7 +3,6 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package knowsley_college
  */
 
 /**

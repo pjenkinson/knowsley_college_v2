@@ -107,6 +107,8 @@ $currentCategory = get_the_category();
 
 <?php endif; ?>
 
+<!--
+
 <section class="full-width-container homepage-live-search">
 	<div class="fixed-container homepage-live-search-container">
 		<input placeholder="Search for a course" type="search" class="homepage-live-search-select" style="width:100%; margin-top: 2.5em;">
@@ -115,6 +117,8 @@ $currentCategory = get_the_category();
 		</input>
 	</div>
 </section>
+
+-->
 
 <!-- Courses section
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

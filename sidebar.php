@@ -2,7 +2,6 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package knowsley_college
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

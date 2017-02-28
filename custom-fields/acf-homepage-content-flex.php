@@ -185,8 +185,8 @@ elseif( get_row_layout() == 'page_grid' ):?>
     <h3><?=$factsheet->name?></h3>
     <p><?=$factsheet->level?></p>
     <p><?=$factsheet->courseabout?></p>
-    <div class="button-default section-button"><a href="/?page_id=1789&factsheet=<?=$factsheet->id?>">Course information</a></div>
-  <div class="button-default section-button"><a href="/apply/?courseid=<?=$factsheet->id?>">Apply</a></div>
+    <div class="button-default"><a href="/?page_id=1789&factsheet=<?=$factsheet->id?>">Course information</a></div>
+  <div class="button-default"><a href="/apply/?courseid=<?=$factsheet->id?>">Apply</a></div>
   </div>
 
 
@@ -436,6 +436,42 @@ function IAMT() {
 
 
 </div>
+
+<!-- -->
+
+<?php elseif( get_row_layout() == 'slider' ):?>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('.slider').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+});
+</script>
+
+<section class="full-width-container">
+  <div class="fixed-container">
+
+<div class="slider">
+<?php // check current row layout
+if( get_row_layout() == 'slider' ):
+
+// loop through the rows of data
+while ( have_rows('slide') ) : the_row();?>
+
+<div class="carousel-cell"><img src="<?php the_sub_field('image');?>" alt="" title=""></div>
+
+<?php  endwhile;?>
+</div>
+
+</div>
+</div>
+
+<?php  endif;?>
+
+<!-- -->
 
 
 <!-- END -->

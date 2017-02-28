@@ -1,7 +1,6 @@
 <?php
 /**
  * The header for our theme.
-  * @package knowsley_college
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

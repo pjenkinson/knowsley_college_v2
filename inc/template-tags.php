@@ -4,7 +4,6 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package knowsley_college
  */
 
 if ( ! function_exists( 'the_posts_navigation' ) ) :
