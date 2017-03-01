@@ -141,7 +141,6 @@ jQuery(document).ready(function() {
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
   pageDots: true,
-  lazyLoad: true,
   selectedAttraction: 0.01,
   friction: 0.2
 });
@@ -150,12 +149,11 @@ jQuery(document).ready(function() {
   // options
   cellAlign: 'left',
   contain: true,
-  draggable: false,
+  draggable: true,
   autoPlay: false,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
   pageDots: true,
-  lazyLoad: true,
   selectedAttraction: 0.01,
   friction: 0.2
 });

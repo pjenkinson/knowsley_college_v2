@@ -177,42 +177,6 @@ if( have_rows('flexible_content') ):
 
 <?php  endif;?>
 
-<?php elseif( get_row_layout() == 'pdf_carousel' ):?>
-
-<div class="pdf-grid-group-title"><h2><?php the_sub_field('pdf_carousel_title');?></h2></div>
-
-
-<script>
-jQuery(document).ready(function(){
-  jQuery('.owl-carousel').owlCarousel({
-    loop:false,
-    nav:true,  
-    items: 3
-})
-});
-</script>
-
-<div class="owl-carousel">
-
-	<?php // check current row layout
-        if( get_row_layout() == 'pdf_carousel' ):
-
-			 	// loop through the rows of data
-			    while ( have_rows('pdf_item') ) : the_row();?>
-
-  <div class="pdf-item">
-		
-		<div class="item pdf-cover"><a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('title');?>"><img src="<?php the_sub_field('pdf_cover');?>" alt="<?php the_sub_field('title');?>"></a> <i class="fa fa-file-pdf-o" aria-hidden="true"></i></div>
-		<div class="pdf-title"><a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('title');?>"><?php the_sub_field('title');?></a></div>
-		
-	</div>
-
-<?php  endwhile;?>
-
-</div>
-
-<?php  endif;?>
-
 <!-- -->
 
 <?php elseif( get_row_layout() == 'slider' ):?>
@@ -222,6 +186,7 @@ jQuery(document).ready(function(){
 		jQuery('.slider').flickity({
   	// options
   	cellAlign: 'left',
+  	draggable: true,
   	contain: true
 	});
 });

@@ -32,7 +32,7 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'breadcrumbs' );?>
 
-<div class="full-width-container body-background">
+<div class="full-width-container body-background secondary-nav">
 	<div class="fixed-container">
 
 <!-- Flexible Navigation
@@ -49,12 +49,12 @@ get_header(); ?>
 
 <div class="fixed-container">
 <?php get_template_part( 'custom-fields/acf', 'homepage-content-flex' );?>
-</div>
-
 
 <!-- WP Content -->
 
 <?php the_content();?>
+</div>
+
 
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>

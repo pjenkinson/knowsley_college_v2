@@ -4,8 +4,7 @@ jQuery(document).ready(function() {
   jQuery('.main-carousel').flickity({
   // options
   cellAlign: 'left',
-  contain: true,
-  draggable: false,
+  draggable: true,
   autoPlay: 6000,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
@@ -18,8 +17,7 @@ jQuery(document).ready(function() {
     jQuery('.promo-carousel').flickity({
   // options
   cellAlign: 'left',
-  contain: true,
-  draggable: false,
+  draggable: true,
   autoPlay: false,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,

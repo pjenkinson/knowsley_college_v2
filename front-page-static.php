@@ -67,7 +67,7 @@ jQuery(function() {
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main site-homepage" role="main">
+<main id="main" class="site-main site-homepage site-static" role="main">
 <?php
 $currentID = get_the_ID();
 $currentCategory = get_the_category();
@@ -242,7 +242,7 @@ $id = get_the_ID(); ?>
 <div class="featured-news-snippet featured-events-snippet featured-article">
 	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
 	<div class="featured-news-snippet-details">
-	<div class="featured-news-heading">
+	<div class="featured-news-heading event-featured-heading">
 	<h3><?php the_title(); ?></h3>
 	</div>
 	<div class="homepage-featured-news-image">

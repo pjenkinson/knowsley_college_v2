@@ -1,9 +1,11 @@
 // Breakpoints
-
 @import "breakpoint";
 $tablet-small-desktop: 700px;
 $desktop: 1149px;
 
+.opening-times-container, .pdf-feature-container, .accordion-container, .content-slider-container {
+margin-top: 2em;
+}
 
 .content-page section, .single-news-page aside {
 	margin-top: 0px;
@@ -11,6 +13,10 @@ $desktop: 1149px;
 
 .single-news-page section {
 	margin-top: 2em;
+}
+
+.event-featured-heading h3 {
+	color: white;
 }
 
 .learners-container {
@@ -402,8 +408,6 @@ color: white;
 
 // Application page
 
-// Application progress bar
-
 .step1 {
 	@include span (12 of 12);
 	background: $primary-color;
@@ -422,7 +426,6 @@ color: white;
 }
 
 // Subject 
-
 .subject-description {
 	@include span (8 of 12);
 }

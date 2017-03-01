@@ -1,5 +1,4 @@
 <?php
-
 // check if the flexible content field has rows of data
 if( have_rows('flexible_homepage') ):
 
@@ -112,7 +111,7 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 <!-- Test Opening Times-->
 
-<section class="full-width-container">
+<section class="full-width-container opening-times-container">
 	<section class="fixed-container">
 		<div class="two-col-section-main">
 			<h2 class="section-heading section-heading-colour">Opening Times</h2>
@@ -350,10 +349,6 @@ function IAMT() {
     
     </script>
 
-
-
-    
-
     <div>
 
     <div class="map-links full-width-container">
@@ -369,7 +364,7 @@ function IAMT() {
 <?php elseif( get_row_layout() == 'pdf_feature_left' ):?>
 
 
-<section class="full-width-container white-background">
+<section class="full-width-container white-background pdf-feature-container">
 <div class="fixed-container">
 <div class="pdf-feature-content">
 <h2 class="section-heading section-heading-colour"><?php the_sub_field('heading'); ?></h2>
@@ -395,7 +390,7 @@ function IAMT() {
 
 <!-- Accordion Container -->
 
-<section class="full-width-container">
+<section class="full-width-container accordion-container">
   <div class="fixed-container">
 <div id="accordion" style="clear:both;">
 
@@ -451,7 +446,7 @@ jQuery(document).ready(function(){
 });
 </script>
 
-<section class="full-width-container">
+<section class="full-width-container content-slider-container">
   <div class="fixed-container">
 
 <div class="slider">
