@@ -1,12 +1,14 @@
 /* PDFs */
 .single-pdf {
- max-width: 168px;
  min-width: 110px;
  float: left;
  clear: both;
- padding: gutter();
- background: $off-white;
  margin-bottom: gutter();
+}
+
+.single-pdf img {
+	width: 100%;
+	height: auto;
 }
 
 .pdf-grid-container {
@@ -68,17 +70,6 @@ clear: both;
 .pdf-grid-group-title h2 {
  color: white;
  margin: 0px;
-}
-
-.owl-carousel {
-	float: left;
-	clear: both;
-	background: $off-white;
-}
-
-.owl-stage-outer {
-	padding-left: 10%;
-	margin-top: gutter();
 }
 
 // COURSE FACTSHEET SNIPPETS

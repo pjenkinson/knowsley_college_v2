@@ -127,14 +127,15 @@ footer.footer-primary address a:active, footer address a:hover {
 
 // Content Snippets
 
-.kcc-primary .button-default a:link, .nla .button-default a:visited {
+.kcc-primary .button-default a:link, .kcc-primary .button-default a:visited {
 	color: $primary-color;
-	border: 2px solid white;
+	border: 2px solid $primary-color;
 	background: white;
 }
 
-.kcc-primary .button-default a:hover, .nla .button-default a:focus {
-  background: $primary-color;
+.kcc-primary .button-default a:hover, .kcc-primary .button-default a:focus {
+  background: $secondary-color;
+  border: 2px solid $secondary-color;
   color: white;
 }
 
@@ -270,6 +271,48 @@ color: $secondary-color;
 
 // HIGHER EDUCATION (KNOWSLEY UNIVERSITY CENTRE) ---------------------------------------------------->
 
+// Content Snippets
+
+.higher-education .button-default a:link, .higher-education .button-default a:visited {
+	color: $higher-education;
+	border: 2px solid $higher-education;
+	background: white;
+}
+
+.higher-education .button-default a:hover, .higher-education .button-default a:focus {
+  background: $higher-education-secondary;
+  border: 2px solid $higher-education-secondary;
+  color: white;
+}
+
+// Featured Content Snippets
+
+.site-static section.higher-education {
+	background: $higher-education;
+}
+
+.site-static section.higher-education .button-default a:link, .site-static section.higher-education .button-default a:visited {
+	border: 2px solid white;
+	background: $higher-education;
+	color: white;
+}
+
+.site-static section.higher-education .button-default a:hover {
+  background: $higher-education-secondary;
+  border: 2px solid $higher-education-secondary;
+  color: white;
+}
+
+.site-static section.higher-education h2, section.higher-education p {
+	color: white;
+}
+
+.site-static section.higher-education h2.section-heading {
+	border-bottom: 1px solid $off-white;
+}
+
+
+
 // Featured Banner
 
 .higher-education .featured-banner .banner-heading {
@@ -282,28 +325,6 @@ border-top: 2px solid $higher-education;
 }
 .he-background {
 background: $higher-education;
-}
-
-// Featured Content Snippets
-
-.site-static section.higher-education {
-	background: $higher-education;
-}
-
-.site-static section.higher-education .button-default a:link {
-	border: 2px solid white;
-	color: white;
-	background: $higher-education;
-}
-
-.site-static section.higher-education .button-default a:hover {
-  background: $higher-education-secondary;
-  color: white;
-  border: 2px solid $higher-education-secondary;
-}
-
-.site-static section.higher-education h2, section.higher-education p {
-	color: white;
 }
 
 footer.higher-education {
@@ -329,21 +350,6 @@ color: $higher-education-secondary;
 	color: $higher-education;
 }
 
-.higher-education .section-button a:link, .button a:visited {
-	background: $higher-education;
-}
-.higher-education .section-button a:hover, .button a:focus  {
-	background: $higher-education-secondary;
-}
-
-.higher-education .button-default {
-	background: $higher-education;
-}
-
-.higher-education .button-default a:hover {
-  background: $higher-education-secondary;
-}
-
 // Menu
 .higher-education .nav-home {
 	background: $off-white !important;
@@ -360,18 +366,50 @@ color: $higher-education-secondary;
 
 // LEE STAFFORD ---------------------------------------------------->
 
+// Content Snippets
+
+.lee-stafford .button-default a:link, .lee-stafford .button-default a:visited {
+	color: $lee-stafford-secondary;
+	border: 2px solid $lee-stafford-secondary;
+	background: white;
+}
+
+.lee-stafford .button-default a:hover, .lee-stafford .button-default a:focus {
+  background: $lee-stafford;
+  color: white;
+  border: 2px solid $lee-stafford;
+}
+
+// Featured Content Snippets
+
+.site-static section.lee-stafford {
+	background: $lee-stafford;
+}
+
+.site-static section.lee-stafford .button-default a:link, .site-static section.lee-stafford .button-default a:visited {
+	border: 2px solid white;
+	background: $lee-stafford;
+	color: white;
+}
+
+.site-static section.lee-stafford .button-default a:hover, .site-static section.lee-stafford .button-default a:focus {
+  background: $lee-stafford-secondary;
+  border: 2px solid $lee-stafford-secondary;
+  color: white;
+}
+
+.site-static section.lee-stafford h2, section.lee-stafford p {
+	color: white;
+}
+
+// Featured Banner
+
 .lee-stafford .featured-banner .banner-heading {
 background: rgba(238, 17, 153, 0.8);
 border-top: solid 2px $lee-stafford;
 }
 
-.lee-stafford .section-button a:link, .button a:visited {
-	background: $lee-stafford;
-}
 
-.lee-stafford .section-button a:hover, .button a:focus  {
-	background: $lee-stafford-secondary;
-}
 
 footer.lee-stafford {
 	border-top: 40px solid $lee-stafford;
@@ -486,23 +524,44 @@ color: $studio-115;
 
 // Content Snippets
 
-section.employers {
+.employers .button-default a:link, .employers .button-default a:visited {
+	color: $employers;
+	border: 2px solid $employers;
+	background: white;
+}
+
+.employers .button-default a:hover, .employers .button-default a:focus {
+  background: $employers;
+  color: white;
+}
+
+// Featured Content Snippets
+
+.site-static section.employers {
 	background: $employers;
 }
 
-section.employers .button-default a:link {
+.site-static section.employers .button-default a:link, .site-static section.employers .button-default a:visited {
+	border: 2px solid white;
 	background: $employers;
-	border: 2px solid $employers-secondary;
-}
-
-section.employers .button-default a:hover {
-  background: $employers-secondary;
-}
-
-section.employers h2, section.employers p {
 	color: white;
 }
 
+.site-static section.employers .button-default a:hover {
+	border: 2px solid $employers-secondary;
+  background: $employers-secondary;
+  color: white;
+}
+
+.site-static section.employers h2, section.employers p {
+	color: white;
+}
+
+.site-static section.employers h2.section-heading {
+	border-bottom: 1px solid $off-white;
+}
+
+// Featured Banner
 
 .employers .featured-banner .banner-heading {
 	background: rgba(74, 13, 102, 0.8);
@@ -538,15 +597,6 @@ color: $employers-secondary;
 .employers .quote-box {
 	background: $employers;
 	border: 2px solid $employers-secondary;
-}
-
-.employers .button-default a:link {
-	background: $employers;
-	border: 2px solid $employers-secondary;
-}
-
-.employers .button-default a:hover {
-  background: $employers-secondary;
 }
 
 // Menu
@@ -655,15 +705,16 @@ color: $the-bistro;
 
 // Content Snippets
 
-.workworld .button-default a:link, .nla .button-default a:visited {
+.workworld .button-default a:link, .workworld .button-default a:visited {
 	color: $workworld;
-	border: 2px solid $nla;
+	border: 2px solid $workworld;
 	background: white;
 }
 
-.workworld .button-default a:hover, .nla .button-default a:focus {
-  background: $workworld;
+.workworld .button-default a:hover, .workworld .button-default a:focus {
+  background: $workworld-secondary;
   color: white;
+  border: 2px solid $workworld-secondary;
 }
 
 // Featured Content Snippets
@@ -738,17 +789,6 @@ color: $workworld-secondary;
 	background: $workworld-secondary !important;
 }
 
-// Buttons
-
-.workworld .button-default a {
-	background: $workworld;
-	border: 2px solid $workworld-secondary;
-}
-
-.workworld .button-default a:hover {
-  background: $workworld-secondary;
-}
-
 // SERVICES ---------------------------------------------------->
 
 // Menu
@@ -767,23 +807,39 @@ color: $workworld-secondary;
 
 // IAMT ---------------------------------------------------->
 
+// Content Snippets
+
+.iamt .button-default a:link, .iamt .button-default a:visited {
+	color: $iamt;
+	border: 2px solid $iamt;
+	background: white;
+}
+
+.iamt .button-default a:hover, .iamt .button-default a:focus {
+  background: $iamt;
+  color: white;
+  border: 2px solid $iamt;
+}
+
 // Featured Content Snippets
 
-section.iamt {
+.site-static section.iamt {
 	background: $iamt;
 }
 
-section.iamt .button-default a {
+.site-static section.iamt .button-default a:link, .site-static section.iamt .button-default a:visited {
 	border: 2px solid white;
+	background: $iamt;
 	color: white;
 }
 
-section.iamt .button-default a:hover {
+.site-static section.iamt .button-default a:hover, .site-static section.iamt .button-default a:focus {
   background: white;
+  border: 2px solid white;
   color: $iamt;
 }
 
-section.iamt h2, section.iamt p {
+.site-static section.iamt h2, section.iamt p {
 	color: white;
 }
 
@@ -805,13 +861,19 @@ footer.iamt {
 
 footer.iamt address a:link, footer address a:visited {
 text-decoration: none;
+color: white;
 }
 footer.iamt address a:active, footer address a:hover {
-color: $iamt;
+color: $primary-color;
+text-decoration: underline;
 }
 
 footer.iamt a:active, footer.iamt a:hover {
-color: $iamt;
+color: $primary-color;
+}
+
+.iamt h2 {
+	color: $iamt;
 }
 
 // Gallery Nav
@@ -840,7 +902,6 @@ color: $iamt;
 }
 
 // Featured Content Snippets
-
 .site-static section.nla {
 	background: $nla;
 }
@@ -908,12 +969,10 @@ color: $nla;
 .nla .secondary-nav {
 	display: none;
 }
-
 .nla .secondary-page section {
 	float: left;
 	width: 100%;
 }
-
 .nla aside {
 	display: none;
 }

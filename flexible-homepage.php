@@ -48,11 +48,13 @@ get_header(); ?>
 <section class="full-width-container white-background">
 
 <div class="fixed-container">
-<?php get_template_part( 'custom-fields/acf', 'homepage-content-flex' );?>
-
 <!-- WP Content -->
 
 <?php the_content();?>
+</div>
+
+<div class="fixed-container">
+<?php get_template_part( 'custom-fields/acf', 'homepage-content-flex' );?>
 </div>
 
 

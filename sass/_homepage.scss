@@ -26,6 +26,8 @@
   -webkit-backface-visibility: hidden;
 }
 
+}
+
 @include breakpoint ($desktop) {
 
 .learner-item img {
@@ -33,18 +35,10 @@
 	height: auto;
 }
 
-}
-
 // Homepage sections
 
 .section-image-container {
 	overflow: hidden;
-}
-
-.section-image-container img {
-	float: left;
-	width: 100%;
-	height: auto;
 }
 
 .metaslider .caption {
@@ -150,6 +144,9 @@ h2.section-heading {
 .promo-slider-container {
 	max-height: 400px;
 	overflow: hidden;
+	@media (max-width: 1180px) {
+  	display: none;
+}
 }
 
 .promo-slider-overlap .fixed-container {
@@ -359,4 +356,9 @@ h2.section-heading {
 
 .homepage-live-search-container {
 	height: 200px;
+}
+.section-image-container img {
+	float: left;
+	width: 100%;
+	height: auto;
 }

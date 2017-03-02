@@ -37,9 +37,9 @@ get_header(); ?>
 <div class="fixed-container">
 
 <aside>
-<!-- Secondary Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'about' );?>
+<nav class="nav-secondary about-nav">
+	<?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
+</nav>
 </aside>
 
 <section>

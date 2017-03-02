@@ -239,7 +239,7 @@ elseif( get_row_layout() == 'page_grid' ):?>
 
 
 		<div class="more-campus">
-			<a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
+			<a href="<?php the_sub_field('campus_link'); ?>" title="<?php the_sub_field('title'); ?>">
 					<p>More <i class="fa fa-arrow-circle-o-right"></i></p>
 			</a>
 		</div>

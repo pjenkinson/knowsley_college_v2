@@ -15,7 +15,7 @@ if( have_rows('flexible_frontpage') ):
 
 
         
-<section class="full-width-container content-snippet <?php the_sub_field('section_branding'); ?> <?php if( get_sub_field('separator') ): ?><?php echo 'separator'?><?php endif; ?>">
+<section class="full-width-container content-snippet <?php the_sub_field('section_branding'); ?> <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
   <div class="fixed-container">
     <div class="two-col-section-main">
       <h2 class="section-heading section-heading-colour"><?php the_sub_field('heading'); ?></h2>

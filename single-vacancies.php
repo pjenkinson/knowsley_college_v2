@@ -40,7 +40,7 @@ get_header(); ?>
 
 </aside>
 
-<section>
+<section style="margin-top: 2em;">
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
