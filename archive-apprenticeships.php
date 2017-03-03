@@ -1,7 +1,6 @@
 <?php
 /**
 * Apprenticeship Vacancies Archive
-* @package knowsley_college
 */
 get_header(); ?>
 
@@ -36,14 +35,14 @@ get_header(); ?>
 <div class="fixed-container">
 
 <aside>
-<!-- Secondary Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'apprenticeships' );?>
+<nav class="nav-secondary about-nav">
+<?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
+</nav>
 </aside>
 
 <section>
 
-<div class="the-content">
+<div class="the-content" style="margin-top: 2em;">
 
 <p>If you are interested in applying for future KCC apprenticeship  vacancies, please email <a href="mailto:EmployerServices@knowsleycollege.ac.uk">EmployerServices@knowsleycollege.ac.uk</a> with your CV attached, noting your area of interest.</p>
 </div>
