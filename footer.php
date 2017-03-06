@@ -142,10 +142,14 @@ jQuery(document).ready(function() {
   prevNextButtons: true,
   pageDots: true,
   selectedAttraction: 0.01,
-  friction: 0.2
+  friction: 0.2,
+  imagesLoaded: true,
+  lazyLoad: true
 });
 
-    jQuery('.promo-carousel').flickity({
+})
+
+  jQuery('.promo-carousel').flickity({
   // options
   cellAlign: 'left',
   contain: true,
@@ -155,20 +159,16 @@ jQuery(document).ready(function() {
   prevNextButtons: true,
   pageDots: true,
   selectedAttraction: 0.01,
-  friction: 0.2
+  friction: 0.2,
+  imagesLoaded: true
 });
-  
-});
-
-jQuery(document).ready(function() {
 
 jQuerycarousel.on( 'select.flickity', function() {
 
 jQuery( ".carousel-caption" ).addClass( "carousel-animation" );
-
-})
-
+  
 });
+
 </script>
 
 

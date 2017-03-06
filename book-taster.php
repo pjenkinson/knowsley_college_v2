@@ -18,7 +18,7 @@ get_header(); ?>
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<?php get_template_part( 'branding-flex' );?>
 
 
 <!-- Page content 
@@ -54,14 +54,14 @@ get_header(); ?>
 <section>
 
 
-<article class="the-content">
+<article class="the-content" style="margin-top: 2em;">
 
 
-
+<?php the_content();?>
 <!-- Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<?php $firstName = $surname = $address1 = $address2 = $address3 = $address4 = $postCode = $telephoneNumber = $email = "";
+<?php $firstName = $surname = $postCode = $telephoneNumber = $email = $tasterSubject = $attending = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -72,22 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["surname"])) { 
 	  $errors['surname'] = "Missing";	 
 	} else {$surname = $_POST['surname'];}
-
-	if (empty($_POST["address1"])) { 
-	  $errors['address1'] = "Missing";	 
-	} else {$address1 = $_POST['address1'];}
-
-	if (empty($_POST["address2"])) { 
-	  $errors['address2'] = "Missing";	 
-	} else {$address2 = $_POST['address2'];}
-
-	if (empty($_POST["address3"])) { 
-	  $errors['address3'] = "Missing";	 
-	} else {$address3 = $_POST['address3'];}
-
-	if (empty($_POST["address4"])) { 
-	  $errors['address4'] = "Missing";	 
-	} else {$address4 = $_POST['address4'];}
 
 	if (empty($_POST["postCode"])) { 
 	  $errors['postCode'] = "Missing";	 
@@ -101,43 +85,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $errors['email'] = "Missing";	 
 	} else {$email = $_POST['email'];}
 
-	if (empty($_POST["age"])) { 
-	  $errors['age'] = "Missing";	 
-	} else {$age = $_POST['age'];}
+	if (empty($_POST["tasterSubject"])) { 
+	  $errors['tasterSubject'] = "Missing";	 
+	} else {$tasterSubject = $_POST['tasterSubject'];}
+
+	if (empty($_POST["attending"])) { 
+	  $errors['attending'] = "Missing";	 
+	} else {$attending = $_POST['attending'];}
 
 }
 
 
 ?>
 
+
 <form class="app-form" method="POST" action="" data-parsley-validate>
 	
-	<legend>Your Details</legend>
 	<fieldset>
 	<label for="firstName"><span class="required-ast" style="color:#e64799;">*</span> First Name:</label>
 	<input class="input-inline" type="text" name="firstName" required>
 	<label for="surname"><span class="required-ast" style="color:#e64799;">*</span> Surname:</label>
 	<input class="input-inline" type="text" name="surname" required>
-	<label for="address1"><span class="required-ast" style="color:#e64799;">*</span> Address line 1</label><input class="input-inline" type="text" name="address1" required/>
-	<label for="address2">Address line 2</label><input class="input-inline" type="text" name="address2"/>
-	<label for="address3">Address line 3</label><input class="input-inline" type="text" name="address3"/>
-	<label for="address4">Address line 4</label><input class="input-inline" type="text" name="address4"/>
 	<label for="postCode"><span class="required-ast" style="color:#e64799;">*</span> Post code:</label><input class="input-inline"  name="postCode" maxlength="8" required/>
     <label for="telephoneNumber"><span class="required-ast" style="color:#e64799;">*</span> Telephone Number:</label>
     <input class="input-inline" type="text" name="telephoneNumber" required>
 	<label for="email"><span class="required-ast" style="color:#e64799;">*</span> Email Address:</label>
 	<input class="input-inline" type="text" name="email" required>
-
-	<label for="ageGroup">Age group:</label>
-			  	<select class="select-inline" type="text" name="age">
-			  			<option value="">Select age group</option>
-  						<option value="16-19">16-19</option>
-  						<option value="20-30">20-30</option>
-  						<option value="30-40">30-40</option>
-  						<option value="40-50">40-50</option>
-  						<option value="50-65">50-65</option>
-  						<option value="65+">65+</option>
-			  	</select>
+	<label for="subject"><span class="required-ast" style="color:#e64799;">*</span> Taster Subject:</label>
+	<select class="select-inline" type="text" name="tasterSubject" required>
+		<option value="Art & Design">Art & Design</option>
+		<option value="Access">Access</option>
+		<option value="Accounting<">Accounting</option>
+		<option value="Beauty Therapy">Beauty Therapy</option>
+		<option value="Catering & Hospitality">Catering & Hospitality</option>
+		<option value="Computing and IT">Computing and IT</option>
+		<option value="Creative Media">Creative Media</option>
+		<option value="Higher Education">Higher Education</option>
+		<option value="Health and Social Care">Health and Social Care</option>
+		<option value="Early Years">Early Years</option>
+		<option value="Construction">Construction</option>
+		<option value="Travel and Tourism<">Travel and Tourism</option>
+		<option value="Engineering & Manufacturing">Engineering & Manufacturing</option>
+		<option value="Electrical Engineering">Electrical Engineering</option>
+		<option value="GCSEs">GCSEs</option>
+		<option value="Hairdressing & Barbering">Hairdressing & Barbering</option>
+		<option value="Music">Music</option>
+		<option value="Performing Arts">Performing Arts</option>
+		<option value="Public Services">Public Services</option>
+		<option value="Sport">Sport</option>
+		<option value="Science">Science</option>
+		<option value="Sport and Public Services">Sport and Public Services</option>
+		<option value="Supported Learning">Supported Learning</option>
+	</select>
+	<label for="attending"><span class="required-ast" style="color:#e64799;">*</span> Attending:</label>
+	<select class="select-inline" type="text" name="attending" required>
+		<option value="Yes">Yes</option>
+		<option value="No">No</option>
+	</select>
 
 	</fieldset>
 
@@ -148,41 +152,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php 
   if (isset($_POST['submit'])) {
 
- $sql ="INSERT INTO `enquiryForm`
-			(
-			`firstName`,
+ $sql ="INSERT INTO `bookTaster`
+			(`firstName`,
 			`surname`,
-			`address1`,
-			`address2`,
-			`address3`,
-			`address4`,
 			`postCode`,
 			`telephoneNumber`,
 			`email`,
-			`age`
+			`tasterSubject`,
+			`attending`
 			)
 VALUES
-			(NOW(),
-			'$firstName',
+			('$firstName',
 			'$surname',
-			'$address1',
-			'$address2',
-			'$address3',
-			'$address4',
 			'$postCode',
 			'$telephoneNumber',
 			'$email',
-			'$age'
+			'$tasterSubject',
+			'$attending'
 			)";
 
 $wpdb->query($sql);?>
 
 <?php 
-$to = 'pjenkinson@knowsleycollege.ac.uk';
-$subject = 'Testing Subject';
+$to = 'marketing@knowsleycollege.ac.uk';
+$subject = 'Taster Booking';
 $body = '<html><body>';
-$body .= '<h2>Testing</h2>';
-
+$body .= '<h2>Taster Booking: ' . '</h2>';
+$body .= '<p>Name: ' . $firstName . '</p>' ;
+$body .= '<p>Surname: ' . $surname . '</p>'  ;
+$body .= '<p>Chosen Subject: ' . $tasterSubject . '</p>'  ;
+$body .= '<p>Email: ' . $email . '</p>'  ;
+$body .= '<p>Tel: ' . $telephoneNumber . '</p>'  ;
+$body .= '<p>Attending: ' . $attending . '</p>'  ;
 $body .= '</body></html>';
 $headers = array('Content-Type: text/html; charset=UTF-8');
  
@@ -190,7 +191,7 @@ wp_mail( $to, $subject, $body, $headers );
 ?>
 
 <script>
-window.location = 'https://www.knowsleycollege.ac.uk/';
+window.location = 'https://www.knowsleycollege.ac.uk/taster-day-confirmation/';
 </script>
 <?php
 
