@@ -187,6 +187,7 @@ jQuery(document).ready(function(){
   	// options
   	cellAlign: 'left',
   	draggable: true,
+  	imagesLoaded: true,
   	contain: true
 	});
 });

@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<select class="select-inline" type="text" name="tasterSubject" required>
 		<option value="Art & Design">Art & Design</option>
 		<option value="Access">Access</option>
-		<option value="Accounting<">Accounting</option>
+		<option value="Accounting">Accounting</option>
 		<option value="Beauty Therapy">Beauty Therapy</option>
 		<option value="Catering & Hospitality">Catering & Hospitality</option>
 		<option value="Computing and IT">Computing and IT</option>
@@ -153,7 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['submit'])) {
 
  $sql ="INSERT INTO `bookTaster`
-			(`firstName`,
+			(
+			`firstName`,
 			`surname`,
 			`postCode`,
 			`telephoneNumber`,
@@ -162,7 +163,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			`attending`
 			)
 VALUES
-			('$firstName',
+			(
+			'$firstName',
 			'$surname',
 			'$postCode',
 			'$telephoneNumber',

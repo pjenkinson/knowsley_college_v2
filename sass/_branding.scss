@@ -964,7 +964,6 @@ color: $nla;
 .nla .service-number a:link, .nla .service-number a:active, .nla .service-number a:visited {
 	color: $nla;
 }
-
 // No Subpages
 .nla .secondary-nav {
 	display: none;
@@ -975,4 +974,17 @@ color: $nla;
 }
 .nla aside {
 	display: none;
+}
+
+.nla .pdf-grid-group-title {
+	background: $nla;
+}
+
+main.nla a:link, main.nla a:visited {
+	color: $nla;
+}
+
+main.nla a:hover, main.nla a:focus {
+	color: $nla-secondary;
+	text-decoration: underline;
 }
