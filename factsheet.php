@@ -13,18 +13,6 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'scroll' );?>
 
 <script>
-(function (d) {
-"use strict";
-var widgetScript = d.createElement('script');
-widgetScript.id = 'unistats-widget-script';
-widgetScript.src = 'http://widget.unistats.ac.uk/js/unistats.widget.js';
-var scriptTags = d.getElementsByTagName('script')[0];
-if (d.getElementById('unistats-widget-script')) { return; }
-scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
-} (document));
-</script>
-
-<script>
 
 jQuery(function() {
     jQuery( "#tabs" ).tabs();
@@ -262,8 +250,8 @@ jQuery("li.last-tab a").unbind('click');
 
    <p>Where applicable you can see the KIS data directly on our course pages. You may however choose to use the information on <a href="https://unistats.direct.gov.uk/Institutions/Details/10003708/ReturnTo/Institutions" title="Unistats - Knowsley Community College">Unistats</a> – which allows you to compare data from different Universities and Colleges.</p>
 <?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
-<div class="kis-widget" data-institution="10003708FT" data-course="<?=$factsheet->kiscode?>" data-orientation="horizontal" data-language="en-GB"></div>
-
+<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Horizontal/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 615px; height: 240px;">
+</iframe>
     <?php 
 } else {
   
@@ -423,9 +411,9 @@ jQuery("li.last-tab a").unbind('click');
 <?php } ?>
 
 <?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
-   
-<div class="kis-widget" data-institution="10003708FT" data-course="<?=$factsheet->kiscode?>" data-orientation="vertical" data-language="en-GB"></div>
 
+<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Vertical/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 190px; height: 500px;">
+</iframe>
   
 <?php } ?>
 

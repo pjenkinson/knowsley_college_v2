@@ -171,7 +171,19 @@ jQuery( ".carousel-caption" ).addClass( "carousel-animation" );
 
 </script>
 
-
+<script>
+jQuery(document).ready(function() {
+ (function (d) {
+"use strict";
+var widgetScript = d.createElement('script');
+widgetScript.id = 'unistats-widget-script';
+widgetScript.src = '//<WidgetUrl>/js/unistats.widget.js';
+var scriptTags = d.getElementsByTagName('script')[0];
+if (d.getElementById('unistats-widget-script')) { return; }
+scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
+} (document));
+</script>
+})
 </body>
 </html>
 	
