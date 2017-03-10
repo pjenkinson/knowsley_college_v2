@@ -63,8 +63,8 @@ clear: both;
 }
 
 .latest-news-snippet-title {
-	float: left;
-	width: 100%;
+	@include span (12 of 12);
+	margin-top: 1em;
 }
 
 .latest-news-snippet-title h3 {

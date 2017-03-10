@@ -110,15 +110,7 @@
           </div>  
     
   </div>
-  <!-- Partners -->
-
-  <div class="college-info-partnerships full-width-container">
-    <div class="fixed-container">
-
-      <img src="<?php echo get_bloginfo('template_directory');?>/images/partners-footer.png" alt="KCC Partners">
-
-    </div>
-  <!-- End of partners -->
+ 
 
 </footer>
   

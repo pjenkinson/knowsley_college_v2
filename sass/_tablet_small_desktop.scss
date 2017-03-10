@@ -191,14 +191,6 @@
 		margin-top: gutter();
 }
 
-.featured-news-snippet {
-	@include span (12 of 12);
-}
-
-.featured-news-snippet:last-of-type {
-		@include span (12 of 12 last);
-}
-
 }
 
 // DESKTOP ONLY

@@ -7,7 +7,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php if ( is_front_page() ) {echo'Knowsley Community College - Liverpool City Region';} else if ( is_page_template('flexible-course-page.php') ) {wp_title(''); echo ' - Liverpool Courses';} else if ( is_page_template('flexible-course-page-adult.php') ) {wp_title(''); echo ' - Liverpool Adult Courses';} else { wp_title(''); } echo' | KCC'?></title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge; IE=9; IE=8; IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="<?php if ( is_front_page() ) { echo'We are an innovative and dynamic Further Education College based in the Liverpool City Region. Our track record of high quality education and training from our two campuses, as well as our partner and employer locations, makes us the best choice for education and employment in Liverpool';} else
 if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?php else: ?><?php the_title();?><?php endif; ?>">
 <meta name="author" content="Knowsley Community College">

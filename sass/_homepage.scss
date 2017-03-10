@@ -1,4 +1,57 @@
-//This applies from 1080px onwards 
+ // WP STATIC HOMEPAGE
+
+$news_snippet_tablet: 700px;
+
+ // NEWS SNIPPETS
+
+.featured-news-container {
+	margin-top: 2em;
+}
+
+.featured-news {
+	@include span (12 of 12);
+}
+
+.featured-news-snippet {
+  @include span (12 of 12);
+  margin-bottom: gutter();
+  background: white;
+} 
+
+@include breakpoint ($news_snippet_tablet) {
+ .featured-news-snippet {
+  @include gallery (6 of 12);
+  }
+}
+
+@include breakpoint ($larger_desktop) {
+	.featured-news-snippet {
+  @include gallery (4 of 12);
+  }
+  .featured-news-snippet:last-of-type {
+  	display: none;
+  }
+
+}
+
+.featured-events-snippet {
+	background: $primary-color;
+}
+
+.featured-events-snippet h2, .featured-events-snippet p {
+	color: white;
+}
+
+.featured-news-heading {
+	float: left;
+	@include span (12 of 12);
+	padding: 1em gutter();
+}
+
+.news-section {
+	background: $off-white;
+}
+
 @include breakpoint ($larger_desktop) {
 
 .learners-container {
@@ -70,10 +123,6 @@ h2.section-heading {
 
 .news-section .section-heading, .services-section {
 	text-align: center;
-}
-
-.news-section {
-	border-top: 1px solid $off-white;
 }
 
 .courses-section p, .news-section p {

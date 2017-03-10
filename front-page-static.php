@@ -8,12 +8,16 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script>
+jQuery(document).ready(function() {
+	
 jQuery(function() {
     jQuery('.featured-article').matchHeight();
 });
 
 jQuery(function() {
     jQuery('.featured-news-heading').matchHeight();
+});
+
 });
 </script>
 
@@ -170,47 +174,12 @@ $currentCategory = get_the_category();
 <!-- News section -->
 <section class="full-width-container news-section">
 <div class="fixed-container">
-<?php
-// Query for displaying the latest post, larger image and main focus of news page.
-$the_query = new WP_Query( array( 'category_name' => 'news' , 'showposts' => '2'));
-?>
+
 <div class="featured-news-container">
 <h2 class="section-heading">Latest News and Events</h2>
 <p class="content-snippet-intro">Stay up to date with KCC <a href="<?php echo site_url(); ?>/news">News</a> and <a href="<?php echo site_url(); ?>/events">Events</a>.</p>
 
 <div class="featured-news">
-<?php
-// The Loop
-while ( $the_query->have_posts() ) :
-$the_query->the_post();
-?>
-
-<div class="featured-news-snippet featured-article">
-	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
-	<div class="featured-news-snippet-details">
-	<div class="featured-news-heading">
-	<h3><?php the_title(); ?></h3>
-	</div>
-	<div class="homepage-featured-news-image">
-	<?php if ( has_post_thumbnail() ) {
-the_post_thumbnail();
-} else { ?>
-<img src="<?php echo site_url(); ?>/wp-content/uploads/2015/06/the-latest.png" alt="<?php the_title(); ?>" />
-<?php } ?>
-	</div>
-	<div class="featured-post-date">
-		<p><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></p>
-	</div>
-	</div>
-	</a>
-</div>
-
-<?php
-endwhile;
-// Restore original Query & Post Data
-wp_reset_query();
-wp_reset_postdata();
-?>
 
 <?php 
 
@@ -239,16 +208,18 @@ $the_query->the_post();
 <?php // Get the Event ID
 $id = get_the_ID(); ?>
 
+<!-- EVENT -->
+
 <div class="featured-news-snippet featured-events-snippet featured-article">
 	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
 	<div class="featured-news-snippet-details">
-	<div class="featured-news-heading event-featured-heading">
-	<h3><?php the_title(); ?></h3>
-	</div>
+	
 	<div class="homepage-featured-news-image">
 		<?php the_post_thumbnail();?>
 	</div>
-
+	<div class="featured-news-heading event-featured-heading">
+	<h3><?php the_title(); ?></h3>
+	</div>
 	<?php // If events post, replace news icon with events icon and text
 	if ($noevents == 'a') {?>
   <div class="featured-post-date">
@@ -270,6 +241,49 @@ wp_reset_query();
 wp_reset_postdata();
 ?>
 
+<!-- NEWS -->
+
+<?php
+// Query for displaying the latest post, larger image and main focus of news page.
+$the_query = new WP_Query( array( 'category_name' => 'news' , 'showposts' => '3'));
+?>
+
+<?php
+// The Loop
+while ( $the_query->have_posts() ) :
+$the_query->the_post();
+?>
+
+<div class="featured-news-snippet featured-article">
+	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
+	<div class="featured-news-snippet-details">
+	
+	<div class="homepage-featured-news-image">
+	<?php if ( has_post_thumbnail() ) {
+the_post_thumbnail();
+} else { ?>
+<img src="<?php echo site_url(); ?>/wp-content/uploads/2015/06/the-latest.png" alt="<?php the_title(); ?>" />
+<?php } ?>
+	</div>
+	<div class="featured-news-heading">
+	<h3><?php the_title(); ?></h3>
+	</div>
+	<div class="featured-post-date">
+		<p><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></p>
+	</div>
+	</div>
+	</a>
+</div>
+
+<?php
+endwhile;
+// Restore original Query & Post Data
+wp_reset_query();
+wp_reset_postdata();
+?>
+
+
+
 </div>
 
 </section>
@@ -278,6 +292,14 @@ wp_reset_postdata();
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'custom-fields/acf', 'frontpage-content-flex' );?>
 
+ <!-- Partners -->
 
+  <div class="college-info-partnerships full-width-container">
+    <div class="fixed-container">
+
+      <img src="<?php echo get_bloginfo('template_directory');?>/images/partners-footer.png" alt="KCC Partners">
+
+    </div>
+  <!-- End of partners -->
 </main>
 <?php get_footer(); ?>

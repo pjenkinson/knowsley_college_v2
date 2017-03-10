@@ -71,17 +71,6 @@ li.course-text-list-item {
  @include span (4 of 12 last);
 }
 
-// Homepage News and Events
-
-.featured-news-snippet {
-	@include span (4 of 12);
-	margin-bottom: 0px;
-}
-
-.featured-news-snippet:last-of-type {
-	@include span (4 of 12 last);
-}
-
 // Homepage sections 
 
 .home-section-3col {
