@@ -42,7 +42,7 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'flex-secondary' );?>
 </aside>
 
-<section>
+<section style="margin-top: 2em;">
 
 <?php
 

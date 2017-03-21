@@ -46,7 +46,7 @@ jQuery("li.last-tab a").unbind('click');
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main content-main" role="main">
 
 
 <!-- Page content 
