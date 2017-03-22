@@ -45,10 +45,6 @@ $currentCategory = get_the_category();
 
 <h1><?php the_title() ?></h1>
 
-<div class="share-this-top">
-<span class='st_sharethis_large' displayText='ShareThis'></span>
-</div>
-
 <p class="post-date"><i class="fa fa-clock-o"></i><?php the_date() ?></p>
 
 <div class="single-featured-image">

@@ -295,7 +295,7 @@ wp_reset_postdata();
  <!-- Partners -->
 
   <div class="college-info-partnerships full-width-container">
-    <div class="fixed-container">
+    <div class="fixed-container fixed-margin-both">
 
       <img src="<?php echo get_bloginfo('template_directory');?>/images/partners-footer.png" alt="KCC Partners">
 

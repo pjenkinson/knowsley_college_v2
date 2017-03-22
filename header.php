@@ -32,7 +32,7 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <!-- Google Maps -->
 
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwwjXh9emEaz5Av5yZtDkKPzVIxb4DKfM&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwwjXh9emEaz5Av5yZtDkKPzVIxb4DKfM&callback">
 </script>
 
 
@@ -42,13 +42,6 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png">
 
 <?php wp_head(); ?>
-
-<!-- Share this for single pages -->
-<?php if ( is_single() ) {?>
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://ws.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "b018ceee-b502-4f45-8a6f-58da868c1cf4", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<?php } else {}?>
 
 <!-- Homepage scripts -->
 

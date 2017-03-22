@@ -11,7 +11,7 @@
 
   <div class="full-width-container footer">
     
-          <div class="fixed-container fixed-margin-both">
+          <div class="fixed-container fixed-margin-top">
 
             <div class='footer-details'>
 
@@ -81,7 +81,7 @@
             <div class="footer-last">
               <h3 class="footer-top-heading">Campuses</h3>
 
-              <address>
+              <address class="footer-address-block-1">
               <span class="address-line"><strong><a href="<?php the_field('roby_campus_link', 'option'); ?>" title="Main Campus">Main Campus</a></strong></span>
               <span class="address-line">Stockbridge Lane</span>
               <span class="address-line">Huyton</span>
@@ -122,7 +122,6 @@
 
 <script>
 jQuery(document).ready(function() {
-
   
   jQuery('.main-carousel').flickity({
   // options
@@ -146,7 +145,7 @@ jQuery(document).ready(function() {
   cellAlign: 'left',
   contain: true,
   draggable: true,
-  autoPlay: false,
+  autoPlay: 6000,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
   pageDots: true,
@@ -154,6 +153,9 @@ jQuery(document).ready(function() {
   friction: 0.2,
   imagesLoaded: true
 });
+
+var jQuerycarousel = jQuery('.carousel').flickity();
+var flkty = jQuerycarousel.data('flickity');
 
 jQuerycarousel.on( 'select.flickity', function() {
 
@@ -174,8 +176,9 @@ var scriptTags = d.getElementsByTagName('script')[0];
 if (d.getElementById('unistats-widget-script')) { return; }
 scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
 } (document));
+});
 </script>
-})
+
 </body>
 </html>
 	
