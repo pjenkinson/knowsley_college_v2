@@ -1,6 +1,5 @@
 footer {
 	width: 100%;
-	margin-top: 2em;
 }
 footer ul li {
 	list-style-type: none;
@@ -20,7 +19,6 @@ footer h3 {
 	float: left;
 	clear: both;
 }
-
 .footer-details address:first-of-type {
  margin-top: 0;
 }
@@ -28,6 +26,7 @@ footer h3 {
 .college-info-partnerships {
 	background: white;
 	padding-top: 2em;
+	padding-bottom: 2em;
 	border-top: 1px solid $off-white;
 }
 .college-info-partnerships img, .footer-logo img  {

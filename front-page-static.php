@@ -298,7 +298,7 @@ wp_reset_postdata();
     <div class="fixed-container fixed-margin-both">
 
       <img src="<?php echo get_bloginfo('template_directory');?>/images/partners-footer.png" alt="KCC Partners">
-
+    </div>
     </div>
   <!-- End of partners -->
 </main>
