@@ -1458,7 +1458,9 @@ body.outlook p {
                             <table>
                               <tr>
                                 <th>
-                                  <h1>Hi, <?php echo $studentName?></h1>
+                                  <h1>Hi, <?php if (isset($studentName)) { ?>
+                                    <?php echo $studentName?>
+                                  <?php }?></h1>
                                   <p class="lead">Thank you for your application to Knowsley Community College.</p> 
 
                                   <img src="https://www.knowsleycollege.ac.uk/wp-content/uploads/2015/08/new-campus-2016.jpg" alt="Knowsley Community College">
@@ -1501,9 +1503,15 @@ body.outlook p {
                                   <h2>Courses you have applied for</h2>
 
                                   <ul>
+                                    <?php if (isset($CourseChoice1)) { ?>
                                     <li><?php echo $CourseChoice1?></li>
+                                    <?php }?>
+                                    <?php if (isset($CourseChoice2)) { ?>
                                     <li><?php echo $CourseChoice2?></li>
+                                    <?php }?>
+                                    <?php if (isset($CourseChoice3)) { ?>
                                     <li><?php echo $CourseChoice3?></li>
+                                    <?php }?>
                                   </ul>
                                   
                                 </th>

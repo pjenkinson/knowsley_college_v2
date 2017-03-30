@@ -638,8 +638,6 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 	$wpdb->query($sql);
 
-	get_template_part( 'page', 'applyEmail' );
-
 	$applicationID = $wpdb->insert_id;
 
 	for ($i=0; $i < count($insertData['qualification']); $i++) { 
@@ -763,24 +761,27 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 	$wpdb->query($sql);
 
-	
-	?>
-
-	
-	<?php session_unset();
+	session_unset();
 	session_destroy();
+	
 	?>
 	<div class="the-content">
 		<h1>Thank you for your application <i class="fa fa-thumbs-up"></i> </h1>
 		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
-		
+	
 	</div>
 	<?php
 }
 ?>
+<div>
+<?php // 
+// echo '<pre style="float:left;">';
+// print_r($_SESSION['appform']);
+// echo '</pre>';
+?>
+</div>
 
-
-
+<?php the_content();?>
 
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>

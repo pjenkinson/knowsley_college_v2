@@ -29,18 +29,13 @@ function configure_smtp( PHPMailer $phpmailer ){
     $phpmailer->Password = 'Kccapp123';
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->From = 'applications@knowsleycollege.ac.uk';
-    $phpmailer->FromName = 'Testing';
+    $phpmailer->FromName = 'Knowsley Community College';
 }
-
 
  // Custom Email
 
- $studentName = 'Paul';
- $CourseChoice1 = 'Course Choice 1';
- $CourseChoice1 = 'Course Choice 2';
- $CourseChoice1 = 'Course Choice 3';
-
- //$includehtmlcontent = include(locate_template('application-reply.php'));
+$studentEmail = 'pjenkinson@knowsleycollege.ac.uk';
+$body = 'bodyContent';
 
 ob_start();                      // start capturing output
 include (locate_template('application-reply.php'));   // execute the file
@@ -49,23 +44,17 @@ ob_end_clean();
 
 
 // WP Mail
-  $to = 'pjenkinson@knowsleycollege.ac.uk';
-  $subject = 'The Subject';
-  $body = '' . $htmlcontent;
+  $to = $studentEmail;
+  $subject = 'Application to Knowlsey Community College';
+  $body = $body;
   $headers = array('Content-Type: text/html; charset=UTF-8');
 
   // $headers = array('Content-Type: text/html; charset=UTF-8');
  
   wp_mail( $to, $subject, $body, $headers );
 
-  if(!$phpmailer ->Send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $phpmailer->ErrorInfo;
-    exit;
-}
 
 ?>
-
 
 
 		</main><!-- #main -->
