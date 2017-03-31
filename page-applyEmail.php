@@ -1,4 +1,69 @@
 <?php
+    
+ // Capture output of echo into variables
+ $studentName = $CourseChoice1 = $CourseChoice2 = $CourseChoice3 = $studentEmail = "";
+
+  ob_start();
+  echo $insertData['FirstForename'];
+  $studentName = ob_get_clean();
+
+  ob_start();
+  echo $insertData['Offering1'];
+  $courseChoice1 = ob_get_clean();
+
+  ob_start();
+  echo $insertData['Offering2'];
+  $courseChoice2 = ob_get_clean();
+
+  ob_start();
+  echo $insertData['Offering3'];
+  $courseChoice3 = ob_get_clean();
+
+  ob_start();
+  echo $insertData['Email'];
+  $studentEmail = ob_get_clean();
+
+  // Query to get Factsheet Name from Offering ID
+
+  // Course Choice 1
+
+    $sql = "SELECT factsheetname, OfferingID
+            FROM fact_sheets
+            INNER JOIN Offering
+            On fact_sheets.id=Offering.CourseInformationID
+            WHERE OfferingID = $courseChoice1";
+
+    $CourseNameFromID1 = $wpdb->get_results($sql);
+ 
+    $courseChoice1 = $CourseNameFromID1[0]->factsheetname;
+
+  // Course Choice 2
+
+    $sql = "SELECT factsheetname, OfferingID
+            FROM fact_sheets
+            INNER JOIN Offering
+            On fact_sheets.id=Offering.CourseInformationID
+            WHERE OfferingID = $courseChoice2";
+
+    $CourseNameFromID2 = $wpdb->get_results($sql);
+ 
+    $courseChoice2 = $CourseNameFromID2[0]->factsheetname;
+
+
+  // Course Choice 3
+
+    $sql = "SELECT factsheetname, OfferingID
+            FROM fact_sheets
+            INNER JOIN Offering
+            On fact_sheets.id=Offering.CourseInformationID
+            WHERE OfferingID = $courseChoice3";
+
+    $CourseNameFromID3 = $wpdb->get_results($sql);
+ 
+    $courseChoice3 = $CourseNameFromID3[0]->factsheetname;
+
+
+  // Course Choice 3
 
 add_action( 'phpmailer_init', 'configure_smtp' );
 function configure_smtp( PHPMailer $phpmailer ){
@@ -13,10 +78,7 @@ function configure_smtp( PHPMailer $phpmailer ){
     $phpmailer->FromName = 'Knowsley Community College';
 }
 
- // Custom Email
 
-$studentEmail = 'pjenkinson@knowsleycollege.ac.uk';
-$body = 'bodyContent';
 
 ob_start();                      // start capturing output
 include (locate_template('application-reply.php'));   // execute the file
@@ -28,10 +90,7 @@ ob_end_clean();
   $to = $studentEmail;
   $subject = 'Application to Knowlsey Community College';
   $body = $htmlcontent;
-  $headers = array('Content-Type: text/html; charset=UTF-8');
-
-  // $headers = array('Content-Type: text/html; charset=UTF-8');
- 
+  $headers = array('Content-Type: text/html; charset=UTF-8'); 
   wp_mail( $to, $subject, $body, $headers );
 
 /*

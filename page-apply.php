@@ -638,7 +638,8 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 	$wpdb->query($sql);
 
-	get_template_part( 'page', 'applyEmail' );
+	//get_template_part( 'page', 'applyEmail' );
+	include (locate_template('page-applyEmail.php')); 
 
 	$applicationID = $wpdb->insert_id;
 
@@ -766,14 +767,12 @@ $sql = "SELECT HeardAboutCollegeID, Description
 	
 	?>
 
-	
 	<?php session_unset();
 	session_destroy();
 	?>
 	<div class="the-content">
 		<h1>Thank you for your application <i class="fa fa-thumbs-up"></i> </h1>
 		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
-		
 	</div>
 	<?php
 }
