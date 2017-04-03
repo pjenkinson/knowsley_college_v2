@@ -44,6 +44,14 @@ get_header(); ?>
 
 <section>
 
+<script>
+ jQuery(".js-select2").each(function() {
+    jQuery(this).select2({
+       placeholder: jQuery(this).attr('placeholder')
+   });
+ });
+</script>
+
 <article class="single-article the-content">
 
 <script>
@@ -52,8 +60,8 @@ jQuery(document).ready(function() {
 jQuery(".search-box").select2({
   ajax: {
     url: "/search-test-2/",
-    placeholder: "Search for a course",
     dataType: 'json',
+    placeholder: "Text...",
     delay: 150,
     allowClear: true,
     data: function (params) {
@@ -74,15 +82,16 @@ jQuery(".search-box").select2({
   // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
 }).on("select2:select", function (e) { 
   console.log(e.params.data.id);
-  console.log(e.params.data.text);
-  console.log(e.params.data.level)
+  window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
 });
 
 })
 </script>
 
 
-<select class="search-box" style="width: 100%; list-style:none;"></select>
+<select class="search-box" style="width: 100%;">
+
+</select>
 
 
 </article>
