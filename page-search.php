@@ -44,26 +44,28 @@ get_header(); ?>
 
 <section>
 
-<script>
- jQuery(".js-select2").each(function() {
-    jQuery(this).select2({
-       placeholder: jQuery(this).attr('placeholder')
-   });
- });
-</script>
-
 <article class="single-article the-content">
+
+<style>
+.select2-search__field {
+  width: 100%;
+}
+
+ul.select2-results__options li {
+  list-style: none;
+}
+
+</style>
 
 <script>
 jQuery(document).ready(function() {
 
-jQuery(".search-box").select2({
+jQuery("#search-box").select2({
   ajax: {
     url: "/search-test-2/",
-    dataType: 'json',
-    placeholder: "Text...",
+    dataType: "json",
+    placeholder: 'Select an option',
     delay: 150,
-    allowClear: true,
     data: function (params) {
       return params;
     },
@@ -88,9 +90,8 @@ jQuery(".search-box").select2({
 })
 </script>
 
-
-<select class="search-box" style="width: 100%;">
-
+<select id="search-box" style="width:100%;">
+ <option value=""></option>
 </select>
 
 
