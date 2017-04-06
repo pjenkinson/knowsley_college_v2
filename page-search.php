@@ -55,16 +55,29 @@ ul.select2-results__options li {
   list-style: none;
 }
 
+.select2-selection__placeholder {
+  font-size: 2em;
+}
+
+.select2-selection__rendered {
+  padding: 1em;
+}
+
+.select2-container .select2-selection--single  {
+  height: auto;
+}
+
 </style>
 
 <script>
 jQuery(document).ready(function() {
 
 jQuery("#search-box").select2({
+  placeholder: 'Search for a course...',
+  tags: true,
   ajax: {
     url: "/search-test-2/",
     dataType: "json",
-    placeholder: 'Select an option',
     delay: 150,
     data: function (params) {
       return params;
@@ -90,7 +103,44 @@ jQuery("#search-box").select2({
 })
 </script>
 
-<select id="search-box" style="width:100%;">
+<script>
+jQuery(document).ready(function() {
+
+jQuery("#search-box-prog").select2({
+  placeholder: 'Search by curriculum area...',
+  ajax: {
+    url: "/search-test-3/",
+    dataType: "json",
+    delay: 150,
+    data: function (params) {
+      return params;
+    },
+    processResults: function (data, params) {
+
+      return {
+        results: data
+        
+      };
+    },
+    cache: true
+},
+  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+  minimumInputLength: 1
+  // templateResult: formatRepo, // omitted for brevity, see the source of this page
+  // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+}).on("select2:select", function (e) { 
+  console.log(e.params.data.id);
+  window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+});
+
+})
+</script>
+
+<select id="search-box" style="width:100%;" multiple="multiple">
+ <option value=""></option>
+</select>
+
+<select id="search-box-prog" style="width:100%;" multiple="multiple">
  <option value=""></option>
 </select>
 

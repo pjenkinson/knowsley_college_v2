@@ -17,10 +17,18 @@ get_header(); ?>
 
 			<p>test email</p>
 
+
+
 <?php
+unset($phpmailer);
+$studentEmail = 'pjenkinsonmail@gmail.com';
+$body = 'bodyContent';
 
 add_action( 'phpmailer_init', 'configure_smtp' );
 function configure_smtp( PHPMailer $phpmailer ){
+    $phpmailer = new PHPMailer( true );
+    $phpmailer->CharSet = 'UTF-8';
+    $phpmailer->IsHTML(true);
     $phpmailer->isSMTP(); //switch to smtp
     $phpmailer->Host = 'smtp.office365.com';
     $phpmailer->SMTPAuth = true;
@@ -30,12 +38,21 @@ function configure_smtp( PHPMailer $phpmailer ){
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->From = 'applications@knowsleycollege.ac.uk';
     $phpmailer->FromName = 'Knowsley Community College';
+    $phpmailer->SMTPDebug = true;
+    ob_start();
 }
+?>
+<div id="message" class="updated fade"><p><strong><?php _e('Test Message Sent', 'wp_mail_smtp'); ?></strong></p>
+<p><?php _e('The result was:', 'wp_mail_smtp'); ?></p>
+<pre><?php var_dump($result); ?></pre>
+<p><?php _e('The full debugging output is shown below:', 'wp_mail_smtp'); ?></p>
+<pre><?php var_dump($phpmailer); ?></pre>
+<p><?php _e('The SMTP debugging output is shown below:', 'wp_mail_smtp'); ?></p>
+<pre><?php echo $smtp_debug ?></pre>
+</div>
 
+<?php 
  // Custom Email
-
-$studentEmail = 'pjenkinson@knowsleycollege.ac.uk';
-$body = 'bodyContent';
 
 ob_start();                      // start capturing output
 include (locate_template('application-reply.php'));   // execute the file
@@ -53,6 +70,8 @@ ob_end_clean();
  
   wp_mail( $to, $subject, $body, $headers );
 
+// Destroy $phpmailer so it doesn't cause issues later
+    unset($phpmailer);
 
 ?>
 

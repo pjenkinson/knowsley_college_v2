@@ -297,3 +297,12 @@ add_filter( 'posts_where', 'wpb_password_post_filter' );
  */
 
 add_theme_support( 'post-thumbnails' ); 
+
+// define the wp_mail_failed callback 
+function action_wp_mail_failed($wp_error) 
+{
+    return error_log(print_r($wp_error, true));
+}
+          
+// add the action 
+add_action('wp_mail_failed', 'action_wp_mail_failed', 10, 1);
