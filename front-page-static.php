@@ -111,7 +111,7 @@ $currentCategory = get_the_category();
 
 <?php endif; ?>
 
-<!--
+<!-- SEARCH -->
 
 <section class="full-width-container homepage-live-search">
 	<div class="fixed-container homepage-live-search-container">
@@ -121,8 +121,6 @@ $currentCategory = get_the_category();
 		</input>
 	</div>
 </section>
-
--->
 
 <!-- Courses section
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
