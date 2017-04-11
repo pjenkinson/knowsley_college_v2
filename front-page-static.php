@@ -111,15 +111,105 @@ $currentCategory = get_the_category();
 
 <?php endif; ?>
 
+
+<style>
+.select2-search__field {
+  width: 100%;
+}
+
+ul.select2-results__options li {
+  list-style: none;
+}
+
+.select2-selection__placeholder {
+  font-size: 2em;
+}
+
+.select2-selection__rendered {
+  padding: 1em;
+}
+
+.select2-container .select2-selection--single  {
+  height: auto;
+}
+
+.select2-container--default .select2-selection--multiple {
+	border: none;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+	text-align: left;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+	padding: 0;
+}
+
+</style>
+
+<script>
+jQuery(document).ready(function() {
+
+jQuery("#search-box").select2({
+  placeholder: 'Search by course title...',
+  tags: true,
+  ajax: {
+    url: "/search-test-2/",
+    dataType: "json",
+    delay: 125,
+    multiple: true,
+    data: function (params) {
+      return params;
+    },
+    processResults: function (data, params) {
+
+      return {
+        results: data
+        
+      };
+    },
+    cache: true
+},
+  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+  minimumInputLength: 1
+  // templateResult: formatRepo, // omitted for brevity, see the source of this page
+  // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+}).on("select2:select", function (e) { 
+
+		window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+	
+});
+
+})
+</script>
+
+
+
+
 <!-- SEARCH -->
 
-<section class="full-width-container homepage-live-search">
+<section class="full-width-container homepage-live-search" style="padding-top: 2em;">
+
+	<h2 class="section-heading" style="text-align: center; border-bottom: none; color: white;">Search for a course <i class="fa fa-search" aria-hidden="true"></i></h2>
+
 	<div class="fixed-container homepage-live-search-container">
-		<input placeholder="Search for a course" type="search" class="homepage-live-search-select" style="width:100%; margin-top: 2.5em;">
+		<select id="search-box" style="width:100%;" multiple="multiple">
+ 			<option value=""></option>
+		</select>
+
+	<ul class="live-search-browse-list">
+		<li><a href="/school-leavers/study-programmes/">School Leaver Courses</a></li>
+		<li><a href="/adults/vocational/">Adult Vocational Courses</a></li>
+		<li><a href="/apprenticeships/">Apprenticeships</a></li>
+		<li><a href="/higher-education/courses-14915/">Higher Education Courses</a></li>
+		<li><a href="/northern-logistics-academy/courses/">Logistics Courses</a></li>
+		<li><a href="/adults/workworld/short-courses/">WorkWorld Courses</a></li>
+	</ul>
+
+	</div>
+
 	
 
-		</input>
-	</div>
 </section>
 
 <!-- Courses section

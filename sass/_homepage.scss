@@ -400,12 +400,23 @@ h2.section-heading {
 }
 
 .homepage-live-search {
-	background: $off-white;
+	background: $primary-color;
+}
+.homepage-live-search-container {
+	height: auto;
+	padding-bottom: 2em;
+}
+.live-search-browse-list li  {
+	float: left;
+	display: inline-block;
+	color: white;
+	padding-right: 2em;
 }
 
-.homepage-live-search-container {
-	height: 200px;
+.live-search-browse-list a:link, .live-search-browse-list a:visited  {
+	color: white;
 }
+
 .section-image-container img {
 	float: left;
 	width: 100%;
