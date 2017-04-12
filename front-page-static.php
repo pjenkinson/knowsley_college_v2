@@ -145,6 +145,10 @@ ul.select2-results__options li {
 	padding: 0;
 }
 
+.select2-results__option:first-of-type {
+	display: none;
+}
+
 </style>
 
 <script>
@@ -153,11 +157,12 @@ jQuery(document).ready(function() {
 jQuery("#search-box").select2({
   placeholder: 'Search by course title...',
   tags: true,
+  multiple: true,
+  selectOnClose: false,
   ajax: {
     url: "/search-test-2/",
     dataType: "json",
     delay: 125,
-    multiple: true,
     data: function (params) {
       return params;
     },
@@ -170,8 +175,9 @@ jQuery("#search-box").select2({
     },
     cache: true
 },
-  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
-  minimumInputLength: 1
+  escapeMarkup: function (markup) { return markup; }, 
+    minimumInputLength: 1,
+  // let our custom formatter work
   // templateResult: formatRepo, // omitted for brevity, see the source of this page
   // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
 }).on("select2:select", function (e) { 
@@ -181,6 +187,7 @@ jQuery("#search-box").select2({
 });
 
 })
+
 </script>
 
 
