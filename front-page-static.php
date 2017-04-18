@@ -152,6 +152,22 @@ ul.select2-results__options li {
 </style>
 
 <script>
+	jQuery(document).ready(function() {
+
+jQuery("#search-box").on("select2:selecting", function(e) {
+    if (e.keypress == 13) {
+        alert("Enter was pressed");
+    } else {
+    	//
+    }
+});
+	})
+
+</script>
+
+<script>
+
+
 jQuery(document).ready(function() {
 
 jQuery("#search-box").select2({
@@ -187,8 +203,9 @@ jQuery("#search-box").select2({
 });
 
 })
-
 </script>
+
+
 
 
 
