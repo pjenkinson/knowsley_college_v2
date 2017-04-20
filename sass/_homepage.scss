@@ -416,9 +416,26 @@ h2.section-heading {
 .live-search-browse-list a:link, .live-search-browse-list a:visited  {
 	color: white;
 }
-
+.select2-selection__arrow {
+	display: none;
+}
 .section-image-container img {
 	float: left;
 	width: 100%;
 	height: auto;
+}
+.select2-selection__placeholder {
+	font-size: 1em;
+}
+.select2-selection__rendered {
+  padding: 1em;
+}
+.select2-search__field {
+  width: 100%;
+}
+.select2-container .select2-selection--single  {
+  height: auto !important;
+}
+li.select2-results__option {
+	list-style: none;
 }

@@ -112,97 +112,38 @@ $currentCategory = get_the_category();
 <?php endif; ?>
 
 
-<style>
-.select2-search__field {
-  width: 100%;
-}
-
-ul.select2-results__options li {
-  list-style: none;
-}
-
-.select2-selection__placeholder {
-  font-size: 2em;
-}
-
-.select2-selection__rendered {
-  padding: 1em;
-}
-
-.select2-container .select2-selection--single  {
-  height: auto;
-}
-
-.select2-container--default .select2-selection--multiple {
-	border: none;
-}
-
-.select2-container--default .select2-search--inline .select2-search__field {
-	text-align: left;
-}
-
-.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-	padding: 0;
-}
-
-.select2-results__option:first-of-type {
-	display: none;
-}
-
-</style>
-
 <script>
-	jQuery(document).ready(function() {
-
-jQuery("#search-box").on("select2:selecting", function(e) {
-    if (e.keypress == 13) {
-        alert("Enter was pressed");
-    } else {
-    	//
-    }
-});
-	})
-
-</script>
-
-<script>
-
-
 jQuery(document).ready(function() {
 
-jQuery("#search-box").select2({
-  placeholder: 'Search by course title...',
-  tags: true,
-  multiple: true,
-  selectOnClose: false,
-  ajax: {
-    url: "/search-test-2/",
-    dataType: "json",
-    delay: 125,
-    data: function (params) {
-      return params;
-    },
-    processResults: function (data, params) {
+  jQuery("#search-box").select2({
+    placeholder: 'Search by course title',
+    tags: false,
+    ajax: {
+      url: "/search-test-2/",
+      dataType: "json",
+      delay: 150,
+      data: function (params) {
+        return params;
+      },
+      processResults: function (data, params) {
 
-      return {
-        results: data
-        
-      };
-    },
-    cache: true
-},
-  escapeMarkup: function (markup) { return markup; }, 
-    minimumInputLength: 1,
-  // let our custom formatter work
-  // templateResult: formatRepo, // omitted for brevity, see the source of this page
-  // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
-}).on("select2:select", function (e) { 
+        return {
+          results: data
+          
+        };
+      },
+      cache: true
+  },
+    escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+    minimumInputLength: 1
+    // templateResult: formatRepo, // omitted for brevity, see the source of this page
+    // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+  }).on("select2:select", function (e) { 
+      window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+  });
 
-		window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
-	
 });
 
-})
 </script>
 
 
@@ -217,7 +158,7 @@ jQuery("#search-box").select2({
 	<h2 class="section-heading" style="text-align: center; border-bottom: none; color: white;">Search for a course <i class="fa fa-search" aria-hidden="true"></i></h2>
 
 	<div class="fixed-container homepage-live-search-container">
-		<select id="search-box" style="width:100%;" multiple="multiple">
+		<select id="search-box" style="width:100%;">
  			<option value=""></option>
 		</select>
 
