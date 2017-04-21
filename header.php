@@ -16,8 +16,8 @@ if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <?php }?>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- JS -->

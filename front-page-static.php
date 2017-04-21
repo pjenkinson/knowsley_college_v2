@@ -111,18 +111,30 @@ $currentCategory = get_the_category();
 
 <?php endif; ?>
 
-<!--
+<!-- SEARCH -->
 
-<section class="full-width-container homepage-live-search">
+<section class="full-width-container homepage-live-search" style="padding-top: 2em;">
+
+	<h2 class="section-heading" style="text-align: center; border-bottom: none; color: white;">Search for a course <i class="fa fa-search" aria-hidden="true"></i></h2>
+
 	<div class="fixed-container homepage-live-search-container">
-		<input placeholder="Search for a course" type="search" class="homepage-live-search-select" style="width:100%; margin-top: 2.5em;">
+		<select id="search-box" style="width:100%;">
+		</select>
+
+	<ul class="live-search-browse-list">
+		<li><a href="/school-leavers/study-programmes/">School Leaver Courses</a></li>
+		<li><a href="/adults/vocational/">Adult Vocational Courses</a></li>
+		<li><a href="/apprenticeships/">Apprenticeships</a></li>
+		<li><a href="/higher-education/courses-14915/">Higher Education Courses</a></li>
+		<li><a href="/northern-logistics-academy/courses/">Logistics Courses</a></li>
+		<li><a href="/adults/workworld/short-courses/">WorkWorld Courses</a></li>
+	</ul>
+
+	</div>
+
 	
 
-		</input>
-	</div>
 </section>
-
--->
 
 <!-- Courses section
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

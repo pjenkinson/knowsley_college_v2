@@ -171,6 +171,17 @@ add_action( 'wp_enqueue_scripts', 'knowsley_college_scripts' );
 
 /* Conditional scripts */
 
+function conditional_script_home_livesearch() {
+    if (is_front_page())
+		{
+				wp_enqueue_script( 'select2-home-livesearch', get_template_directory_uri() . '/inc/select2/select2-home-livesearch.js', array('jquery'), '20130219', true );
+    } 
+}
+add_action('wp_enqueue_scripts', 'conditional_script_home_livesearch');
+
+
+ 
+
 /* Hover Effects */
 
 function conditional_script_loading_he_hover () {
