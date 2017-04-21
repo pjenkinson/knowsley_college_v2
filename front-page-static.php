@@ -111,46 +111,6 @@ $currentCategory = get_the_category();
 
 <?php endif; ?>
 
-
-<script>
-jQuery(document).ready(function() {
-
-  jQuery("#search-box").select2({
-    placeholder: 'Search by course title',
-    tags: false,
-    ajax: {
-      url: "/search-test-2/",
-      dataType: "json",
-      delay: 150,
-      data: function (params) {
-        return params;
-      },
-      processResults: function (data, params) {
-
-        return {
-          results: data
-          
-        };
-      },
-      cache: true
-  },
-    escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
-    minimumInputLength: 1
-    // templateResult: formatRepo, // omitted for brevity, see the source of this page
-    // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
-  }).on("select2:select", function (e) { 
-      window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
-  });
-
-});
-
-</script>
-
-
-
-
-
-
 <!-- SEARCH -->
 
 <section class="full-width-container homepage-live-search" style="padding-top: 2em;">
@@ -159,7 +119,6 @@ jQuery(document).ready(function() {
 
 	<div class="fixed-container homepage-live-search-container">
 		<select id="search-box" style="width:100%;">
- 			<option value=""></option>
 		</select>
 
 	<ul class="live-search-browse-list">

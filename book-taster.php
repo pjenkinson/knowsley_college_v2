@@ -61,7 +61,7 @@ get_header(); ?>
 <!-- Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<?php $firstName = $surname = $postCode = $telephoneNumber = $email = $tasterSubject = $attending = "";
+<?php $firstName = $surname = $postCode = $telephoneNumber = $email = $interest1 = $interest2 = $interest3 = $interest4 = $interest5 = $interest6 = $interest7 = $interest8 = $interest9 = $interest10 = $attending = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -85,9 +85,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $errors['email'] = "Missing";	 
 	} else {$email = $_POST['email'];}
 
-	if (empty($_POST["tasterSubject"])) { 
-	  $errors['tasterSubject'] = "Missing";	 
-	} else {$tasterSubject = $_POST['tasterSubject'];}
+	if (empty($_POST["interest1"])) { 
+	  $errors['interest1'] = "Missing";	 
+	} else {$interest1 = $_POST['interest1'];}
+
+	if (empty($_POST["interest2"])) { 
+	  $errors['interest2'] = "Missing";	 
+	} else {$interest2 = $_POST['interest2'];}
+
+	if (empty($_POST["interest3"])) { 
+	  $errors['interest3'] = "Missing";	 
+	} else {$interest3 = $_POST['interest3'];}
+
+	if (empty($_POST["interest4"])) { 
+	  $errors['interest4'] = "Missing";	 
+	} else {$interest4 = $_POST['interest4'];}
+
+	if (empty($_POST["interest5"])) { 
+	  $errors['interest5'] = "Missing";	 
+	} else {$interest5 = $_POST['interest5'];}
+
+	if (empty($_POST["interest6"])) { 
+	  $errors['interest6'] = "Missing";	 
+	} else {$interest6 = $_POST['interest6'];}
+
+	if (empty($_POST["interest7"])) { 
+	  $errors['interest7'] = "Missing";	 
+	} else {$interest7 = $_POST['interest7'];}
+
+	if (empty($_POST["interest8"])) { 
+	  $errors['interest8'] = "Missing";	 
+	} else {$interest8 = $_POST['interest8'];}
+
+	if (empty($_POST["interest9"])) { 
+	  $errors['interest9'] = "Missing";	 
+	} else {$interest9 = $_POST['interest9'];}
+
+	if (empty($_POST["interest10"])) { 
+	  $errors['interest10'] = "Missing";	 
+	} else {$interest10 = $_POST['interest10'];}
 
 	if (empty($_POST["attending"])) { 
 	  $errors['attending'] = "Missing";	 
@@ -111,35 +147,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input class="input-inline" type="text" name="telephoneNumber" required>
 	<label for="email"><span class="required-ast" style="color:#e64799;">*</span> Email Address:</label>
 	<input class="input-inline" type="text" name="email" required>
-	<label for="subject"><span class="required-ast" style="color:#e64799;">*</span> Taster Subject:</label>
-	<select class="select-inline" type="text" name="tasterSubject" required>
-		<option value="Art & Design">Art & Design</option>
-		<option value="Access">Access</option>
-		<option value="Accounting">Accounting</option>
-		<option value="Beauty Therapy">Beauty Therapy</option>
-		<option value="Catering & Hospitality">Catering & Hospitality</option>
-		<option value="Computing and IT">Computing and IT</option>
-		<option value="Creative Media">Creative Media</option>
-		<option value="Higher Education">Higher Education</option>
-		<option value="Health and Social Care">Health and Social Care</option>
-		<option value="Early Years">Early Years</option>
-		<option value="Construction">Construction</option>
-		<option value="Travel and Tourism<">Travel and Tourism</option>
-		<option value="Engineering & Manufacturing">Engineering & Manufacturing</option>
-		<option value="Electrical Engineering">Electrical Engineering</option>
-		<option value="GCSEs">GCSEs</option>
-		<option value="Hairdressing & Barbering">Hairdressing & Barbering</option>
-		<option value="Music">Music</option>
-		<option value="Performing Arts">Performing Arts</option>
-		<option value="Public Services">Public Services</option>
-		<option value="Sport">Sport</option>
-		<option value="Science">Science</option>
-		<option value="Sport and Public Services">Sport and Public Services</option>
-		<option value="Supported Learning">Supported Learning</option>
-	</select>
+	<label for="interest"><span class="required-ast" style="color:#e64799;">*</span> I am interested in:</label>
+	  <input type="checkbox" name="interest1" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Hiring an apprentice</label>
+	  <input type="checkbox" name="interest2" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Offering work placement opportunities</label>
+	  <input type="checkbox" name="interest3" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Staff development and staff up skilling</label>
+	  <input type="checkbox" name="interest4" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Part time courses</label>
+	  <input type="checkbox" name="interest5" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Hiring the facilities</label>
+	  <input type="checkbox" name="interest6" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Assessor awards</label>
+	  <input type="checkbox" name="interest7" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Health and safety/ first aid</label>
+	  <input type="checkbox" name="interest8" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Gift tokens to use in salon</label>
+	  <input type="checkbox" name="interest9" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Day gifts</label>
+	  <input type="checkbox" name="interest10" value="YES" style="width: 15px; margin: 10px;"><label style="clear:none; margin:0; width:50%; margin: 10px;">Leisure/Short courses</label>
 	<label for="attending"><span class="required-ast" style="color:#e64799;">*</span> Attending:</label>
 	<select class="select-inline" type="text" name="attending" required>
-		<option value="Yes">Yes</option>
+		<option value="YES">Yes</option>
 		<option value="No">No</option>
 	</select>
 
@@ -159,7 +180,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			`postCode`,
 			`telephoneNumber`,
 			`email`,
-			`tasterSubject`,
+			`interest1`,
+			`interest2`,
+			`interest3`,
+			`interest4`,
+			`interest5`,
+			`interest6`,
+			`interest7`,
+			`interest8`,
+			`interest9`,
+			`interest10`,
 			`attending`
 			)
 VALUES
@@ -169,7 +199,16 @@ VALUES
 			'$postCode',
 			'$telephoneNumber',
 			'$email',
-			'$tasterSubject',
+			'$interest1',
+			'$interest2',
+			'$interest3',
+			'$interest4',
+			'$interest5',
+			'$interest6',
+			'$interest7',
+			'$interest8',
+			'$interest9',
+			'$interest10',
 			'$attending'
 			)";
 
@@ -177,12 +216,11 @@ $wpdb->query($sql);?>
 
 <?php 
 $to = 'marketing@knowsleycollege.ac.uk';
-$subject = 'Taster Booking';
+$subject = 'Lee Stafford Employers Event';
 $body = '<html><body>';
 $body .= '<h2>Taster Booking: ' . '</h2>';
 $body .= '<p>Name: ' . $firstName . '</p>' ;
 $body .= '<p>Surname: ' . $surname . '</p>'  ;
-$body .= '<p>Chosen Subject: ' . $tasterSubject . '</p>'  ;
 $body .= '<p>Email: ' . $email . '</p>'  ;
 $body .= '<p>Tel: ' . $telephoneNumber . '</p>'  ;
 $body .= '<p>Attending: ' . $attending . '</p>'  ;
