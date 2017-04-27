@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
 
   jQuery("#search-box").select2({
-    placeholder: 'Search by course title',
+    placeholder: 'Search by course title or subject',
     tags: false,
     ajax: {
       url: "/search-test-2/",

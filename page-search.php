@@ -35,16 +35,7 @@ get_header(); ?>
 
 <div class="fixed-container">
 
-
-<aside>
-<!-- Secondary Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'flex-secondary' );?>
-</aside>
-
-<section>
-
-<article class="single-article the-content">
+<article class="full-width-container the-content">
 
 <style>
 .select2-search__field {
@@ -72,9 +63,42 @@ ul.select2-results__options li {
 <script>
 jQuery(document).ready(function() {
 
-jQuery("#search-box").select2({
-  placeholder: 'Search for a course...',
-  tags: true,
+  jQuery("#search-box").select2({
+    placeholder: 'Search for a course...',
+    tags: false,
+    ajax: {
+      url: "/search-test-2/",
+      dataType: "json",
+      delay: 150,
+      data: function (params) {
+        return params;
+      },
+      processResults: function (data, params) {
+
+        return {
+          results: data
+          
+        };
+      },
+      cache: true
+  },
+    escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+    minimumInputLength: 1
+    // templateResult: formatRepo, // omitted for brevity, see the source of this page
+    // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+  }).on("select2:select", function (e) { 
+      window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+  });
+
+});
+
+</script>
+
+<script>
+jQuery(document).ready(function() {
+
+jQuery("#search-box-prog").select2({
+  placeholder: 'Search by curriculum area...',
   ajax: {
     url: "/search-test-2/",
     dataType: "json",
@@ -100,43 +124,38 @@ jQuery("#search-box").select2({
   window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
 });
 
-})
-</script>
 
-<script>
-jQuery(document).ready(function() {
+// jQuery LIVE SEARCH WITH HTML OUTPUT
 
-jQuery("#search-box-prog").select2({
-  placeholder: 'Search by curriculum area...',
-  ajax: {
-    url: "/search-test-3/",
-    dataType: "json",
-    delay: 150,
-    data: function (params) {
-      return params;
-    },
-    processResults: function (data, params) {
 
-      return {
-        results: data
-        
-      };
-    },
-    cache: true
-},
-  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
-  minimumInputLength: 1
-  // templateResult: formatRepo, // omitted for brevity, see the source of this page
-  // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
-}).on("select2:select", function (e) { 
-  console.log(e.params.data.id);
-  window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+  jQuery('#livesearch').on('keyup', function(e){
+
+    var searchTerm = jQuery(this).val();
+    console.log(searchTerm);
+
+    jQuery.ajax({
+       type: 'GET',
+       url: '/search-test-html/?term='+searchTerm,
+       dataType: 'html',
+       success: function(data) {
+          console.log(data);
+
+          jQuery('#livesearch-results').html(data);
+       }
+       
+    });
+  });
+
 });
-
-})
 </script>
 
-<select id="search-box" style="width:100%;" multiple="multiple">
+
+
+
+
+
+
+<select id="search-box" style="width:100%;">
  <option value=""></option>
 </select>
 
@@ -144,17 +163,15 @@ jQuery("#search-box-prog").select2({
  <option value=""></option>
 </select>
 
+<input type="text" id="livesearch" style="width:100%; margin-top: 2em;" />
+
+<div id="livesearch-results"></div>
+
 
 </article>
 
+</div>
 
-	
-	</section>
-
-		
-
-
-	</div>
 
 </div>
 
