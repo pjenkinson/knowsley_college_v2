@@ -169,7 +169,9 @@ function knowsley_college_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'knowsley_college_scripts' ); 
 
-/* Conditional scripts */
+/* CONDITIONAL SCRIPTS */
+
+/* Select 2 Static Homepage Live Search */
 
 function conditional_script_home_livesearch() {
     if (is_front_page())
@@ -178,6 +180,17 @@ function conditional_script_home_livesearch() {
     } 
 }
 add_action('wp_enqueue_scripts', 'conditional_script_home_livesearch');
+
+/* Responsive tables with stackable */
+
+function conditional_script_livesearch_advanced() {
+    if (is_page_template('page-search.php'))
+		{
+				wp_enqueue_script( 'stacktable', get_template_directory_uri() . '/inc/stacktable/stacktable.js', array('jquery'), '20134219', true );
+				wp_enqueue_style( 'stacktable-style', get_template_directory_uri() . '/inc/stacktable/style.css' );
+    } 
+}
+add_action('wp_enqueue_scripts', 'conditional_script_livesearch_advanced');
 
 
  

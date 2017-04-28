@@ -58,6 +58,18 @@ ul.select2-results__options li {
   height: auto;
 }
 
+/* Stacktable */
+
+.stacktable.small-only {
+ display: none;
+}
+
+@media (max-width: 900px) {
+  #advanced-search-table.stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; } /* Responsive Table */
+}
+
+
 </style>
 
 <script>
@@ -127,6 +139,7 @@ jQuery("#search-box-prog").select2({
 
 // jQuery LIVE SEARCH WITH HTML OUTPUT
 
+jQuery(document).ready(function() {
 
   jQuery('#livesearch').on('keyup', function(e){
 
@@ -145,6 +158,8 @@ jQuery("#search-box-prog").select2({
        
     });
   });
+
+});
 
 });
 </script>
@@ -167,6 +182,7 @@ jQuery("#search-box-prog").select2({
 
 <div id="livesearch-results"></div>
 
+<?php get_search_form(); ?>
 
 </article>
 
