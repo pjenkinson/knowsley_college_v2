@@ -110,6 +110,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'employers-courses' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Supported Learning' ): ?>
+	<nav class="nav-secondary supported-learning">
+	<?php wp_nav_menu( array( 'theme_location' => 'supported-learning' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 
