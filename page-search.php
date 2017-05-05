@@ -178,9 +178,15 @@ jQuery(document).ready(function() {
  <option value=""></option>
 </select>
 
-<input type="text" id="livesearch" style="width:100%; margin-top: 2em;" />
+<div class="course-finder" style="margin-bottom: 2em; background: #3d3d3c; margin-top: 2em;">
 
-<div id="livesearch-results"></div>
+<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 1em;">Course Finder</h2>
+
+  <input type="text" id="livesearch" style="width:100%; padding: 1em;" />
+
+  <div id="livesearch-results"></div> 
+
+</div>
 
 <?php get_search_form(); ?>
 

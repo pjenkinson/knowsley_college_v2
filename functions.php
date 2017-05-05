@@ -79,7 +79,8 @@ add_filter('wp_title', 'af_titledespacer');
       'policies' => __( 'policies' ),
       'nla' => __( 'Northern Logistics Academy' ),
       'leisure-courses' => __( 'Leisure Courses' ),
-      'employers-courses' => __( 'Employers Courses' )
+      'employers-courses' => __( 'Employers Courses' ),
+      'supported-learning' => __( 'Supported Learning' )
     )
   );
 }

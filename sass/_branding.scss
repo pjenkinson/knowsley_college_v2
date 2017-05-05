@@ -108,6 +108,51 @@ th, td {
 	padding: 1em !important;
 }
 
+// Advaced Course Search Table
+#advanced-search-table tr th {
+	background: white;
+	color: $primary-color;
+	text-align: left;
+}
+
+#advanced-search-table tr {
+	background: white;
+	border-bottom: 1px solid $off-white;
+}
+
+#advanced-search-table tbody tr {
+	border-left: 1px solid $off-white;
+	border-right: 1px solid $off-white;
+}
+
+#advanced-search-table td.more a:link, #advanced-search-table td.more a:focus, #advanced-search-table td.more a:visited {
+  color: $primary-color;
+  padding: 10px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid $primary-color;
+}
+
+#advanced-search-table td.more a:hover {
+	color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid $secondary-color;
+  background: $primary-color;
+  text-decoration: none;
+}
+
+#advanced-search-table tr:nth-child(even) {
+}
+
+#advanced-search-table tr:nth-child(odd) {
+}
+
 // Page content formatting
 .the-content h2 {
  clear: both;

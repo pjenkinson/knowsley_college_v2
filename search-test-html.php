@@ -50,7 +50,7 @@ jQuery( document ).ready(function() {
       <th scope="col">Level</th>
       <th scope="col">Campus</th>
       <th scope="col">Duration</th>
-      <th scope="col">Apply</th>
+      <th scope="col">Course Info</th>
     </tr>
   
 <?php
@@ -64,7 +64,7 @@ if(!is_null($results)) {
       <td><?=$value['level']?></td>
       <td><?=$value['location']?></td>
       <td><?=$value['duration']?></td>
-      <td><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">Apply Now</a></td>
+      <td class="more"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">More</a></td>
       </tr>
     <?php
   }

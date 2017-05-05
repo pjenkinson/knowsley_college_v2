@@ -38,6 +38,7 @@ get_header(); ?>
 
 </aside>
 
+
 <script>
 		// jQuery LIVE SEARCH WITH HTML OUTPUT
 
@@ -61,25 +62,44 @@ get_header(); ?>
 	    });
 	  });
 
-	});
+	  jQuery('#livesearch').val('<?php echo get_search_query(); ?>').trigger('keyup'); 
+
 
 	});
+  
+
 </script>
 
 
 <section class="search-page">
+
+
+
+
+<article>
+
+
+
+<div class="course-finder" style="margin-bottom: 2em; background: #3d3d3c; margin-top: 2em;">
+
+<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 0.6em;">Course Finder</h2>
+	
+	<div class="" style="padding:1em; maring: 0;">
+  <input type="search" id="livesearch" style="width:100%;" value="<?php echo get_search_query(); ?>" />
+	</div>
+  <div id="livesearch-results"></div> 
+
+</div>
+
+
+
+
 
 <?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'knowsley_college' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
-
-
-<article>
- <input type="text" id="livesearch" style="width:100%; margin-top: 2em;" />
-
-<div id="livesearch-results"></div>
 
 </article>
 
