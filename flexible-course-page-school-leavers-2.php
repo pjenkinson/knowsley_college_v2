@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Flexible Course Page - Adult 2 URL SECTIONS
+* Template Name: Flexible Course Page - School Leavers 2 URL SECTIONS
 */
 get_header(); ?>
 
@@ -94,7 +94,7 @@ $id = $finalBreakdown[$finalCount];
           FROM fact_sheets 
           INNER JOIN Offering
          	   On Offering.CourseInformationID=fact_sheets.id
-         WHERE level != 'Level 1' /* Level 1 Courses not included for Adults */ AND programmearea = (SELECT programmearea 
+         WHERE  programmearea = (SELECT programmearea 
 								FROM fact_sheets 
 								WHERE id = '".$id."')
 				AND fact_sheets.id = Offering.CourseInformationID	

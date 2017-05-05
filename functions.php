@@ -199,7 +199,7 @@ add_action('wp_enqueue_scripts', 'conditional_script_loading_factsheet');
 /* Mega Menu UI */
 
 function conditional_script_mega_menu_ui() {
-    if (is_page_template('flexible-content-page.php') || is_archive() || is_page_template('flexible-course-page.php') || is_page_template('flexible-content-page-eventbrite.php') || is_page_template('flexible-course-page-sport-pub.php') || is_page_template('flexible-course-page-adult.php') || is_page_template('flexible-course-page-adult-sport-pub.php') || is_page_template('flexible-course-page-adult-access.php') || is_page_template('flexible-course-page-higher-education.php') || is_page_template('facilities-enquiry.php')  ) {
+    if (is_page_template('flexible-content-page.php') || is_archive() || is_page_template('flexible-course-page.php') || is_page_template('flexible-content-page-eventbrite.php') || is_page_template('flexible-course-page-sport-pub.php') || is_page_template('flexible-course-page-school-leavers-2.php') || is_page_template('flexible-course-page-adult.php') || is_page_template('flexible-course-page-adult-sport-pub.php') || is_page_template('flexible-course-page-adult-access.php') || is_page_template('flexible-course-page-higher-education.php') || is_page_template('facilities-enquiry.php')  ) {
         wp_enqueue_script( 'mega_menu_ui', get_template_directory_uri() . '/inc/mega-menu-ui.js', array('jquery'), '1000000', true );
     } 
 }
