@@ -639,7 +639,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 	$wpdb->query($sql);
 
 	//get_template_part( 'page', 'applyEmail' );
-	include (locate_template('page-applyEmail.php')); 
+	//include (locate_template('page-applyEmail.php')); 
 
 	$applicationID = $wpdb->insert_id;
 

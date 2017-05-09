@@ -19,17 +19,10 @@
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div class="full-width-container secondary-page content-page">
+<div class="full-width-container one-col-page content-page">
 
 
 <div class="fixed-container">
-
-
-<aside>
-<!-- Secondary Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'flex-secondary' );?>
-</aside>
 
 <script>
 		// jQuery LIVE SEARCH WITH HTML OUTPUT
@@ -99,14 +92,15 @@
 </div>
 
 
+<div class="search-results-pages" style="clear: both;">
 <h2>Pages</h2>
 
 
 <?php if ( have_posts() ) : ?>
 
-				<p class="page-title"><?php printf( __( 'Search Results for: %s', 'knowsley_college' ), '<span>' . get_search_query() . '</span>' ); ?></p>
+				<p><?php printf( __( 'Search Results for: %s', 'knowsley_college' ), '<span>' . get_search_query() . '</span>' ); ?></p>
 
-</article>
+
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -131,6 +125,9 @@
 		-->
 		
 		<?php endif; ?>
+</div>
+
+</article>
 
 	
 </section>

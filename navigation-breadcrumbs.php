@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="full-width-container primary-breadcrumbs <?php if (is_page_template('home-higher-education.php')) { ?>breadcrumbs-higher-education<?php }?>">
+<div class="full-width-container primary-breadcrumbs">
 	<div class="fixed-container">
 		<div id="breadcrumbs">
 			<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
