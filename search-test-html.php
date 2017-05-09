@@ -21,7 +21,6 @@
      header('Content-Type: application/json');
 
      // echo json_encode($results);
-
      // exit;
 } 
 
@@ -30,12 +29,30 @@
 <script>
 jQuery( document ).ready(function() {
  jQuery('#advanced-search-table').stacktable({
-    myClass: 'something anotherclass',
+    myClass: 'something anotherclass'
  });
 
 });
 </script>
 
+<style>
+/* Stacktable */
+
+.stacktable.small-only {
+ display: none;
+}
+
+@media (max-width: 900px) {
+  #advanced-search-table.stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; } /* Responsive Table */
+  .stacktable.small-only tr:first-of-type {
+    display: none;
+  }
+
+}
+
+
+</style>
 
 
 <div>
@@ -70,15 +87,15 @@ if(!is_null($results)) {
   }
 }
 ?>
-    
-  </tbody>
 
-  <tfoot>
     <tr>
       <td colspan="2"><i class="fa fa-phone" aria-hidden="true"></i> Call us on 0151 477 5850</td>
       <td colspan="4" style="text-align:center;"><i class="fa fa-info" aria-hidden="true"></i> We can provide advice on courses, finance and student support.</td>
     </tr>
-  </tfoot>
+    
+  </tbody>
+
+    
 </table>
 
 

@@ -185,16 +185,13 @@ add_action('wp_enqueue_scripts', 'conditional_script_home_livesearch');
 /* Responsive tables with stackable */
 
 function conditional_script_livesearch_advanced() {
-    if (is_page_template('page-search.php'))
+    if (is_page_template('page-search.php') || is_search() )
 		{
 				wp_enqueue_script( 'stacktable', get_template_directory_uri() . '/inc/stacktable/stacktable.js', array('jquery'), '20134219', true );
 				wp_enqueue_style( 'stacktable-style', get_template_directory_uri() . '/inc/stacktable/style.css' );
     } 
 }
 add_action('wp_enqueue_scripts', 'conditional_script_livesearch_advanced');
-
-
- 
 
 /* Hover Effects */
 

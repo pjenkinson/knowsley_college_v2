@@ -1,8 +1,13 @@
-<?php get_header(); ?>
+<?php
+
+get_header(); ?>
 
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>
+
+
+
 	
 </header>
 
@@ -13,7 +18,7 @@
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'branding-flex' );?>
+<main id="main" class="site-main" role="main">
 
 
 <!-- Page content 
@@ -21,15 +26,13 @@
 
 <div class="full-width-container secondary-page content-page">
 
+	<div class="fixed-container">
 
-<div class="fixed-container">
-
-
-<aside>
-<!-- Secondary Navigation
+<!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'flex-secondary' );?>
-</aside>
+
+
+
 
 <script>
 		// jQuery LIVE SEARCH WITH HTML OUTPUT

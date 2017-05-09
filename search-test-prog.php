@@ -7,7 +7,7 @@
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT programmearea, id
                FROM fact_sheets
-              WHERE programmearea LIKE '%".$searchTerm."%'
+              WHERE programmearea LIKE '%".$searchTerm."%'.
               LIMIT 20";
      $courses = $wpdb->get_results($sql);
      foreach ($courses as $courses) {
