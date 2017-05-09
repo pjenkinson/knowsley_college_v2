@@ -5981,13 +5981,6 @@ article p.apply a {
 }
 
 /* line 551, sass/_single_pages.scss */
-.entry-summary {
-  float: left;
-  width: 100%;
-  border-bottom: 1px solid #d7d7d7;
-}
-
-/* line 559, sass/_single_pages.scss */
 section.application-form-section {
   width: 100%;
   float: left;
@@ -5995,7 +5988,7 @@ section.application-form-section {
   margin-right: 0;
 }
 
-/* line 563, sass/_single_pages.scss */
+/* line 555, sass/_single_pages.scss */
 .application-progress-bar {
   width: 100%;
   float: left;
@@ -6006,41 +5999,41 @@ section.application-form-section {
   margin-bottom: 3.7037%;
 }
 
-/* line 569, sass/_single_pages.scss */
+/* line 561, sass/_single_pages.scss */
 .steps {
   padding: 1em;
 }
 
-/* line 573, sass/_single_pages.scss */
+/* line 565, sass/_single_pages.scss */
 .step-active {
   background: #99cc66;
 }
 
-/* line 577, sass/_single_pages.scss */
+/* line 569, sass/_single_pages.scss */
 form.app-form .declaration {
   float: left;
   width: 90%;
 }
 
-/* line 582, sass/_single_pages.scss */
+/* line 574, sass/_single_pages.scss */
 form.app-form .marketing {
   float: left;
   width: 90%;
 }
 
-/* line 587, sass/_single_pages.scss */
+/* line 579, sass/_single_pages.scss */
 form.app-form .feedback {
   float: left;
   width: 90%;
 }
 
-/* line 592, sass/_single_pages.scss */
+/* line 584, sass/_single_pages.scss */
 input[type=checkbox] {
   clear: both;
   margin: 0px;
 }
 
-/* line 601, sass/_single_pages.scss */
+/* line 593, sass/_single_pages.scss */
 .contact-sections {
   float: left;
   background: white;
@@ -6048,13 +6041,13 @@ input[type=checkbox] {
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 608, sass/_single_pages.scss */
+/* line 600, sass/_single_pages.scss */
 .contact-sections-profile img {
   display: block;
   height: auto;
 }
 
-/* line 613, sass/_single_pages.scss */
+/* line 605, sass/_single_pages.scss */
 .contact-sections-intro {
   width: 100%;
   float: left;
@@ -6062,29 +6055,29 @@ input[type=checkbox] {
   margin-right: 0;
 }
 
-/* line 617, sass/_single_pages.scss */
+/* line 609, sass/_single_pages.scss */
 .contact-sections-intro p {
   margin: 0px;
 }
 
-/* line 621, sass/_single_pages.scss */
+/* line 613, sass/_single_pages.scss */
 .contact-sections .page-description {
   width: 100%;
   float: left;
   background: white;
 }
 
-/* line 627, sass/_single_pages.scss */
+/* line 619, sass/_single_pages.scss */
 .contact-sections .page-description p {
   padding: 0px 1em;
 }
 
-/* line 631, sass/_single_pages.scss */
+/* line 623, sass/_single_pages.scss */
 .contact-sections .page-description address {
   padding: 0.5em 1em;
 }
 
-/* line 636, sass/_single_pages.scss */
+/* line 628, sass/_single_pages.scss */
 .contact-sections .page-image {
   width: 100%;
   float: left;
@@ -6093,12 +6086,12 @@ input[type=checkbox] {
   overflow: hidden;
 }
 
-/* line 644, sass/_single_pages.scss */
+/* line 636, sass/_single_pages.scss */
 .contact-sections .page-image img {
   height: auto;
 }
 
-/* line 648, sass/_single_pages.scss */
+/* line 640, sass/_single_pages.scss */
 .contact-sections .heading {
   width: 100%;
   float: left;
@@ -6109,58 +6102,58 @@ input[type=checkbox] {
   left: 0;
 }
 
-/* line 658, sass/_single_pages.scss */
+/* line 650, sass/_single_pages.scss */
 .contact-sections .heading h2, .contact-sections .heading h3 {
   color: white;
   margin-bottom: 0px;
   font-size: 1em;
 }
 
-/* line 664, sass/_single_pages.scss */
+/* line 656, sass/_single_pages.scss */
 .contact-sections .page-description .sub-heading {
   width: 100%;
   float: left;
   padding: 3.7037%;
 }
 
-/* line 670, sass/_single_pages.scss */
+/* line 662, sass/_single_pages.scss */
 .contact-sections a:link, .page-sections a:visited, .page-sections a:hover {
   color: white;
 }
 
-/* line 674, sass/_single_pages.scss */
+/* line 666, sass/_single_pages.scss */
 .contact-sections .page-description p a:link, .page-sections .page-description p a:visited, .page-sections .page-description p a:hover {
   color: #3d3d3c;
 }
 
-/* line 678, sass/_single_pages.scss */
+/* line 670, sass/_single_pages.scss */
 .contact-sections .page-description .heading h3 {
   color: white;
   margin-bottom: 0px;
 }
 
-/* line 683, sass/_single_pages.scss */
+/* line 675, sass/_single_pages.scss */
 .contact-sections {
   background: white;
 }
 
-/* line 687, sass/_single_pages.scss */
+/* line 679, sass/_single_pages.scss */
 .contact-sections .page-description p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-/* line 692, sass/_single_pages.scss */
+/* line 684, sass/_single_pages.scss */
 .opening-hours {
   clear: both;
 }
 
-/* line 695, sass/_single_pages.scss */
+/* line 687, sass/_single_pages.scss */
 .opening-hours ul li {
   list-style-position: inside;
 }
 
-/* line 698, sass/_single_pages.scss */
+/* line 690, sass/_single_pages.scss */
 .more-campus {
   background: #3d3d3c;
   width: 100%;
@@ -6168,7 +6161,7 @@ input[type=checkbox] {
   position: relative;
 }
 
-/* line 704, sass/_single_pages.scss */
+/* line 696, sass/_single_pages.scss */
 .more-campus p {
   margin: 0px;
   color: white;
@@ -6176,19 +6169,19 @@ input[type=checkbox] {
   font-size: 1em;
 }
 
-/* line 710, sass/_single_pages.scss */
+/* line 702, sass/_single_pages.scss */
 .contact-sections .more-campus a {
   color: white;
   float: left;
   width: 100%;
 }
 
-/* line 716, sass/_single_pages.scss */
+/* line 708, sass/_single_pages.scss */
 .more-campus:hover {
   background: #99cc66;
 }
 
-/* line 722, sass/_single_pages.scss */
+/* line 714, sass/_single_pages.scss */
 .slt-profile-1col {
   width: 100%;
   float: left;
@@ -6196,7 +6189,7 @@ input[type=checkbox] {
   margin-right: 0;
 }
 
-/* line 726, sass/_single_pages.scss */
+/* line 718, sass/_single_pages.scss */
 .slt-profile {
   overflow: hidden;
   background: white;
@@ -6205,25 +6198,25 @@ input[type=checkbox] {
   margin-top: 3.7037%;
 }
 
-/* line 734, sass/_single_pages.scss */
+/* line 726, sass/_single_pages.scss */
 .slt-profile:first-of-type {
   margin-top: 0px;
 }
 
-/* line 738, sass/_single_pages.scss */
+/* line 730, sass/_single_pages.scss */
 .slt-image {
   position: relative;
   z-index: 100;
 }
 
-/* line 743, sass/_single_pages.scss */
+/* line 735, sass/_single_pages.scss */
 .slt-image img {
   width: 100%;
   height: auto;
   border: none;
 }
 
-/* line 749, sass/_single_pages.scss */
+/* line 741, sass/_single_pages.scss */
 .slt-info {
   position: relative;
   z-index: 9999;
@@ -6231,7 +6224,7 @@ input[type=checkbox] {
   padding-bottom: 0px;
 }
 
-/* line 756, sass/_single_pages.scss */
+/* line 748, sass/_single_pages.scss */
 .slt-member-name {
   color: #99cc66;
   position: absolute;
@@ -6242,23 +6235,23 @@ input[type=checkbox] {
   left: 0;
 }
 
-/* line 766, sass/_single_pages.scss */
+/* line 758, sass/_single_pages.scss */
 .slt-member-title {
   color: #3d3d3c;
   font-size: 1.6em;
 }
 
-/* line 773, sass/_single_pages.scss */
+/* line 765, sass/_single_pages.scss */
 .search-result {
   margin-top: 3.7037%;
 }
 
-/* line 779, sass/_single_pages.scss */
+/* line 771, sass/_single_pages.scss */
 .subject-intro {
   margin-bottom: 3.7037%;
 }
 
-/* line 783, sass/_single_pages.scss */
+/* line 775, sass/_single_pages.scss */
 .subject-download {
   width: 100.594px;
   height: 140.016px;
@@ -6266,12 +6259,12 @@ input[type=checkbox] {
   vertical-align: top;
 }
 
-/* line 790, sass/_single_pages.scss */
+/* line 782, sass/_single_pages.scss */
 .overlay {
   position: relative;
 }
 
-/* line 794, sass/_single_pages.scss */
+/* line 786, sass/_single_pages.scss */
 .overlay:after {
   position: absolute;
   content: "";
@@ -6282,55 +6275,55 @@ input[type=checkbox] {
   opacity: 0;
 }
 
-/* line 804, sass/_single_pages.scss */
+/* line 796, sass/_single_pages.scss */
 .overlay:hover:after {
   opacity: .7;
 }
 
-/* line 808, sass/_single_pages.scss */
+/* line 800, sass/_single_pages.scss */
 .overlay-red:after {
   background-color: #99cc66;
 }
 
-/* line 812, sass/_single_pages.scss */
+/* line 804, sass/_single_pages.scss */
 .subject-download a {
   width: 100%;
   height: auto;
 }
 
-/* line 817, sass/_single_pages.scss */
+/* line 809, sass/_single_pages.scss */
 .subject-download img {
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
-/* line 822, sass/_single_pages.scss */
+/* line 814, sass/_single_pages.scss */
 .subject-download img:hover {
   background: #99cc66;
   cursor: pointer;
 }
 
-/* line 827, sass/_single_pages.scss */
+/* line 819, sass/_single_pages.scss */
 .higher-education hr.dotted {
   border-style: dashed;
   color: #68478d;
   margin-bottom: 2em;
 }
 
-/* line 833, sass/_single_pages.scss */
+/* line 825, sass/_single_pages.scss */
 .lee-stafford hr.dotted {
   border-style: dashed;
   color: #ee1199;
   margin-bottom: 2em;
 }
 
-/* line 839, sass/_single_pages.scss */
+/* line 831, sass/_single_pages.scss */
 .section-panels-bg {
   background: #d7d7d7;
 }
 
-/* line 844, sass/_single_pages.scss */
+/* line 836, sass/_single_pages.scss */
 .eventbrite-course {
   margin-bottom: 3.7037%;
   background: white;
@@ -6338,17 +6331,17 @@ input[type=checkbox] {
 }
 
 @media screen and (max-width: 956px) {
-  /* line 853, sass/_single_pages.scss */
+  /* line 845, sass/_single_pages.scss */
   .slider .flickity-prev-next-button {
     display: none;
   }
 }
-/* line 858, sass/_single_pages.scss */
+/* line 850, sass/_single_pages.scss */
 .slider {
   position: relative;
 }
 
-/* line 862, sass/_single_pages.scss */
+/* line 854, sass/_single_pages.scss */
 .slider .carousel-cell {
   width: 100%;
   /* full width */
@@ -6357,7 +6350,7 @@ input[type=checkbox] {
   margin-right: 10px;
 }
 
-/* line 868, sass/_single_pages.scss */
+/* line 860, sass/_single_pages.scss */
 .slider .flickity-prev-next-button {
   width: 40px;
   height: 40px;
@@ -6365,54 +6358,54 @@ input[type=checkbox] {
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-/* line 875, sass/_single_pages.scss */
+/* line 867, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:hover {
   background: transparent;
 }
 
-/* line 879, sass/_single_pages.scss */
+/* line 871, sass/_single_pages.scss */
 .slider .flickity-prev-next-button svg {
   margin-top: 4px;
 }
 
 /* arrow color */
-/* line 884, sass/_single_pages.scss */
+/* line 876, sass/_single_pages.scss */
 .slider .flickity-prev-next-button .arrow {
   fill: white;
 }
 
-/* line 888, sass/_single_pages.scss */
+/* line 880, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:hover .arrow {
   fill: #99cc66;
 }
 
-/* line 892, sass/_single_pages.scss */
+/* line 884, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.no-svg {
   color: white;
 }
 
 /* hide disabled button */
-/* line 896, sass/_single_pages.scss */
+/* line 888, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:disabled {
   display: none;
 }
 
 /* position outside */
-/* line 901, sass/_single_pages.scss */
+/* line 893, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.previous {
   top: 170px;
   left: 2em;
   position: absolute;
 }
 
-/* line 906, sass/_single_pages.scss */
+/* line 898, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.next {
   top: 170px;
   right: 2em;
   position: absolute;
 }
 
-/* line 912, sass/_single_pages.scss */
+/* line 904, sass/_single_pages.scss */
 .vacancies-archive {
   margin-top: 2em;
 }
