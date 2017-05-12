@@ -74,17 +74,13 @@
 
 
 
-<div class="course-finder" style="float: left; margin-bottom: 2em; background: #3d3d3c; margin-top: 2em;">
+<div class="course-finder" style="float: left; margin-bottom: 2em; background: #3d3d3c; margin-top: 2em; width: 100%;">
 
 
-<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 0.6em;">Course Finder</h2>
-
-<p style="color: white; padding:0; margin: 0; padding-left: 1em;">Search for a course</p>
-
-    
+<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 0.6em; padding-bottom: 0;">Course Finder</h2>
 	
 	<div class="" style="padding:1em; maring: 0;">
-  <input type="search" id="livesearch" style="width:85%; float: left;" value="<?php echo get_search_query(); ?>" />
+  <input type="search" id="livesearch" style="width:90%; float: left;" value="<?php echo get_search_query(); ?>" placeholder="Search for a course" />
   <div style="color:white;float:left;display-inline:block; margin: 0; padding: 0;"><i class="fa fa-search" aria-hidden="true" style="font-size: 2em; padding-left: 0.5em; background: white; color: #3d3d3c; padding: 0.1em; margin-left: 1em;"></i></div>
 	</div>
   <div id="livesearch-results"></div> 

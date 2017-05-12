@@ -86,6 +86,14 @@ if(!is_null($results)) {
     <?php
   }
 }
+else {?>
+    
+    <tr>
+      <td colspan="6">No courses found: Try searching by subject area, e.g Art or Sport</td>
+    </tr>
+
+<?php
+}
 ?>
 
     <tr>
