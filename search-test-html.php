@@ -7,7 +7,7 @@
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT programmearea, id, factsheetname, level, location, duration FROM fact_sheets
               WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
-              LIMIT 20";
+              LIMIT 100";
      $courses = $wpdb->get_results($sql);
      foreach ($courses as $courses) {
           $results[] = array('id' => $courses->id, 
@@ -19,7 +19,6 @@
                               );
      }
      header('Content-Type: application/json');
-
      // echo json_encode($results);
      // exit;
 } 
@@ -76,7 +75,7 @@ if(!is_null($results)) {
   foreach($results as $value) {
     ?>
       <tr>
-      <td><?=$value['text']?></td>
+      <td><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>"><?=$value['text']?></a></td>
       <td><?=$value['programme']?></td>
       <td><?=$value['level']?></td>
       <td><?=$value['location']?></td>
@@ -105,6 +104,7 @@ else {?>
 
     
 </table>
+
 
 
 </div>

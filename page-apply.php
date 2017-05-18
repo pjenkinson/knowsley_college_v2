@@ -1,8 +1,6 @@
 <?php
 /**
 * Template Name: Apply Page
-* Content Page
-*
 * @package knowsley_college
 */
 

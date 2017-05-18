@@ -13,7 +13,7 @@
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'branding-flex' );?>
+<main id="main" class="site-main" role="main">
 
 
 <!-- Page content 
@@ -25,7 +25,7 @@
 <div class="fixed-container">
 
 <script>
-		// jQuery LIVE SEARCH WITH HTML OUTPUT
+		// LIVE SEARCH WITH HTML OUTPUT
 
 		jQuery(document).ready(function() {
 
@@ -36,7 +36,7 @@
 
 	    jQuery.ajax({
 	       type: 'GET',
-	       url: '/search-test-html/?term='+searchTerm,
+	       url: '/htmllivesearch/?term='+searchTerm,
 	       dataType: 'html',
 	       data: {
 	       	searchTerm: 4
@@ -51,19 +51,41 @@
 	  });
 
 	  // Adds WP search query to live search text input
-
 	  jQuery('#livesearch').val('<?php echo get_search_query(); ?>').trigger('keyup'); 
 
 	});
 
 </script>
 
-<style>
+<script>
+
+jQuery(document).ready(function() {
+
+	jQuery('#livesearch').bind('keypress', function(e) {
+    if(e.keyCode==13){
+        var livesearchvalue = jQuery( "#livesearch" ).val();
+        window.location.href="/?s=" + livesearchvalue;
+    }
+	});
+
+	jQuery( "#livesearchbutton" ).click(function() {
+	  var livesearchvalue = jQuery( "#livesearch" ).val();
+	  window.location.href="/?s=" + livesearchvalue;
+	});
+
+	jQuery( "#showallcourses" ).click(function() {
+	  var livesearchvalue = jQuery( "a" ).val();
+	  window.location.href="/?s=" + livesearchvalue;
+	});
+
+});
+
+</script>
 
 
 </style>
 
-<section class="search-page">
+<section class="search-page full-width-container">
 <article>
 
 <h1>Search Results</h1>
@@ -74,21 +96,31 @@
 
 
 
-<div class="course-finder" style="float: left; margin-bottom: 2em; background: #3d3d3c; margin-top: 2em; width: 100%;">
+<!-- COURSE FINDER -->
 
+<div class="course-finder">
 
-<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 0.6em; padding-bottom: 0;">Course Finder</h2>
-	
-	<div class="" style="padding:1em; maring: 0;">
-  <input type="search" id="livesearch" style="width:90%; float: left;" value="<?php echo get_search_query(); ?>" placeholder="Search for a course" />
-  <div style="color:white;float:left;display-inline:block; margin: 0; padding: 0;"><i class="fa fa-search" aria-hidden="true" style="font-size: 2em; padding-left: 0.5em; background: white; color: #3d3d3c; padding: 0.1em; margin-left: 1em;"></i></div>
-	</div>
-  <div id="livesearch-results"></div> 
+  <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
+  <p style="">Find a course and apply</p>
+  <div class="live-search-container">
+
+    <input type="search" id="livesearch" value="<?php echo get_search_query(); ?>" placeholder="Search for a course" />
+
+    <button id="livesearchbutton">SEARCH</button>
+    <button id="showallcourses">VIEW ALL COURSES</button>
+  
+  </div>
+
+  <div id="livesearch-results">
+
+    <!-- Search Results -->
+
+  </div> 
 
 </div>
 
 
-<div class="search-results-pages" style="clear: both;">
+<div class="search-results-pages full-width-container">
 <h2>Pages</h2>
 
 

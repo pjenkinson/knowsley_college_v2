@@ -148,7 +148,7 @@ jQuery(document).ready(function() {
 
     jQuery.ajax({
        type: 'GET',
-       url: '/search-test-html/?term='+searchTerm,
+       url: '/htmllivesearch/?term='+searchTerm,
        dataType: 'html',
        success: function(data) {
           console.log(data);
@@ -162,33 +162,71 @@ jQuery(document).ready(function() {
 });
 
 });
+
+
+
+var livesearchvalue = '';
+
+jQuery(document).ready(function() {
+
+  console.log(livesearchvalue);
+
+  jQuery('#livesearch').bind('keypress', function(e) {
+    if(e.keyCode==13){
+        var livesearchvalue = jQuery( "#livesearch" ).val();
+        window.location.href="/?s=" + livesearchvalue;
+    }
+});
+
+
+jQuery( "#livesearchbutton" ).click(function() {
+  var livesearchvalue = jQuery( "#livesearch" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+jQuery( "#showallcourses" ).click(function() {
+  var livesearchvalue = jQuery( "a" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+
+});
+
+
+
+
+
+
 </script>
 
 
+<!-- COURSE FINDER -->
 
+<div class="course-finder">
 
+  <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
+  <p style="color:white; margin-left: 1em; margin-bottom: 0;">Find a course and apply</p>
+  <div class="live-search-container">
 
+    <input type="search" id="livesearch" value="<?php echo get_search_query(); ?>" placeholder="Search for a course" />
 
+    <button id="livesearchbutton">SEARCH</button>
+    <button id="showallcourses">VIEW ALL COURSES</button>
+  
+  </div>
 
-<select id="search-box" style="width:100%;">
- <option value=""></option>
-</select>
+  <div id="livesearch-results">
 
-<select id="search-box-prog" style="width:100%;" multiple="multiple">
- <option value=""></option>
-</select>
+    <!-- Search Results -->
 
-<div class="course-finder" style="margin-bottom: 2em; background: #3d3d3c; margin-top: 2em;">
-
-<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 1em;">Course Finder</h2>
-
-  <input type="text" id="livesearch" style="width:100%; padding: 1em;" />
-
-  <div id="livesearch-results"></div> 
+  </div> 
 
 </div>
 
-<?php get_search_form(); ?>
+
+
+
+
 
 </article>
 
