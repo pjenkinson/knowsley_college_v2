@@ -39,7 +39,6 @@ get_header(); ?>
 
 <script>
 
-
 // jQuery LIVE SEARCH WITH HTML OUTPUT
 
 jQuery(document).ready(function() {
@@ -54,9 +53,13 @@ jQuery(document).ready(function() {
        url: '/htmllivesearch/?term='+searchTerm,
        dataType: 'html',
        success: function(data) {
-          console.log(data);
-
+          // console.log(data);
           jQuery('#livesearch-results').html(data);
+
+           // jQuery('html, body').animate({
+            //  scrollTop: jQuery("#livesearch-results").offset().top
+           //}, 4000);
+
        }
        
     });
@@ -78,6 +81,24 @@ jQuery(document).ready(function() {
 });
 
 
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
+
+jQuery('#livesearch').keyup(function() {
+    delay(function(){
+      jQuery('html, body').stop(true, false).animate({
+      scrollTop: jQuery("#livesearch-results").offset().top
+      }, 1500);
+    }, 1800 );
+});
+    
+
 jQuery( "#livesearchbutton" ).click(function() {
   var livesearchvalue = jQuery( "#livesearch" ).val();
   window.location.href="/?s=" + livesearchvalue;
@@ -92,6 +113,8 @@ jQuery( "#showallcourses" ).click(function() {
 
 
 </script>
+
+
 
 
 <!-- COURSE FINDER -->

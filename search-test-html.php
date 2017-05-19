@@ -27,12 +27,17 @@
 
 <script>
 jQuery( document ).ready(function() {
+
  jQuery('#advanced-search-table').stacktable({
     myClass: 'something anotherclass'
  });
 
+
+
+
 });
 </script>
+
 
 <style>
 /* Stacktable */
@@ -52,6 +57,7 @@ jQuery( document ).ready(function() {
 
 
 </style>
+
 
 
 <div>
