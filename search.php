@@ -13,7 +13,7 @@
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main kcc-primary" role="main">
 
 
 <!-- Page content 
