@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Course Finder
+* Template Name: Flexible Search Page
 */
 get_header(); ?>
 
@@ -37,7 +37,104 @@ get_header(); ?>
 
 <article class="full-width-container the-content">
 
+<style>
+.select2-search__field {
+  width: 100%;
+}
+
+ul.select2-results__options li {
+  list-style: none;
+}
+
+.select2-selection__placeholder {
+  font-size: 2em;
+}
+
+.select2-selection__rendered {
+  padding: 1em;
+}
+
+.select2-container .select2-selection--single  {
+  height: auto;
+}
+
+/* Stacktable */
+
+.stacktable.small-only {
+ display: none;
+}
+
+@media (max-width: 900px) {
+  #advanced-search-table.stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; } /* Responsive Table */
+}
+
+
+</style>
+
 <script>
+jQuery(document).ready(function() {
+
+  jQuery("#search-box").select2({
+    placeholder: 'Search for a course...',
+    tags: false,
+    ajax: {
+      url: "/search-test-2/",
+      dataType: "json",
+      delay: 150,
+      data: function (params) {
+        return params;
+      },
+      processResults: function (data, params) {
+
+        return {
+          results: data
+          
+        };
+      },
+      cache: true
+  },
+    escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+    minimumInputLength: 1
+    // templateResult: formatRepo, // omitted for brevity, see the source of this page
+    // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+  }).on("select2:select", function (e) { 
+      window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+  });
+
+});
+
+</script>
+
+<script>
+jQuery(document).ready(function() {
+
+jQuery("#search-box-prog").select2({
+  placeholder: 'Search by curriculum area...',
+  ajax: {
+    url: "/search-test-2/",
+    dataType: "json",
+    delay: 150,
+    data: function (params) {
+      return params;
+    },
+    processResults: function (data, params) {
+
+      return {
+        results: data
+        
+      };
+    },
+    cache: true
+},
+  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+  minimumInputLength: 1
+  // templateResult: formatRepo, // omitted for brevity, see the source of this page
+  // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+}).on("select2:select", function (e) { 
+  console.log(e.params.data.id);
+  window.location.href="https://www.knowsleycollege.ac.uk/course-finder/factsheet/?factsheet=" + (e.params.data.id);
+});
 
 
 // jQuery LIVE SEARCH WITH HTML OUTPUT
@@ -64,6 +161,10 @@ jQuery(document).ready(function() {
 
 });
 
+});
+
+
+
 var livesearchvalue = '';
 
 jQuery(document).ready(function() {
@@ -88,7 +189,12 @@ jQuery( "#showallcourses" ).click(function() {
   window.location.href="/?s=" + livesearchvalue;
 });
 
+
 });
+
+
+
+
 
 
 </script>
