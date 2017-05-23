@@ -3,7 +3,7 @@
 	height: auto;
 }
 .factsheet-page section {
-	margin-bottom: 3em;
+	background: white;
 }
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
 	background: white;
@@ -27,7 +27,6 @@
 	float: left;
 	width: 100%;
 	background: $off-white;
-	margin-top: 2em;
 }
 .factsheet-header {
   float: left;
@@ -44,31 +43,42 @@
 }
 
 .factsheet-title {
-	position: relative;
+	position: absolute;
 	float: left;
 	width: 100%;
-	top: 0;
+	bottom: 0;
 	left: 0;
-	background: $primary-color;
 }
 
 .factsheet-title h1 {
 	color: $secondary-color;
+	background: $primary-color;
 	text-decoration: none;
 	border-bottom: none;
-	margin: 0px;
+	display: inline-block;
+	float: left;
+	clear: both;
 	padding: 0.5em;
-	padding-bottom: 0px;
+	font-size: 3em;
 }
 
 .factsheet-title p {
-	margin: 0px 1em;
-	margin-bottom: 1em;
-	padding-left: 0px;
-	padding-bottom: 1em;
+	background: $primary-color;
 	color: white;
+	display: inline-block;
+	float: left;
+	clear: both;
+	padding: 1em;
 }
 
+.factsheet-title-bg {
+}
+
+.factsheet-image {
+	width: 100%;
+	float: left;
+	max-height: 500px;
+}
 #tabs  {
 	width: 100%;
 	float: left;
@@ -112,8 +122,6 @@
 	float: left;
 	width: 100%;
 	background: $primary-color;
-	padding-top: 0.5em;
-	padding-left: 0.5em;
 	color: white;
 }
 
