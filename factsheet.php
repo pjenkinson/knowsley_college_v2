@@ -124,7 +124,7 @@ get_header(); ?>
       <div class="factsheet-title">
           <div class="fixed-container factsheet-title-bg">
             <h1><?=$factsheet->name?></h1>
-            <p><?=$factsheet->programmearea?> <span class="highlight-text"><?=$factsheet->level?></span></p>
+            <p><?=$factsheet->programmearea?>: <span class="highlight-text"><?=$factsheet->level?></span></p>
           </div>
       </div>
 
