@@ -92,8 +92,7 @@ $sql = 			"SELECT DISTINCT id,
                factsheetname, 
                courseabout,
                entryrequirements,
-               level,
-               course_url
+               level
           FROM fact_sheets 
           INNER JOIN Offering
          	   On Offering.CourseInformationID=fact_sheets.id
@@ -118,7 +117,7 @@ foreach($courses AS $course) {
 	<div class="course-level"><?=$course->level?></div>
 	<p><?=$course->courseabout?></p>
 	<!--Include ID of 16-19 course factsheet page -->
-	<div class="button-default"><a href="/<?=$course->course_url?>">Course information</a></div>
+	<div class="button-default"><a href="/?page_id=1789&factsheet=<?=$course->id?>">Course information</a></div>
   <div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
   </article>
 	<?php

@@ -1,10 +1,16 @@
 .factsheet-feature img {
 	width: 100%;
 	height: auto;
+	opacity: 0.7;
 }
 .factsheet-page section {
 	background: white;
 }
+
+.factsheet-details h2 {
+ border: none;
+}
+
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
 	background: white;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
@@ -39,7 +45,10 @@
 	height: auto;
 	position: relative;
 	overflow: hidden;
-	background: $secondary-color;
+}
+.factsheet-title-bg {
+	background: $primary-color;
+	padding: 1em;
 }
 
 .factsheet-title {
@@ -52,33 +61,30 @@
 
 .factsheet-title h1 {
 	color: $secondary-color;
-	background: $primary-color;
 	text-decoration: none;
 	border-bottom: none;
 	display: inline-block;
 	float: left;
 	clear: both;
-	padding: 0.5em;
 	font-size: 3em;
 }
 
 .factsheet-title p {
-	background: $primary-color;
 	color: white;
 	display: inline-block;
 	float: left;
 	clear: both;
-	padding: 1em;
-}
-
-.factsheet-title-bg {
+	margin-top: 0;
 }
 
 .factsheet-image {
 	width: 100%;
 	float: left;
-	max-height: 500px;
+	max-height: 600px;
+	background: black;
+	overflow: hidden;
 }
+
 #tabs  {
 	width: 100%;
 	float: left;
@@ -115,6 +121,9 @@
   color: white !important;
 }
 
+.highlight-text {
+	color: $secondary-color;
+}
 
 // Tab Sections
 
@@ -136,6 +145,9 @@
 
 .tab-links ul li a:link, .tab-links ul li a:visited,  {
 	color: white;
+	border: 1px solid white;
+	border-bottom: none;
+	font-size: 1.2em;
 }
 
 .ui-tabs-nav li a:link {

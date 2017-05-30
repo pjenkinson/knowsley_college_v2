@@ -1,6 +1,8 @@
 <?php
 /**
-* Template Name: SEO Friendly Factsheet
+* Template Name: New Factsheet
+*
+* @package knowsley_college
 */
 get_header(); ?>
 
@@ -66,11 +68,8 @@ get_header(); ?>
 
  <!-- Factsheet section -->
 
-
   <?php
-
-  // Get Factsheet ID from ACF Field
-  $factsheetID = get_field('factsheet_id');
+  $factsheetID = filter_var($_GET['factsheet'], FILTER_SANITIZE_NUMBER_INT);
 
   $sql = "SELECT id, 
                  factsheetname AS name, 
@@ -88,8 +87,7 @@ get_header(); ?>
                  unit2,
                  unit3,
                  unit4,
-                 kiscode,
-                 course_url
+                 kiscode
             FROM fact_sheets
            WHERE id = '".$factsheetID."'";
 
@@ -106,31 +104,29 @@ get_header(); ?>
   $units = $wpdb->get_results($sql);         
 
   ?>
- <p><?=$factsheet->course_url?></p>
+
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
-
-  <div class="factsheet-image">
-  <?php $factsheetImg = $factsheet->programmearea ?>
-
-  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
-
-  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
-    </div>
 
   <div class="fixed-container">
 
       <div class="factsheet-title">
           <div class="fixed-container factsheet-title-bg">
             <h1><?=$factsheet->name?></h1>
-            <p><?=$factsheet->programmearea?> <span class="highlight-text"><?=$factsheet->level?></span></p>
+            <p><?=$factsheet->level?></p>
           </div>
       </div>
 
   </div>  
 
-    
+    <div class="factsheet-image">
+  <?php $factsheetImg = $factsheet->programmearea ?>
+
+  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
+
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
+    </div>
 
 
 
@@ -149,7 +145,7 @@ get_header(); ?>
     <div class="fixed-container">
 
   <ul class="tab-links-list">
-    <li><a href="#about">Course Overview</a></li>
+    <li><a href="#about">Course Information</a></li>
     <li><a href="#units">Units</a></li>
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
   </ul>
@@ -197,55 +193,45 @@ get_header(); ?>
 
   <div id="about" class="tab-section">
 
-
-
-
     <?php if (!empty($factsheet->courseabout)) {?>
 
-    <section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
-        <div class="two-col-section-main">
-        <h2 class="section-heading section-heading-colour">About</h2>
-        <p><?=$factsheet->courseabout?></p>
-        </div>
-        <div class="two-col-section-side two-col-section-image">
-          <div class="section-image-container">
-          <a href="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" title="<?php the_sub_field('link_title'); ?>">
-          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?php the_sub_field('link_title'); ?>">
-          </a>
-          </div>
-        </div>
-    </section>
+    <h2>About</h2>
+    <p><?=$factsheet->courseabout?></p>
 
-    <?php } ?>
+    <?php } else {}; ?>
 
-    <section class="full-width-container">
+    <?php if (!empty($factsheet->entryrequirements)) {?>
 
-      <div class="two-col-section-main factsheet-details">
-        <?php if (!empty($factsheet->entryrequirements)) {?>
-
-    <h2>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
+    <h2>Entry requirements</h2>
     <p><?=$factsheet->entryrequirements?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->duration)) {?>
 
-    <h2>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
+    <h2>Duration</h2>
     <p><?=$factsheet->duration?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->progression)) {?>
 
-      <h2>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
+      <h2>Progression and Careers</h2>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->location)) {?>
 
-    <h2>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+    <h2>Study location</h2>
     <p><?=$factsheet->location?></p>
+
+    <?php } else {}; ?>
+
+    <?php if (!empty($factsheet->cost)) {?>
+
+    <h2>Cost</h2>
+    <p><?=$factsheet->cost?></p>
 
     <?php } else {}; ?>
 
@@ -256,19 +242,6 @@ get_header(); ?>
 
     <?php } else {}; ?>
 
-      </div>
-
-      <div class="two-col-section-side">
-        <p>2</p>
-      </div>
-
-
-
-    </section>
-
-    
-
-    
   </div>
 
   <div id="units" class="tab-section">
