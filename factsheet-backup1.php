@@ -1,6 +1,8 @@
 <?php
 /**
-* Template Name: SEO Friendly Factsheet
+* Template Name: New Factsheet
+*
+* @package knowsley_college
 */
 get_header(); ?>
 
@@ -10,12 +12,15 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'scroll' );?>
 
 <script>
-  jQuery(function() {
-      jQuery( "#tabs" ).tabs();
-    }); 
 
-  jQuery("li.last-tab a").unbind('click');
+jQuery(function() {
+    jQuery( "#tabs" ).tabs();
+  }); 
+
+jQuery("li.last-tab a").unbind('click');
+
 </script>
+
 
 </header>
 
@@ -34,6 +39,7 @@ get_header(); ?>
 
 <div class="full-width-container factsheet-page">
 
+	<div class="fixed-container">
 
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -66,11 +72,8 @@ get_header(); ?>
 
  <!-- Factsheet section -->
 
-
   <?php
-
-  // Get Factsheet ID from ACF Field
-  $factsheetID = get_field('factsheet_id');
+  $factsheetID = filter_var($_GET['factsheet'], FILTER_SANITIZE_NUMBER_INT);
 
   $sql = "SELECT id, 
                  factsheetname AS name, 
@@ -88,8 +91,7 @@ get_header(); ?>
                  unit2,
                  unit3,
                  unit4,
-                 kiscode,
-                 course_url
+                 kiscode
             FROM fact_sheets
            WHERE id = '".$factsheetID."'";
 
@@ -106,68 +108,29 @@ get_header(); ?>
   $units = $wpdb->get_results($sql);         
 
   ?>
- <p><?=$factsheet->course_url?></p>
+
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
 
-  <div class="factsheet-image">
+  <div class="factsheet-title">
+    <h1><?=$factsheet->name?></h1>
+    <p><?=$factsheet->level?></p>
+  </div>
+
+  <!-- Featured Factsheet IMG 
+
   <?php $factsheetImg = $factsheet->programmearea ?>
 
   <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
 
   <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
-    </div>
 
-  <div class="fixed-container">
-
-      <div class="factsheet-title">
-          <div class="fixed-container factsheet-title-bg">
-            <h1><?=$factsheet->name?></h1>
-            <p><?=$factsheet->programmearea?>: <span class="highlight-text"><?=$factsheet->level?></span></p>
-
-          </div>
-      </div>
-
-  </div>  
-
-    
-
-
-
-    </div>
-
-
-
-
-      </div>
-
-
-    <div id="tabs"> 
-
-  <div class="tab-links">  
-
-    <div class="fixed-container">
-
-  <ul class="tab-links-list">
-    <li><a href="#about">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
-    <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
-  </ul>
-  <ul class="tab-links-last">
-    <?php if ($HEpdf === 0) {?> <?php } else {?>
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
-    <?php } ?></li>
-  </ul>
-
-    </div>
+  -->
 
   </div>
 
-
-    <div class="fixed-container">
-
-
+  </div>
 
   <!-- PDFs -->
 
@@ -194,97 +157,77 @@ get_header(); ?>
   <?php }?>
 
 
-  <!-- FACTSHEET TABS -->
+  <!-- Factsheet tabs -->
+
+  <div id="tabs"> 
+
+  <div class="tab-links">  
+  <ul class="tab-links-list">
+    <li><a href="#about">Course Information</a></li>
+    <li><a href="#units">Units</a></li>
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
+  </ul>
+  <ul class="tab-links-last">
+    <?php if ($HEpdf === 0) {?> <?php } else {?>
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
+    <?php } ?></li>
+  </ul>
+  </div>
 
   <div id="about" class="tab-section">
 
-  <!-- BEGIN ABOUT TAB-->
-
     <?php if (!empty($factsheet->courseabout)) {?>
 
-    <section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
-        <div class="two-col-section-main">
-        <h2 class="section-heading section-heading-colour">About</h2>
-        <p><?=$factsheet->courseabout?></p>
-        </div>
-        <div class="two-col-section-side two-col-section-image">
-          <div class="section-image-container">
-          <a href="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" title="<?php the_sub_field('link_title'); ?>">
-          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?php the_sub_field('link_title'); ?>">
-          </a>
-          </div>
-        </div>
-    </section>
+    <h2>About</h2>
+    <p><?=$factsheet->courseabout?></p>
 
-    <?php } ?>
+    <?php } else {}; ?>
 
-    <section class="full-width-container">
+    <?php if (!empty($factsheet->entryrequirements)) {?>
 
-      <div class="two-col-section-main factsheet-details">
-        <?php if (!empty($factsheet->entryrequirements)) {?>
-
-    <h2>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
+    <h2>Entry requirements</h2>
     <p><?=$factsheet->entryrequirements?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->duration)) {?>
 
-    <h2>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
+    <h2>Duration</h2>
     <p><?=$factsheet->duration?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->progression)) {?>
 
-      <h2>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
+      <h2>Progression and Careers</h2>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->location)) {?>
 
-    <h2>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+    <h2>Study location</h2>
     <p><?=$factsheet->location?></p>
 
     <?php } else {}; ?>
 
-      </div>
+    <?php if (!empty($factsheet->cost)) {?>
 
-      <div class="two-col-section-side">
-        <!-- YouTube Embed v5.0.3 -->
-        <div style="max-width: 533px; width: 100%;">
-          <div class="youtube-embed ye-container" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="url" content="https://www.youtube.com/v/7CUCEDEO7Tw" />
-            <meta itemprop="name" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="description" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="uploadDate" content="2017-03-10T15:51:41+00:00" />
-            <meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/3aWG6P1gR94/default.jpg" />
-            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/7CUCEDEO7Tw" />
-            <meta itemprop="height" content="416" />
-            <meta itemprop="width" content="740" />
-            <iframe style="border: 0; width: 100%;" class="youtube-player" height="300" src="https://www.youtube.com/embed/7CUCEDEO7Tw" allowfullscreen ></iframe>
-          </div>
-      </div>
-<!-- End of YouTube Embed code. Generated in 0.00227 seconds -->
-      </div>
+    <h2>Cost</h2>
+    <p><?=$factsheet->cost?></p>
 
+    <?php } else {}; ?>
 
+    <?php if (!empty($factsheet->equipment)) {?>
 
-      <div class="related-courses full-width-container">
+    <h2>Equipment</h2>
+    <p><?=$factsheet->equipment?></p>
 
-        <!-- COURSE FINDER SET TO PROGRAMME AREA -->
-       
-      </div>
+    <?php } else {}; ?>
 
-
-    <!-- END ABOUT TAB -->
   </div>
-    
 
   <div id="units" class="tab-section">
-
-  <!-- BEGIN UNITS TAB -->
 
   <h2>Units you will study include:</h2>
   
@@ -317,8 +260,166 @@ get_header(); ?>
  <?php } else {}; ?>
 
   <!-- End of tabbed content -->
+
+  <?php if ($factsheet->programmearea == 'Apprenticeships') {?>
+
+  <div class="factsheet-content-apply">
+    <a href="<?php the_field('enquiry'); ?>" title="Apply for <?=$factsheet->name?>">Apply</a>
+  </div>
+
+   <?php 
+} else {?>
+
+  <div class="factsheet-content-apply">
+    <a href="/apply/?courseid=<?=$factsheet->id?>" title="Apply for <?=$factsheet->name?>">Apply</a>
+  </div>
+  
+<?php }?>
+
+	
 	
 	</section>
+
+<aside>
+
+
+
+<?php // APPLY BOX
+
+    if ( ($factsheet->level == 'Level 5') && ($factsheet->programmearea == 'Higher Education') )  {?>
+
+    <div class="the-content">
+      <div class="apply-box">
+      <h3>Apply</h3>
+      <a href="/apply/?courseid=<?=$factsheet->id?>"><p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i> Apply</p></a>
+      <p class="apply-box-button" title="UCAS" href="https://www.ucas.com/"><i class="fa fa-hand-pointer-o"></i><a href="http://search.ucas.com/search/results?Vac=1&AvailableIn=2017&ProviderQuery=Knowsley%20Community%20College%2C%20&AcpId=2841&IsFeatherProcessed=True&page=1&providerids=2841"> Apply Full Time</a></p>
+      <p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775757"> 0151 477 5757</a></p>
+      </div>
+    </div>
+
+     <?php 
+} elseif ($factsheet->programmearea == 'Apprenticeships') {?>
+
+    <div class="the-content">
+      <div class="apply-box">
+      <h3>Apply online or call</h3>
+      <p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i><a href="<?php the_field('enquiry'); ?>"> Apply</a></p>
+      <p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775757"> 0151 477 5757</a></p>
+      </div>
+    </div>
+
+    <?php 
+} elseif ($factsheet->programmearea != 'Apprenticeships') {?>
+
+		<div class="the-content">
+			<div class="apply-box">
+			<h3>Apply online or call</h3>
+			<a href="/apply/?courseid=<?=$factsheet->id?>"><p class="apply-box-button"><i class="fa fa-hand-pointer-o"></i> Apply</p></a>
+			<p><i class="fa fa-phone"></i><a class="tel" href="tel:01514775850"> 0151 477 5850</a></p>
+			</div>
+		</div>
+<?php }
+   elseif ($factsheet->id == '14861') {?>
+   
+    <a href="<?php the_field('performance_qualifications_link', 'option'); ?>" title="Performance Qualifications">
+    <div class="higher-education-promo the-content">
+
+     <img width="100%" src="<?php the_field('performance_qualifications', 'option'); ?>" alt="Performance Qualifications">
+
+    </div>
+    </a>
+
+
+    <?php 
+} else { }?>
+
+    
+
+<!-- Subject Information -->
+
+<?php if ($factsheet->programmearea == 'Hairdressing & Barbering') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/3gtArMLtKN0?rel=0" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+</div>
+    
+<?php } ?>
+
+<?php if ($factsheet->programmearea == 'Construction') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/lgUwqQ6GsjY?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+   
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<?php } ?>
+
+<?php if ($factsheet->programmearea == 'Creative Media') {
+   
+// echo 'Creative Media';
+    
+} ?>
+
+<?php if ($factsheet->programmearea == 'Early Years') {
+   
+// echo 'Early Years';
+    
+} ?>
+
+<?php if ($factsheet->programmearea == 'Electrical Engineering') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">   
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/oL8tpP3oOyM?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
+    
+<?php } ?>
+
+<?php if ($factsheet->programmearea == 'Engineering & Manufacturing') {?>
+
+<div class="aside-videos">
+
+<div class="youtube-side">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/uNa7EJI6IdA?rel=0" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+<div class="youtube-side-last">  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ehMcShOR15o?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
+    
+<?php } ?>
+
+<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
+
+<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Vertical/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 190px; height: 500px;">
+</iframe>
+  
+<?php } ?>
+
+</aside>
+
+
+		
 
 
 	</div>

@@ -1,10 +1,31 @@
 .factsheet-feature img {
 	width: 100%;
 	height: auto;
+	opacity: 0.7;
 }
 .factsheet-page section {
-	margin-bottom: 3em;
+	background: white;
 }
+.factsheet-details h2 {
+ border: none;
+ padding-top: gutter();
+ color: white;
+}
+
+.factsheet-details p {
+	color: white;
+}
+
+.factsheet-details {
+	border: 1px solid $off-white;
+	padding: 0.5em;
+	background: $primary-color;
+}
+
+.container-border-top {
+ border-top: 1px solid $off-white;
+}
+
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
 	background: white;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
@@ -27,7 +48,6 @@
 	float: left;
 	width: 100%;
 	background: $off-white;
-	margin-top: 2em;
 }
 .factsheet-header {
   float: left;
@@ -40,33 +60,44 @@
 	height: auto;
 	position: relative;
 	overflow: hidden;
-	background: $secondary-color;
+}
+.factsheet-title-bg {
+	background: $primary-color;
+	padding: 1em;
 }
 
 .factsheet-title {
-	position: relative;
+	position: absolute;
 	float: left;
 	width: 100%;
-	top: 0;
+	bottom: 0;
 	left: 0;
-	background: $primary-color;
 }
 
 .factsheet-title h1 {
 	color: $secondary-color;
 	text-decoration: none;
 	border-bottom: none;
-	margin: 0px;
-	padding: 0.5em;
-	padding-bottom: 0px;
+	display: inline-block;
+	float: left;
+	clear: both;
+	font-size: 4.5em;
 }
 
 .factsheet-title p {
-	margin: 0px 1em;
-	margin-bottom: 1em;
-	padding-left: 0px;
-	padding-bottom: 1em;
 	color: white;
+	display: inline-block;
+	float: left;
+	clear: both;
+	margin-top: 0;
+}
+
+.factsheet-image {
+	width: 100%;
+	float: left;
+	max-height: 600px;
+	background: black;
+	overflow: hidden;
 }
 
 #tabs  {
@@ -105,6 +136,9 @@
   color: white !important;
 }
 
+.highlight-text {
+	color: $secondary-color;
+}
 
 // Tab Sections
 
@@ -112,8 +146,6 @@
 	float: left;
 	width: 100%;
 	background: $primary-color;
-	padding-top: 0.5em;
-	padding-left: 0.5em;
 	color: white;
 }
 
@@ -128,6 +160,9 @@
 
 .tab-links ul li a:link, .tab-links ul li a:visited,  {
 	color: white;
+	border: 1px solid white;
+	border-bottom: none;
+	font-size: 1.2em;
 }
 
 .ui-tabs-nav li a:link {

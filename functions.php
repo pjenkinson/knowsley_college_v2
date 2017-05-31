@@ -200,7 +200,7 @@ function conditional_script_loading_he_hover () {
 add_action('wp_enqueue_scripts', 'conditional_script_loading_he_hover');
 
 function conditional_script_loading_factsheet() {
-    if ( is_page( array('factsheet', 'course-factsheet') ) ){
+    if ( is_page_template('factsheet.php') ){
         wp_enqueue_script( 'jquery-ui-tabs', array( 'jquery' ));
     } 
 }
