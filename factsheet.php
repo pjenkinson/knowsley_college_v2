@@ -125,6 +125,7 @@ get_header(); ?>
           <div class="fixed-container factsheet-title-bg">
             <h1><?=$factsheet->name?></h1>
             <p><?=$factsheet->programmearea?>: <span class="highlight-text"><?=$factsheet->level?></span></p>
+
           </div>
       </div>
 
@@ -149,8 +150,8 @@ get_header(); ?>
     <div class="fixed-container">
 
   <ul class="tab-links-list">
-    <li><a href="#about">Course Overview</a></li>
-    <li><a href="#units">Units</a></li>
+    <li><a href="#about">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
+    <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
   </ul>
   <ul class="tab-links-last">
@@ -193,12 +194,11 @@ get_header(); ?>
   <?php }?>
 
 
-  <!-- Factsheet tabs -->
+  <!-- FACTSHEET TABS -->
 
   <div id="about" class="tab-section">
 
-
-
+  <!-- BEGIN ABOUT TAB-->
 
     <?php if (!empty($factsheet->courseabout)) {?>
 
@@ -249,29 +249,42 @@ get_header(); ?>
 
     <?php } else {}; ?>
 
-    <?php if (!empty($factsheet->equipment)) {?>
-
-    <h2>Equipment</h2>
-    <p><?=$factsheet->equipment?></p>
-
-    <?php } else {}; ?>
-
       </div>
 
       <div class="two-col-section-side">
-        <p>2</p>
+        <!-- YouTube Embed v5.0.3 -->
+        <div style="max-width: 533px; width: 100%;">
+          <div class="youtube-embed ye-container" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+            <meta itemprop="url" content="https://www.youtube.com/v/7CUCEDEO7Tw" />
+            <meta itemprop="name" content="National Apprenticeship Week Roundup 2017" />
+            <meta itemprop="description" content="National Apprenticeship Week Roundup 2017" />
+            <meta itemprop="uploadDate" content="2017-03-10T15:51:41+00:00" />
+            <meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/3aWG6P1gR94/default.jpg" />
+            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/7CUCEDEO7Tw" />
+            <meta itemprop="height" content="416" />
+            <meta itemprop="width" content="740" />
+            <iframe style="border: 0; width: 100%;" class="youtube-player" height="300" src="https://www.youtube.com/embed/7CUCEDEO7Tw" allowfullscreen ></iframe>
+          </div>
+      </div>
+<!-- End of YouTube Embed code. Generated in 0.00227 seconds -->
       </div>
 
 
 
-    </section>
+      <div class="related-courses full-width-container">
 
-    
+        <!-- COURSE FINDER SET TO PROGRAMME AREA -->
+       
+      </div>
 
-    
+
+    <!-- END ABOUT TAB -->
   </div>
+    
 
   <div id="units" class="tab-section">
+
+  <!-- BEGIN UNITS TAB -->
 
   <h2>Units you will study include:</h2>
   

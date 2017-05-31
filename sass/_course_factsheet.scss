@@ -6,9 +6,24 @@
 .factsheet-page section {
 	background: white;
 }
-
 .factsheet-details h2 {
  border: none;
+ padding-top: gutter();
+ color: white;
+}
+
+.factsheet-details p {
+	color: white;
+}
+
+.factsheet-details {
+	border: 1px solid $off-white;
+	padding: 0.5em;
+	background: $primary-color;
+}
+
+.container-border-top {
+ border-top: 1px solid $off-white;
 }
 
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
