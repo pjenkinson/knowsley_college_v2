@@ -17,6 +17,73 @@ get_header(); ?>
   jQuery("li.last-tab a").unbind('click');
 </script>
 
+<script>
+
+// jQuery LIVE SEARCH WITH HTML OUTPUT
+
+jQuery(document).ready(function() {
+
+  jQuery('#livesearch').on('keyup', function(e){
+
+    var searchTerm = jQuery(this).val();
+    console.log(searchTerm);
+
+    jQuery.ajax({
+       type: 'GET',
+       url: '/htmllivesearch/?term='+searchTerm,
+       dataType: 'html',
+       success: function(data) {
+          // console.log(data);
+          jQuery('#livesearch-results').html(data);
+
+           // jQuery('html, body').animate({
+            //  scrollTop: jQuery("#livesearch-results").offset().top
+           //}, 4000);
+
+       }
+       
+    });
+  });
+
+});
+
+var livesearchvalue = '';
+
+jQuery(document).ready(function() {
+
+  console.log(livesearchvalue);
+
+  jQuery('#livesearch').bind('keypress', function(e) {
+    if(e.keyCode==13){
+        var livesearchvalue = jQuery( "#livesearch" ).val();
+        window.location.href="/?s=" + livesearchvalue;
+    }
+});
+
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+    
+
+jQuery( "#livesearchbutton" ).click(function() {
+  var livesearchvalue = jQuery( "#livesearch" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+jQuery( "#showallcourses" ).click(function() {
+  var livesearchvalue = jQuery( "a" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+});
+
+</script>
+
 </header>
 
 <!-- Breadcrumbs
@@ -220,31 +287,35 @@ get_header(); ?>
 
     <section class="full-width-container">
 
+
       <div class="two-col-section-main factsheet-details">
+
+          <h2>Details</h2>
+
         <?php if (!empty($factsheet->entryrequirements)) {?>
 
-    <h2>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
+    <h3>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
     <p><?=$factsheet->entryrequirements?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->duration)) {?>
 
-    <h2>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
+    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
     <p><?=$factsheet->duration?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->progression)) {?>
 
-      <h2>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
+      <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->location)) {?>
 
-    <h2>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+    <h3>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h3>
     <p><?=$factsheet->location?></p>
 
     <?php } else {}; ?>
@@ -274,6 +345,36 @@ get_header(); ?>
       <div class="related-courses full-width-container">
 
         <!-- COURSE FINDER SET TO PROGRAMME AREA -->
+
+
+<!-- COURSE FINDER -->
+
+ <h2 class="section-heading">Related courses and Course Finder</h2>
+
+ <p>If this is not the course for you, you might be interested in some of our other <?=$factsheet->programmearea?> courses.</p>
+
+<div class="course-finder">
+
+
+
+  <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
+  <p style="color:white; margin-left: 1em; margin-bottom: 0;">Find a course and apply</p>
+  <div class="live-search-container">
+
+    <input type="search" id="livesearch" value="" placeholder="Search for a course" />
+
+    <button id="livesearchbutton">SEARCH</button>
+    <button id="showallcourses">VIEW ALL COURSES</button>
+  
+  </div>
+
+  <div id="livesearch-results">
+
+    <!-- Search Results -->
+
+  </div> 
+
+</div>
        
       </div>
 
@@ -326,7 +427,11 @@ get_header(); ?>
 </div>
 
   
-
+<script>
+jQuery(document).ready(function() {
+     jQuery('#livesearch').val('<?=$factsheet->programmearea?>').trigger('keyup'); 
+});     
+</script>
 
 </main><!-- #main -->
 <?php get_footer(); ?>

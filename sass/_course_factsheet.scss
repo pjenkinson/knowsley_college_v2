@@ -6,10 +6,16 @@
 .factsheet-page section {
 	background: white;
 }
-.factsheet-details h2 {
+.factsheet-details h3 {
  border: none;
  padding-top: gutter();
  color: white;
+ font-size: 1.2em;
+}
+
+.factsheet-details h2 {
+	color: white;
+	border: none;
 }
 
 .factsheet-details p {
