@@ -103,6 +103,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'leisure-courses' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Supported Learning' ): ?>
+	<nav class="nav-home supported-learning">
+	<?php wp_nav_menu( array( 'theme_location' => 'supported-learning' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 

@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Flexible Course Page - Adult (Access)
+* Template Name: Flexible Course Page - Adult 2 URL SECTIONS
 */
 get_header(); ?>
 
