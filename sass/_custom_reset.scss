@@ -76,9 +76,10 @@ font-weight: normal;
 	display: none;
 }
 
-header a:link, a:visited, a:active {
+header a:link, header a:visited, header a:active {
 	color: white;
 }
+
 body {
 	background: $body-background;
 }

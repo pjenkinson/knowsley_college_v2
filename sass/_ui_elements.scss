@@ -3,6 +3,76 @@
 	font-size: 2em;
 }
 
+// COURSE FINDER 
+
+.course-finder {
+  float: left;
+  margin-bottom: 2em;
+  background: #3d3d3c;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.course-finder h2 {
+  border-bottom: none;
+  color: white;
+  margin-top: 0 !important;
+  padding: 0.6em;
+  padding-bottom: 0;
+}
+
+.course-finder p {
+	color:white; 
+	margin-left: 1em; 
+	margin-bottom: 0;
+}
+
+#livesearch {
+  width:100%; 
+  float: left; 
+  font-size: 1.5em;
+}
+
+#livesearchbutton {
+  width:25%; 
+  margin-top: 1em; 
+  background: inherit; 
+  border: 0; 
+  padding: 1em; 
+  border: 1px solid #99cc66; 
+  color: white;
+}
+
+#showallcourses {
+  width:25%; 
+  margin-top: 1em; 
+  background: inherit; 
+  color: white; 
+  border: 0; 
+  padding: 1em; 
+  border: 1px solid #99cc66;
+}
+
+@media screen and (max-width: 1234px) {
+  	 #showallcourses, #livesearchbutton {
+  		width: 40%;
+  	}
+}
+
+#showallcourses:hover {
+	background: #99cc66;
+}
+#livesearchbutton:hover {
+	background: #99cc66;
+}
+
+.live-search-container {
+  padding:1em; 
+  margin: 0;
+}
+
+// BUTTONS
+
 // Primary Button
 .button-default {
 	display: inline-block;

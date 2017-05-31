@@ -63,7 +63,7 @@
     $courseChoice3 = $CourseNameFromID3[0]->factsheetname;
 
 
-  // Course Choice 3
+// Course Choice 3
 
 add_action( 'phpmailer_init', 'configure_smtp' );
 function configure_smtp( PHPMailer $phpmailer ){
@@ -76,11 +76,9 @@ function configure_smtp( PHPMailer $phpmailer ){
     $phpmailer->Username = 'applications@knowsleycollege.ac.uk';
     $phpmailer->Password = 'Kccapp123';
     $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->From = 'applications@knowsleycollege.ac.uk';
+    // $phpmailer->From = 'applications@knowsleycollege.ac.uk';
     $phpmailer->FromName = 'Knowsley Community College';
 }
-
-
 
 ob_start();                      // start capturing output
 include (locate_template('application-reply.php'));   // execute the file

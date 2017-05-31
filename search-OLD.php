@@ -1,8 +1,13 @@
-<?php get_header(); ?>
+<?php
+
+get_header(); ?>
 
 <!-- Scroll to top 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>
+
+
+
 	
 </header>
 
@@ -13,19 +18,24 @@
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main kcc-primary" role="main">
+<main id="main" class="site-main" role="main">
 
 
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div class="full-width-container one-col-page content-page">
+<div class="full-width-container secondary-page content-page">
+
+	<div class="fixed-container">
+
+<!-- Page content 
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 
-<div class="fixed-container">
+
 
 <script>
-		// LIVE SEARCH WITH HTML OUTPUT
+		// jQuery LIVE SEARCH WITH HTML OUTPUT
 
 		jQuery(document).ready(function() {
 
@@ -36,7 +46,7 @@
 
 	    jQuery.ajax({
 	       type: 'GET',
-	       url: '/htmllivesearch/?term='+searchTerm,
+	       url: '/search-test-html/?term='+searchTerm,
 	       dataType: 'html',
 	       data: {
 	       	searchTerm: 4
@@ -51,41 +61,19 @@
 	  });
 
 	  // Adds WP search query to live search text input
+
 	  jQuery('#livesearch').val('<?php echo get_search_query(); ?>').trigger('keyup'); 
 
 	});
 
 </script>
 
-<script>
-
-jQuery(document).ready(function() {
-
-	jQuery('#livesearch').bind('keypress', function(e) {
-    if(e.keyCode==13){
-        var livesearchvalue = jQuery( "#livesearch" ).val();
-        window.location.href="/?s=" + livesearchvalue;
-    }
-	});
-
-	jQuery( "#livesearchbutton" ).click(function() {
-	  var livesearchvalue = jQuery( "#livesearch" ).val();
-	  window.location.href="/?s=" + livesearchvalue;
-	});
-
-	jQuery( "#showallcourses" ).click(function() {
-	  var livesearchvalue = jQuery( "a" ).val();
-	  window.location.href="/?s=" + livesearchvalue;
-	});
-
-});
-
-</script>
+<style>
 
 
 </style>
 
-<section class="search-page full-width-container">
+<section class="search-page">
 <article>
 
 <h1>Search Results</h1>
@@ -96,39 +84,32 @@ jQuery(document).ready(function() {
 
 
 
-<!-- COURSE FINDER -->
+<div class="course-finder" style="float: left; margin-bottom: 2em; background: #3d3d3c; margin-top: 2em;">
 
-<div class="course-finder">
 
-  <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
-  <p style="">Find a course and apply</p>
-  <div class="live-search-container">
+<h2 style="border-bottom: none; color: white; margin-top: 0 !important; padding: 0.6em;">Course Finder</h2>
 
-    <input type="search" id="livesearch" value="<?php echo get_search_query(); ?>" placeholder="Search for a course" />
+<p style="color: white; padding:0; margin: 0; padding-left: 1em;">Search for a course</p>
 
-    <button id="livesearchbutton">SEARCH</button>
-    <button id="showallcourses">VIEW ALL COURSES</button>
-  
-  </div>
-
-  <div id="livesearch-results">
-
-    <!-- Search Results -->
-
-  </div> 
+    
+	
+	<div class="" style="padding:1em; maring: 0;">
+  <input type="search" id="livesearch" style="width:85%; float: left;" value="<?php echo get_search_query(); ?>" />
+  <div style="color:white;float:left;display-inline:block; margin: 0; padding: 0;"><i class="fa fa-search" aria-hidden="true" style="font-size: 2em; padding-left: 0.5em; background: white; color: #3d3d3c; padding: 0.1em; margin-left: 1em;"></i></div>
+	</div>
+  <div id="livesearch-results"></div> 
 
 </div>
 
 
-<div class="search-results-pages full-width-container">
 <h2>Pages</h2>
 
 
 <?php if ( have_posts() ) : ?>
 
-				<p><?php printf( __( 'Search Results for: %s', 'knowsley_college' ), '<span>' . get_search_query() . '</span>' ); ?></p>
+				<p class="page-title"><?php printf( __( 'Search Results for: %s', 'knowsley_college' ), '<span>' . get_search_query() . '</span>' ); ?></p>
 
-
+</article>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -153,9 +134,6 @@ jQuery(document).ready(function() {
 		-->
 		
 		<?php endif; ?>
-</div>
-
-</article>
 
 	
 </section>

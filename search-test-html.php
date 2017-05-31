@@ -7,48 +7,73 @@
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT programmearea, id, factsheetname, level, location, duration FROM fact_sheets
               WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
-              LIMIT 20";
+              LIMIT 100";
      $courses = $wpdb->get_results($sql);
      foreach ($courses as $courses) {
           $results[] = array('id' => $courses->id, 
                               'text' => $courses->factsheetname,
                               'level' => $courses->level,
                               'duration' => $courses->duration,
-                              'location' => $courses->location
+                              'location' => $courses->location,
+                              'programme' => $courses->programmearea
                               );
      }
      header('Content-Type: application/json');
-
      // echo json_encode($results);
-
      // exit;
 } 
 
 ?>
 
+<script>
+jQuery( document ).ready(function() {
+
+ jQuery('#advanced-search-table').stacktable({
+    myClass: 'something anotherclass'
+ });
+
+
+
+
+});
+</script>
+
+
+<style>
+/* Stacktable */
+
+.stacktable.small-only {
+ display: none;
+}
+
+@media (max-width: 900px) {
+  #advanced-search-table.stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; } /* Responsive Table */
+  .stacktable.small-only tr:first-of-type {
+    display: none;
+  }
+
+}
+
+
+</style>
+
+
+
 <div>
 
-   <table>
-  <caption>We have found the following courses from your search term ""</caption>
-  <colgroup />
-  <colgroup span="2" title="title" />
-  <thead>
-    <tr>
+   <table id="advanced-search-table"> 
+ <!-- thead not supported by stacktable yet; neither is <th> in <tbody>; but the later is working in stackcolumns.--> 
+  <tbody> 
+
+   <tr>
       <th scope="col">Course Title</th>
+      <th scope="col">Programme Area</th>
       <th scope="col">Level</th>
       <th scope="col">Campus</th>
       <th scope="col">Duration</th>
-      <th scope="col">Apply</th>
+      <th scope="col">Course Info</th>
     </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan="2">Call us on 0000 000 000</td>
-      <td colspan="3">We can provide advice on courses, finance and student support.</td>
-    </tr>
-  </tfoot>
- 
-  <tbody> 
   
 <?php
 
@@ -56,19 +81,36 @@ if(!is_null($results)) {
   foreach($results as $value) {
     ?>
       <tr>
-      <td><?=$value['text']?></td>
+      <td><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>"><?=$value['text']?></a></td>
+      <td><?=$value['programme']?></td>
       <td><?=$value['level']?></td>
       <td><?=$value['location']?></td>
       <td><?=$value['duration']?></td>
-      <td><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">Apply Now</a></td>
+      <td class="more"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">More</a></td>
       </tr>
     <?php
   }
 }
+else {?>
+    
+    <tr>
+      <td colspan="6">No courses found: Try searching by subject area, e.g Art or Sport</td>
+    </tr>
+
+<?php
+}
 ?>
+
+    <tr>
+      <td colspan="2"><i class="fa fa-phone" aria-hidden="true"></i> Call us on 0151 477 5850</td>
+      <td colspan="4" style="text-align:center;"><i class="fa fa-info" aria-hidden="true"></i> We can provide advice on courses, finance and student support.</td>
+    </tr>
     
   </tbody>
+
+    
 </table>
+
 
 
 </div>
