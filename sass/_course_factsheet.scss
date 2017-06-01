@@ -152,27 +152,25 @@
 	float: left;
 	width: 100%;
 	background: $primary-color;
-	color: white;
 }
 
 .tab-links ul {
 	margin-bottom: 0px;
 }
-
 .tab-links ul li {
 	list-style-type: none;
 	display: inline-block;
+	padding-bottom: 10px;
+	color: white;
 }
 
 .tab-links ul li a:link, .tab-links ul li a:visited,  {
-	color: white;
-	border: 1px solid white;
-	border-bottom: none;
 	font-size: 1.2em;
+	color: white;
 }
 
-.ui-tabs-nav li a:link {
-	color: white !important;
+#tabs .ui-tabs-active a {
+ color: $secondary-color !important;
 }
 
 .tab-section {
@@ -218,10 +216,12 @@
  float: left;
  top: 0;
  color: white;
+ line-height: 0;
+ padding-bottom: 0;
 }
 
 .ui-tabs-nav li a {
-	padding: 0.5em;
+	padding: 0.5em 0.5em 0 0.5em;
 	width: auto;
 	color: white;
 }
@@ -301,8 +301,6 @@ $unistats: max-width 735px;
   padding: gutter();
   margin-bottom: gutter();
 }
-
-
 .youtube-content {
 	position: relative;
   padding-bottom: 56.25%;

@@ -219,8 +219,13 @@ jQuery( "#showallcourses" ).click(function() {
   <ul class="tab-links-list">
     <li><a href="#about">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
+    <li><a href="#careers">Careers <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+    <li><a href="#print" onclick="window.print();">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
+    <li class="apply-tab"><a href="#apply" onclick="location.href = '/apply/?courseid=<?=$factsheet->id?>';">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
+    
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
   </ul>
+
   <ul class="tab-links-last">
     <?php if ($HEpdf === 0) {?> <?php } else {?>
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
@@ -233,8 +238,6 @@ jQuery( "#showallcourses" ).click(function() {
 
 
     <div class="fixed-container">
-
-
 
   <!-- PDFs -->
 
@@ -342,7 +345,7 @@ jQuery( "#showallcourses" ).click(function() {
 
 
 
-      <div class="related-courses full-width-container">
+      <div class="related-courses full-width-container content-snippet">
 
         <!-- COURSE FINDER SET TO PROGRAMME AREA -->
 
@@ -385,6 +388,7 @@ jQuery( "#showallcourses" ).click(function() {
 
   <div id="units" class="tab-section">
 
+  <div class="full-width-container content-snippet">  
   <!-- BEGIN UNITS TAB -->
 
   <h2>Units you will study include:</h2>
@@ -395,6 +399,9 @@ jQuery( "#showallcourses" ).click(function() {
     <li><?=$factsheet->unit3?></li>
     <li><?=$factsheet->unit4?></li>
   </ul>
+
+  </div>
+
 
   </div>
 
@@ -416,6 +423,65 @@ jQuery( "#showallcourses" ).click(function() {
  </div>
 
  <?php } else {}; ?>
+
+
+
+  <div id="careers" class="tab-section">
+
+    <!-- BEGIN CAREERS TAB -->
+
+    <div class="full-width-container content-snippet">
+
+    <h2>Careers</h2>
+
+    <p>To find out about careers in <?=$factsheet->programmearea?>, visit the <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
+
+    <h3>National Careers Service: Job Profiles</h3>
+
+    <p>The <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">Job Profiles <i class="fa fa-external-link-square" aria-hidden="true"></i></a> search will give you information on the following:</p>
+
+    <ul>
+
+      <li>the skills and qualifications needed to get into that job</li>
+      <li>what the work would be like</li>
+      <li>the pay you could expect</li>
+      <li>what the career prospects are</li>
+
+    </ul>
+
+    </div>
+
+
+    <!-- END CAREERS TAB -->
+
+  </div>
+
+  <div id="print" class="tab-section">
+
+    <!-- BEGIN PRINT TAB -->
+
+      <div class="full-width-container content-snippet">
+        <h3><?=$factsheet->name?></h3>
+        <p><a href="#print" onclick="window.print();">Print factsheet <i class="fa fa-print" aria-hidden="true"></i></a></p>
+
+      </div>
+
+      <!-- END PRINT TAB -->
+
+  </div>
+
+
+  <div id="apply" class="tab-section">
+
+    <!-- BEGIN APPLY TAB -->
+
+      <div class="full-width-container content-snippet">
+
+      </div>
+
+  </div>
+
+    <!-- END APPLY TAB -->
 
   <!-- End of tabbed content -->
 	
