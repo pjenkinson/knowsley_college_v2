@@ -5,9 +5,7 @@
 get_header(); ?>
 
 
-<!-- Scroll to top 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'scroll' );?>
+
 
 <script>
   jQuery(function() {
@@ -93,7 +91,7 @@ jQuery( "#showallcourses" ).click(function() {
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main kcc-primary" role="main">
 
 
 <!-- Page content 
@@ -173,18 +171,12 @@ jQuery( "#showallcourses" ).click(function() {
   $units = $wpdb->get_results($sql);         
 
   ?>
- <p><?=$factsheet->course_url?></p>
+
+
+
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
-
-  <div class="factsheet-image">
-  <?php $factsheetImg = $factsheet->programmearea ?>
-
-  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
-
-  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
-    </div>
 
   <div class="fixed-container">
 
@@ -198,8 +190,15 @@ jQuery( "#showallcourses" ).click(function() {
 
   </div>  
 
-    
+  <div class="factsheet-image">
+  <?php $factsheetImg = $factsheet->programmearea ?>
 
+  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
+
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
+    </div>
+
+  
 
 
     </div>
@@ -217,7 +216,7 @@ jQuery( "#showallcourses" ).click(function() {
     <div class="fixed-container">
 
   <ul class="tab-links-list">
-    <li><a href="#about">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
+    <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
     <li><a href="#careers">Careers <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
     <li><a href="#print" onclick="window.print();">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
@@ -237,7 +236,6 @@ jQuery( "#showallcourses" ).click(function() {
   </div>
 
 
-    <div class="fixed-container">
 
   <!-- PDFs -->
 
@@ -266,32 +264,45 @@ jQuery( "#showallcourses" ).click(function() {
 
   <!-- FACTSHEET TABS -->
 
-  <div id="about" class="tab-section">
+  <!-- BEGIN OVERVIEW TAB -->
 
-  <!-- BEGIN ABOUT TAB-->
+  <div id="overview" class="tab-section">
+
+  
+
+    <div class="full-width-container"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <?php if (!empty($factsheet->courseabout)) {?>
 
-    <section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
+    <!-- BEGIN ABOUT SECTION-->
+
+    <section class="content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
         <div class="two-col-section-main">
         <h2 class="section-heading section-heading-colour">About</h2>
         <p><?=$factsheet->courseabout?></p>
         </div>
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
-          <a href="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" title="<?php the_sub_field('link_title'); ?>">
-          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?php the_sub_field('link_title'); ?>">
-          </a>
+          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?=$factsheet->title?>">
           </div>
         </div>
     </section>
 
+      </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+    <!-- END ABOUT SECTION -->
+
     <?php } ?>
 
-    <section class="full-width-container">
 
+    <div class="full-width-container factsheet-details"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-      <div class="two-col-section-main factsheet-details">
+      <div class="two-col-section-main factsheet-details-text">
+
+        <!-- BEGIN DETAILS -->
 
           <h2>Details</h2>
 
@@ -327,7 +338,7 @@ jQuery( "#showallcourses" ).click(function() {
 
       <div class="two-col-section-side">
         <!-- YouTube Embed v5.0.3 -->
-        <div style="max-width: 533px; width: 100%;">
+        <div style="max-width: 548px; width: 100%;">
           <div class="youtube-embed ye-container" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
             <meta itemprop="url" content="https://www.youtube.com/v/7CUCEDEO7Tw" />
             <meta itemprop="name" content="National Apprenticeship Week Roundup 2017" />
@@ -343,50 +354,58 @@ jQuery( "#showallcourses" ).click(function() {
 <!-- End of YouTube Embed code. Generated in 0.00227 seconds -->
       </div>
 
+       <!-- END DETAILS -->
+
+       </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
 
 
-      <div class="related-courses full-width-container content-snippet">
+<div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-        <!-- COURSE FINDER SET TO PROGRAMME AREA -->
+  <!-- COURSE FINDER SET TO PROGRAMME AREA -->
 
+<h2 class="section-heading text-align-center">Related courses</h2>
+
+<p class="text-align-center">If this is not the course for you, you might be interested in some of our other <?=$factsheet->programmearea?> courses.</p>
 
 <!-- COURSE FINDER -->
 
- <h2 class="section-heading">Related courses and Course Finder</h2>
-
- <p>If this is not the course for you, you might be interested in some of our other <?=$factsheet->programmearea?> courses.</p>
-
 <div class="course-finder">
 
-
-
-  <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
-  <p style="color:white; margin-left: 1em; margin-bottom: 0;">Find a course and apply</p>
+<h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
+<p style="color:white; margin-left: 1em; margin-bottom: 0;">Find a course and apply</p>
   <div class="live-search-container">
 
-    <input type="search" id="livesearch" value="" placeholder="Search for a course" />
+  <input type="search" id="livesearch" value="" placeholder="Search for a course" />
 
-    <button id="livesearchbutton">SEARCH</button>
-    <button id="showallcourses">VIEW ALL COURSES</button>
-  
+  <button id="livesearchbutton">SEARCH</button>
+  <button id="showallcourses">VIEW ALL COURSES</button>
+
   </div>
 
   <div id="livesearch-results">
 
-    <!-- Search Results -->
+  <!-- Search Results -->
 
   </div> 
 
 </div>
-       
-      </div>
+
+<!-- END OF COURSE FINDER -->
+ 
+
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
 
 
-    <!-- END ABOUT TAB -->
-  </div>
+  </div> <!-- END OF OVERVIEW TAB -->
     
 
   <div id="units" class="tab-section">
+
+    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
   <div class="full-width-container content-snippet">  
   <!-- BEGIN UNITS TAB -->
@@ -424,17 +443,22 @@ jQuery( "#showallcourses" ).click(function() {
 
  <?php } else {}; ?>
 
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
 
 
   <div id="careers" class="tab-section">
 
     <!-- BEGIN CAREERS TAB -->
 
-    <div class="full-width-container content-snippet">
+    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <h2>Careers</h2>
 
-    <p>To find out about careers in <?=$factsheet->programmearea?>, visit the <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
+    <p>You can look into careers in <?=$factsheet->programmearea?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
 
     <h3>National Careers Service: Job Profiles</h3>
 
@@ -449,7 +473,10 @@ jQuery( "#showallcourses" ).click(function() {
 
     </ul>
 
-    </div>
+    
+
+     </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
 
 
     <!-- END CAREERS TAB -->
@@ -460,7 +487,13 @@ jQuery( "#showallcourses" ).click(function() {
 
     <!-- BEGIN PRINT TAB -->
 
+    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
       <div class="full-width-container content-snippet">
+
+        <h2>Print Factsheet</h2>
+
         <h3><?=$factsheet->name?></h3>
         <p><a href="#print" onclick="window.print();">Print factsheet <i class="fa fa-print" aria-hidden="true"></i></a></p>
 
@@ -477,6 +510,16 @@ jQuery( "#showallcourses" ).click(function() {
 
       <div class="full-width-container content-snippet">
 
+      <h2>Apply</h2>
+
+      <p>To apply for <strong><?=$factsheet->name?></strong>, use the online application form or call 0151 477 5850 for more information.</p>
+
+      <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers will be available to speak with you and provide advice, guidance and information about College life.</p>
+
+      <div class="button-default">
+        <a href="#apply">Apply</a>
+      </div>
+
       </div>
 
   </div>
@@ -485,7 +528,6 @@ jQuery( "#showallcourses" ).click(function() {
 
   <!-- End of tabbed content -->
 	
-	</section>
 
 
 	</div>

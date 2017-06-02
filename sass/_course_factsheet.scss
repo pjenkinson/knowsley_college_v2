@@ -1,3 +1,15 @@
+// Breakpoints
+
+$youtube-tablet: 530px;
+$youtube-desktop: 1150px;
+$youtube-tablet-content: 900px;
+$unistats: max-width 735px;
+$factsheet-title: 780px;
+
+.text-align-center {
+	text-align: center;
+}
+
 .factsheet-feature img {
 	width: 100%;
 	height: auto;
@@ -24,8 +36,12 @@
 
 .factsheet-details {
 	border: 1px solid $off-white;
-	padding: 0.5em;
+	background: $secondary-color;
+}
+
+.factsheet-details-text {
 	background: $primary-color;
+	padding: gutter();
 }
 
 .container-border-top {
@@ -58,6 +74,7 @@
 .factsheet-header {
   float: left;
   width: 100%;
+  background: $primary-color;
 }
 
 .factsheet-feature {
@@ -69,15 +86,19 @@
 }
 .factsheet-title-bg {
 	background: $primary-color;
-	padding: 1em;
+	outline: 2em solid $primary-color;
 }
 
 .factsheet-title {
-	position: absolute;
+	position: relative;
 	float: left;
 	width: 100%;
-	bottom: 0;
 	left: 0;
+	z-index: 9999;
+	bottom: 0;
+	@include breakpoint($factsheet-title) { 
+			position: absolute;
+	 }
 }
 
 .factsheet-title h1 {
@@ -87,7 +108,9 @@
 	display: inline-block;
 	float: left;
 	clear: both;
-	font-size: 4.5em;
+	@include breakpoint($factsheet-title) { 
+			font-size: 4.5em;
+	 }
 }
 
 .factsheet-title p {
@@ -117,11 +140,6 @@
 .tab-content {
 	padding: 1em;
 }
-
-.tab-section {
-	padding: 1em;
-}
-
 .factsheet-content-apply {
 	float: left;
 	width: 100%;
@@ -195,10 +213,6 @@
 	padding: 1em 0.5em;
 }
 
-.tab-links ul li {
-	padding-left: 0.5em;
-} 
-
 .share-bar ul li a:link, .share-bar ul li a:visited, .share-bar ul li a:active  {
 	color: white;
 }
@@ -224,6 +238,10 @@
 	padding: 0.5em 0.5em 0 0.5em;
 	width: auto;
 	color: white;
+}
+
+.ui-tabs-nav li a:first-of-type {
+	padding-left: 0;
 }
 
 .ui-tabs-nav li a:link, .ui-tabs-nav li a:visited, .ui-tabs-nav li a:hover {
@@ -284,10 +302,6 @@
 
 // YouTube Videos
 
-$youtube-tablet: 530px;
-$youtube-desktop: 1150px;
-$youtube-tablet-content: 900px;
-$unistats: max-width 735px;
 // Youtube Fix
 
 .aside-videos {
