@@ -94,6 +94,15 @@ jQuery( "#showallcourses" ).click(function() {
 <main id="main" class="site-main kcc-primary" role="main">
 
 
+<!-- Main content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'branding-flex' );?>
+
+<!-- Main content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'audience' );?>
+
+
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -270,7 +279,7 @@ jQuery( "#showallcourses" ).click(function() {
 
   
 
-    <div class="full-width-container"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <?php if (!empty($factsheet->courseabout)) {?>
@@ -365,16 +374,16 @@ jQuery( "#showallcourses" ).click(function() {
 
   <!-- COURSE FINDER SET TO PROGRAMME AREA -->
 
-<h2 class="section-heading text-align-center">Related courses</h2>
+<h2 class="section-heading text-align-center">More courses</h2>
 
-<p class="text-align-center">If this is not the course for you, you might be interested in some of our other <?=$factsheet->programmearea?> courses.</p>
+<p class="text-align-center">If this is not the right course for you, you might be interested in some of our other courses.</p>
 
 <!-- COURSE FINDER -->
 
 <div class="course-finder">
 
 <h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
-<p style="color:white; margin-left: 1em; margin-bottom: 0;">Find a course and apply</p>
+<p style="color:white; margin-left: 1em; margin-bottom: 0;">Search for a course</p>
   <div class="live-search-container">
 
   <input type="search" id="livesearch" value="" placeholder="Search for a course" />
@@ -393,10 +402,59 @@ jQuery( "#showallcourses" ).click(function() {
 </div>
 
 <!-- END OF COURSE FINDER -->
- 
+
 
  </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
+
+<style>
+.maths-english {
+  background: url("http://192.168.99.100:8000/wp-content/themes/KCC2/images/maths-english.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+
+
+
+<div class="maths-english full-width-container content-snippet"> <!-- Begin Full Width Container -->
+
+      <div style="background: white; padding: 2em;" class="fixed-container"> <!-- Begin Fixed Container -->
+ 
+
+<!-- MATHS & ENGLISH -->
+
+<h2 class="section-heading">Study Programme: Maths and English</h2>
+
+<p>As part of your study programme you will continue your development of Maths and English skills, two of the most essential and valued skills by employers.</p>
+
+<p>If you didn’t achieve a grade 4/C at GCSE, we’ll help you to continue to develop your skills. If you did achieve a grade 4/C or above, you’ll build your knowledge further.</p>
+
+
+
+
+
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </div> <!-- END OF OVERVIEW TAB -->
@@ -404,7 +462,7 @@ jQuery( "#showallcourses" ).click(function() {
 
   <div id="units" class="tab-section">
 
-    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
   <div class="full-width-container content-snippet">  
@@ -453,7 +511,7 @@ jQuery( "#showallcourses" ).click(function() {
 
     <!-- BEGIN CAREERS TAB -->
 
-    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <h2>Careers</h2>
@@ -487,7 +545,7 @@ jQuery( "#showallcourses" ).click(function() {
 
     <!-- BEGIN PRINT TAB -->
 
-    <div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
       <div class="full-width-container content-snippet">
@@ -501,6 +559,10 @@ jQuery( "#showallcourses" ).click(function() {
 
       <!-- END PRINT TAB -->
 
+       </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
   </div>
 
 
@@ -508,7 +570,8 @@ jQuery( "#showallcourses" ).click(function() {
 
     <!-- BEGIN APPLY TAB -->
 
-      <div class="full-width-container content-snippet">
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
       <h2>Apply</h2>
 
@@ -521,6 +584,10 @@ jQuery( "#showallcourses" ).click(function() {
       </div>
 
       </div>
+
+    </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
 
   </div>
 

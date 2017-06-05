@@ -55,6 +55,10 @@ jQuery( document ).ready(function() {
 
 }
 
+.stacktable-factsheet:nth-of-type(5n), .stacktable-factsheet:nth-of-type(6n) {
+ display: none;
+}
+
 
 </style>
 
@@ -80,12 +84,12 @@ jQuery( document ).ready(function() {
 if(!is_null($results)) {
   foreach($results as $value) {
     ?>
-      <tr>
-      <td><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>"><?=$value['text']?></a></td>
-      <td><?=$value['programme']?></td>
-      <td><?=$value['level']?></td>
-      <td><?=$value['location']?></td>
-      <td><?=$value['duration']?></td>
+      <tr class="stacktable-factsheet">
+      <td class="stacktable-about"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>"><?=$value['text']?></a></td>
+      <td class="stacktable-programme"><?=$value['programme']?></td>
+      <td class="stacktable-level"><?=$value['level']?></td>
+      <td class="stacktable-campus"><?=$value['location']?></td>
+      <td class="stacktable-duration"><?=$value['duration']?></td>
       <td class="more"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">More</a></td>
       </tr>
     <?php
