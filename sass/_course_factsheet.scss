@@ -91,6 +91,7 @@ $responsive-tab-links: 332px;
 	padding: 2em 0 2em 0;
 	@include breakpoint($factsheet-title) { 
 	outline: 2em solid $primary-color;
+	padding: 0 0 0 0;
 	}
 }
 
