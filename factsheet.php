@@ -4,9 +4,6 @@
 */
 get_header(); ?>
 
-
-
-
 <script>
   jQuery(function() {
       jQuery( "#tabs" ).tabs();
@@ -200,11 +197,19 @@ jQuery( "#showallcourses" ).click(function() {
   </div>  
 
   <div class="factsheet-image">
-  <?php $factsheetImg = $factsheet->programmearea ?>
 
-  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
+<?php
+if( have_rows('about_course') ):
+while ( have_rows('about_course') ) : the_row();?>
+// display a sub field value
+<img src="<?php the_sub_field('image');?>" alt="<?=$factsheet->name?>">
 
-  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
+<?php endwhile;
+else :
+endif;
+?>  
+
+  
     </div>
 
   
@@ -345,22 +350,11 @@ jQuery( "#showallcourses" ).click(function() {
 
       </div>
 
+
+
       <div class="two-col-section-side">
-        <!-- YouTube Embed v5.0.3 -->
-        <div style="max-width: 548px; width: 100%;">
-          <div class="youtube-embed ye-container" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="url" content="https://www.youtube.com/v/7CUCEDEO7Tw" />
-            <meta itemprop="name" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="description" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="uploadDate" content="2017-03-10T15:51:41+00:00" />
-            <meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/3aWG6P1gR94/default.jpg" />
-            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/7CUCEDEO7Tw" />
-            <meta itemprop="height" content="416" />
-            <meta itemprop="width" content="740" />
-            <iframe style="border: 0; width: 100%;" class="youtube-player" height="300" src="https://www.youtube.com/embed/7CUCEDEO7Tw" allowfullscreen ></iframe>
-          </div>
-      </div>
-<!-- End of YouTube Embed code. Generated in 0.00227 seconds -->
+       <?php the_field('video');?>
+
       </div>
 
        <!-- END DETAILS -->
