@@ -162,19 +162,11 @@ jQuery( "#showallcourses" ).click(function() {
                  kiscode,
                  course_url
             FROM fact_sheets
-           WHERE id = '".$factsheetID."'";
+           WHERE id = '".$factsheetID."' AND level != 'Level 3'";
 
   $factsheet = $wpdb->get_results($sql);
 
-  $factsheet = $factsheet[0];
-
-
-  $sql = "SELECT unit
-            FROM fact_sheet_units
-           WHERE CourseInformationID = '".$factsheetID."'";
-
-
-  $units = $wpdb->get_results($sql);         
+  $factsheet = $factsheet[0];       
 
   ?>
 
@@ -198,19 +190,9 @@ jQuery( "#showallcourses" ).click(function() {
 
   <div class="factsheet-image">
 
-<?php
-if( have_rows('about_course') ):
-while ( have_rows('about_course') ) : the_row();?>
-// display a sub field value
-<img src="<?php the_sub_field('image');?>" alt="<?=$factsheet->name?>">
-
-<?php endwhile;
-else :
-endif;
-?>  
-
+    <img src="<?php the_field('featured_image');?>" alt="<?=$factsheet->name?>">
   
-    </div>
+  </div>
 
   
 
@@ -227,7 +209,7 @@ endif;
 
   <div class="tab-links">  
 
-    <div class="fixed-container">
+    <div class="fixed-container tab-links-container">
 
   <ul class="tab-links-list">
     <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
@@ -298,7 +280,15 @@ endif;
         </div>
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
-          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?=$factsheet->title?>">
+            <?php
+if( have_rows('about_course') ):
+while ( have_rows('about_course') ) : the_row();?>
+<img src="<?php the_sub_field('image');?>" alt="<?=$factsheet->name?>">
+
+<?php endwhile;
+else :
+endif;
+?>  
           </div>
         </div>
     </section>
@@ -336,7 +326,7 @@ endif;
 
     <?php if (!empty($factsheet->progression)) {?>
 
-      <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
+    <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
@@ -415,26 +405,21 @@ endif;
 
 
 
-
 <div class="maths-english full-width-container content-snippet"> <!-- Begin Full Width Container -->
 
-      <div style="background: white; padding: 2em;" class="fixed-container"> <!-- Begin Fixed Container -->
- 
+  <div style="background: white; padding: 2em;" class="fixed-container"> <!-- Begin Fixed Container -->
 
 <!-- MATHS & ENGLISH -->
 
-<h2 class="section-heading">Study Programme: Maths and English</h2>
+  <h2 class="section-heading">Study Programme: Maths and English</h2>
 
-<p>As part of your study programme you will continue your development of Maths and English skills, two of the most essential and valued skills by employers.</p>
+    <p>As part of your study programme you will continue your development of Maths and English skills, two of the most essential and valued skills by employers.</p>
 
-<p>If you didn’t achieve a grade 4/C at GCSE, we’ll help you to continue to develop your skills. If you did achieve a grade 4/C or above, you’ll build your knowledge further.</p>
-
-
+    <p>If you didn’t achieve a grade 4/C at GCSE, we’ll help you to continue to develop your skills. If you did achieve a grade 4/C or above, you’ll build your knowledge further.</p>
 
 
-
- </div>  <!-- End Fixed Container -->
-    </div>  <!-- End Full Width Container -->
+  </div>  <!-- End Fixed Container -->
+</div>  <!-- End Full Width Container -->
 
 
 

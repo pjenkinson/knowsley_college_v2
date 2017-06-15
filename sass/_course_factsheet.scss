@@ -179,6 +179,10 @@ $responsive-tab-links: 332px;
 	background: $primary-color;
 }
 
+.tab-links-container {
+	background: white;
+}
+
 .tab-links ul {
 	margin-bottom: 0px;
 }
@@ -186,21 +190,23 @@ $responsive-tab-links: 332px;
 	list-style-type: none;
 	display: block;
 	clear: both;
-	padding-bottom: 10px;
-	color: white;
+	background: white;
+	color: $primary-color;
+	padding: 1em 0 0 1em;
 	@include breakpoint($responsive-tab-links) { 
  		display: inline-block;
  		clear: none;
+ 		padding: 1em 1em 0 1em;
 	}
 }
 
 .tab-links ul li a:link, .tab-links ul li a:visited,  {
 	font-size: 1.2em;
-	color: white;
+	color: $primary-color;
 }
 
 #tabs .ui-tabs-active a {
- color: $secondary-color !important;
+ color: $links !important;
 }
 
 .tab-section {
