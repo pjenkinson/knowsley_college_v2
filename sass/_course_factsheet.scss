@@ -16,9 +16,11 @@ $responsive-tab-links: 332px;
 	height: auto;
 	opacity: 0.7;
 }
+
 .factsheet-page section {
 	background: white;
 }
+
 .factsheet-details h3 {
  border: none;
  padding-top: gutter();
@@ -43,6 +45,11 @@ $responsive-tab-links: 332px;
 .factsheet-details-text {
 	background: $primary-color;
 	padding: gutter();
+	color: white;
+}
+
+.factsheet-details-text ul li {
+	color: white;
 }
 
 .container-border-top {

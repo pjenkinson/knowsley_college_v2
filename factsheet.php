@@ -218,13 +218,7 @@ jQuery( "#showallcourses" ).click(function() {
     <li><a href="#print" onclick="window.print();">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
     <li class="apply-tab"><a href="#apply" onclick="location.href = '/apply/?courseid=<?=$factsheet->id?>';">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
-  </ul>
-
-  <ul class="tab-links-last">
-    <?php if ($HEpdf === 0) {?> <?php } else {?>
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
-    <?php } ?></li>
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
   </ul>
 
     </div>
@@ -402,6 +396,7 @@ endif;
   background-size: cover;
 }
 </style>
+
 
 
 
