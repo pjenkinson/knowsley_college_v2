@@ -298,6 +298,64 @@ endif;
     <div class="full-width-container factsheet-details"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
+      <?php if ($factsheet->programmearea == 'Higher Education') {?>  
+
+
+      <div class="two-col-section-main factsheet-details-text">
+
+        <!-- BEGIN DETAILS -->
+
+          <h2>Details</h2>
+
+
+          <?php if (!empty($factsheet->entryrequirements)) {?>
+
+    <h3>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->entryrequirements?></p>
+
+    <?php } ?>
+
+        
+
+   
+
+      </div>
+
+
+      <div class="two-col-section-side he-factsheet-side-details">
+       
+
+
+     <?php if (!empty($factsheet->duration)) {?>
+
+    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->duration?></p>
+
+    <?php } else {}; ?>
+
+    <?php if (!empty($factsheet->progression)) {?>
+
+    <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->progression?></p>
+
+    <?php } else {}; ?>
+
+    <?php if (!empty($factsheet->location)) {?>
+
+    <h3>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->location?></p>
+
+    <?php } else {}; ?>
+
+      </div>  
+
+
+
+      
+
+      <?php } else {?>
+
+
       <div class="two-col-section-main factsheet-details-text">
 
         <!-- BEGIN DETAILS -->
@@ -335,11 +393,14 @@ endif;
       </div>
 
 
-
       <div class="two-col-section-side">
        <?php the_field('video');?>
 
-      </div>
+      </div>  
+
+
+
+     <?php }?>
 
        <!-- END DETAILS -->
 
@@ -398,6 +459,8 @@ endif;
 </style>
 
 
+<?php if( get_field('enable_maths_english') ): ?>
+  
 
 
 <div class="maths-english full-width-container content-snippet"> <!-- Begin Full Width Container -->
@@ -417,18 +480,7 @@ endif;
 </div>  <!-- End Full Width Container -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<?php endif; ?>
 
 
   </div> <!-- END OF OVERVIEW TAB -->
@@ -456,25 +508,7 @@ endif;
 
   </div>
 
-  <?php if ($factsheet->programmearea == 'Higher Education') {?>
-
-  <div id="unistats" class="tab-section">
-   
-   <h2>Unistats</h2>
-   <p>The Key Information Set (KIS) contains the information which students nationally have said they find most useful when making choices about which course to study. Some of the items are measures of student satisfaction from the National Student Survey (NSS), others are from the Destination of Leavers from Higher Education (DLHE) which surveys students who gained a qualification from a university or college, six months after they left.</p>
-
-   <p>Where applicable you can see the KIS data directly on our course pages. You may however choose to use the information on <a href="https://unistats.direct.gov.uk/Institutions/Details/10003708/ReturnTo/Institutions" title="Unistats - Knowsley Community College">Unistats</a> – which allows you to compare data from different Universities and Colleges.</p>
-<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
-<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Horizontal/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 615px; height: 240px;">
-</iframe>
-    <?php 
-} else {
   
-}?>
- </div>
-
- <?php } else {}; ?>
-
  </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
 
@@ -562,12 +596,57 @@ endif;
     </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
 
-
-  </div>
-
     <!-- END APPLY TAB -->
 
+
+  
+  <?php if ($factsheet->programmearea == 'Higher Education') {?> <!-- IMPORTANT: Unistats tab only displays if programme area is equal to 'Higher Education' -->
+
+  <div id="unistats" class="tab-section">
+
+     <!-- BEGIN UNISTATS TAB -->
+
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+   
+   <h2>Unistats</h2>
+   <p>The Key Information Set (KIS) contains the information which students nationally have said they find most useful when making choices about which course to study. Some of the items are measures of student satisfaction from the National Student Survey (NSS), others are from the Destination of Leavers from Higher Education (DLHE) which surveys students who gained a qualification from a university or college, six months after they left.</p>
+
+   <p>Where applicable you can see the KIS data directly on our course pages. You may however choose to use the information on <a href="https://unistats.direct.gov.uk/Institutions/Details/10003708/ReturnTo/Institutions" title="Unistats - Knowsley Community College">Unistats</a> – which allows you to compare data from different Universities and Colleges.</p>
+
+<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?> <!-- IMPORTANT: KIS code needs to be entered in Pro Solution for widget to display   -->
+
+<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Horizontal/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 615px; height: 240px;">
+</iframe>
+    <?php }?>
+
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+</div>
+
+ <?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- End of tabbed content -->
+
+
+
 	
 
 
