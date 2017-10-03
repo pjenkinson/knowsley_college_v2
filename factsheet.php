@@ -162,7 +162,7 @@ jQuery( "#showallcourses" ).click(function() {
                  kiscode,
                  course_url
             FROM fact_sheets
-           WHERE id = '".$factsheetID."' AND level != 'Level 3'";
+           WHERE id = '".$factsheetID."' ";
 
   $factsheet = $wpdb->get_results($sql);
 
@@ -190,7 +190,7 @@ jQuery( "#showallcourses" ).click(function() {
 
   <div class="factsheet-image">
 
-    <img src="<?php the_field('featured_image');?>" alt="<?=$factsheet->name?>">
+    <img src="<?php the_field('factsheet_featured_image');?>" alt="<?=$factsheet->name?>">
   
   </div>
 
@@ -274,15 +274,9 @@ jQuery( "#showallcourses" ).click(function() {
         </div>
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
-            <?php
-if( have_rows('about_course') ):
-while ( have_rows('about_course') ) : the_row();?>
-<img src="<?php the_sub_field('image');?>" alt="<?=$factsheet->name?>">
+          
+            <img src="<?php the_post_thumbnail('factsheet_featured_image');?>" alt="<?=$factsheet->name?>"
 
-<?php endwhile;
-else :
-endif;
-?>  
           </div>
         </div>
     </section>
@@ -295,11 +289,8 @@ endif;
     <?php } ?>
 
 
-    <div class="full-width-container factsheet-details"> <!-- Begin Full Width Container -->
+    <div class="full-width-container"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
-
-      <?php if ($factsheet->programmearea == 'Higher Education') {?>  
-
 
       <div class="two-col-section-main factsheet-details-text">
 
@@ -315,14 +306,11 @@ endif;
 
     <?php } ?>
 
-        
-
-   
 
       </div>
 
 
-      <div class="two-col-section-side he-factsheet-side-details">
+      <div class="two-col-section-side">
        
 
 
@@ -353,54 +341,8 @@ endif;
 
       
 
-      <?php } else {?>
 
-
-      <div class="two-col-section-main factsheet-details-text">
-
-        <!-- BEGIN DETAILS -->
-
-          <h2>Details</h2>
-
-        <?php if (!empty($factsheet->entryrequirements)) {?>
-
-    <h3>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
-    <p><?=$factsheet->entryrequirements?></p>
-
-    <?php } else {}; ?>
-
-    <?php if (!empty($factsheet->duration)) {?>
-
-    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
-    <p><?=$factsheet->duration?></p>
-
-    <?php } else {}; ?>
-
-    <?php if (!empty($factsheet->progression)) {?>
-
-    <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
-    <p><?=$factsheet->progression?></p>
-
-    <?php } else {}; ?>
-
-    <?php if (!empty($factsheet->location)) {?>
-
-    <h3>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h3>
-    <p><?=$factsheet->location?></p>
-
-    <?php } else {}; ?>
-
-      </div>
-
-
-      <div class="two-col-section-side">
-       <?php the_field('video');?>
-
-      </div>  
-
-
-
-     <?php }?>
+    
 
        <!-- END DETAILS -->
 
