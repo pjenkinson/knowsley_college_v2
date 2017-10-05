@@ -21,65 +21,31 @@ $responsive-tab-links: 332px;
 	background: white;
 }
 
-.factsheet-details h3 {
- border: none;
- padding-top: gutter();
- color: white;
- font-size: 1.2em;
-}
-
-.factsheet-details h2 {
-	color: white;
-	border: none;
-}
-
-.factsheet-details p {
-	color: white;
-}
-
-.factsheet-details {
-	border: 1px solid $off-white;
-	background: $secondary-color;
-}
-
-.he-factsheet-side-details {
-	background: white;
-	padding: gutter();
-}
-
-.he-factsheet-side-details p, .he-factsheet-side-details h2 {
-	color: $primary-color;
-}
-
-.factsheet-details-text {
-	background: $primary-color;
-	padding: gutter();
-	color: white;
-}
-
-.factsheet-details-text h2, .factsheet-details-text h3, .factsheet-details-text p {
-	color: white;
-}
-
-.factsheet-details-text ul li {
-	color: white;
-}
-
 .container-border-top {
  border-top: 1px solid $off-white;
 }
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
-	background: white;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  background: white;
   padding: gutter();
-  margin-bottom: gutter();
+  margin-bottom: 0;
   float: left;
   @include span (12 of 12);
 }
 
-.prospectus-subject {
-	margin-top: 2em;
+.course-listing {
+  border-bottom: 1px solid $off-white;
+}
+
+.course-listing:last-of-type {
+	border-bottom: 0;
+}
+
+.course-listing h2 {
+  padding-bottom: 0;
+}
+
+.course-listing p {
+  margin-top: 0;
 }
 
 #tabs h3:first-of-type {
@@ -150,7 +116,7 @@ $responsive-tab-links: 332px;
 .factsheet-image {
 	width: 100%;
 	float: left;
-	max-height: 600px;
+	max-height: 450px;
 	background: black;
 	overflow: hidden;
 }
@@ -162,6 +128,10 @@ $responsive-tab-links: 332px;
 }
 
 // Tabbed Content
+
+.factsheet-section {
+	border-bottom: 1px solid $off-white;
+}
 
 .tab-content {
 	padding: 1em;
@@ -292,6 +262,11 @@ $responsive-tab-links: 332px;
 	padding-bottom: gutter();
 }
 
+.course-list {
+	background: white;
+	margin: 2em 0 2em 0;
+}
+
 .course-listing {
 	float: left;
 	margin-bottom: 1em;
@@ -299,6 +274,7 @@ $responsive-tab-links: 332px;
 
 .course-listing h2 {
 	margin-bottom: 0px;
+	border-bottom: none;
 }
 
 .course-listing .course-level {

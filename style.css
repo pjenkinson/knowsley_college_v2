@@ -8633,70 +8633,15 @@ aside .contact-apply ul li {
 }
 
 /* line 24, sass/_course_factsheet.scss */
-.factsheet-details h3 {
-  border: none;
-  padding-top: 3.7037%;
-  color: white;
-  font-size: 1.2em;
-}
-
-/* line 31, sass/_course_factsheet.scss */
-.factsheet-details h2 {
-  color: white;
-  border: none;
-}
-
-/* line 36, sass/_course_factsheet.scss */
-.factsheet-details p {
-  color: white;
-}
-
-/* line 40, sass/_course_factsheet.scss */
-.factsheet-details {
-  border: 1px solid #d7d7d7;
-  background: #99cc66;
-}
-
-/* line 45, sass/_course_factsheet.scss */
-.he-factsheet-side-details {
-  background: white;
-  padding: 3.7037%;
-}
-
-/* line 50, sass/_course_factsheet.scss */
-.he-factsheet-side-details p, .he-factsheet-side-details h2 {
-  color: #3d3d3c;
-}
-
-/* line 54, sass/_course_factsheet.scss */
-.factsheet-details-text {
-  background: #3d3d3c;
-  padding: 3.7037%;
-  color: white;
-}
-
-/* line 60, sass/_course_factsheet.scss */
-.factsheet-details-text h2, .factsheet-details-text h3, .factsheet-details-text p {
-  color: white;
-}
-
-/* line 64, sass/_course_factsheet.scss */
-.factsheet-details-text ul li {
-  color: white;
-}
-
-/* line 68, sass/_course_factsheet.scss */
 .container-border-top {
   border-top: 1px solid #d7d7d7;
 }
 
-/* line 71, sass/_course_factsheet.scss */
+/* line 27, sass/_course_factsheet.scss */
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
   background: white;
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   padding: 3.7037%;
-  margin-bottom: 3.7037%;
+  margin-bottom: 0;
   float: left;
   width: 100%;
   float: left;
@@ -8704,31 +8649,46 @@ aside .contact-apply ul li {
   margin-right: 0;
 }
 
-/* line 81, sass/_course_factsheet.scss */
-.prospectus-subject {
-  margin-top: 2em;
+/* line 35, sass/_course_factsheet.scss */
+.course-listing {
+  border-bottom: 1px solid #d7d7d7;
 }
 
-/* line 85, sass/_course_factsheet.scss */
+/* line 39, sass/_course_factsheet.scss */
+.course-listing:last-of-type {
+  border-bottom: 0;
+}
+
+/* line 43, sass/_course_factsheet.scss */
+.course-listing h2 {
+  padding-bottom: 0;
+}
+
+/* line 47, sass/_course_factsheet.scss */
+.course-listing p {
+  margin-top: 0;
+}
+
+/* line 51, sass/_course_factsheet.scss */
 #tabs h3:first-of-type {
   padding-top: 1em;
 }
 
-/* line 89, sass/_course_factsheet.scss */
+/* line 55, sass/_course_factsheet.scss */
 .factsheet-header {
   float: left;
   width: 100%;
   background: #d7d7d7;
 }
 
-/* line 94, sass/_course_factsheet.scss */
+/* line 60, sass/_course_factsheet.scss */
 .factsheet-header {
   float: left;
   width: 100%;
   background: #3d3d3c;
 }
 
-/* line 100, sass/_course_factsheet.scss */
+/* line 66, sass/_course_factsheet.scss */
 .factsheet-feature {
   float: left;
   width: 100%;
@@ -8737,21 +8697,21 @@ aside .contact-apply ul li {
   overflow: hidden;
 }
 
-/* line 107, sass/_course_factsheet.scss */
+/* line 73, sass/_course_factsheet.scss */
 .factsheet-title-bg {
   background: #3d3d3c;
   outline: none;
   padding: 2em 0 2em 0;
 }
 @media (min-width: 700px) {
-  /* line 107, sass/_course_factsheet.scss */
+  /* line 73, sass/_course_factsheet.scss */
   .factsheet-title-bg {
     outline: 2em solid #3d3d3c;
     padding: 0 0 0 0;
   }
 }
 
-/* line 117, sass/_course_factsheet.scss */
+/* line 83, sass/_course_factsheet.scss */
 .factsheet-title {
   position: relative;
   float: left;
@@ -8759,7 +8719,7 @@ aside .contact-apply ul li {
   left: 0;
 }
 @media (min-width: 700px) {
-  /* line 117, sass/_course_factsheet.scss */
+  /* line 83, sass/_course_factsheet.scss */
   .factsheet-title {
     position: absolute;
     z-index: 9999;
@@ -8767,7 +8727,7 @@ aside .contact-apply ul li {
   }
 }
 
-/* line 129, sass/_course_factsheet.scss */
+/* line 95, sass/_course_factsheet.scss */
 .factsheet-title h1 {
   color: #99cc66;
   text-decoration: none;
@@ -8777,13 +8737,13 @@ aside .contact-apply ul li {
   clear: both;
 }
 @media (min-width: 700px) {
-  /* line 129, sass/_course_factsheet.scss */
+  /* line 95, sass/_course_factsheet.scss */
   .factsheet-title h1 {
     font-size: 4.5em;
   }
 }
 
-/* line 141, sass/_course_factsheet.scss */
+/* line 107, sass/_course_factsheet.scss */
 .factsheet-title p {
   color: white;
   display: inline-block;
@@ -8793,35 +8753,40 @@ aside .contact-apply ul li {
   margin-bottom: 0;
 }
 
-/* line 150, sass/_course_factsheet.scss */
+/* line 116, sass/_course_factsheet.scss */
 .factsheet-image {
   width: 100%;
   float: left;
-  max-height: 600px;
+  max-height: 450px;
   background: black;
   overflow: hidden;
 }
 
-/* line 158, sass/_course_factsheet.scss */
+/* line 124, sass/_course_factsheet.scss */
 #tabs {
   width: 100%;
   float: left;
   background: white;
 }
 
-/* line 166, sass/_course_factsheet.scss */
+/* line 132, sass/_course_factsheet.scss */
+.factsheet-section {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+/* line 136, sass/_course_factsheet.scss */
 .tab-content {
   padding: 1em;
 }
 
-/* line 169, sass/_course_factsheet.scss */
+/* line 139, sass/_course_factsheet.scss */
 .factsheet-content-apply {
   float: left;
   width: 100%;
   position: relative;
 }
 
-/* line 175, sass/_course_factsheet.scss */
+/* line 145, sass/_course_factsheet.scss */
 .factsheet-content-apply a {
   width: 100%;
   background: #99cc66;
@@ -8832,34 +8797,34 @@ aside .contact-apply ul li {
   text-align: center;
 }
 
-/* line 185, sass/_course_factsheet.scss */
+/* line 155, sass/_course_factsheet.scss */
 .factsheet-content-apply a:link, .factsheet-content-apply a:hover, .factsheet-content-apply a:focus, .factsheet-content-apply a:visited {
   color: white !important;
 }
 
-/* line 189, sass/_course_factsheet.scss */
+/* line 159, sass/_course_factsheet.scss */
 .highlight-text {
   color: #99cc66;
 }
 
-/* line 195, sass/_course_factsheet.scss */
+/* line 165, sass/_course_factsheet.scss */
 .tab-links {
   float: left;
   width: 100%;
   background: #3d3d3c;
 }
 
-/* line 201, sass/_course_factsheet.scss */
+/* line 171, sass/_course_factsheet.scss */
 .tab-links-container {
   background: white;
 }
 
-/* line 205, sass/_course_factsheet.scss */
+/* line 175, sass/_course_factsheet.scss */
 .tab-links ul {
   margin-bottom: 0px;
 }
 
-/* line 208, sass/_course_factsheet.scss */
+/* line 178, sass/_course_factsheet.scss */
 .tab-links ul li {
   list-style-type: none;
   display: block;
@@ -8869,7 +8834,7 @@ aside .contact-apply ul li {
   padding: 1em 0 0 1em;
 }
 @media (min-width: 332px) {
-  /* line 208, sass/_course_factsheet.scss */
+  /* line 178, sass/_course_factsheet.scss */
   .tab-links ul li {
     display: inline-block;
     clear: none;
@@ -8877,24 +8842,24 @@ aside .contact-apply ul li {
   }
 }
 
-/* line 222, sass/_course_factsheet.scss */
+/* line 192, sass/_course_factsheet.scss */
 .tab-links ul li a:link, .tab-links ul li a:visited {
   font-size: 1.2em;
   color: #3d3d3c;
 }
 
-/* line 227, sass/_course_factsheet.scss */
+/* line 197, sass/_course_factsheet.scss */
 #tabs .ui-tabs-active a {
   color: #6d9837 !important;
 }
 
-/* line 231, sass/_course_factsheet.scss */
+/* line 201, sass/_course_factsheet.scss */
 .tab-section {
   float: left;
   width: 100%;
 }
 
-/* line 235, sass/_course_factsheet.scss */
+/* line 205, sass/_course_factsheet.scss */
 .share-bar {
   float: left;
   width: 100%;
@@ -8904,29 +8869,29 @@ aside .contact-apply ul li {
   display: none;
 }
 
-/* line 244, sass/_course_factsheet.scss */
+/* line 214, sass/_course_factsheet.scss */
 .share-bar ul li {
   display: inline-block;
   float: left;
 }
 
-/* line 249, sass/_course_factsheet.scss */
+/* line 219, sass/_course_factsheet.scss */
 .share-bar ul li a {
   padding: 1em 0.5em;
 }
 
-/* line 253, sass/_course_factsheet.scss */
+/* line 223, sass/_course_factsheet.scss */
 .share-bar ul li a:link, .share-bar ul li a:visited, .share-bar ul li a:active {
   color: white;
 }
 
-/* line 259, sass/_course_factsheet.scss */
+/* line 229, sass/_course_factsheet.scss */
 .ui-tabs-nav ul {
   float: left;
   width: 100%;
 }
 
-/* line 264, sass/_course_factsheet.scss */
+/* line 234, sass/_course_factsheet.scss */
 .ui-tabs-nav li {
   display: inline-block;
   position: relative;
@@ -8937,41 +8902,48 @@ aside .contact-apply ul li {
   padding-bottom: 0;
 }
 
-/* line 274, sass/_course_factsheet.scss */
+/* line 244, sass/_course_factsheet.scss */
 .ui-tabs-nav li a {
   padding: 0.5em 0.5em 0 0.5em;
   width: auto;
   color: white;
 }
 
-/* line 280, sass/_course_factsheet.scss */
+/* line 250, sass/_course_factsheet.scss */
 .ui-tabs-nav li a:first-of-type {
   padding-left: 0;
 }
 
-/* line 284, sass/_course_factsheet.scss */
+/* line 254, sass/_course_factsheet.scss */
 .ui-tabs-nav li a:link, .ui-tabs-nav li a:visited, .ui-tabs-nav li a:hover {
   color: #3d3d3c;
 }
 
-/* line 290, sass/_course_factsheet.scss */
+/* line 260, sass/_course_factsheet.scss */
 .apply {
   display: inline-block;
   padding-bottom: 3.7037%;
 }
 
-/* line 295, sass/_course_factsheet.scss */
+/* line 265, sass/_course_factsheet.scss */
+.course-list {
+  background: white;
+  margin: 2em 0 2em 0;
+}
+
+/* line 270, sass/_course_factsheet.scss */
 .course-listing {
   float: left;
   margin-bottom: 1em;
 }
 
-/* line 300, sass/_course_factsheet.scss */
+/* line 275, sass/_course_factsheet.scss */
 .course-listing h2 {
   margin-bottom: 0px;
+  border-bottom: none;
 }
 
-/* line 304, sass/_course_factsheet.scss */
+/* line 280, sass/_course_factsheet.scss */
 .course-listing .course-level {
   color: #3d3d3c;
   background: #99cc66;
@@ -8982,36 +8954,36 @@ aside .contact-apply ul li {
   color: white;
 }
 
-/* line 316, sass/_course_factsheet.scss */
+/* line 292, sass/_course_factsheet.scss */
 .factsheet-apply {
   float: left;
   width: 100%;
 }
 
-/* line 321, sass/_course_factsheet.scss */
+/* line 297, sass/_course_factsheet.scss */
 .apply-box {
   text-align: center;
 }
 
-/* line 325, sass/_course_factsheet.scss */
+/* line 301, sass/_course_factsheet.scss */
 .apply-box p i {
   color: #99cc66;
 }
 
-/* line 329, sass/_course_factsheet.scss */
+/* line 305, sass/_course_factsheet.scss */
 .apply-box p a {
   text-decoration: none;
   color: white;
 }
 
-/* line 334, sass/_course_factsheet.scss */
+/* line 310, sass/_course_factsheet.scss */
 .apply-box-button, .apply-box p {
   color: white;
   padding: 0.5em;
   background: #3d3d3c;
 }
 
-/* line 344, sass/_course_factsheet.scss */
+/* line 320, sass/_course_factsheet.scss */
 .aside-videos {
   width: 100%;
   float: left;
@@ -9019,7 +8991,7 @@ aside .contact-apply ul li {
   margin-right: 0;
 }
 
-/* line 348, sass/_course_factsheet.scss */
+/* line 324, sass/_course_factsheet.scss */
 .youtube-side, .youtube-side-last {
   background: white;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
@@ -9028,7 +9000,7 @@ aside .contact-apply ul li {
   margin-bottom: 3.7037%;
 }
 
-/* line 355, sass/_course_factsheet.scss */
+/* line 331, sass/_course_factsheet.scss */
 .youtube-content {
   position: relative;
   padding-bottom: 56.25%;
@@ -9037,7 +9009,7 @@ aside .contact-apply ul li {
   overflow: hidden;
 }
 
-/* line 363, sass/_course_factsheet.scss */
+/* line 339, sass/_course_factsheet.scss */
 .youtube-content iframe {
   position: absolute;
   top: 0;
@@ -9047,13 +9019,13 @@ aside .contact-apply ul li {
 }
 
 @media (max-width: 735px) {
-  /* line 372, sass/_course_factsheet.scss */
+  /* line 348, sass/_course_factsheet.scss */
   #unistats-tab {
     display: none;
   }
 }
 @media (min-width: 900px) {
-  /* line 377, sass/_course_factsheet.scss */
+  /* line 353, sass/_course_factsheet.scss */
   .youtube-content {
     width: 100%;
     float: left;
@@ -9061,20 +9033,20 @@ aside .contact-apply ul li {
     margin-right: 0;
   }
 
-  /* line 381, sass/_course_factsheet.scss */
+  /* line 357, sass/_course_factsheet.scss */
   .youtube-content iframe {
     height: 416px;
   }
 }
 @media (min-width: 530px) {
-  /* line 388, sass/_course_factsheet.scss */
+  /* line 364, sass/_course_factsheet.scss */
   .youtube-side {
     width: 48.14815%;
     float: left;
     margin-right: 3.7037%;
   }
 
-  /* line 392, sass/_course_factsheet.scss */
+  /* line 368, sass/_course_factsheet.scss */
   .youtube-side-last {
     width: 48.14815%;
     float: right;
@@ -9082,7 +9054,7 @@ aside .contact-apply ul li {
   }
 }
 @media (min-width: 1150px) {
-  /* line 399, sass/_course_factsheet.scss */
+  /* line 375, sass/_course_factsheet.scss */
   .youtube-side {
     width: 100%;
     float: left;
@@ -9091,7 +9063,7 @@ aside .contact-apply ul li {
     margin-bottom: 3.7037%;
   }
 
-  /* line 404, sass/_course_factsheet.scss */
+  /* line 380, sass/_course_factsheet.scss */
   .youtube-side-last {
     width: 100%;
     float: left;
@@ -9099,19 +9071,19 @@ aside .contact-apply ul li {
     margin-right: 0;
   }
 
-  /* line 408, sass/_course_factsheet.scss */
+  /* line 384, sass/_course_factsheet.scss */
   .aside-videos {
     padding-bottom: 0;
   }
 }
-/* line 415, sass/_course_factsheet.scss */
+/* line 391, sass/_course_factsheet.scss */
 .emsi-widget {
   width: 100%;
   float: left;
   margin-top: 1em;
 }
 
-/* line 421, sass/_course_factsheet.scss */
+/* line 397, sass/_course_factsheet.scss */
 .emsi-widget iframe {
   height: 65vh;
 }
@@ -10198,11 +10170,6 @@ input[type=checkbox] {
 }
 
 /* line 765, sass/_single_pages.scss */
-.subject-intro {
-  margin-bottom: 3.7037%;
-}
-
-/* line 769, sass/_single_pages.scss */
 .subject-download {
   width: 100.594px;
   height: 140.016px;
@@ -10210,12 +10177,12 @@ input[type=checkbox] {
   vertical-align: top;
 }
 
-/* line 776, sass/_single_pages.scss */
+/* line 772, sass/_single_pages.scss */
 .overlay {
   position: relative;
 }
 
-/* line 780, sass/_single_pages.scss */
+/* line 776, sass/_single_pages.scss */
 .overlay:after {
   position: absolute;
   content: "";
@@ -10226,55 +10193,55 @@ input[type=checkbox] {
   opacity: 0;
 }
 
-/* line 790, sass/_single_pages.scss */
+/* line 786, sass/_single_pages.scss */
 .overlay:hover:after {
   opacity: .7;
 }
 
-/* line 794, sass/_single_pages.scss */
+/* line 790, sass/_single_pages.scss */
 .overlay-red:after {
   background-color: #99cc66;
 }
 
-/* line 798, sass/_single_pages.scss */
+/* line 794, sass/_single_pages.scss */
 .subject-download a {
   width: 100%;
   height: auto;
 }
 
-/* line 803, sass/_single_pages.scss */
+/* line 799, sass/_single_pages.scss */
 .subject-download img {
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
-/* line 808, sass/_single_pages.scss */
+/* line 804, sass/_single_pages.scss */
 .subject-download img:hover {
   background: #99cc66;
   cursor: pointer;
 }
 
-/* line 813, sass/_single_pages.scss */
+/* line 809, sass/_single_pages.scss */
 .higher-education hr.dotted {
   border-style: dashed;
   color: #68478d;
   margin-bottom: 2em;
 }
 
-/* line 819, sass/_single_pages.scss */
+/* line 815, sass/_single_pages.scss */
 .lee-stafford hr.dotted {
   border-style: dashed;
   color: #ee1199;
   margin-bottom: 2em;
 }
 
-/* line 825, sass/_single_pages.scss */
+/* line 821, sass/_single_pages.scss */
 .section-panels-bg {
   background: #d7d7d7;
 }
 
-/* line 830, sass/_single_pages.scss */
+/* line 826, sass/_single_pages.scss */
 .eventbrite-course {
   margin-bottom: 3.7037%;
   background: white;
@@ -10282,17 +10249,17 @@ input[type=checkbox] {
 }
 
 @media screen and (max-width: 956px) {
-  /* line 839, sass/_single_pages.scss */
+  /* line 835, sass/_single_pages.scss */
   .slider .flickity-prev-next-button {
     display: none;
   }
 }
-/* line 844, sass/_single_pages.scss */
+/* line 840, sass/_single_pages.scss */
 .slider {
   position: relative;
 }
 
-/* line 848, sass/_single_pages.scss */
+/* line 844, sass/_single_pages.scss */
 .slider .carousel-cell {
   width: 100%;
   /* full width */
@@ -10301,7 +10268,7 @@ input[type=checkbox] {
   margin-right: 10px;
 }
 
-/* line 854, sass/_single_pages.scss */
+/* line 850, sass/_single_pages.scss */
 .slider .flickity-prev-next-button {
   width: 40px;
   height: 40px;
@@ -10309,54 +10276,54 @@ input[type=checkbox] {
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-/* line 861, sass/_single_pages.scss */
+/* line 857, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:hover {
   background: transparent;
 }
 
-/* line 865, sass/_single_pages.scss */
+/* line 861, sass/_single_pages.scss */
 .slider .flickity-prev-next-button svg {
   margin-top: 4px;
 }
 
 /* arrow color */
-/* line 870, sass/_single_pages.scss */
+/* line 866, sass/_single_pages.scss */
 .slider .flickity-prev-next-button .arrow {
   fill: white;
 }
 
-/* line 874, sass/_single_pages.scss */
+/* line 870, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:hover .arrow {
   fill: #99cc66;
 }
 
-/* line 878, sass/_single_pages.scss */
+/* line 874, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.no-svg {
   color: white;
 }
 
 /* hide disabled button */
-/* line 882, sass/_single_pages.scss */
+/* line 878, sass/_single_pages.scss */
 .slider .flickity-prev-next-button:disabled {
   display: none;
 }
 
 /* position outside */
-/* line 887, sass/_single_pages.scss */
+/* line 883, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.previous {
   top: 170px;
   left: 2em;
   position: absolute;
 }
 
-/* line 892, sass/_single_pages.scss */
+/* line 888, sass/_single_pages.scss */
 .slider .flickity-prev-next-button.next {
   top: 170px;
   right: 2em;
   position: absolute;
 }
 
-/* line 898, sass/_single_pages.scss */
+/* line 894, sass/_single_pages.scss */
 .vacancies-archive {
   margin-top: 2em;
 }

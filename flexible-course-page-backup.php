@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Flexible Course Page
+* Template Name: Flexible Course Page Old
 */
 get_header(); ?>
 

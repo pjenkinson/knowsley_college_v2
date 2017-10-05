@@ -160,7 +160,8 @@ jQuery( "#showallcourses" ).click(function() {
                  unit3,
                  unit4,
                  kiscode,
-                 course_url
+                 course_url,
+                 keywords
             FROM fact_sheets
            WHERE id = '".$factsheetID."' ";
 
@@ -215,7 +216,7 @@ jQuery( "#showallcourses" ).click(function() {
     <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
     <li><a href="#careers">Careers <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
-    <li><a href="#print" onclick="window.print();">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
+    <li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
     <li class="apply-tab"><a href="#apply" onclick="location.href = '/apply/?courseid=<?=$factsheet->id?>';">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
@@ -260,7 +261,7 @@ jQuery( "#showallcourses" ).click(function() {
 
   
 
-    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <?php if (!empty($factsheet->courseabout)) {?>
@@ -275,7 +276,7 @@ jQuery( "#showallcourses" ).click(function() {
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
           
-            <img src="<?php the_post_thumbnail('factsheet_featured_image');?>" alt="<?=$factsheet->name?>"
+            <?php the_post_thumbnail();?>
 
           </div>
         </div>
@@ -289,22 +290,36 @@ jQuery( "#showallcourses" ).click(function() {
     <?php } ?>
 
 
-    <div class="full-width-container"> <!-- Begin Full Width Container -->
+    <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-      <div class="two-col-section-main factsheet-details-text">
+      <div class="two-col-section-main">
 
         <!-- BEGIN DETAILS -->
 
-          <h2>Details</h2>
 
-
-          <?php if (!empty($factsheet->entryrequirements)) {?>
+    <?php if (!empty($factsheet->entryrequirements)) {?>
 
     <h3>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
     <p><?=$factsheet->entryrequirements?></p>
 
     <?php } ?>
+
+    <?php if (!empty($factsheet->keywords)) {?>
+
+    <h3>Finance <i class="fa fa-gbp" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->keywords?></p>
+
+    <?php } ?>
+
+    <?php if (!empty($factsheet->duration)) {?>
+
+    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
+    <p><?=$factsheet->duration?></p>
+
+    <?php } ?>
+
+    
 
 
       </div>
@@ -316,8 +331,7 @@ jQuery( "#showallcourses" ).click(function() {
 
      <?php if (!empty($factsheet->duration)) {?>
 
-    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
-    <p><?=$factsheet->duration?></p>
+    
 
     <?php } else {}; ?>
 

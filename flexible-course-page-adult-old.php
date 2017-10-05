@@ -1,7 +1,6 @@
 <?php
 /**
-* Template Name: Flexible Course Page - Adult
-* Filters out level 1
+* Template Name: Flexible Course Page - Adult Old
 */
 get_header(); ?>
 
@@ -43,7 +42,7 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'flex-secondary' );?>
 </aside>
 
-<section class="course-list">
+<section style="margin-top: 2em;">
 
 <?php
 
@@ -61,16 +60,15 @@ if( have_rows('subject_info') ):
 
 	</div>
 	<div class="subject-buttons">
-	<div class="button-default"><a href="<?php the_sub_field('prospectus_download');?>" title="<?php the_sub_field('subject_title');?>">More information <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div>
+	<div class="button-default"><a href="#courses" title="View courses">View courses</a></div>
+	<div class="button-default"><a href="<?php the_sub_field('prospectus_download');?>" title="<?php the_sub_field('subject_title');?>">Download subject information <i class="fa fa-arrow-circle-o-down"></i></a></div>
 	</div>
 </div>
 
 <?php
     endwhile;
 
-else :
-
-    echo 'No Subject Info found';
+else :'';
 
 endif;
 
@@ -87,28 +85,24 @@ $finalBreakdown = explode('-', $urlSections[3]);
 $finalCount = count($finalBreakdown) - 1;
 $id = $finalBreakdown[$finalCount];
 
-$sql = 	 "SELECT DISTINCT id,
+      $sql = 	"SELECT DISTINCT id,
                programmearea,
                factsheetname, 
                courseabout,
                entryrequirements,
-               level,
-               course_url
+               level
           FROM fact_sheets 
           INNER JOIN Offering
          	   On Offering.CourseInformationID=fact_sheets.id
-         WHERE programmearea = (SELECT programmearea 
+         WHERE level != 'Level 1' /* Level 1 Courses not included for Adults */ AND programmearea = (SELECT programmearea 
 								FROM fact_sheets 
 								WHERE id = '".$id."')
-				AND fact_sheets.id = Offering.CourseInformationID
-				AND level != 'Level 1'
+				AND fact_sheets.id = Offering.CourseInformationID	
 		ORDER BY level ASC";
 
 $courses = $wpdb->get_results($sql);
 
 ?>
-
-<div id="courses">
 
 <?php
 
@@ -116,9 +110,10 @@ foreach($courses AS $course) {
 	?>
 	<article class="course-listing the-content">
 	<h2><?=$course->factsheetname?></h2>
-	<p><?=$course->level?></p>
+	<div class="course-level"><?=$course->level?></div>
+	<p><?=$course->courseabout?></p>
 	<!--Include ID of 16-19 course factsheet page -->
-	<div class="button-default"><a href="/<?=$course->course_url?>">Course information</a></div>
+	<div class="button-default"><a href="/?page_id=1789&factsheet=<?=$course->id?>">Course information</a></div>
   <div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
   </article>
 	<?php
@@ -129,10 +124,15 @@ foreach($courses AS $course) {
 	
 	</section>
 
+		
+
 
 	</div>
 
 </div>
+
+
+
 
 
 </main><!-- #main -->
