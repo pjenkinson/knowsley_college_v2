@@ -5,7 +5,7 @@
 
  if(isset($_GET['term'])) {
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
-     $sql = "SELECT programmearea, id, factsheetname, level, location, duration FROM fact_sheets
+     $sql = "SELECT programmearea, id, factsheetname, level, location, duration, course_url FROM fact_sheets
               WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
               LIMIT 100";
      $courses = $wpdb->get_results($sql);
@@ -15,7 +15,8 @@
                               'level' => $courses->level,
                               'duration' => $courses->duration,
                               'location' => $courses->location,
-                              'programme' => $courses->programmearea
+                              'programme' => $courses->programmearea,
+                              'url' => $courses->course_url
                               );
      }
      header('Content-Type: application/json');
@@ -31,8 +32,6 @@ jQuery( document ).ready(function() {
  jQuery('#advanced-search-table').stacktable({
     myClass: 'something anotherclass'
  });
-
-
 
 
 });

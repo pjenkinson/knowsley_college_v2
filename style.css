@@ -1861,7 +1861,7 @@ li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
 
 /* line 633, sass/_ui_elements.scss */
 #mega-menu-wrap-policies .mega-menu-toggle:after {
-  content: "College Policies" !important;
+  content: "Public Information" !important;
   float: left;
 }
 
@@ -8722,7 +8722,7 @@ aside .contact-apply ul li {
   /* line 83, sass/_course_factsheet.scss */
   .factsheet-title {
     position: absolute;
-    z-index: 9999;
+    z-index: 8888;
     bottom: 0;
   }
 }

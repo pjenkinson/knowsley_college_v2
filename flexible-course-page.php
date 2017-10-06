@@ -48,6 +48,15 @@ get_header(); ?>
 	  $sectionProgramme = get_field( "programme_area" ); // Get programme area from ACF input
 ?>
 
+<? $level = get_field('exclude_levels');
+
+// Get excluded levels from ACF input
+
+$exclude1 = $level['exclude_level_1']; 
+$exclude2 = $level['exclude_level_2']; 
+$exclude3 = $level['exclude_level_3']; ?>
+
+
 <?php 
 $sql = 	 "SELECT DISTINCT id,
                programmearea,
@@ -60,7 +69,11 @@ $sql = 	 "SELECT DISTINCT id,
           INNER JOIN Offering
          	   On Offering.CourseInformationID=fact_sheets.id
          WHERE programmearea = '$sectionProgramme'
-				AND fact_sheets.id = Offering.CourseInformationID	
+				AND fact_sheets.id = Offering.CourseInformationID
+				/* Exclude levels using ACF */
+				AND level != '$exclude1' 
+				AND level != '$exclude2'
+				AND level != '$exclude3'
 		ORDER BY level ASC";
 
 $courses = $wpdb->get_results($sql);

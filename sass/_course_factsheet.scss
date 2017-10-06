@@ -87,7 +87,7 @@ $responsive-tab-links: 332px;
 	left: 0;
 	@include breakpoint($factsheet-title) { 
 			position: absolute;
-			z-index: 9999;
+			z-index: 8888;
 			bottom: 0;
 	 }
 }
