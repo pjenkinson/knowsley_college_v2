@@ -84,12 +84,12 @@ if(!is_null($results)) {
   foreach($results as $value) {
     ?>
       <tr class="stacktable-factsheet">
-      <td class="stacktable-about"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>"><?=$value['text']?></a></td>
+      <td class="stacktable-about"><a href="<?=$value['url']?>"><?=$value['text']?></a></td>
       <td class="stacktable-programme"><?=$value['programme']?></td>
       <td class="stacktable-level"><?=$value['level']?></td>
       <td class="stacktable-campus"><?=$value['location']?></td>
       <td class="stacktable-duration"><?=$value['duration']?></td>
-      <td class="more"><a href="/course-finder/factsheet/?factsheet=<?=$value['id']?>">More</a></td>
+      <td class="more"><a href="<?=$value['url']?>">More</a></td>
       </tr>
     <?php
   }

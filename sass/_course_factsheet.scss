@@ -69,6 +69,7 @@ $responsive-tab-links: 332px;
 	height: auto;
 	position: relative;
 	overflow: hidden;
+	z-index: 300;
 }
 .factsheet-title-bg {
 	background: $primary-color;
@@ -81,18 +82,17 @@ $responsive-tab-links: 332px;
 }
 
 .factsheet-title {
-	position: relative;
 	float: left;
 	width: 100%;
 	left: 0;
 	@include breakpoint($factsheet-title) { 
-			position: absolute;
 			z-index: 8888;
 			bottom: 0;
 	 }
 }
 
 .factsheet-title h1 {
+	margin-top: gutter();
 	color: $secondary-color;
 	text-decoration: none;
 	border-bottom: none;
@@ -105,12 +105,14 @@ $responsive-tab-links: 332px;
 }
 
 .factsheet-title p {
+	font-size: 1.5em;
+	margin-top: 0.5em;
 	color: white;
 	display: inline-block;
 	float: left;
 	clear: both;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: gutter();
 }
 
 .factsheet-image {
@@ -165,11 +167,15 @@ $responsive-tab-links: 332px;
 .tab-links {
 	float: left;
 	width: 100%;
-	background: $primary-color;
 }
 
 .tab-links-container {
 	background: white;
+	padding: 0;
+}
+
+.tab-list-container {
+	padding-left: gutter();
 }
 
 .tab-links ul {
@@ -181,11 +187,11 @@ $responsive-tab-links: 332px;
 	clear: both;
 	background: white;
 	color: $primary-color;
-	padding: 1em 0 0 1em;
+	padding: 1em 0 0 0;
 	@include breakpoint($responsive-tab-links) { 
  		display: inline-block;
  		clear: none;
- 		padding: 1em 1em 0 1em;
+ 		padding: 1em 1em 0 0;
 	}
 }
 
@@ -264,7 +270,7 @@ $responsive-tab-links: 332px;
 
 .course-list {
 	background: white;
-	margin: 2em 0 2em 0;
+	margin: gutter() 0 gutter() 0;
 }
 
 .course-listing {
@@ -314,8 +320,6 @@ $responsive-tab-links: 332px;
 }
 
 // YouTube Videos
-
-// Youtube Fix
 
 .aside-videos {
 	@include span (12 of 12);

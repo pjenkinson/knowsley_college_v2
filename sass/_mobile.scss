@@ -3,10 +3,6 @@
 $tablet-small-desktop: 700px;
 $desktop: 1149px;
 
-.site-main {
- margin-top: 2em;
-}
-
 .opening-times-container, .pdf-feature-container, .accordion-container, .content-slider-container {
 margin-top: 2em;
 }
@@ -286,21 +282,7 @@ margin-top: 2em;
 	padding: 0px 0px 0px 5%;
 }
 
-@media (min-width: 0px) and (max-width: 1139px) {
 
-.nav-secondary .mega-menu-toggle {
-	background: white !important;
-}
-
-.nav-home .mega-menu-toggle {
-	background: $off-white !important;
-}
-
-}
-
-#mega-menu-wrap-higher-education {
-	background: $off-white !important;
-}
 
 // Breadcrumbs
 

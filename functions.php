@@ -132,7 +132,13 @@ add_action( 'widgets_init', 'knowsley_college_widgets_init' );
  * Enqueue scripts and styles.
  */
 function knowsley_college_scripts() {
-	wp_enqueue_style( 'knowsley_college-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+	'knowsley_college-style', // handle name
+    get_stylesheet_uri() , // the URL of the stylesheet
+    array(), // an array of dependent styles
+    '1', // version number
+    'screen, print' // CSS media type
+    );
 
 	wp_enqueue_script('jquery-ui-datepicker');
 

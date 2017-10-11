@@ -81,9 +81,7 @@ jQuery( "#showallcourses" ).click(function() {
 
 </header>
 
-<!-- Breadcrumbs
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'breadcrumbs' );?>
+
 
 
 <!-- Main content
@@ -190,10 +188,15 @@ jQuery( "#showallcourses" ).click(function() {
   </div>  
 
   <div class="factsheet-image">
-
+  <?php if( get_field('factsheet_featured_image') ): ?>
     <img src="<?php the_field('factsheet_featured_image');?>" alt="<?=$factsheet->name?>">
+  <?php endif; ?>
   
   </div>
+
+  <!-- Breadcrumbs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'navigation', 'breadcrumbs' );?>
 
   
 
@@ -213,17 +216,22 @@ jQuery( "#showallcourses" ).click(function() {
     <div class="fixed-container tab-links-container">
 
   <ul class="tab-links-list">
+
+
+   
     <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
-    <li><a href="#careers">Careers <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+    <li><a href="#careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
     <li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
     <li class="apply-tab"><a href="#apply" onclick="location.href = '/apply/?courseid=<?=$factsheet->id?>';">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
   </ul>
 
-    </div>
 
+
+
+  </div>
   </div>
 
 
@@ -364,7 +372,7 @@ jQuery( "#showallcourses" ).click(function() {
     </div>  <!-- End Full Width Container -->
 
 
-<div class="full-width-container related-courses content-snippet"> <!-- Begin Full Width Container -->
+<div class="full-width-container related-courses content-snippet no-print"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
   <!-- COURSE FINDER SET TO PROGRAMME AREA -->

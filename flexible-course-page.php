@@ -33,7 +33,7 @@ get_header(); ?>
 <?php get_template_part( 'content', 'featured-banner-has-parent' );?>
 </div>
 
-<div class="fixed-container">
+<div class="fixed-container course-page-content">
 
 
 <aside>

@@ -1,5 +1,7 @@
 // FLEXIBLE HOMEPAGE 
 
+$desktop-1179: 1179px;
+
 // Content Snippets
 
 .content-snippet {
@@ -128,3 +130,46 @@ height: 500px;
 .campus-sections {
 	padding-top: 2em;
 }
+
+
+
+// White background for mobile view
+
+.course-page-content, .nav-secondary .mega-menu-toggle, .flexible-content-container {
+ background: white !important;
+ @include breakpoint($desktop-1179) { 
+	 background: none !important;
+	}
+}
+
+.mega-menu-toggle {
+ border-bottom: 1px solid $off-white;
+ padding: gutter();
+ padding-top: 0;
+}
+
+/*
+@media (min-width: 0px) and (max-width: 1139px) {
+
+.nav-secondary .mega-menu-toggle {
+	background: white !important;
+}
+
+.nav-home .mega-menu-toggle {
+	background: $off-white !important;
+}
+
+}
+
+#mega-menu-wrap-higher-education {
+	background: $off-white !important;
+}
+*/
+
+#mega-menu-wrap-16-19-subject .mega-menu-toggle .mega-toggle-block-right {
+ margin-right: 0;
+}	
+
+.featured-banner {
+ overflow: hidden;
+}	
