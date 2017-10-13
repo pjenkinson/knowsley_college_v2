@@ -17,7 +17,7 @@ $desktop-1179: 1179px;
 	@include span (12 of 12);
 	background: white;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
 	clear: both;
 	padding: gutter();
 	margin-bottom: 2em;
@@ -136,16 +136,43 @@ height: 500px;
 // White background for mobile view
 
 .course-page-content, .nav-secondary .mega-menu-toggle, .flexible-content-container {
- background: white !important;
  @include breakpoint($desktop-1179) { 
 	 background: none !important;
 	}
 }
 
-.mega-menu-toggle {
- border-bottom: 1px solid $off-white;
- padding: gutter();
- padding-top: 0;
+.primary .mega-menu-toggle {
+ border-bottom: 0;	
+}
+
+.secondary-page .fixed-container, .secondary-nav .fixed-container   {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  @include breakpoint($desktop-1179) { 
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+}
+
+.featured-banner .fixed-container {
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+	 @include breakpoint($desktop-1179) { 
+	 	max-width: 1140px;
+  		margin-left: auto;
+  	    margin-right: auto;
+	 }
+  
+}
+
+aside {
+  border-bottom: 1px solid $off-white;
+  @include breakpoint($desktop-1179) { 
+  border-bottom: none;
+ }
 }
 
 /*

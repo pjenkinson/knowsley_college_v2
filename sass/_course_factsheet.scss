@@ -74,10 +74,9 @@ $responsive-tab-links: 332px;
 .factsheet-title-bg {
 	background: $primary-color;
 	outline: none;
-	padding: 2em 0 2em 0;
+	padding: 0;
 	@include breakpoint($factsheet-title) { 
 	outline: 2em solid $primary-color;
-	padding: 0 0 0 0;
 	}
 }
 
@@ -165,19 +164,26 @@ $responsive-tab-links: 332px;
 // Tab Sections
 
 .tab-links {
-	float: left;
-	width: 100%;
+float: left;
+width: 100%;
+border-bottom: 1px solid $off-white;
+}
+
+.tab-links-list {
+padding: 0;
+margin: 0;
 }
 
 .tab-links-container {
-	background: white;
-	padding: 0;
+background: white;
+padding: 0;
+padding-top: 1em;
+padding-bottom: 1em;
 }
 
 .tab-list-container {
-	padding-left: gutter();
+padding-left: gutter();
 }
-
 .tab-links ul {
 	margin-bottom: 0px;
 }
@@ -187,11 +193,11 @@ $responsive-tab-links: 332px;
 	clear: both;
 	background: white;
 	color: $primary-color;
-	padding: 1em 0 0 0;
+	padding: 0 0 0 0;
 	@include breakpoint($responsive-tab-links) { 
  		display: inline-block;
  		clear: none;
- 		padding: 1em 1em 0 0;
+ 		padding: 0 0 0 0;
 	}
 }
 
@@ -270,7 +276,7 @@ $responsive-tab-links: 332px;
 
 .course-list {
 	background: white;
-	margin: gutter() 0 gutter() 0;
+	margin: 0 0 gutter() 0;
 }
 
 .course-listing {
@@ -326,8 +332,8 @@ $responsive-tab-links: 332px;
 }
 
 .youtube-side, .youtube-side-last {
-	background: white;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
   padding: gutter();
   margin-bottom: gutter();

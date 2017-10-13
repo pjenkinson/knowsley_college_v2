@@ -159,7 +159,8 @@ jQuery( "#showallcourses" ).click(function() {
                  unit4,
                  kiscode,
                  course_url,
-                 keywords
+                 keywords,
+                 qualification_type
             FROM fact_sheets
            WHERE id = '".$factsheetID."' ";
 
@@ -178,9 +179,9 @@ jQuery( "#showallcourses" ).click(function() {
   <div class="fixed-container">
 
       <div class="factsheet-title">
-          <div class="fixed-container factsheet-title-bg">
+          <div class="factsheet-title-bg">
             <h1><?=$factsheet->name?></h1>
-            <p><?=$factsheet->programmearea?>: <span class="highlight-text"><?=$factsheet->level?></span></p>
+            <p><span class="highlight-text"><?=$factsheet->level?></span> <?=$factsheet->qualification_type?> in <?=$factsheet->programmearea?></p>
 
           </div>
       </div>
@@ -193,12 +194,6 @@ jQuery( "#showallcourses" ).click(function() {
   <?php endif; ?>
   
   </div>
-
-  <!-- Breadcrumbs
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'breadcrumbs' );?>
-
-  
 
 
     </div>

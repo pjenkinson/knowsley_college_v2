@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: New Factsheet
+* Template Name: Old Factsheet
 * Content Page
 *
 * @package knowsley_college
