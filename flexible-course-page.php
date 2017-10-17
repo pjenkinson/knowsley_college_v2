@@ -117,8 +117,10 @@ foreach($courses AS $course) {
 	<h2><?=$course->factsheetname?></h2>
 	<p><?=$course->level?></p>
 	<!--Include ID of 16-19 course factsheet page -->
-	<div class="button-default"><a href="/<?=$course->course_url?>">Course information</a></div>
-  <div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
+	<div class="course-buttons">
+		<div class="button-default"><a href="/<?=$course->course_url?>">Course information</a></div>
+  		<div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
+  	</div>
   </article>
 	<?php
 }

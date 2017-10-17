@@ -81,6 +81,14 @@ $desktop-1179: 1179px;
 	display: inline-block;
 	width: auto;
 	position: relative;
+	float: left;
+	margin-right: 0.5em;
+}
+
+.course-buttons {
+	width: 100%;
+	float: left;
+	margin-bottom: 0.5em;
 }
 
 .button-default a:link, .button-default a:focus, .button-default a:visited {

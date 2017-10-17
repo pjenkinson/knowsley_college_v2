@@ -1221,9 +1221,18 @@ main.nla a:hover, main.nla a:focus {
   display: inline-block;
   width: auto;
   position: relative;
+  float: left;
+  margin-right: 0.5em;
 }
 
-/* line 86, sass/_ui_elements.scss */
+/* line 88, sass/_ui_elements.scss */
+.course-buttons {
+  width: 100%;
+  float: left;
+  margin-bottom: 0.5em;
+}
+
+/* line 94, sass/_ui_elements.scss */
 .button-default a:link, .button-default a:focus, .button-default a:visited {
   color: white;
   padding: 10px 10px;
@@ -1233,13 +1242,13 @@ main.nla a:hover, main.nla a:focus {
   border-radius: 5px;
 }
 
-/* line 95, sass/_ui_elements.scss */
+/* line 103, sass/_ui_elements.scss */
 .button-default a:hover {
   background: #99cc66;
   color: white;
 }
 
-/* line 100, sass/_ui_elements.scss */
+/* line 108, sass/_ui_elements.scss */
 .button-promo-slider {
   width: 124px;
   height: 41px;
@@ -1253,7 +1262,7 @@ main.nla a:hover, main.nla a:focus {
   opacity: 0.9;
 }
 
-/* line 110, sass/_ui_elements.scss */
+/* line 118, sass/_ui_elements.scss */
 .button-promo-slider a:link, .button-promo-slider a:visited {
   color: white;
   width: 124px;
@@ -1268,7 +1277,7 @@ main.nla a:hover, main.nla a:focus {
   padding-top: 10px;
 }
 
-/* line 124, sass/_ui_elements.scss */
+/* line 132, sass/_ui_elements.scss */
 .button-promo-slider a:hover {
   background: white;
   width: 124px;
@@ -1277,68 +1286,68 @@ main.nla a:hover, main.nla a:focus {
   color: #99cc66;
 }
 
-/* line 134, sass/_ui_elements.scss */
+/* line 142, sass/_ui_elements.scss */
 .factsheet-snippet-more-courses {
   margin-bottom: 2em;
 }
 
-/* line 138, sass/_ui_elements.scss */
+/* line 146, sass/_ui_elements.scss */
 .section-margin-top {
   margin-top: 1em;
 }
 
-/* line 142, sass/_ui_elements.scss */
+/* line 150, sass/_ui_elements.scss */
 .button-primary a:link, .button-primary a:visited {
   background: #3d3d3c;
 }
 
-/* line 145, sass/_ui_elements.scss */
+/* line 153, sass/_ui_elements.scss */
 .button-primary a:hover, .button-primary a:focus {
   background: #99cc66;
 }
 
-/* line 149, sass/_ui_elements.scss */
+/* line 157, sass/_ui_elements.scss */
 #owl-demo .item {
   margin: 1.69492%;
 }
 
-/* line 152, sass/_ui_elements.scss */
+/* line 160, sass/_ui_elements.scss */
 #owl-demo .item img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 159, sass/_ui_elements.scss */
+/* line 167, sass/_ui_elements.scss */
 div.wpcf7 {
   background: #d7d7d7;
   padding: 5.26316% !important;
   float: left;
 }
 
-/* line 165, sass/_ui_elements.scss */
+/* line 173, sass/_ui_elements.scss */
 .wpcf7-form {
   font-size: inherit;
   font-family: inherit;
 }
 
-/* line 170, sass/_ui_elements.scss */
+/* line 178, sass/_ui_elements.scss */
 .wpcf7-form br {
   display: none;
 }
 
-/* line 174, sass/_ui_elements.scss */
+/* line 182, sass/_ui_elements.scss */
 .wpcf7-form fieldset {
   margin-bottom: 5.26316%;
 }
 
-/* line 178, sass/_ui_elements.scss */
+/* line 186, sass/_ui_elements.scss */
 .wpcf7-text {
   float: left;
   width: 100%;
 }
 
-/* line 183, sass/_ui_elements.scss */
+/* line 191, sass/_ui_elements.scss */
 .wpcf7-submit {
   padding: 1em;
   border: 1px solid #d83a89;
@@ -1348,19 +1357,19 @@ div.wpcf7 {
   margin: 0px;
 }
 
-/* line 192, sass/_ui_elements.scss */
+/* line 200, sass/_ui_elements.scss */
 .wpcf7-form fieldset label {
   padding-top: 1em !important;
   padding-bottom: 1em !important;
   float: left !important;
 }
 
-/* line 198, sass/_ui_elements.scss */
+/* line 206, sass/_ui_elements.scss */
 .ajax-loader {
   display: none;
 }
 
-/* line 202, sass/_ui_elements.scss */
+/* line 210, sass/_ui_elements.scss */
 .contact-form-half {
   width: 100%;
   float: left;
@@ -1368,14 +1377,14 @@ div.wpcf7 {
   margin-right: 0;
 }
 
-/* line 205, sass/_ui_elements.scss */
+/* line 213, sass/_ui_elements.scss */
 .contact-form-half-last {
   width: 100%;
   float: right;
   margin-right: 0;
 }
 
-/* line 210, sass/_ui_elements.scss */
+/* line 218, sass/_ui_elements.scss */
 .app-form label {
   float: left;
   clear: both;
@@ -1385,115 +1394,115 @@ div.wpcf7 {
   margin-top: 0.5em;
 }
 
-/* line 219, sass/_ui_elements.scss */
+/* line 227, sass/_ui_elements.scss */
 .app-form input {
   display: block;
   float: left;
 }
 
-/* line 224, sass/_ui_elements.scss */
+/* line 232, sass/_ui_elements.scss */
 .app-form label.course-choice {
   width: 100%;
 }
 
-/* line 228, sass/_ui_elements.scss */
+/* line 236, sass/_ui_elements.scss */
 .app-form input.input-inline {
   margin-bottom: 1em;
   float: left;
   min-width: 200px;
 }
 
-/* line 234, sass/_ui_elements.scss */
+/* line 242, sass/_ui_elements.scss */
 .app-form select.select-inline {
   width: 50%;
   margin-bottom: 1em;
   float: left;
 }
 
-/* line 240, sass/_ui_elements.scss */
+/* line 248, sass/_ui_elements.scss */
 .app-form .submit {
   display: inline-block;
 }
 
-/* line 244, sass/_ui_elements.scss */
+/* line 252, sass/_ui_elements.scss */
 .app-form fieldset {
   margin-bottom: 1em;
 }
 
-/* line 248, sass/_ui_elements.scss */
+/* line 256, sass/_ui_elements.scss */
 .app-form .quali-row {
   border-bottom: 1px solid #d7d7d7;
   margin-bottom: 1em;
 }
 
-/* line 253, sass/_ui_elements.scss */
+/* line 261, sass/_ui_elements.scss */
 .postcodeout, .postcodein {
   display: inline-block;
   float: left;
 }
 
-/* line 258, sass/_ui_elements.scss */
+/* line 266, sass/_ui_elements.scss */
 .postcodeout {
   margin-right: 0.5em;
   width: 60px;
 }
 
-/* line 263, sass/_ui_elements.scss */
+/* line 271, sass/_ui_elements.scss */
 .postcodein {
   width: 50px;
 }
 
-/* line 267, sass/_ui_elements.scss */
+/* line 275, sass/_ui_elements.scss */
 select.schoollist {
   text-transform: uppercase !important;
 }
 
-/* line 273, sass/_ui_elements.scss */
+/* line 281, sass/_ui_elements.scss */
 .parsley-errors-list {
   list-style-type: none;
 }
 
-/* line 277, sass/_ui_elements.scss */
+/* line 285, sass/_ui_elements.scss */
 .parsley-errors-list li {
   float: left;
   display: inline-block;
   margin-left: 10px;
 }
 
-/* line 283, sass/_ui_elements.scss */
+/* line 291, sass/_ui_elements.scss */
 input.parsley-error {
   background: #99cc66;
 }
 
-/* line 287, sass/_ui_elements.scss */
+/* line 295, sass/_ui_elements.scss */
 .parsley-required {
   color: #99cc66;
   float: left;
 }
 
-/* line 292, sass/_ui_elements.scss */
+/* line 300, sass/_ui_elements.scss */
 .highlight-hover {
   background: #99cc66;
 }
 
-/* line 296, sass/_ui_elements.scss */
+/* line 304, sass/_ui_elements.scss */
 .page-section-hover-title {
   background: #99cc66 !important;
 }
 
-/* line 300, sass/_ui_elements.scss */
+/* line 308, sass/_ui_elements.scss */
 .page-section-hover-title h3 {
   color: white !important;
 }
 
-/* line 304, sass/_ui_elements.scss */
+/* line 312, sass/_ui_elements.scss */
 .new-qualification-row {
   float: left;
   display: inline-block;
   clear: both;
 }
 
-/* line 312, sass/_ui_elements.scss */
+/* line 320, sass/_ui_elements.scss */
 #live-search {
   width: 100%;
   float: left;
@@ -1501,46 +1510,46 @@ input.parsley-error {
   padding: 1em;
 }
 
-/* line 319, sass/_ui_elements.scss */
+/* line 327, sass/_ui_elements.scss */
 .ui-menu {
   padding: 2em;
 }
 
-/* line 323, sass/_ui_elements.scss */
+/* line 331, sass/_ui_elements.scss */
 .ui-menu .ui-menu-item {
   font-size: 1.4em;
   list-style-type: none;
   padding: 1em;
 }
 
-/* line 331, sass/_ui_elements.scss */
+/* line 339, sass/_ui_elements.scss */
 .ui-datepicker-header {
   background: #99cc66;
   float: left;
   padding: 1em;
 }
 
-/* line 337, sass/_ui_elements.scss */
+/* line 345, sass/_ui_elements.scss */
 .ui-datepicker-calendar tbody {
   border: 1px solid #3d3d3c;
 }
 
-/* line 341, sass/_ui_elements.scss */
+/* line 349, sass/_ui_elements.scss */
 .ui-datepicker-calendar thead {
   border: 1px solid #3d3d3c;
 }
 
-/* line 345, sass/_ui_elements.scss */
+/* line 353, sass/_ui_elements.scss */
 .ui-datepicker-title {
   float: left;
 }
 
-/* line 349, sass/_ui_elements.scss */
+/* line 357, sass/_ui_elements.scss */
 .ui-datepicker-calendar .ui-state-default, .ui-datepicker-calendar .ui-state-default a, .ui-datepicker-calendar .ui-state-default a:visited {
   color: #3d3d3c;
 }
 
-/* line 353, sass/_ui_elements.scss */
+/* line 361, sass/_ui_elements.scss */
 .ui-icon {
   background: #3d3d3c;
   color: white;
@@ -1549,17 +1558,17 @@ input.parsley-error {
   padding: 0.5em;
 }
 
-/* line 361, sass/_ui_elements.scss */
+/* line 369, sass/_ui_elements.scss */
 .ui-icon:hover {
   cursor: pointer;
 }
 
-/* line 365, sass/_ui_elements.scss */
+/* line 373, sass/_ui_elements.scss */
 #menu-posts-vacancies {
   display: none;
 }
 
-/* line 369, sass/_ui_elements.scss */
+/* line 377, sass/_ui_elements.scss */
 .enquire-button {
   float: left;
   width: 100%;
@@ -1568,7 +1577,7 @@ input.parsley-error {
   padding: 1em;
 }
 
-/* line 377, sass/_ui_elements.scss */
+/* line 385, sass/_ui_elements.scss */
 .enquire-button a:link {
   padding: 0.5em;
   background: #99cc66;
@@ -1577,40 +1586,40 @@ input.parsley-error {
   color: white;
 }
 
-/* line 385, sass/_ui_elements.scss */
+/* line 393, sass/_ui_elements.scss */
 .enquire-button a:hover {
   font-weight: bold;
   color: white;
 }
 
-/* line 390, sass/_ui_elements.scss */
+/* line 398, sass/_ui_elements.scss */
 .newsletter-signup {
   float: left;
   background: #3d3d3c;
   margin-bottom: 1em 0px;
 }
 
-/* line 396, sass/_ui_elements.scss */
+/* line 404, sass/_ui_elements.scss */
 .newsletter-form-signup-bar label {
   font-size: 2em;
   color: white;
 }
 
-/* line 401, sass/_ui_elements.scss */
+/* line 409, sass/_ui_elements.scss */
 .newsletter-form-signup-bar .email-input {
   height: 2em;
   margin-left: 5.26316%;
   width: 35%;
 }
 
-/* line 407, sass/_ui_elements.scss */
+/* line 415, sass/_ui_elements.scss */
 .newsletter-form-signup-bar .submit {
   padding: 0.5em;
   background: #99cc66;
   color: white;
 }
 
-/* line 413, sass/_ui_elements.scss */
+/* line 421, sass/_ui_elements.scss */
 .newsletter-signup .parsley-errors-list li {
   color: white;
   position: absolute;
@@ -1619,12 +1628,12 @@ input.parsley-error {
   top: -2em;
 }
 
-/* line 421, sass/_ui_elements.scss */
+/* line 429, sass/_ui_elements.scss */
 .newsletter-signup ul.parsley-errors-list {
   position: relative;
 }
 
-/* line 427, sass/_ui_elements.scss */
+/* line 435, sass/_ui_elements.scss */
 .pdf-container {
   display: inline-block;
   clear: both;
@@ -1632,7 +1641,7 @@ input.parsley-error {
   padding: 0.5em;
 }
 
-/* line 436, sass/_ui_elements.scss */
+/* line 444, sass/_ui_elements.scss */
 .issuu-pdf-viewer .issuuembed {
   width: 100%;
   height: auto;
@@ -1640,13 +1649,13 @@ input.parsley-error {
 }
 
 @media (min-width: 645px) {
-  /* line 444, sass/_ui_elements.scss */
+  /* line 452, sass/_ui_elements.scss */
   .issuu-pdf-viewer .issuuembed {
     width: 525px;
     height: 373px;
   }
 }
-/* line 453, sass/_ui_elements.scss */
+/* line 461, sass/_ui_elements.scss */
 #accordion {
   float: left;
   width: 100%;
@@ -1654,51 +1663,51 @@ input.parsley-error {
   margin-bottom: 2em;
 }
 
-/* line 460, sass/_ui_elements.scss */
+/* line 468, sass/_ui_elements.scss */
 #accordion a:link, #accordion a:visited {
   text-decoration: underline;
   color: #373737;
 }
 
-/* line 465, sass/_ui_elements.scss */
+/* line 473, sass/_ui_elements.scss */
 #accordion ul li {
   font-size: 1rem;
   color: #373737;
 }
 
-/* line 470, sass/_ui_elements.scss */
+/* line 478, sass/_ui_elements.scss */
 #accordion * {
   font-weight: normal;
 }
 
-/* line 474, sass/_ui_elements.scss */
+/* line 482, sass/_ui_elements.scss */
 #accordion * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 480, sass/_ui_elements.scss */
+/* line 488, sass/_ui_elements.scss */
 #accordion h3 {
   padding: 1em;
 }
 
-/* line 484, sass/_ui_elements.scss */
+/* line 492, sass/_ui_elements.scss */
 #accordion h3 span {
   padding: 0px;
 }
 
-/* line 488, sass/_ui_elements.scss */
+/* line 496, sass/_ui_elements.scss */
 #accordion h3:hover {
   cursor: pointer;
 }
 
-/* line 492, sass/_ui_elements.scss */
+/* line 500, sass/_ui_elements.scss */
 #accordion p {
   font-size: 1.1rem;
 }
 
-/* line 496, sass/_ui_elements.scss */
+/* line 504, sass/_ui_elements.scss */
 #accordion .ui-accordion-content {
   width: 100%;
   background-color: #d7d7d7;
@@ -1708,30 +1717,30 @@ input.parsley-error {
   padding: 1em;
 }
 
-/* line 505, sass/_ui_elements.scss */
+/* line 513, sass/_ui_elements.scss */
 #accordion .ui-accordion-content > * {
   margin: 0;
   padding: 0px;
 }
 
-/* line 510, sass/_ui_elements.scss */
+/* line 518, sass/_ui_elements.scss */
 #accordion .ui-accordion-content a {
   color: #777;
 }
 
-/* line 514, sass/_ui_elements.scss */
+/* line 522, sass/_ui_elements.scss */
 #accordion .ui-accordion-content ul li a {
   color: #3d3d3c;
 }
 
-/* line 518, sass/_ui_elements.scss */
+/* line 526, sass/_ui_elements.scss */
 #accordion .ui-accordion-header {
   background-color: #3d3d3c;
   color: white;
   margin: 0px;
 }
 
-/* line 524, sass/_ui_elements.scss */
+/* line 532, sass/_ui_elements.scss */
 #accordion .ui-accordion-header a {
   color: white;
   line-height: 42px;
@@ -1741,26 +1750,26 @@ input.parsley-error {
   text-indent: 10px;
 }
 
-/* line 532, sass/_ui_elements.scss */
+/* line 540, sass/_ui_elements.scss */
 .quick-links {
   background: #d7d7d7;
   padding: 1em;
   margin-bottom: 1em;
 }
 
-/* line 541, sass/_ui_elements.scss */
+/* line 549, sass/_ui_elements.scss */
 .nav-secondary li.mega-menu-item, .nav-home li.mega-menu-item {
   border-bottom: 1px solid #d7d7d7 !important;
 }
 
-/* line 545, sass/_ui_elements.scss */
+/* line 553, sass/_ui_elements.scss */
 .nav-secondary li.mega-menu-item > a.mega-menu-link {
   padding: 3.7037% !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 551, sass/_ui_elements.scss */
+/* line 559, sass/_ui_elements.scss */
 .nav-secondary .mega-menu-toggle {
   border-bottom: 1px solid #d7d7d7;
   padding: 5.26316%;
@@ -1768,20 +1777,20 @@ input.parsley-error {
   padding-bottom: 0;
 }
 @media (min-width: 1179px) {
-  /* line 551, sass/_ui_elements.scss */
+  /* line 559, sass/_ui_elements.scss */
   .nav-secondary .mega-menu-toggle {
     padding: 0;
   }
 }
 
-/* line 563, sass/_ui_elements.scss */
+/* line 571, sass/_ui_elements.scss */
 .nav-home li.mega-menu-item > a.mega-menu-link {
   padding: 5% !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 569, sass/_ui_elements.scss */
+/* line 577, sass/_ui_elements.scss */
 .nav-home .mega-menu-toggle {
   border-bottom: 1px solid #d7d7d7;
   padding: 5%;
@@ -1789,147 +1798,147 @@ input.parsley-error {
   padding-bottom: 0;
 }
 @media (min-width: 1179px) {
-  /* line 569, sass/_ui_elements.scss */
+  /* line 577, sass/_ui_elements.scss */
   .nav-home .mega-menu-toggle {
     padding: 0;
   }
 }
 
-/* line 583, sass/_ui_elements.scss */
+/* line 591, sass/_ui_elements.scss */
 li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
   background: #3d3d3c !important;
   color: #FFFFFF !important;
 }
 
-/* line 588, sass/_ui_elements.scss */
+/* line 596, sass/_ui_elements.scss */
 li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
   background: #99cc66 !important;
 }
 
-/* line 594, sass/_ui_elements.scss */
+/* line 602, sass/_ui_elements.scss */
 #mega-menu-wrap-higher-education #mega-menu-wrap-higher-education > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
   background: #68478d !important;
   color: #FFFFFF !important;
 }
 
-/* line 599, sass/_ui_elements.scss */
+/* line 607, sass/_ui_elements.scss */
 #mega-menu-wrap-employers #mega-menu-wrap-employers > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
   background: #4a0d66 !important;
   color: #FFFFFF !important;
 }
 
-/* line 604, sass/_ui_elements.scss */
+/* line 612, sass/_ui_elements.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle, #mega-menu-wrap-supported-learning .mega-menu-toggle {
   text-align: left;
 }
 
-/* line 608, sass/_ui_elements.scss */
+/* line 616, sass/_ui_elements.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before, #mega-menu-wrap-supported-learning .mega-menu-toggle:before {
   float: right !important;
 }
 
-/* line 613, sass/_ui_elements.scss */
+/* line 621, sass/_ui_elements.scss */
 #mega-menu-wrap-about-menu .mega-menu-toggle:after {
   content: "About" !important;
   float: left;
 }
 
-/* line 618, sass/_ui_elements.scss */
+/* line 626, sass/_ui_elements.scss */
 #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:after {
   content: "Student Support" !important;
   float: left;
 }
 
-/* line 623, sass/_ui_elements.scss */
+/* line 631, sass/_ui_elements.scss */
 #mega-menu-wrap-16-19 .mega-menu-toggle:after {
   content: "School Leavers" !important;
   float: left;
 }
 
-/* line 628, sass/_ui_elements.scss */
+/* line 636, sass/_ui_elements.scss */
 #mega-menu-wrap-16-19-subject .mega-menu-toggle:after {
   content: "School Leavers Courses" !important;
   float: left;
 }
 
-/* line 633, sass/_ui_elements.scss */
+/* line 641, sass/_ui_elements.scss */
 #mega-menu-wrap-employers .mega-menu-toggle:after {
   content: "Employers" !important;
   float: left;
 }
 
-/* line 638, sass/_ui_elements.scss */
+/* line 646, sass/_ui_elements.scss */
 #mega-menu-wrap-adults .mega-menu-toggle:after {
   content: "Adults" !important;
   float: left;
 }
 
-/* line 643, sass/_ui_elements.scss */
+/* line 651, sass/_ui_elements.scss */
 #mega-menu-wrap-apprenticeships .mega-menu-toggle:after {
   content: "Apprentices" !important;
   float: left;
 }
 
-/* line 648, sass/_ui_elements.scss */
+/* line 656, sass/_ui_elements.scss */
 #mega-menu-wrap-higher-education .mega-menu-toggle:after {
   content: "Higher Education" !important;
   float: left;
 }
 
-/* line 653, sass/_ui_elements.scss */
+/* line 661, sass/_ui_elements.scss */
 #mega-menu-wrap-contact .mega-menu-toggle:after {
   content: "Contact" !important;
   float: left;
 }
 
-/* line 658, sass/_ui_elements.scss */
+/* line 666, sass/_ui_elements.scss */
 #mega-menu-wrap-external-access .mega-menu-toggle {
   background: #99cc66 !important;
 }
 
-/* line 662, sass/_ui_elements.scss */
+/* line 670, sass/_ui_elements.scss */
 #mega-menu-wrap-vacancies .mega-menu-toggle:after {
   content: "Vacancies" !important;
   float: left;
 }
 
-/* line 667, sass/_ui_elements.scss */
+/* line 675, sass/_ui_elements.scss */
 #mega-menu-wrap-workworld .mega-menu-toggle:after {
   content: "WorkWorld" !important;
   float: left;
 }
 
-/* line 672, sass/_ui_elements.scss */
+/* line 680, sass/_ui_elements.scss */
 #mega-menu-wrap-governors .mega-menu-toggle:after {
   content: "Governance" !important;
   float: left;
 }
 
-/* line 677, sass/_ui_elements.scss */
+/* line 685, sass/_ui_elements.scss */
 #mega-menu-wrap-policies .mega-menu-toggle:after {
   content: "Public Information" !important;
   float: left;
 }
 
-/* line 681, sass/_ui_elements.scss */
+/* line 689, sass/_ui_elements.scss */
 #mega-menu-wrap-campus .mega-menu-toggle:after {
   content: "Campuses" !important;
   float: left;
 }
 
-/* line 686, sass/_ui_elements.scss */
+/* line 694, sass/_ui_elements.scss */
 #mega-menu-wrap-about-services .mega-menu-toggle:after {
   content: "Services Menu" !important;
   float: left;
 }
 
-/* line 691, sass/_ui_elements.scss */
+/* line 699, sass/_ui_elements.scss */
 #mega-menu-wrap-about-partners .mega-menu-toggle:after {
   content: "Partners Menu" !important;
   float: left;
 }
 
-/* line 696, sass/_ui_elements.scss */
+/* line 704, sass/_ui_elements.scss */
 #mega-menu-wrap-supported-learning .mega-menu-toggle:after {
   content: "Supported Learning" !important;
   float: left;
@@ -9010,16 +9019,15 @@ aside .contact-apply ul li {
 /* line 282, sass/_course_factsheet.scss */
 .course-listing {
   float: left;
-  margin-bottom: 1em;
 }
 
-/* line 287, sass/_course_factsheet.scss */
+/* line 286, sass/_course_factsheet.scss */
 .course-listing h2 {
   margin-bottom: 0px;
   border-bottom: none;
 }
 
-/* line 292, sass/_course_factsheet.scss */
+/* line 291, sass/_course_factsheet.scss */
 .course-listing .course-level {
   color: #3d3d3c;
   background: #99cc66;
@@ -9030,36 +9038,36 @@ aside .contact-apply ul li {
   color: white;
 }
 
-/* line 304, sass/_course_factsheet.scss */
+/* line 303, sass/_course_factsheet.scss */
 .factsheet-apply {
   float: left;
   width: 100%;
 }
 
-/* line 309, sass/_course_factsheet.scss */
+/* line 308, sass/_course_factsheet.scss */
 .apply-box {
   text-align: center;
 }
 
-/* line 313, sass/_course_factsheet.scss */
+/* line 312, sass/_course_factsheet.scss */
 .apply-box p i {
   color: #99cc66;
 }
 
-/* line 317, sass/_course_factsheet.scss */
+/* line 316, sass/_course_factsheet.scss */
 .apply-box p a {
   text-decoration: none;
   color: white;
 }
 
-/* line 322, sass/_course_factsheet.scss */
+/* line 321, sass/_course_factsheet.scss */
 .apply-box-button, .apply-box p {
   color: white;
   padding: 0.5em;
   background: #3d3d3c;
 }
 
-/* line 330, sass/_course_factsheet.scss */
+/* line 329, sass/_course_factsheet.scss */
 .aside-videos {
   width: 100%;
   float: left;
@@ -9067,7 +9075,7 @@ aside .contact-apply ul li {
   margin-right: 0;
 }
 
-/* line 334, sass/_course_factsheet.scss */
+/* line 333, sass/_course_factsheet.scss */
 .youtube-side, .youtube-side-last {
   background: white;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
@@ -9076,7 +9084,7 @@ aside .contact-apply ul li {
   margin-bottom: 3.7037%;
 }
 
-/* line 341, sass/_course_factsheet.scss */
+/* line 340, sass/_course_factsheet.scss */
 .youtube-content {
   position: relative;
   padding-bottom: 56.25%;
@@ -9085,7 +9093,7 @@ aside .contact-apply ul li {
   overflow: hidden;
 }
 
-/* line 349, sass/_course_factsheet.scss */
+/* line 348, sass/_course_factsheet.scss */
 .youtube-content iframe {
   position: absolute;
   top: 0;
@@ -9095,13 +9103,13 @@ aside .contact-apply ul li {
 }
 
 @media (max-width: 735px) {
-  /* line 358, sass/_course_factsheet.scss */
+  /* line 357, sass/_course_factsheet.scss */
   #unistats-tab {
     display: none;
   }
 }
 @media (min-width: 900px) {
-  /* line 363, sass/_course_factsheet.scss */
+  /* line 362, sass/_course_factsheet.scss */
   .youtube-content {
     width: 100%;
     float: left;
@@ -9109,20 +9117,20 @@ aside .contact-apply ul li {
     margin-right: 0;
   }
 
-  /* line 367, sass/_course_factsheet.scss */
+  /* line 366, sass/_course_factsheet.scss */
   .youtube-content iframe {
     height: 416px;
   }
 }
 @media (min-width: 530px) {
-  /* line 374, sass/_course_factsheet.scss */
+  /* line 373, sass/_course_factsheet.scss */
   .youtube-side {
     width: 48.14815%;
     float: left;
     margin-right: 3.7037%;
   }
 
-  /* line 378, sass/_course_factsheet.scss */
+  /* line 377, sass/_course_factsheet.scss */
   .youtube-side-last {
     width: 48.14815%;
     float: right;
@@ -9130,7 +9138,7 @@ aside .contact-apply ul li {
   }
 }
 @media (min-width: 1150px) {
-  /* line 385, sass/_course_factsheet.scss */
+  /* line 384, sass/_course_factsheet.scss */
   .youtube-side {
     width: 100%;
     float: left;
@@ -9139,7 +9147,7 @@ aside .contact-apply ul li {
     margin-bottom: 3.7037%;
   }
 
-  /* line 390, sass/_course_factsheet.scss */
+  /* line 389, sass/_course_factsheet.scss */
   .youtube-side-last {
     width: 100%;
     float: left;
@@ -9147,19 +9155,19 @@ aside .contact-apply ul li {
     margin-right: 0;
   }
 
-  /* line 394, sass/_course_factsheet.scss */
+  /* line 393, sass/_course_factsheet.scss */
   .aside-videos {
     padding-bottom: 0;
   }
 }
-/* line 401, sass/_course_factsheet.scss */
+/* line 400, sass/_course_factsheet.scss */
 .emsi-widget {
   width: 100%;
   float: left;
   margin-top: 1em;
 }
 
-/* line 407, sass/_course_factsheet.scss */
+/* line 406, sass/_course_factsheet.scss */
 .emsi-widget iframe {
   height: 65vh;
 }

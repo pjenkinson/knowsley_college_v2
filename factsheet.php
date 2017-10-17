@@ -303,21 +303,21 @@ jQuery( "#showallcourses" ).click(function() {
 
     <?php if (!empty($factsheet->entryrequirements)) {?>
 
-    <h3>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
+    <h2 class="section-heading">Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
     <p><?=$factsheet->entryrequirements?></p>
 
     <?php } ?>
 
     <?php if (!empty($factsheet->keywords)) {?>
 
-    <h3>Finance <i class="fa fa-gbp" aria-hidden="true"></i></h3>
+    <h2 class="section-heading">Finance <i class="fa fa-gbp" aria-hidden="true"></i></h2>
     <p><?=$factsheet->keywords?></p>
 
     <?php } ?>
 
     <?php if (!empty($factsheet->duration)) {?>
 
-    <h3>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h3>
+    <h2 class="section-heading">Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
     <p><?=$factsheet->duration?></p>
 
     <?php } ?>
@@ -340,14 +340,14 @@ jQuery( "#showallcourses" ).click(function() {
 
     <?php if (!empty($factsheet->progression)) {?>
 
-    <h3>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h3>
+    <h2 class="section-heading">Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->location)) {?>
 
-    <h3>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h3>
+    <h2 class="section-heading">Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
     <p><?=$factsheet->location?></p>
 
     <?php } else {}; ?>
@@ -453,7 +453,7 @@ jQuery( "#showallcourses" ).click(function() {
   <div class="full-width-container content-snippet">  
   <!-- BEGIN UNITS TAB -->
 
-  <h2>Units you will study include:</h2>
+  <h2 class="section-heading">Units you will study include:</h2>
   
   <ul>
     <li><?=$factsheet->unit1?></li>
@@ -481,7 +481,7 @@ jQuery( "#showallcourses" ).click(function() {
     <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-    <h2>Careers</h2>
+    <h2 class="section-heading">Careers</h2>
 
     <p>You can look into careers in <?=$factsheet->programmearea?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
 
@@ -517,7 +517,7 @@ jQuery( "#showallcourses" ).click(function() {
 
       <div class="full-width-container content-snippet">
 
-        <h2>Print Factsheet</h2>
+        <h2 class="section-heading">Print Factsheet</h2>
 
         <h3><?=$factsheet->name?></h3>
         <p><a href="#print" onclick="window.print();">Print factsheet <i class="fa fa-print" aria-hidden="true"></i></a></p>
@@ -540,7 +540,7 @@ jQuery( "#showallcourses" ).click(function() {
       <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-      <h2>Apply</h2>
+      <h2 class="section-heading">Apply</h2>
 
       <p>To apply for <strong><?=$factsheet->name?></strong>, use the online application form or call 0151 477 5850 for more information.</p>
 
