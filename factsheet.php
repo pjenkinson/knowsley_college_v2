@@ -218,43 +218,14 @@ jQuery( "#showallcourses" ).click(function() {
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
     <li><a href="#careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
     <li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
-    <li class="apply-tab"><a href="#apply" onclick="location.href = '/apply/?courseid=<?=$factsheet->id?>';">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
+    <li class="apply-tab"><a href="#apply">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
   </ul>
 
 
-
-
   </div>
   </div>
-
-
-
-  <!-- PDFs -->
-
-  <?php if ($factsheet->id == '14852' or '14856' or '14858' or '14853' or '14855' or '14859' or '14854' or '14862' or '14863' or '14860' or '14850' or '14824' or '14823' or '14857' or '14849' or '14789' ) {?>
-
-  <?php $HEpdf = 0;?>
-
-  <?php if ($factsheet->id == '14852') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-early-years.pdf' ;}?>
-  <?php if ($factsheet->id == '14858') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-biological-sciences.pdf' ;}?>
-  <?php if ($factsheet->id == '14853') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-business.pdf'; }?>
-  <?php if ($factsheet->id == '14859') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-computing-systems-development.pdf' ;}?>
-  <?php if ($factsheet->id == '14854') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-creative-media.pdf' ;}?>
-  <?php if ($factsheet->id == '14862') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-electrical-engineering.pdf' ;}?>
-  <?php if ($factsheet->id == '14860') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-manufacturing-engineering.pdf' ;}?>
-  <?php if ($factsheet->id == '14850') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-sport.pdf' ;}?>
-  <?php if ($factsheet->id == '14824') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-business.pdf' ;}?>
-  <?php if ($factsheet->id == '14823') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-computing-systems-development.pdf' ;}?>
-  <?php if ($factsheet->id == '14855') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-hospitality-management.pdf' ;}?>
-  <?php if ($factsheet->id == '14856') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-music.pdf' ;}?>
-  <?php if ($factsheet->id == '14857') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-creative-media.pdf' ;}?>
-  <?php if ($factsheet->id == '14849') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-sport.pdf' ;}?>
-  <?php if ($factsheet->id == '14789') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-music.pdf' ;}?>
-  <?php if ($factsheet->id == '14863') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-mechanical-engineering.pdf' ;}?>  
-  <?php }?>
-
 
   <!-- FACTSHEET TABS -->
 
@@ -315,12 +286,7 @@ jQuery( "#showallcourses" ).click(function() {
 
     <?php } ?>
 
-    <?php if (!empty($factsheet->duration)) {?>
-
-    <h2 class="section-heading">Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->duration?></p>
-
-    <?php } ?>
+    
 
     
 
@@ -351,6 +317,14 @@ jQuery( "#showallcourses" ).click(function() {
     <p><?=$factsheet->location?></p>
 
     <?php } else {}; ?>
+
+
+    <?php if (!empty($factsheet->duration)) {?>
+
+    <h2 class="section-heading">Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
+    <p><?=$factsheet->duration?></p>
+
+    <?php } ?>
 
       </div>  
 
@@ -544,7 +518,7 @@ jQuery( "#showallcourses" ).click(function() {
 
       <p>To apply for <strong><?=$factsheet->name?></strong>, use the online application form or call 0151 477 5850 for more information.</p>
 
-      <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers will be available to speak with you and provide advice, guidance and information about College life.</p>
+      <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
       <div class="button-default">
         <a href="#apply">Apply</a>
@@ -585,20 +559,6 @@ jQuery( "#showallcourses" ).click(function() {
 </div>
 
  <?php } ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
