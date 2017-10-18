@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
     // templateResult: formatRepo, // omitted for brevity, see the source of this page
     // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
   }).on("select2:select", function (e) { 
-          window.location.href="http://192.168.99.100:8000/" + (e.params.data.url);
+          window.location.href="https://www.knowsleycollege.ac.uk/" + (e.params.data.url);
   });
 
 });
