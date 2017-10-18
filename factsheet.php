@@ -217,7 +217,7 @@ jQuery( "#showallcourses" ).click(function() {
     <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
     <li><a href="#careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
-    <li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>
+    <!--<li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>-->
     <li class="apply-tab"><a href="#apply">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
     <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
@@ -482,6 +482,8 @@ jQuery( "#showallcourses" ).click(function() {
 
   </div>
 
+ <?php /*
+
   <div id="print" class="tab-section">
 
     <!-- BEGIN PRINT TAB -->
@@ -505,7 +507,7 @@ jQuery( "#showallcourses" ).click(function() {
 
 
   </div>
-
+*/?>
 
   <div id="apply" class="tab-section">
 
@@ -521,7 +523,7 @@ jQuery( "#showallcourses" ).click(function() {
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
       <div class="button-default">
-        <a href="#apply">Apply</a>
+        <a href="/apply/?courseid=<?=$factsheet->id?>">Apply</a>
       </div>
 
       </div>
