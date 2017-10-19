@@ -57,7 +57,11 @@ $exclude2 = $level['exclude_level_2'];
 $exclude3 = $level['exclude_level_3']; ?>
 
 
+
 <?php 
+
+// Query to auto list courses with programme area selected through Wordpress (ACF)
+
 $sql = 	 "SELECT DISTINCT id,
                programmearea,
                factsheetname, 
@@ -74,12 +78,24 @@ $sql = 	 "SELECT DISTINCT id,
 				AND level != '$exclude1' 
 				AND level != '$exclude2'
 				AND level != '$exclude3'
+		UNION
+		SELECT DISTINCT id,
+               programmearea,
+               factsheetname, 
+               courseabout,
+               entryrequirements,
+               level,
+               course_url
+          FROM fact_sheets 
+          INNER JOIN Offering
+         	   On Offering.CourseInformationID=fact_sheets.id
+         WHERE id = 15200
+				AND fact_sheets.id = Offering.CourseInformationID
 		ORDER BY level ASC";
 
 $courses = $wpdb->get_results($sql);
 
 ?>
-
 
 <?php if( get_field('toggle_programme_pdf') ): ?>
 	
@@ -125,7 +141,6 @@ foreach($courses AS $course) {
 	<?php
 }
 ?>
-
 
 	
 	</section>
