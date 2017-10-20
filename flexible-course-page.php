@@ -57,6 +57,31 @@ $exclude2 = $level['exclude_level_2'];
 $exclude3 = $level['exclude_level_3']; ?>
 
 
+<?php if( have_rows('add_course') ): ?>
+  
+    <?php while( have_rows('add_course') ): the_row(); ?>
+ 
+       <?php  
+
+       $course_id = get_sub_field('course_id');
+
+       $safe_course_id = filter_var($course_id, FILTER_SANITIZE_STRING);
+
+ 	   $array = str_split($safe_course_id, 5);
+
+ 	   print_r($array);
+
+ 	   // echo $array
+ 	 
+
+  	   ?>
+
+        
+    <?php endwhile; ?>
+
+ 
+<?php endif; ?>
+
 
 <?php 
 
@@ -89,7 +114,7 @@ $sql = 	 "SELECT DISTINCT id,
           FROM fact_sheets 
           INNER JOIN Offering
          	   On Offering.CourseInformationID=fact_sheets.id
-         WHERE id = 15200
+         WHERE id IN = $course_id
 				AND fact_sheets.id = Offering.CourseInformationID
 		ORDER BY level ASC";
 
