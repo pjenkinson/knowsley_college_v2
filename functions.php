@@ -132,7 +132,13 @@ add_action( 'widgets_init', 'knowsley_college_widgets_init' );
  * Enqueue scripts and styles.
  */
 function knowsley_college_scripts() {
-	wp_enqueue_style( 'knowsley_college-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+	'knowsley_college-style', // handle name
+    get_stylesheet_uri() , // the URL of the stylesheet
+    array(), // an array of dependent styles
+    '1', // version number
+    'screen, print' // CSS media type
+    );
 
 	wp_enqueue_script('jquery-ui-datepicker');
 
@@ -184,7 +190,7 @@ add_action('wp_enqueue_scripts', 'conditional_script_home_livesearch');
 /* Responsive tables with stackable */
 
 function conditional_script_livesearch_advanced() {
-    if (is_page_template('page-search.php') || is_search() )
+    if (is_page_template('page-search.php') || is_search() || is_page_template('factsheet.php') )
 		{
 				wp_enqueue_script( 'stacktable', get_template_directory_uri() . '/inc/stacktable/stacktable.js', array('jquery'), '20134219', true );
 				wp_enqueue_style( 'stacktable-style', get_template_directory_uri() . '/inc/stacktable/style.css' );

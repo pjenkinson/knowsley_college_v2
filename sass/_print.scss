@@ -1,0 +1,30 @@
+@media print {
+
+body { background:white; color:black; margin:0; }
+
+header { 
+display: none;
+}
+
+.top-nav {
+display: none;
+}
+
+.primary-navigation {
+display: none;
+}
+
+.no-print {
+display: none;
+}
+
+#content { }
+#comments { }
+#sidebar { }
+
+
+footer { 
+display: none;
+}
+
+}

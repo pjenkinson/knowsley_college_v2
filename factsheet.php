@@ -4,11 +4,6 @@
 */
 get_header(); ?>
 
-
-<!-- Scroll to top 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'scroll' );?>
-
 <script>
   jQuery(function() {
       jQuery( "#tabs" ).tabs();
@@ -17,16 +12,90 @@ get_header(); ?>
   jQuery("li.last-tab a").unbind('click');
 </script>
 
+<script>
+
+// jQuery LIVE SEARCH WITH HTML OUTPUT
+
+jQuery(document).ready(function() {
+
+  jQuery('#livesearch').on('keyup', function(e){
+
+    var searchTerm = jQuery(this).val();
+    console.log(searchTerm);
+
+    jQuery.ajax({
+       type: 'GET',
+       url: '/htmllivesearch/?term='+searchTerm,
+       dataType: 'html',
+       success: function(data) {
+          // console.log(data);
+          jQuery('#livesearch-results').html(data);
+
+           // jQuery('html, body').animate({
+            //  scrollTop: jQuery("#livesearch-results").offset().top
+           //}, 4000);
+
+       }
+       
+    });
+  });
+
+});
+
+var livesearchvalue = '';
+
+jQuery(document).ready(function() {
+
+  console.log(livesearchvalue);
+
+  jQuery('#livesearch').bind('keypress', function(e) {
+    if(e.keyCode==13){
+        var livesearchvalue = jQuery( "#livesearch" ).val();
+        window.location.href="/?s=" + livesearchvalue;
+    }
+});
+
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+    
+
+jQuery( "#livesearchbutton" ).click(function() {
+  var livesearchvalue = jQuery( "#livesearch" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+jQuery( "#showallcourses" ).click(function() {
+  var livesearchvalue = jQuery( "a" ).val();
+  window.location.href="/?s=" + livesearchvalue;
+});
+
+});
+
+</script>
+
 </header>
 
-<!-- Breadcrumbs
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php get_template_part( 'navigation', 'breadcrumbs' );?>
+
 
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main kcc-primary" role="main">
+
+
+<!-- Main content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'branding-flex' );?>
+
+<!-- Main content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php get_template_part( 'audience' );?>
 
 
 <!-- Page content 
@@ -89,50 +158,42 @@ get_header(); ?>
                  unit3,
                  unit4,
                  kiscode,
-                 course_url
+                 course_url,
+                 keywords,
+                 qualification_type
             FROM fact_sheets
-           WHERE id = '".$factsheetID."'";
+           WHERE id = '".$factsheetID."' ";
 
   $factsheet = $wpdb->get_results($sql);
 
-  $factsheet = $factsheet[0];
-
-
-  $sql = "SELECT unit
-            FROM fact_sheet_units
-           WHERE CourseInformationID = '".$factsheetID."'";
-
-
-  $units = $wpdb->get_results($sql);         
+  $factsheet = $factsheet[0];       
 
   ?>
- <p><?=$factsheet->course_url?></p>
+
+
+
   <div class="factsheet-header">
 
   <div class="factsheet-feature">
 
-  <div class="factsheet-image">
-  <?php $factsheetImg = $factsheet->programmearea ?>
-
-  <?php $factsheetImg = preg_replace("/[^a-zA-Z]+/", "", $factsheetImg);?>
-
-  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/factsheet_images/<?php echo $factsheetImg ?>.jpg" alt="">
-    </div>
-
   <div class="fixed-container">
 
       <div class="factsheet-title">
-          <div class="fixed-container factsheet-title-bg">
+          <div class="factsheet-title-bg">
             <h1><?=$factsheet->name?></h1>
-            <p><?=$factsheet->programmearea?>: <span class="highlight-text"><?=$factsheet->level?></span></p>
+            <p><span class="highlight-text"><?=$factsheet->level?></span> <?=$factsheet->qualification_type?> in <?=$factsheet->programmearea?></p>
 
           </div>
       </div>
 
   </div>  
 
-    
-
+  <div class="factsheet-image">
+  <?php if( get_field('factsheet_featured_image') ): ?>
+    <img src="<?php the_field('factsheet_featured_image');?>" alt="<?=$factsheet->name?>">
+  <?php endif; ?>
+  
+  </div>
 
 
     </div>
@@ -147,146 +208,226 @@ get_header(); ?>
 
   <div class="tab-links">  
 
-    <div class="fixed-container">
+    <div class="fixed-container tab-links-container">
 
   <ul class="tab-links-list">
-    <li><a href="#about">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
+
+
+   
+    <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
     <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats</a></li><?php } else {}?>
-  </ul>
-  <ul class="tab-links-last">
-    <?php if ($HEpdf === 0) {?> <?php } else {?>
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li class="last-tab"><a href="<?php echo $HEpdf ?>">Download Factsheet <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li><?php } else {}?>
-    <?php } ?></li>
+    <li><a href="#careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
+    <!--<li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>-->
+    <li class="apply-tab"><a href="#apply">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
+    
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
   </ul>
 
-    </div>
 
   </div>
-
-
-    <div class="fixed-container">
-
-
-
-  <!-- PDFs -->
-
-  <?php if ($factsheet->id == '14852' or '14856' or '14858' or '14853' or '14855' or '14859' or '14854' or '14862' or '14863' or '14860' or '14850' or '14824' or '14823' or '14857' or '14849' or '14789' ) {?>
-
-  <?php $HEpdf = 0;?>
-
-  <?php if ($factsheet->id == '14852') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-early-years.pdf' ;}?>
-  <?php if ($factsheet->id == '14858') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-biological-sciences.pdf' ;}?>
-  <?php if ($factsheet->id == '14853') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-business.pdf'; }?>
-  <?php if ($factsheet->id == '14859') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-computing-systems-development.pdf' ;}?>
-  <?php if ($factsheet->id == '14854') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-creative-media.pdf' ;}?>
-  <?php if ($factsheet->id == '14862') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-electrical-engineering.pdf' ;}?>
-  <?php if ($factsheet->id == '14860') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-manufacturing-engineering.pdf' ;}?>
-  <?php if ($factsheet->id == '14850') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-sport.pdf' ;}?>
-  <?php if ($factsheet->id == '14824') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-business.pdf' ;}?>
-  <?php if ($factsheet->id == '14823') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-computing-systems-development.pdf' ;}?>
-  <?php if ($factsheet->id == '14855') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-hospitality-management.pdf' ;}?>
-  <?php if ($factsheet->id == '14856') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-music.pdf' ;}?>
-  <?php if ($factsheet->id == '14857') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-creative-media.pdf' ;}?>
-  <?php if ($factsheet->id == '14849') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-sport.pdf' ;}?>
-  <?php if ($factsheet->id == '14789') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnd-music.pdf' ;}?>
-  <?php if ($factsheet->id == '14863') { $HEpdf = 'http://www.knowsleycollege.ac.uk/wp-content/uploads/2016/04/hnc-mechanical-engineering.pdf' ;}?>  
-  <?php }?>
-
+  </div>
 
   <!-- FACTSHEET TABS -->
 
-  <div id="about" class="tab-section">
+  <!-- BEGIN OVERVIEW TAB -->
 
-  <!-- BEGIN ABOUT TAB-->
+  <div id="overview" class="tab-section">
+
+  
+
+    <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
     <?php if (!empty($factsheet->courseabout)) {?>
 
-    <section class="full-width-container content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
+    <!-- BEGIN ABOUT SECTION-->
+
+    <section class="content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
         <div class="two-col-section-main">
         <h2 class="section-heading section-heading-colour">About</h2>
         <p><?=$factsheet->courseabout?></p>
         </div>
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
-          <a href="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" title="<?php the_sub_field('link_title'); ?>">
-          <img src="http://192.168.99.100:8000/wp-content/themes/KCC2/images/factsheet_images/ArtDesign.jpg" alt="<?php the_sub_field('link_title'); ?>">
-          </a>
+          
+            <?php the_post_thumbnail();?>
+
           </div>
         </div>
     </section>
 
+      </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+    <!-- END ABOUT SECTION -->
+
     <?php } ?>
 
-    <section class="full-width-container">
 
-      <div class="two-col-section-main factsheet-details">
-        <?php if (!empty($factsheet->entryrequirements)) {?>
+    <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-    <h2>Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
+      <div class="two-col-section-main">
+
+        <!-- BEGIN DETAILS -->
+
+
+    <?php if (!empty($factsheet->entryrequirements)) {?>
+
+    <h2 class="section-heading">Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
     <p><?=$factsheet->entryrequirements?></p>
 
-    <?php } else {}; ?>
+    <?php } ?>
 
-    <?php if (!empty($factsheet->duration)) {?>
+    <?php if (!empty($factsheet->keywords)) {?>
 
-    <h2>Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->duration?></p>
+    <h2 class="section-heading">Finance <i class="fa fa-gbp" aria-hidden="true"></i></h2>
+    <p><?=$factsheet->keywords?></p>
+
+    <?php } ?>
+
+    
+
+    
+
+
+      </div>
+
+
+      <div class="two-col-section-side">
+       
+
+
+     <?php if (!empty($factsheet->duration)) {?>
+
+    
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->progression)) {?>
 
-      <h2>Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
+    <h2 class="section-heading">Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
     <p><?=$factsheet->progression?></p>
 
     <?php } else {}; ?>
 
     <?php if (!empty($factsheet->location)) {?>
 
-    <h2>Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+    <h2 class="section-heading">Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
     <p><?=$factsheet->location?></p>
 
     <?php } else {}; ?>
 
-      </div>
 
-      <div class="two-col-section-side">
-        <!-- YouTube Embed v5.0.3 -->
-        <div style="max-width: 533px; width: 100%;">
-          <div class="youtube-embed ye-container" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="url" content="https://www.youtube.com/v/7CUCEDEO7Tw" />
-            <meta itemprop="name" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="description" content="National Apprenticeship Week Roundup 2017" />
-            <meta itemprop="uploadDate" content="2017-03-10T15:51:41+00:00" />
-            <meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/3aWG6P1gR94/default.jpg" />
-            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/7CUCEDEO7Tw" />
-            <meta itemprop="height" content="416" />
-            <meta itemprop="width" content="740" />
-            <iframe style="border: 0; width: 100%;" class="youtube-player" height="300" src="https://www.youtube.com/embed/7CUCEDEO7Tw" allowfullscreen ></iframe>
-          </div>
-      </div>
-<!-- End of YouTube Embed code. Generated in 0.00227 seconds -->
-      </div>
+    <?php if (!empty($factsheet->duration)) {?>
+
+    <h2 class="section-heading">Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
+    <p><?=$factsheet->duration?></p>
+
+    <?php } ?>
+
+      </div>  
 
 
 
-      <div class="related-courses full-width-container">
-
-        <!-- COURSE FINDER SET TO PROGRAMME AREA -->
-       
-      </div>
+      
 
 
-    <!-- END ABOUT TAB -->
+    
+
+       <!-- END DETAILS -->
+
+       </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+<div class="full-width-container related-courses content-snippet no-print"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+  <!-- COURSE FINDER SET TO PROGRAMME AREA -->
+
+<h2 class="section-heading text-align-center">More courses</h2>
+
+<p class="text-align-center">If this is not the right course for you, you might be interested in some of our other courses.</p>
+
+<!-- COURSE FINDER -->
+
+<div class="course-finder">
+
+<h2>Course Finder <i class="fa fa-search" aria-hidden="true"></i></h2>
+<p style="color:white; margin-left: 1em; margin-bottom: 0;">Search for a course</p>
+  <div class="live-search-container">
+
+  <input type="search" id="livesearch" value="" placeholder="Search for a course" />
+
+  <button id="livesearchbutton">SEARCH</button>
+  <button id="showallcourses">VIEW ALL COURSES</button>
+
   </div>
+
+  <div id="livesearch-results">
+
+  <!-- Search Results -->
+
+  </div> 
+
+</div>
+
+<!-- END OF COURSE FINDER -->
+
+
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+<style>
+.maths-english {
+  background: url("http://192.168.99.100:8000/wp-content/themes/KCC2/images/maths-english.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+
+<?php if( get_field('enable_maths_english') ): ?>
+  
+
+
+<div class="maths-english full-width-container content-snippet"> <!-- Begin Full Width Container -->
+
+  <div style="background: white; padding: 2em;" class="fixed-container"> <!-- Begin Fixed Container -->
+
+<!-- MATHS & ENGLISH -->
+
+  <h2 class="section-heading">Study Programme: Maths and English</h2>
+
+    <p>As part of your study programme you will continue your development of Maths and English skills, two of the most essential and valued skills by employers.</p>
+
+    <p>If you didn’t achieve a grade 4/C at GCSE, we’ll help you to continue to develop your skills. If you did achieve a grade 4/C or above, you’ll build your knowledge further.</p>
+
+
+  </div>  <!-- End Fixed Container -->
+</div>  <!-- End Full Width Container -->
+
+
+<?php endif; ?>
+
+
+  </div> <!-- END OF OVERVIEW TAB -->
     
 
   <div id="units" class="tab-section">
 
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+  <div class="full-width-container content-snippet">  
   <!-- BEGIN UNITS TAB -->
 
-  <h2>Units you will study include:</h2>
+  <h2 class="section-heading">Units you will study include:</h2>
   
   <ul>
     <li><?=$factsheet->unit1?></li>
@@ -297,28 +438,137 @@ get_header(); ?>
 
   </div>
 
-  <?php if ($factsheet->programmearea == 'Higher Education') {?>
+
+  </div>
+
+  
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+
+
+  <div id="careers" class="tab-section">
+
+    <!-- BEGIN CAREERS TAB -->
+
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+    <h2 class="section-heading">Careers</h2>
+
+    <p>You can look into careers in <?=$factsheet->programmearea?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
+
+    <h3>National Careers Service: Job Profiles</h3>
+
+    <p>The <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">Job Profiles <i class="fa fa-external-link-square" aria-hidden="true"></i></a> search will give you information on the following:</p>
+
+    <ul>
+
+      <li>the skills and qualifications needed to get into that job</li>
+      <li>what the work would be like</li>
+      <li>the pay you could expect</li>
+      <li>what the career prospects are</li>
+
+    </ul>
+
+    
+
+     </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+    <!-- END CAREERS TAB -->
+
+  </div>
+
+ <?php /*
+
+  <div id="print" class="tab-section">
+
+    <!-- BEGIN PRINT TAB -->
+
+    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+      <div class="full-width-container content-snippet">
+
+        <h2 class="section-heading">Print Factsheet</h2>
+
+        <h3><?=$factsheet->name?></h3>
+        <p><a href="#print" onclick="window.print();">Print factsheet <i class="fa fa-print" aria-hidden="true"></i></a></p>
+
+      </div>
+
+      <!-- END PRINT TAB -->
+
+       </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+  </div>
+*/?>
+
+  <div id="apply" class="tab-section">
+
+    <!-- BEGIN APPLY TAB -->
+
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+      <h2 class="section-heading">Apply</h2>
+
+      <p>To apply for <strong><?=$factsheet->name?></strong>, use the online application form or call 0151 477 5850 for more information.</p>
+
+      <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
+
+      <div class="button-default">
+        <a href="/apply/?courseid=<?=$factsheet->id?>">Apply</a>
+      </div>
+
+      </div>
+
+    </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+    <!-- END APPLY TAB -->
+
+
+  
+  <?php if ($factsheet->programmearea == 'Higher Education') {?> <!-- IMPORTANT: Unistats tab only displays if programme area is equal to 'Higher Education' -->
 
   <div id="unistats" class="tab-section">
+
+     <!-- BEGIN UNISTATS TAB -->
+
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
    
    <h2>Unistats</h2>
    <p>The Key Information Set (KIS) contains the information which students nationally have said they find most useful when making choices about which course to study. Some of the items are measures of student satisfaction from the National Student Survey (NSS), others are from the Destination of Leavers from Higher Education (DLHE) which surveys students who gained a qualification from a university or college, six months after they left.</p>
 
    <p>Where applicable you can see the KIS data directly on our course pages. You may however choose to use the information on <a href="https://unistats.direct.gov.uk/Institutions/Details/10003708/ReturnTo/Institutions" title="Unistats - Knowsley Community College">Unistats</a> – which allows you to compare data from different Universities and Colleges.</p>
-<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?>
+
+<?php if ( ($factsheet->programmearea == 'Higher Education') && !empty($factsheet->kiscode) ) {?> <!-- IMPORTANT: KIS code needs to be entered in Pro Solution for widget to display   -->
+
 <iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/10003708FT/<?=$factsheet->kiscode?>/Horizontal/Small/en-GB" scrolling="no"style="overflow: hidden; border: 0px none transparent; width: 615px; height: 240px;">
 </iframe>
-    <?php 
-} else {
-  
-}?>
- </div>
+    <?php }?>
 
- <?php } else {}; ?>
+ </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+</div>
+
+ <?php } ?>
+
+
 
   <!-- End of tabbed content -->
+
+
+
 	
-	</section>
 
 
 	</div>
@@ -326,7 +576,11 @@ get_header(); ?>
 </div>
 
   
-
+<script>
+jQuery(document).ready(function() {
+     jQuery('#livesearch').val('<?=$factsheet->programmearea?>').trigger('keyup'); 
+});     
+</script>
 
 </main><!-- #main -->
 <?php get_footer(); ?>

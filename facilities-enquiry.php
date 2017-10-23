@@ -78,7 +78,7 @@ input[type=checkbox] {
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main content-main" role="main">
+<main id="main" class="site-main" role="main">
 
 
 <!-- Page content 
@@ -301,28 +301,32 @@ VALUES
 
 $wpdb->query($sql);?>
 
-<?php 
-$to = 'facilities@knowsleycollege.ac.uk';
-$subject = 'Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo;
-$body = '<html><body>';
-$body .= '<h2>Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo . '</h2>';
-$body .= '<p>Facility: ' . $facility . '</p>'  ;
-$body .= '<p>Date of hire: ' . $hireDate . '</p>'  ;
-$body .= '<p>Time from: ' . $timeFrom . '</p>'  ;
-$body .= '<p>Time to: ' . $timeTo . '</p>'  ;
-$body .= '<p>First Name: ' . $firstName . '</p>'  ;
-$body .= '<p>Surname: ' . $surname . '</p>'  ;
-$body .= '<p>Age: ' . $age . '</p>'  ;
-$body .= '<p>Email: ' . $email . '</p>'  ;
-$body .= '<p>Telephone: ' . $telephoneNumber . '</p>'  ;
-$body .= '<p>Address: ' . $address1 . ',' .  $address2 . ',' . $address3 . ',' . $address4 . '</p>' ;
-$body .= '<p>Postcode: ' . $postCode . '</p>'  ;
+<?php
 
-$body .= '</body></html>';
-$headers = array('Content-Type: text/html; charset=UTF-8');
- 
-wp_mail( $to, $subject, $body, $headers );
+// WP Mail
+  $to = 'facilities@knowsleycollege.ac.uk';
+  $subject = 'Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo;
+  $body = '<html><body>';
+  $body .= '<h2>Facilities Enquiry: ' . $facility . ' | ' . $hireDate . ' ' . $timeFrom . ' - ' . $timeTo . '</h2>';
+  $body .= '<p>Facility: ' . $facility . '</p>'  ;
+  $body .= '<p>Date of hire: ' . $hireDate . '</p>'  ;
+  $body .= '<p>Time from: ' . $timeFrom . '</p>'  ;
+  $body .= '<p>Time to: ' . $timeTo . '</p>'  ;
+  $body .= '<p>First Name: ' . $firstName . '</p>'  ;
+  $body .= '<p>Surname: ' . $surname . '</p>'  ;
+  $body .= '<p>Age: ' . $age . '</p>'  ;
+  $body .= '<p>Email: ' . $email . '</p>'  ;
+  $body .= '<p>Telephone: ' . $telephoneNumber . '</p>'  ;
+  $body .= '<p>Address: ' . $address1 . ',' .  $address2 . ',' . $address3 . ',' . $address4 . '</p>' ;
+  $body .= '<p>Postcode: ' . $postCode . '</p>'  ;
+  $body .= '</body></html>';
+  $headers = array('Content-Type: text/html; charset=UTF-8'); 
+  $headers[]  = 'From:' . $firstName . ' ' . $surname . '<applications@knowsleycollege.ac.uk>';
+  $headers[]  = 'Reply-To:' . $firstName . ' ' . $surname . '<'.$email.'>';
+  wp_mail( $to, $subject, $body, $headers );
+
 ?>
+
 
 <?php 
 $to = $email;
@@ -342,8 +346,9 @@ $body .= '<p>Postcode: ' . $postCode . '</p>'  ;
 $body .= '<br>';
 $body .= '<p><a href="https://www.knowsleycollege.ac.uk">www.knowsleycollege.ac.uk</a></p>';
 $body .= '</body></html>';
-$headers = array('Content-Type: text/html; charset=UTF-8');
- 
+$headers = array('Content-Type: text/html; charset=UTF-8'); 
+$headers[]   = 'Reply-To: KCC Facility Hire <facilities@knowsleycollege.ac.uk>';
+$headers[] = 'From: KCC Facility Hire <applications@knowsleycollege.ac.uk>';
 wp_mail( $to, $subject, $body, $headers );
 ?>
 

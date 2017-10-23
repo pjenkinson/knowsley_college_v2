@@ -1,3 +1,6 @@
+$desktop-1179: 1179px;
+
+
 .homepage-live-search input[type="search"] {
 	text-align: center;
 	font-size: 2em;
@@ -78,6 +81,14 @@
 	display: inline-block;
 	width: auto;
 	position: relative;
+	float: left;
+	margin-right: 0.5em;
+}
+
+.course-buttons {
+	width: 100%;
+	float: left;
+	margin-bottom: 0.5em;
 }
 
 .button-default a:link, .button-default a:focus, .button-default a:visited {
@@ -531,8 +542,49 @@ margin-bottom: 2em;
 	padding: 1em;
 	margin-bottom: 1em;
 }
-
 // NAVIGATION STYLE
+
+// Secondary Navigation
+
+.nav-secondary li.mega-menu-item, .nav-home li.mega-menu-item {
+border-bottom: 1px solid $off-white !important;
+}
+
+.nav-secondary li.mega-menu-item > a.mega-menu-link {
+	padding: 3.7037% !important; 
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.nav-secondary .mega-menu-toggle {
+ border-bottom: 1px solid $off-white;
+ padding: gutter();
+ padding-top: 0;
+ padding-bottom: 0;
+ @include breakpoint($desktop-1179) { 
+  padding: 0;	
+ }
+}
+
+// Secondary Homepage Navigation
+
+.nav-home li.mega-menu-item > a.mega-menu-link  {
+	padding: 5% !important; 
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.nav-home .mega-menu-toggle {
+ border-bottom: 1px solid $off-white;
+ padding: 5%;
+ padding-top: 0;
+ padding-bottom: 0;
+ @include breakpoint($desktop-1179) { 
+  padding: 0;	
+ }
+}
+
+
 
 // Ancestor Styles
 
@@ -631,7 +683,7 @@ float: left;
 }
 
 #mega-menu-wrap-policies .mega-menu-toggle:after {
-content: "College Policies" !important;
+content: "Public Information" !important;
 float: left;
 }
 #mega-menu-wrap-campus .mega-menu-toggle:after {

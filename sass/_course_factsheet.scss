@@ -1,43 +1,51 @@
+// Breakpoints
+
+$youtube-tablet: 530px;
+$youtube-desktop: 1150px;
+$youtube-tablet-content: 900px;
+$unistats: max-width 735px;
+$factsheet-title: 700px;
+$responsive-tab-links: 332px;
+
+.text-align-center {
+	text-align: center;
+}
+
 .factsheet-feature img {
 	width: 100%;
 	height: auto;
 	opacity: 0.7;
 }
+
 .factsheet-page section {
 	background: white;
-}
-.factsheet-details h2 {
- border: none;
- padding-top: gutter();
- color: white;
-}
-
-.factsheet-details p {
-	color: white;
-}
-
-.factsheet-details {
-	border: 1px solid $off-white;
-	padding: 0.5em;
-	background: $primary-color;
 }
 
 .container-border-top {
  border-top: 1px solid $off-white;
 }
-
 .factsheet-page .the-content, .courses .course-listing, .prospectus-subject, .the-content {
-	background: white;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  background: white;
   padding: gutter();
-  margin-bottom: gutter();
+  margin-bottom: 0;
   float: left;
   @include span (12 of 12);
 }
 
-.prospectus-subject {
-	margin-top: 2em;
+.course-listing {
+  border-bottom: 1px solid $off-white;
+}
+
+.course-listing:last-of-type {
+	border-bottom: 0;
+}
+
+.course-listing h2 {
+  padding-bottom: 0;
+}
+
+.course-listing p {
+  margin-top: 0;
 }
 
 #tabs h3:first-of-type {
@@ -52,6 +60,7 @@
 .factsheet-header {
   float: left;
   width: 100%;
+  background: $primary-color;
 }
 
 .factsheet-feature {
@@ -60,42 +69,55 @@
 	height: auto;
 	position: relative;
 	overflow: hidden;
+	z-index: 300;
 }
 .factsheet-title-bg {
 	background: $primary-color;
-	padding: 1em;
+	outline: none;
+	padding: 0;
+	@include breakpoint($factsheet-title) { 
+	outline: 2em solid $primary-color;
+	}
 }
 
 .factsheet-title {
-	position: absolute;
 	float: left;
 	width: 100%;
-	bottom: 0;
 	left: 0;
+	@include breakpoint($factsheet-title) { 
+			z-index: 8888;
+			bottom: 0;
+	 }
 }
 
 .factsheet-title h1 {
+	margin-top: gutter();
 	color: $secondary-color;
 	text-decoration: none;
 	border-bottom: none;
 	display: inline-block;
 	float: left;
 	clear: both;
-	font-size: 4.5em;
+	@include breakpoint($factsheet-title) { 
+			font-size: 4.5em;
+	 }
 }
 
 .factsheet-title p {
+	font-size: 1.5em;
+	margin-top: 0.5em;
 	color: white;
 	display: inline-block;
 	float: left;
 	clear: both;
 	margin-top: 0;
+	margin-bottom: gutter();
 }
 
 .factsheet-image {
 	width: 100%;
 	float: left;
-	max-height: 600px;
+	max-height: 450px;
 	background: black;
 	overflow: hidden;
 }
@@ -108,14 +130,13 @@
 
 // Tabbed Content
 
+.factsheet-section {
+	border-bottom: 1px solid $off-white;
+}
+
 .tab-content {
 	padding: 1em;
 }
-
-.tab-section {
-	padding: 1em;
-}
-
 .factsheet-content-apply {
 	float: left;
 	width: 100%;
@@ -143,30 +164,50 @@
 // Tab Sections
 
 .tab-links {
-	float: left;
-	width: 100%;
-	background: $primary-color;
-	color: white;
+float: left;
+width: 100%;
+border-bottom: 1px solid $off-white;
 }
 
+.tab-links-list {
+padding: 0;
+margin: 0;
+}
+
+.tab-links-container {
+background: white;
+padding: 0;
+padding-top: 1em;
+padding-bottom: 1em;
+}
+
+.tab-list-container {
+padding-left: gutter();
+}
 .tab-links ul {
 	margin-bottom: 0px;
 }
-
 .tab-links ul li {
 	list-style-type: none;
-	display: inline-block;
+	display: block;
+	clear: both;
+	background: white;
+	color: $primary-color;
+	padding: 0 0 0 0;
+	@include breakpoint($responsive-tab-links) { 
+ 		display: inline-block;
+ 		clear: none;
+ 		padding: 0 0 0 0;
+	}
 }
 
 .tab-links ul li a:link, .tab-links ul li a:visited,  {
-	color: white;
-	border: 1px solid white;
-	border-bottom: none;
 	font-size: 1.2em;
+	color: $primary-color;
 }
 
-.ui-tabs-nav li a:link {
-	color: white !important;
+#tabs .ui-tabs-active a {
+ color: $links !important;
 }
 
 .tab-section {
@@ -191,10 +232,6 @@
 	padding: 1em 0.5em;
 }
 
-.tab-links ul li {
-	padding-left: 0.5em;
-} 
-
 .share-bar ul li a:link, .share-bar ul li a:visited, .share-bar ul li a:active  {
 	color: white;
 }
@@ -212,12 +249,18 @@
  float: left;
  top: 0;
  color: white;
+ line-height: 0;
+ padding-bottom: 0;
 }
 
 .ui-tabs-nav li a {
-	padding: 0.5em;
+	padding: 0.5em 0.5em 0 0.5em;
 	width: auto;
 	color: white;
+}
+
+.ui-tabs-nav li a:first-of-type {
+	padding-left: 0;
 }
 
 .ui-tabs-nav li a:link, .ui-tabs-nav li a:visited, .ui-tabs-nav li a:hover {
@@ -231,13 +274,18 @@
 	padding-bottom: gutter();
 }
 
+.course-list {
+	background: white;
+	margin: 0 0 gutter() 0;
+}
+
 .course-listing {
 	float: left;
-	margin-bottom: 1em;
 }
 
 .course-listing h2 {
 	margin-bottom: 0px;
+	border-bottom: none;
 }
 
 .course-listing .course-level {
@@ -278,25 +326,17 @@
 
 // YouTube Videos
 
-$youtube-tablet: 530px;
-$youtube-desktop: 1150px;
-$youtube-tablet-content: 900px;
-$unistats: max-width 735px;
-// Youtube Fix
-
 .aside-videos {
 	@include span (12 of 12);
 }
 
 .youtube-side, .youtube-side-last {
-	background: white;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  background: white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
   padding: gutter();
   margin-bottom: gutter();
 }
-
-
 .youtube-content {
 	position: relative;
   padding-bottom: 56.25%;

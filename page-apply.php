@@ -9,12 +9,10 @@ if(!session_id()) {
 }
 get_header(); ?>
 
-<!-- Scroll to top 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Scroll to top  -->
 <?php get_template_part( 'navigation', 'scroll' );?>
 
-<!-- jQuery datepicker 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- jQuery datepicker -->
 <script>
 
 jQuery( document ).ready(function() {
@@ -35,43 +33,38 @@ function bindDatePicker() {
 
 </header>
 
-<!-- Breadcrumbs
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Breadcrumbs-->
 <?php get_template_part( 'navigation', 'breadcrumbs' );?>
 
 
-<!-- Main content
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Main content-->
 <main id="main" class="site-main" role="main">
 
 
-<!-- Page content 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Page content-->
 
 <div class="full-width-container secondary-page">
 
 	<div class="fixed-container">
 
-<!-- Page content 
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Page content-->
 
-<!-- Start of loop
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Start of loop-->
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
 
-<!-- Featured banner
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Featured banner-->
 
 <?php get_template_part( 'content', 'featured-banner-has-parent' );?>
 
 <section class="application-form-section">
 
+
+
 <?php if( get_field('tagline') ): ?>
 
-<!-- Homepage tagline and intro paragraph
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Homepage tagline and intro paragraph-->
 
 <?php get_template_part( 'acf', 'homepage-tagline' );?>
 
@@ -153,10 +146,13 @@ if($pageID == '1' || empty($pageID)) {
 
 	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 
-	  		<div class="the-content">
-	  			<p>If you are still interested in applying for the 2016-17 academic year, please contact learner services on 0151 477 5850.</p>
-	  		</div>
-			
+	  	<div class="the-content" style="margin-bottom: 1em;">
+		 	
+		  <P>Online applications are currently being taken for 2018 entry.</P>
+		  <p>If you are still interested in joining us for this academic year, please call Learner Services on 0151 477 5850.</p>
+		 </div>
+
+	  				
 			  <div class="the-content">
 
 			  	<?php
@@ -168,7 +164,7 @@ if($pageID == '1' || empty($pageID)) {
 					  	<li><?=$courses[0]->name?></li>
 					 	</ul>
 					 	<input type="hidden" name="Offering1" value="<?=$offeringid[0]->OfferingID?>" />
-					 	<input type="hidden" name="AcademicYearID" value="17/18"/>
+					 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 
 				 		<?php
 				 	} else {
@@ -200,7 +196,7 @@ if($pageID == '1' || empty($pageID)) {
 				 		<?php
 				 	}
 				 	?>
-				 	<input type="hidden" name="AcademicYearID" value="17/18"/>
+				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 				 	<div>
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
 				 			<select name="Offering2">
@@ -240,6 +236,9 @@ if($pageID == '1' || empty($pageID)) {
 				 			</select>
 				 	</div>
 			  </div>
+
+
+
 
 
 		  <div class="the-content">
@@ -637,7 +636,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 	$wpdb->query($sql);
 
 	//get_template_part( 'page', 'applyEmail' );
-	//include (locate_template('page-applyEmail.php')); 
+	include (locate_template('page-applyEmail.php')); 
 
 	$applicationID = $wpdb->insert_id;
 
@@ -768,10 +767,23 @@ $sql = "SELECT HeardAboutCollegeID, Description
 	<?php session_unset();
 	session_destroy();
 	?>
+
+
 	<div class="the-content">
 		<h1>Thank you for your application <i class="fa fa-thumbs-up"></i> </h1>
-		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
+
+		<p>We’re delighted that you’ve chosen to apply to Knowsley Community College, you have applied for the 2018/2019 academic year.</p>
+
+		<p>You will soon be contacted by a member of the KCC team to invite you to an Information Evening. You will have an opportunity to find out more about your course and to speak to our tutors. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
+
+		<p>Our enrolment dates for 2017 have now passed; however it's not too late to enrol and there are still limited places available.</p>
+ 
+<p>In order to secure your place with us, you must enrol at our Main Campus. Our Learner Services team can help you through the enrolment process. Learner Services is open 8:45am to 5pm Monday to Friday</p>
+
+<p>If you have any questions in the meantime, please call Learner Services on <a href="tel:01514775850">0151 477 5850</a>.</p>
+
 	</div>
+
 	<?php
 }
 ?>
@@ -785,9 +797,8 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 <?php endif; ?>
 
-<!-- End of loop
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	
+<!-- End of loop-->
+
 	</section>
 
 	</div>
