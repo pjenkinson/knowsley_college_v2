@@ -185,8 +185,78 @@ if($pageID == '1' || empty($pageID)) {
   						?>>Female</option>
 			  	</select>
 			  
-			  <label for="DateOfBirth">Date of birth:</label>
-			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" required/>
+			  
+
+			 <?php 
+$sql = "SELECT day FROM dob_day";
+
+    $dob_data_day = $wpdb->get_results($sql);
+
+    $sql = "SELECT month, month_name FROM dob_month";
+
+    $dob_data_month = $wpdb->get_results($sql);
+
+    $sql = "SELECT year FROM dob_year";
+
+    $dob_data_year = $wpdb->get_results($sql);
+
+?>
+
+				<label for="Day">Day:</label>
+
+<select class="select-inline" type="text" name="DateOfBirthDay" required>
+<?php
+	foreach($dob_data_day AS $key => $value) {
+			$storedValue = $_SESSION['appform']['contents']['DateOfBirthDay'];
+			if($storedValue == $value) {
+				  $selected = 'selected';
+			} else {
+					$selected = '';
+			}
+		  ?>
+		  <option value="<?=$value->day?>-" <?=$selected?>><?=$value->day?></option>
+		  <?php
+	}
+?>
+</select>
+
+
+<label for="Month">Month:</label>
+
+<select class="select-inline" type="text" name="DateOfBirthMonth" required>
+<?php
+	foreach($dob_data_month AS $key => $value) {
+			$storedValue = $_SESSION['appform']['contents']['DateOfBirthMonth'];
+			if($storedValue == $value) {
+				  $selected = 'selected';
+			} else {
+					$selected = '';
+			}
+		  ?>
+		  <option value="<?=$value->month?>-" <?=$selected?>><?=$value->month_name?></option>
+		  <?php
+	}
+?>
+</select>
+
+<label for="Year">Year:</label>
+
+<select class="select-inline" type="text" name="DateOfBirthYear" required>
+<?php
+	foreach($dob_data_year AS $key => $value) {
+			$storedValue = $_SESSION['appform']['contents']['DateOfBirthYear'];
+			if($storedValue == $value) {
+				  $selected = 'selected';
+			} else {
+					$selected = '';
+			}
+		  ?>
+		  <option value="<?=$value->year?>-" <?=$selected?>><?=$value->year?></option>
+		  <?php
+	}
+?>
+</select>
+
 			  
 			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" />
 			  <label for="Address2">Address line 2</label><input class="input-inline" type="text" name="Address2" value="<?=$_SESSION['appform']['contents']['Address2']?>" />
@@ -203,14 +273,13 @@ if($pageID == '1' || empty($pageID)) {
 			  <label for="Email">Email:</label>
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="Email" value="<?=$_SESSION['appform']['contents']['Email']?>" required/>		 
 
+	  	  <input type="hidden" name="courseid" value="<?=$courseID?>" />
 
 <?php 
 $sql = "SELECT OrganisationID, Name FROM Schools";
 
     $schools = $wpdb->get_results($sql);
 ?>
-
-	  	  <input type="hidden" name="courseid" value="<?=$courseID?>" />
 			  
 	  	    <div>
 			  	<label for="LastSchool">Name of your current school/college? </label>
@@ -432,7 +501,7 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['Title']."',
 											'".$insertData['FirstForename']."',
 											'".$insertData['Surname']."',
-											'".$insertData['DateOfBirth']."',
+											'".$insertData['DateOfBirthYear']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
 											'".$insertData['Tel']."',
@@ -592,6 +661,8 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 		<h1>Thank you for your application</h1>
 		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
 	</div>
+  			
+
 	<?php
 }
 ?>
