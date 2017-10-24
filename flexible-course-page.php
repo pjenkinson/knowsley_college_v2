@@ -107,6 +107,30 @@ $courses = $wpdb->get_results($sql);
 ?>
 
 
+<?php
+    $array = [];
+?>
+
+<?php if( have_rows('add_course') ): ?>
+    <?php while( have_rows('add_course') ): the_row(); ?>
+ 
+       <?php  
+
+       $course_id = get_sub_field('course_id');
+
+       $safe_course_id = filter_var($course_id, FILTER_SANITIZE_STRING);
+
+           //The [] syntax tells php to append the value to the existing array
+ 	   $array[] = str_split($safe_course_id, 5);
+  	   ?>   
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<?php 
+    print_r($array);
+?>
+
+
 
 <div id="courses">
 

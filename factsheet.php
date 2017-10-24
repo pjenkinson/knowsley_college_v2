@@ -379,42 +379,6 @@ jQuery( "#showallcourses" ).click(function() {
  </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
 
-<style>
-.maths-english {
-  background: url("http://192.168.99.100:8000/wp-content/themes/KCC2/images/maths-english.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-</style>
-
-
-<?php if( get_field('enable_maths_english') ): ?>
-  
-
-
-<div class="maths-english full-width-container content-snippet"> <!-- Begin Full Width Container -->
-
-  <div style="background: white; padding: 2em;" class="fixed-container"> <!-- Begin Fixed Container -->
-
-<!-- MATHS & ENGLISH -->
-
-  <h2 class="section-heading">Study Programme: Maths and English</h2>
-
-    <p>As part of your study programme you will continue your development of Maths and English skills, two of the most essential and valued skills by employers.</p>
-
-    <p>If you didn’t achieve a grade 4/C at GCSE, we’ll help you to continue to develop your skills. If you did achieve a grade 4/C or above, you’ll build your knowledge further.</p>
-
-
-  </div>  <!-- End Fixed Container -->
-</div>  <!-- End Full Width Container -->
-
-
-<?php endif; ?>
-
 
   </div> <!-- END OF OVERVIEW TAB -->
     
