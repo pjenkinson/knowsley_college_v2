@@ -187,75 +187,9 @@ if($pageID == '1' || empty($pageID)) {
 			  
 			  
 
-			 <?php 
-$sql = "SELECT day FROM dob_day";
+			<label for="DateOfBirth">Date of birth:</label>
 
-    $dob_data_day = $wpdb->get_results($sql);
-
-    $sql = "SELECT month, month_name FROM dob_month";
-
-    $dob_data_month = $wpdb->get_results($sql);
-
-    $sql = "SELECT year FROM dob_year";
-
-    $dob_data_year = $wpdb->get_results($sql);
-
-?>
-
-				<label for="Day">Day:</label>
-
-<select class="select-inline" type="text" name="DateOfBirthDay" required>
-<?php
-	foreach($dob_data_day AS $key => $value) {
-			$storedValue = $_SESSION['appform']['contents']['DateOfBirthDay'];
-			if($storedValue == $value) {
-				  $selected = 'selected';
-			} else {
-					$selected = '';
-			}
-		  ?>
-		  <option value="<?=$value->day?>-" <?=$selected?>><?=$value->day?></option>
-		  <?php
-	}
-?>
-</select>
-
-
-<label for="Month">Month:</label>
-
-<select class="select-inline" type="text" name="DateOfBirthMonth" required>
-<?php
-	foreach($dob_data_month AS $key => $value) {
-			$storedValue = $_SESSION['appform']['contents']['DateOfBirthMonth'];
-			if($storedValue == $value) {
-				  $selected = 'selected';
-			} else {
-					$selected = '';
-			}
-		  ?>
-		  <option value="<?=$value->month?>-" <?=$selected?>><?=$value->month_name?></option>
-		  <?php
-	}
-?>
-</select>
-
-<label for="Year">Year:</label>
-
-<select class="select-inline" type="text" name="DateOfBirthYear" required>
-<?php
-	foreach($dob_data_year AS $key => $value) {
-			$storedValue = $_SESSION['appform']['contents']['DateOfBirthYear'];
-			if($storedValue == $value) {
-				  $selected = 'selected';
-			} else {
-					$selected = '';
-			}
-		  ?>
-		  <option value="<?=$value->year?>-" <?=$selected?>><?=$value->year?></option>
-		  <?php
-	}
-?>
-</select>
+			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" required/>
 
 			  
 			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" />
@@ -273,7 +207,10 @@ $sql = "SELECT day FROM dob_day";
 			  <label for="Email">Email:</label>
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="Email" value="<?=$_SESSION['appform']['contents']['Email']?>" required/>		 
 
-	  	  <input type="hidden" name="courseid" value="<?=$courseID?>" />
+
+			  
+
+
 
 <?php 
 $sql = "SELECT OrganisationID, Name FROM Schools";
@@ -298,6 +235,26 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 													}
 												?>
 			  	</select>
+
+
+			  	<label for="ParentFirstName">Parent/Carer First name:</label>
+			  	<input class="input-inline" type="text" name="ParentFirstName" value="<?=$_SESSION['appform']['contents']['ParentFirstName']?>" required/>
+			  <label for="ParentSurname">Parent/Carer Surname:</label>
+			  	<input class="input-inline" type="text" name="ParentSurname" value="<?=$_SESSION['appform']['contents']['ParentSurname']?>" required/>	
+
+			  	 <label for="ParentPhoneNumber">Parent/Carer Contact Number:</label>
+			  	<input class="input-inline" type="text" name="ParentPhoneNumber" value="<?=$_SESSION['appform']['contents']['ParentPhoneNumber']?>" />
+
+			  <label for="ParentEmailAddress">Parent/Carer Email:</label>
+			  	<input class="input-inline" type="email" data-parsley-type="email" name="ParentEmailAddress" value="<?=$_SESSION['appform']['contents']['ParentEmailAddress']?>" required/>	
+
+
+
+	  	 	 <input type="hidden" name="courseid" value="<?=$courseID?>" />
+
+
+
+			  	<!-- END OF PERSONAL DETAILS -->
 
 			  </fieldset>
 
@@ -469,7 +426,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`Offering2ID`,
 											`Offering3ID`,
 											`AcademicYearID`,
-											`Title`,
 											`FirstForename`,
 											`Surname`,
 											`DateOfBirth`,
@@ -489,6 +445,10 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`LastSchool`,
 											`SchoolAttendedFrom`,
 											`SchoolAttendedTo`,
+											`ParentFirstName`,
+											`ParentSurname`,
+											`ParentPhoneNumber`,
+											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`)
@@ -498,10 +458,9 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['Offering2']."',
 											'".$insertData['Offering3']."',
 											'".$insertData['AcademicYearID']."',
-											'".$insertData['Title']."',
 											'".$insertData['FirstForename']."',
 											'".$insertData['Surname']."',
-											'".$insertData['DateOfBirthYear']."',
+											'".$insertData['DateOfBirth']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
 											'".$insertData['Tel']."',
@@ -518,6 +477,10 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['LastSchool']."',
 											'".$insertData['SchoolAttendedFrom']."',
 											'".$insertData['SchoolAttendedTo']."',
+											'".$insertData['ParentFirstName']."',
+											'".$insertData['ParentSurname']."',
+											'".$insertData['ParentPhoneNumber']."',
+											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."' 
@@ -557,7 +520,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`Offering2ID`,
 											`Offering3ID`,
 											`AcademicYearID`,
-											`Title`,
 											`FirstForename`,
 											`Surname`,
 											`DateOfBirth`,
@@ -577,6 +539,10 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`LastSchool`,
 											`SchoolAttendedFrom`,
 											`SchoolAttendedTo`,
+											`ParentFirstName`,
+											`ParentSurname`,
+											`ParentPhoneNumber`,
+											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`)
@@ -586,7 +552,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['Offering2']."',
 											'".$insertData['Offering3']."',
 											'".$insertData['AcademicYearID']."',
-											'".$insertData['Title']."',
 											'".$insertData['FirstForename']."',
 											'".$insertData['Surname']."',
 											'".$insertData['DateOfBirth']."',
@@ -606,6 +571,10 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['LastSchool']."',
 											'".$insertData['SchoolAttendedFrom']."',
 											'".$insertData['SchoolAttendedTo']."',
+											'".$insertData['ParentFirstName']."',
+											'".$insertData['ParentSurname']."',
+											'".$insertData['ParentPhoneNumber']."',
+											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."' 
