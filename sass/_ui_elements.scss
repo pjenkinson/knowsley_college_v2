@@ -2,456 +2,418 @@ $desktop-1179: 1179px;
 
 
 .homepage-live-search input[type="search"] {
-	text-align: center;
-	font-size: 2em;
+text-align: center;
+font-size: 2em;
 }
 
 // COURSE FINDER 
 
 .course-finder {
-  float: left;
-  margin-bottom: 2em;
-  background: #3d3d3c;
-  margin-top: 2em;
-  width: 100%;
+float: left;
+margin-bottom: 2em;
+background: #3d3d3c;
+margin-top: 2em;
+width: 100%;
 }
 
 .course-finder h2 {
-  border-bottom: none;
-  color: white;
-  margin-top: 0 !important;
-  padding: 0.6em;
-  padding-bottom: 0;
+border-bottom: none;
+color: white;
+margin-top: 0 !important;
+padding: 0.6em;
+padding-bottom: 0;
 }
 
 .course-finder p {
-	color:white; 
-	margin-left: 1em; 
-	margin-bottom: 0;
+color:white; 
+margin-left: 1em; 
+margin-bottom: 0;
 }
 
 #livesearch {
-  width:100%; 
-  float: left; 
-  font-size: 1.5em;
+width:100%; 
+float: left; 
+font-size: 1.5em;
 }
 
 #livesearchbutton {
-  width:25%; 
-  margin-top: 1em; 
-  background: inherit; 
-  border: 0; 
-  padding: 1em; 
-  border: 1px solid #99cc66; 
-  color: white;
+width:25%; 
+margin-top: 1em; 
+background: inherit; 
+border: 0; 
+padding: 1em; 
+border: 1px solid #99cc66; 
+color: white;
 }
 
 #showallcourses {
-  width:25%; 
-  margin-top: 1em; 
-  background: inherit; 
-  color: white; 
-  border: 0; 
-  padding: 1em; 
-  border: 1px solid #99cc66;
+width:25%; 
+margin-top: 1em; 
+background: inherit; 
+color: white; 
+border: 0; 
+padding: 1em; 
+border: 1px solid #99cc66;
 }
 
 @media screen and (max-width: 1234px) {
-  	 #showallcourses, #livesearchbutton {
-  		width: 40%;
-  	}
+#showallcourses, #livesearchbutton {
+width: 40%;
+}
 }
 
 #showallcourses:hover {
-	background: #99cc66;
+background: #99cc66;
 }
 #livesearchbutton:hover {
-	background: #99cc66;
+background: #99cc66;
 }
 
 .live-search-container {
-  padding:1em; 
-  margin: 0;
+padding:1em; 
+margin: 0;
 }
 
 // BUTTONS
 
 // Primary Button
 .button-default {
-	display: inline-block;
-	width: auto;
-	position: relative;
-	float: left;
-	margin-right: 0.5em;
+display: inline-block;
+width: auto;
+position: relative;
+float: left;
+margin-right: 0.5em;
 }
 
 .course-buttons {
-	width: 100%;
-	float: left;
-	margin-bottom: 0.5em;
+width: 100%;
+float: left;
+margin-bottom: 0.5em;
 }
 
 .button-default a:link, .button-default a:focus, .button-default a:visited {
-	color: white;
-	padding: 10px 10px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-   border-radius: 5px; 
+color: white;
+padding: 10px 10px;
+border-radius: 5px;
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px; 
 }
 
 .button-default a:hover  {
-	background: $secondary-color;
-	color: white;
+background: $secondary-color;
+color: white;
 }
 
 .button-promo-slider {
-	width: 124px;
-	height: 41px;
-	display: inline-block;
-	position: absolute;
-	top: 700px; left: 0; bottom: 0; right: 0;
-	margin: auto;
-  opacity: 0.9;
+width: 124px;
+height: 41px;
+display: inline-block;
+position: absolute;
+top: 700px; left: 0; bottom: 0; right: 0;
+margin: auto;
+opacity: 0.9;
 }
 
 .button-promo-slider a:link, .button-promo-slider a:visited {
-	color: white;
-	width: 124px;
-	height: 41px;
-	display: inline-block;
-	background: $primary-color;
-	-webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
-  border: 2px solid white;
-  text-align: center;
-  padding-top: 10px;
+color: white;
+width: 124px;
+height: 41px;
+display: inline-block;
+background: $primary-color;
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px; 
+border: 2px solid white;
+text-align: center;
+padding-top: 10px;
 }
 
 .button-promo-slider a:hover {
-	background: white;
-	width: 124px;
-	height: 41px;
-	display: inline-block;
-	color: $secondary-color;
+background: white;
+width: 124px;
+height: 41px;
+display: inline-block;
+color: $secondary-color;
 }
 
 // Flexible Homepage: More Courses Button
 
 .factsheet-snippet-more-courses {
- margin-bottom: 2em;
+margin-bottom: 2em;
 }
 
 .section-margin-top {
-	margin-top: 1em;
+margin-top: 1em;
 }
 
 .button-primary a:link, .button-primary a:visited {
-	background: $primary-color;
+background: $primary-color;
 }
 .button-primary a:hover, .button-primary a:focus  {
-	background: $secondary-color;
-}
-
-#owl-demo .item{
-  margin: 1.69492%;
-}
-#owl-demo .item img{
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-// WPCF7 Contact Form 7
-div.wpcf7 {
-	background: $off-white;
-	padding: gutter() !important;
-	float: left;
-}
-
-.wpcf7-form {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-.wpcf7-form br {
-	display: none;
-}
-
-.wpcf7-form fieldset {
-	margin-bottom: gutter();
-}
-
-.wpcf7-text {
-	float: left;
-	width: 100%;
-}
-
-.wpcf7-submit {
-	padding: 1em;
-	border: 1px solid $secondary-color-tint;
-	border-radius: 3px;
-	background: $secondary-color;
-	color: white;
-	margin: 0px;
-}
-
-.wpcf7-form fieldset label {
-	padding-top: 1em !important;
-	padding-bottom: 1em !important;
-	float: left !important;
-}
-
-.ajax-loader {
-	display: none;
+background: $secondary-color;
 }
 
 .contact-form-half {
-	@include span (12 of 12);
+@include span (12 of 12);
 }
 .contact-form-half-last {
-	@include span (12 of 12 last);
+@include span (12 of 12 last);
 }
 
 // Application form
+
+.app-form input {
+margin: 0;
+}
+
 .app-form label {
-	float: left;
-	clear: both;
-	display: block;
-	width: 200px;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
+float: left;
+clear: both;
+display: block;
+min-width: 267px;
+width: auto;
+padding: 0.5em;
+padding-left: none;
 }
 
 .app-form input {
-	display: block;
-	float: left;
+display: block;
+float: left;
 }
 
 .app-form label.course-choice {
-	width: 100%;
+width: 100%;
 }
 
 .app-form input.input-inline {
-	margin-bottom: 1em;
-	float: left;
-	min-width: 200px;
+margin-bottom: 1em;
+float: left;
+min-width: 200px;
+padding: 0.2em;
 }
 
 .app-form select.select-inline {
-	width: 50%;
-	margin-bottom: 1em;
-	float: left;
+width: auto;
+margin-bottom: 1em;
+float: left;
 }
 
 .app-form .submit {
-	display: inline-block;
+display: inline-block;
 }
 
 .app-form fieldset {
-	margin-bottom: 1em;
+margin-bottom: 1em;
 }
 
 .app-form .quali-row {
-	border-bottom: 1px solid $off-white;
-	margin-bottom: 1em;
+border-bottom: 1px solid $off-white;
+margin-bottom: 1em;
 }
 
-.postcodeout, .postcodein {
-	display: inline-block;
-	float: left;
+.app-form .radio-button-input {
+float: left;
+clear: both;
+padding-bottom: 0.5em;
 }
 
-.postcodeout {
-	margin-right: 0.5em;
-	width: 60px;
+.app-form .radio-buttons {
+float: left;
+clear: both;
+margin-right: 0.5em;
 }
 
-.postcodein {
-	width: 50px;
+.app-form .postcodeout, .app-form .postcodein {
+display: inline-block;
+float: left;
+width: 100px;
+}
+
+.app-form select {
+ width: auto;
 }
 
 select.schoollist {
-	text-transform: uppercase !important;
+text-transform: uppercase !important;
 }
 
 // Parsley Validation
 
 .parsley-errors-list {
-	list-style-type: none;
+list-style-type: none;
 }
 
 .parsley-errors-list li {
-	float: left;
-	display: inline-block;
-	margin-left: 10px;
+float: left;
+display: inline-block;
+margin-left: 10px;
 }
 
 input.parsley-error {
-	background: $secondary-color;
+background: $secondary-color;
 }
 
 .parsley-required {
-	color: $secondary-color;
-	float: left;
+color: $secondary-color;
+float: left;
 }
 
 .highlight-hover {
-	background: $secondary-color;
+background: $secondary-color;
 }
 
 .page-section-hover-title {
-	background: $secondary-color !important;
+background: $secondary-color !important;
 }
 
 .page-section-hover-title h3 {
-	color: white !important; 
+color: white !important; 
 }
 
 .new-qualification-row {
-	float: left;
-	display: inline-block;
-	clear: both;
+float: left;
+display: inline-block;
+clear: both;
 }
 
 // Live Search
 
 #live-search {
-	width: 100%;
-	float: left;
-	font-size: 2em;
-	padding: 1em;
+width: 100%;
+float: left;
+font-size: 2em;
+padding: 1em;
 }
 
 .ui-menu {
-	padding: 2em;
+padding: 2em;
 }
 
 .ui-menu .ui-menu-item {
-	font-size: 1.4em;
-	list-style-type: none;
-	padding: 1em;
+font-size: 1.4em;
+list-style-type: none;
+padding: 1em;
 }
 
 // UI Datepicker
 
 .ui-datepicker-header {
-	background: $secondary-color;
-	float: left;
-	padding: 1em;
+background: $secondary-color;
+float: left;
+padding: 1em;
 }
 
 .ui-datepicker-calendar tbody {
-	border: 1px solid $primary-color;
+border: 1px solid $primary-color;
 } 
 
 .ui-datepicker-calendar thead {
-	border: 1px solid $primary-color;
+border: 1px solid $primary-color;
 }
 
 .ui-datepicker-title {
-	float: left;
+float: left;
 }
 
 .ui-datepicker-calendar .ui-state-default, .ui-datepicker-calendar .ui-state-default a, .ui-datepicker-calendar .ui-state-default a:visited {
-	color: $primary-color;
+color: $primary-color;
 }
 
 .ui-icon {
-	background: $primary-color;
-	color: white;
-	float: left;
-	margin-right: 0.5em;
-	padding: 0.5em;
+background: $primary-color;
+color: white;
+float: left;
+margin-right: 0.5em;
+padding: 0.5em;
 }
 
 .ui-icon:hover {
-	cursor: pointer;
+cursor: pointer;
 }
 
 #menu-posts-vacancies {
-	display: none;
+display: none;
 }
 
 .enquire-button {
-	float: left;
-	width: 100%;
-	text-align: center;
-	background: $off-white;
-	padding: 1em;
+float: left;
+width: 100%;
+text-align: center;
+background: $off-white;
+padding: 1em;
 }
 
 .enquire-button a:link {
-	padding: 0.5em;
-	background: $secondary-color;
-	float: left;
-	width: 100%;
-	color: white;
+padding: 0.5em;
+background: $secondary-color;
+float: left;
+width: 100%;
+color: white;
 }
 
 .enquire-button a:hover {
-	font-weight: bold;
-	color: white;
+font-weight: bold;
+color: white;
 }
 
 .newsletter-signup {
-	float: left;
-	background: $primary-color;
-	margin-bottom: 1em 0px;
+float: left;
+background: $primary-color;
+margin-bottom: 1em 0px;
 }
 
 .newsletter-form-signup-bar label {
- font-size: 2em;
- color: white;
+font-size: 2em;
+color: white;
 }
 
 .newsletter-form-signup-bar .email-input {
-	height: 2em;
-	margin-left: gutter();
-	width: 35%;
+height: 2em;
+margin-left: gutter();
+width: 35%;
 }
 
 .newsletter-form-signup-bar .submit {
-	padding: 0.5em;
-	background: $secondary-color;
-	color: white;
+padding: 0.5em;
+background: $secondary-color;
+color: white;
 }
 
 .newsletter-signup .parsley-errors-list li {
-	color: white;
-	position: absolute;
-  right: 50px;
-  width: 250px;
-  top: -2em;
+color: white;
+position: absolute;
+right: 50px;
+width: 250px;
+top: -2em;
 }
 
 .newsletter-signup ul.parsley-errors-list {
-	position: relative;
+position: relative;
 }
 
 // Featured PDF
 
 .pdf-container {
-	display: inline-block;
-	clear: both;
-	background: $off-white;
-	padding: 0.5em;
+display: inline-block;
+clear: both;
+background: $off-white;
+padding: 0.5em;
 }
 
 $issuu: 645px;
 
 .issuu-pdf-viewer .issuuembed {
-	width: 100%;
-	height: auto;
-	float: left;
+width: 100%;
+height: auto;
+float: left;
 }
 
 @include breakpoint($issuu) {
 
 .issuu-pdf-viewer .issuuembed {
- width: 525px;
- height: 373px; 
+width: 525px;
+height: 373px; 
 }
 
 }
@@ -466,81 +428,81 @@ margin-bottom: 2em;
 }
 
 #accordion a:link, #accordion a:visited {
-	text-decoration: underline;
-	color: $para-text;
+text-decoration: underline;
+color: $para-text;
 }
 
 #accordion ul li {
- font-size: 1rem;
- color: $para-text;
+font-size: 1rem;
+color: $para-text;
 }
 
 #accordion * {
- font-weight: normal;
+font-weight: normal;
 }
 
- #accordion  * { 
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box;
+#accordion  * { 
+-moz-box-sizing: border-box; 
+-webkit-box-sizing: border-box; 
+box-sizing: border-box;
 }
 
 #accordion h3 {
-	padding: 1em;
+padding: 1em;
 }
 
 #accordion h3 span {
-	padding: 0px;
+padding: 0px;
 }
 
 #accordion h3:hover {
-	cursor: pointer;
+cursor: pointer;
 }
 
 #accordion p {
-	font-size: 1.1rem;
+font-size: 1.1rem;
 }
 
-  #accordion .ui-accordion-content {
-    width: 100%;
-    background-color: $off-white;
-    color: #777;
-    font-size: 10pt;
-    line-height: 16pt;
-    padding: 1em;
+#accordion .ui-accordion-content {
+width: 100%;
+background-color: $off-white;
+color: #777;
+font-size: 10pt;
+line-height: 16pt;
+padding: 1em;
 }
 
 #accordion .ui-accordion-content > * {
-    margin: 0;
-    padding: 0px;
+margin: 0;
+padding: 0px;
 }
 
 #accordion .ui-accordion-content a {
-    color: #777;
+color: #777;
 }
 
 #accordion .ui-accordion-content ul li a {
-	color: $primary-color;
+color: $primary-color;
 }
 
 #accordion .ui-accordion-header {
-    background-color: $primary-color;
-    color: white;
-    margin: 0px;
+background-color: $primary-color;
+color: white;
+margin: 0px;
 }
 
 #accordion .ui-accordion-header a {
-    color: white;
-    line-height: 42px;
-    display: block;
-    font-size: 12pt;
-    width: 100%;
-    text-indent: 10px;
+color: white;
+line-height: 42px;
+display: block;
+font-size: 12pt;
+width: 100%;
+text-indent: 10px;
 }
 .quick-links {
-	background: $off-white;
-	padding: 1em;
-	margin-bottom: 1em;
+background: $off-white;
+padding: 1em;
+margin-bottom: 1em;
 }
 // NAVIGATION STYLE
 
@@ -551,71 +513,69 @@ border-bottom: 1px solid $off-white !important;
 }
 
 .nav-secondary li.mega-menu-item > a.mega-menu-link {
-	padding: 3.7037% !important; 
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
+padding: 3.7037% !important; 
+padding-top: 0 !important;
+padding-bottom: 0 !important;
 }
 
 .nav-secondary .mega-menu-toggle {
- border-bottom: 1px solid $off-white;
- padding: gutter();
- padding-top: 0;
- padding-bottom: 0;
- @include breakpoint($desktop-1179) { 
-  padding: 0;	
- }
+border-bottom: 1px solid $off-white;
+padding: gutter();
+padding-top: 0;
+padding-bottom: 0;
+@include breakpoint($desktop-1179) { 
+padding: 0;	
+}
 }
 
 // Secondary Homepage Navigation
 
 .nav-home li.mega-menu-item > a.mega-menu-link  {
-	padding: 5% !important; 
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
+padding: 5% !important; 
+padding-top: 0 !important;
+padding-bottom: 0 !important;
 }
 
 .nav-home .mega-menu-toggle {
- border-bottom: 1px solid $off-white;
- padding: 5%;
- padding-top: 0;
- padding-bottom: 0;
- @include breakpoint($desktop-1179) { 
-  padding: 0;	
- }
+border-bottom: 1px solid $off-white;
+padding: 5%;
+padding-top: 0;
+padding-bottom: 0;
+@include breakpoint($desktop-1179) { 
+padding: 0;	
 }
-
-
+}
 
 // Ancestor Styles
 
 li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
-  background: $primary-color !important;
-	color: #FFFFFF !important;
+background: $primary-color !important;
+color: #FFFFFF !important;
 }
 
 li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
-	background: $secondary-color !important;
+background: $secondary-color !important;
 }
 
 // Current item branding
 
 #mega-menu-wrap-higher-education #mega-menu-wrap-higher-education > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link  {
-	background: $higher-education !important;
-	color: #FFFFFF !important;
+background: $higher-education !important;
+color: #FFFFFF !important;
 }
 
 #mega-menu-wrap-employers #mega-menu-wrap-employers > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link  {
-	background: $employers !important;
-	color: #FFFFFF !important;
+background: $employers !important;
+color: #FFFFFF !important;
 }
 
 #mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle, #mega-menu-wrap-supported-learning .mega-menu-toggle {
-	text-align: left;
+text-align: left;
 }
 
 #mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before, #mega-menu-wrap-supported-learning .mega-menu-toggle:before
- {
-	float: right !important;
+{
+float: right !important;
 }
 
 #mega-menu-wrap-about-menu .mega-menu-toggle:after {
@@ -664,7 +624,7 @@ float: left;
 }
 
 #mega-menu-wrap-external-access .mega-menu-toggle {
-	background: $secondary-color !important;
+background: $secondary-color !important;
 }
 
 #mega-menu-wrap-vacancies .mega-menu-toggle:after {

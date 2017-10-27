@@ -150,7 +150,7 @@ if($pageID == '1' || empty($pageID)) {
     $allCourses = $wpdb->get_results($sql);?>
 
 
-	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
+	  <form class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 	  		 <div class="the-content">
 
 	  			<h2 class="section-heading">School Leavers Application Form</h2>
@@ -167,9 +167,9 @@ if($pageID == '1' || empty($pageID)) {
 
 
 	  		 <label for="FirstForename">First name:</label>
-			  	<input class="input-inline" type="text" name="FirstForename" value="<?=$_SESSION['appform']['contents']['FirstForename']?>" required/>
+			  	<input class="input-inline" type="text" name="FirstForename" value="<?=$_SESSION['appform']['contents']['FirstForename']?>" placeholder="Your First Name" required/>
 			  <label for="Surname">Surname:</label>
-			  	<input class="input-inline" type="text" name="Surname" value="<?=$_SESSION['appform']['contents']['Surname']?>" required/>
+			  	<input class="input-inline" type="text" name="Surname" value="<?=$_SESSION['appform']['contents']['Surname']?>" placeholder="Your Surname" required/>
 
 			  <label for="Sex">Gender:</label>
 			  	<select class="select-inline" type="text" name="Sex" required>
@@ -189,7 +189,7 @@ if($pageID == '1' || empty($pageID)) {
 
 			<label for="DateOfBirth">Date of birth:</label>
 
-			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" required/>
+			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" placeholder="YYYY-MM-DD" maxlength="10" required/>
 
 			  
 			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" />
@@ -238,9 +238,9 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 
 			  	<label for="ParentFirstName">Parent/Carer First name:</label>
-			  	<input class="input-inline" type="text" name="ParentFirstName" value="<?=$_SESSION['appform']['contents']['ParentFirstName']?>" required/>
+			  	<input class="input-inline" type="text" name="ParentFirstName" value="<?=$_SESSION['appform']['contents']['ParentFirstName']?>" placeholder="Parent/Carer First Name" required/>
 			  <label for="ParentSurname">Parent/Carer Surname:</label>
-			  	<input class="input-inline" type="text" name="ParentSurname" value="<?=$_SESSION['appform']['contents']['ParentSurname']?>" required/>	
+			  	<input class="input-inline" type="text" name="ParentSurname" value="<?=$_SESSION['appform']['contents']['ParentSurname']?>" placeholder="Parent/Carer Surname" required/>	
 
 			  	 <label for="ParentPhoneNumber">Parent/Carer Contact Number:</label>
 			  	<input class="input-inline" type="text" name="ParentPhoneNumber" value="<?=$_SESSION['appform']['contents']['ParentPhoneNumber']?>" />
@@ -347,8 +347,20 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 			<fieldset>
 
-<label class="marketing" for="SentMarketingInfo">Tick the box if you do NOT want to receive any marketing information from us</label>
-<input class="input-inline" type="checkbox" name="SentMarketingInfo" value="true" <?php
+			<label class="marketing" for="UserDefined16">Is Knowsley Community College your first choice for Further Education?</label>
+
+			<div class="radio-buttons">
+				<div class="radio-button-input"><input class="radio-buttons" type="radio" name="UserDefined16" value="Yes">Yes</div>
+				<div class="radio-button-input"><input class="radio-buttons" type="radio" name="UserDefined16" value="No">No</div>
+			<div>
+
+			<?php
+			if(isset($_POST['UserDefined16']))
+			{ $_SESSION['appform']['contents']['SentMarketingInfo'] == $_POST['UserDefined16']; }
+			?>
+
+			<label class="marketing" for="SentMarketingInfo">Tick the box if you do NOT want to receive any marketing information from us</label>
+			<input class="input-inline" type="checkbox" name="SentMarketingInfo" value="true" <?php
 
 if($_SESSION['appform']['contents']['SentMarketingInfo'] == 'true') {
 	echo 'checked';
@@ -366,7 +378,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 ?>
 
 	<label class="feedback" for="HeardAboutCollegeID">How did you hear about KCC?</label>
-	<select type="text" name="HeardAboutCollegeID">
+	<select class="select-inline" type="text" name="HeardAboutCollegeID">
 
 	<?php
 		foreach($HeardAboutCollege AS $key => $value) {
@@ -403,7 +415,7 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 ?>/>
 </fieldset>
 
-			 <input class="submit" type="submit" name="submit" value="Next Step" />
+			 <input class="submit" type="submit" name="submit" value="Apply" />
 
 
 
@@ -451,7 +463,8 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
-											`HeardAboutCollegeID`)
+											`HeardAboutCollegeID`,
+											`UserDefined16`)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
@@ -483,7 +496,8 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
-											'".$insertData['HeardAboutCollegeID']."' 
+											'".$insertData['HeardAboutCollegeID']."',
+											'".$insertData['UserDefined16']."' 
 											)";
 
 	$wpdb->query($sql);
@@ -545,7 +559,8 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
-											`HeardAboutCollegeID`)
+											`HeardAboutCollegeID`,
+											`UserDefined16`)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
@@ -577,7 +592,8 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
-											'".$insertData['HeardAboutCollegeID']."' 
+											'".$insertData['HeardAboutCollegeID']."',
+											'".$insertData['UserDefined16']."'  
 											)";
 
 	$wpdb->query($sql);
