@@ -141,13 +141,67 @@ if($pageID == '1' || empty($pageID)) {
 
     $DisabilityType = $wpdb->get_results($sql);?>
 
-     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID
+     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
          	   INNER JOIN fact_sheets
          	   On Offering.CourseInformationID=fact_sheets.id
-         	   ORDER BY factsheetname ASC";
+         	   ORDER BY level ASC";
 
     $allCourses = $wpdb->get_results($sql);?>
+
+     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 1'
+         	   ORDER BY level ASC";
+
+    $level1Courses = $wpdb->get_results($sql);?>
+
+     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 2'
+         	   ORDER BY level ASC";
+
+    $level2Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 3'
+         	   ORDER BY level ASC";
+
+    $level3Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 4'
+         	   ORDER BY level ASC";
+
+    $level4Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 5'
+         	   ORDER BY level ASC";
+
+    $level5Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Entry Level 1' or level = 'Entry Level 2' or level = 'Entry 3'
+         	   ORDER BY level ASC";
+
+    $EntryLevelCourses = $wpdb->get_results($sql);?>
 
 
 	  <form class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
@@ -282,21 +336,10 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 				 		<div>
 				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
-				 			<select name="Offering1" required>
+				 			<select class="select-inline" name="Offering1" required>
 				 				  <option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering1'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?> - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+
 				 			</select>
 				 		</div>
 				 		<?php
@@ -305,40 +348,17 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 				 	<input type="hidden" name="AcademicYearID" value="17/18"/>
 				 	<div>
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
-				 			<select name="Offering2">
+				 			<select class="select-inline" name="Offering2">
 				 				  <option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering2'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?>  - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+
 				 			</select>
 				 	</div>
 				 	<div>
 				 			<label class="course-choice" for="Offering3">Select your third choice course (Optional)</label>
-				 			<select name="Offering3">
+				 			<select class="select-inline" name="Offering3">
 				 					<option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering3'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?> - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
 				 			</select>
 				 	</div>
 				 </fieldset>
@@ -503,7 +523,7 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 	$wpdb->query($sql);
 
 	//get_template_part( 'page', 'applyEmail' );
-	//include (locate_template('page-applyEmail.php')); 
+	include (locate_template('page-applyEmail.php')); 
 
 	$applicationID = $wpdb->insert_id;
 

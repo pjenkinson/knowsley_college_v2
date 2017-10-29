@@ -1,5 +1,5 @@
 $desktop-1179: 1179px;
-
+$selectWidth: 650px;
 
 .homepage-live-search input[type="search"] {
 text-align: center;
@@ -194,9 +194,12 @@ padding: 0.2em;
 }
 
 .app-form select.select-inline {
-width: auto;
+width: 100%;
 margin-bottom: 1em;
 float: left;
+@include breakpoint($selectWidth) { 
+width: auto;	
+}
 }
 
 .app-form .submit {
@@ -230,9 +233,6 @@ float: left;
 width: 100px;
 }
 
-.app-form select {
- width: auto;
-}
 
 select.schoollist {
 text-transform: uppercase !important;

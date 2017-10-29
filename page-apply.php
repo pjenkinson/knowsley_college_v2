@@ -133,15 +133,63 @@ if($pageID == '1' || empty($pageID)) {
     <?php $sql = "SELECT DisabilityID, Description
          	   FROM Disability";
 
-    $DisabilityType = $wpdb->get_results($sql);?>
+    $DisabilityType = $wpdb->get_results($sql);
 
-     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID
+    $allCourses = $wpdb->get_results($sql);
+
+    $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
          	   INNER JOIN fact_sheets
          	   On Offering.CourseInformationID=fact_sheets.id
-         	   ORDER BY factsheetname ASC";
+         	   WHERE level = 'Level 1'
+         	   ORDER BY level ASC";
 
-    $allCourses = $wpdb->get_results($sql);?>
+    $level1Courses = $wpdb->get_results($sql);?>
+
+     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 2'
+         	   ORDER BY level ASC";
+
+    $level2Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 3'
+         	   ORDER BY level ASC";
+
+    $level3Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 4'
+         	   ORDER BY level ASC";
+
+    $level4Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Level 5'
+         	   ORDER BY level ASC";
+
+    $level5Courses = $wpdb->get_results($sql);?>
+
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id
+         	   WHERE level = 'Entry Level 1' or level = 'Entry Level 2' or level = 'Entry 3'
+         	   ORDER BY level ASC";
+
+    $EntryLevelCourses = $wpdb->get_results($sql);?>
 
 
 	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
@@ -174,74 +222,39 @@ if($pageID == '1' || empty($pageID)) {
 				 		<h1>Select your course choices</h1>
 				 		<p>Please select a course from the drop-down menu. If you are interested in more than one course, please select more choices (Maximum of 3 courses per application)</p>
 
+				 		<fieldset>
+
+				 		<p>Which course/subject are you interested in studying?</p>	
+
 				 		<div>
 				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
-				 			<select name="Offering1" required>
+				 			<select class="select-inline" name="Offering1" required>
 				 				  <option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering1'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?> - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+
 				 			</select>
 				 		</div>
 				 		<?php
 				 	}
 				 	?>
-				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
+				 	<input type="hidden" name="AcademicYearID" value="17/18"/>
 				 	<div>
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
-				 			<select name="Offering2">
+				 			<select class="select-inline" name="Offering2">
 				 				  <option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering2'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?>  - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+
 				 			</select>
 				 	</div>
 				 	<div>
 				 			<label class="course-choice" for="Offering3">Select your third choice course (Optional)</label>
-				 			<select name="Offering3">
+				 			<select class="select-inline" name="Offering3">
 				 					<option value="">Please Select</option>
-				 					<?php
-				 					foreach($allCourses AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Offering3'];
-				 							if($storedValue == $value) {
-				 								  $selected = 'selected';
-				 							} else {
-				 									$selected = '';
-				 							}
-				 						  ?>
-				 						  <option value="<?=$value->OfferingID?>" <?=$selected?>><?=$value->factsheetname?> - <?=$value->level?></option>
-				 						  <?php
-				 					}
-				 					?>
+				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
 				 			</select>
 				 	</div>
-			  </div>
-
-
-
-
-
-		  <div class="the-content">
+				 </fieldset>
+		 
 
 		  <h1>Personal Details</h1>
 	  
