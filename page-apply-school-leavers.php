@@ -131,10 +131,6 @@ if($pageID == '1' || empty($pageID)) {
 							    $subjects = $wpdb->get_results($sql);
 						?>
 
-		<?php $sql = "SELECT EthnicGroupID, Description
-         	   FROM EthnicGroup";
-
-    $EthnicGroup = $wpdb->get_results($sql);?>
 
     <?php $sql = "SELECT DisabilityID, Description
          	   FROM Disability";
@@ -227,6 +223,7 @@ if($pageID == '1' || empty($pageID)) {
 
 			  <label for="Sex">Gender:</label>
 			  	<select class="select-inline" type="text" name="Sex" required>
+			  			<option value="">Select</option>
   						<option value="male" <?php
   							if($_SESSION['appform']['contents']['Sex'] == 'male') {
   								echo 'selected';
@@ -246,7 +243,7 @@ if($pageID == '1' || empty($pageID)) {
 			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" placeholder="YYYY-MM-DD" maxlength="10" required/>
 
 			  
-			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" />
+			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" required />
 			  <label for="Address2">Address line 2</label><input class="input-inline" type="text" name="Address2" value="<?=$_SESSION['appform']['contents']['Address2']?>" />
 			  <label for="Address3">Address line 3</label><input class="input-inline" type="text" name="Address3" value="<?=$_SESSION['appform']['contents']['Address3']?>" />
 			  <label for="Address4">Address line 4</label><input class="input-inline" type="text" name="Address4" value="<?=$_SESSION['appform']['contents']['Address4']?>" />
@@ -257,7 +254,7 @@ if($pageID == '1' || empty($pageID)) {
 			  <label for="Tel">Telephone:</label>
 					<input class="input-inline" type="text" name="Tel" value="<?=$_SESSION['appform']['contents']['Tel']?>" required/>
 			  <label for="MobileTel">Mobile:</label>
-			  	<input class="input-inline" type="text" name="MobileTel" value="<?=$_SESSION['appform']['contents']['MobileTel']?>" />
+			  	<input class="input-inline" type="text" name="MobileTel" value="<?=$_SESSION['appform']['contents']['MobileTel']?>" required />
 			  <label for="Email">Email:</label>
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="Email" value="<?=$_SESSION['appform']['contents']['Email']?>" required/>		 
 
@@ -267,7 +264,7 @@ if($pageID == '1' || empty($pageID)) {
 
 
 <?php 
-$sql = "SELECT OrganisationID, Name FROM Schools";
+$sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 
     $schools = $wpdb->get_results($sql);
 ?>
@@ -275,6 +272,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 	  	    <div>
 			  	<label for="LastSchool">Name of your current school/college? </label>
 			  	<select class="select-inline schoollist" type="text" name="LastSchool" required>
+			  			<option value="">Select</option>
 						<?php
 													foreach($schools AS $key => $value) {
 															$storedValue = $_SESSION['appform']['contents']['LastSchool'];
@@ -297,7 +295,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 			  	<input class="input-inline" type="text" name="ParentSurname" value="<?=$_SESSION['appform']['contents']['ParentSurname']?>" placeholder="Parent/Carer Surname" required/>	
 
 			  	 <label for="ParentPhoneNumber">Parent/Carer Contact Number:</label>
-			  	<input class="input-inline" type="text" name="ParentPhoneNumber" value="<?=$_SESSION['appform']['contents']['ParentPhoneNumber']?>" />
+			  	<input class="input-inline" type="text" name="ParentPhoneNumber" value="<?=$_SESSION['appform']['contents']['ParentPhoneNumber']?>" required />
 
 			  <label for="ParentEmailAddress">Parent/Carer Email:</label>
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="ParentEmailAddress" value="<?=$_SESSION['appform']['contents']['ParentEmailAddress']?>" required/>	
@@ -306,14 +304,18 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 	  	 	 <input type="hidden" name="courseid" value="<?=$courseID?>" />
 
-
+	  	 	 <input type="hidden" name="Ethnicity" value="99" />
 
 			  	<!-- END OF PERSONAL DETAILS -->
 
 			  </fieldset>
 
 
-			  <?php
+			
+
+				 		<h3>Course choice</h3>
+				 		<fieldset>
+				 		  <?php
 					if(!empty($courses)) {
 						?>
 					  <p>You have selected the following courses to apply for,</p>
@@ -322,16 +324,12 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 					  	<li><?=$courses[0]->name?></li>
 					 	</ul>
 					 	<input type="hidden" name="Offering1" value="<?=$offeringid[0]->OfferingID?>" />
-					 	<input type="hidden" name="AcademicYearID" value="17/18"/>
+					 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 
 				 		<?php
 				 	} else {
 				 		?>
-
-				 		<h3>Course choice</h3>
 				 		
-				 		<fieldset>
-
 				 		<p>Which course/subject are you interested in studying?</p>	
 
 				 		<div>
@@ -345,7 +343,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 				 		<?php
 				 	}
 				 	?>
-				 	<input type="hidden" name="AcademicYearID" value="17/18"/>
+				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 				 	<div>
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
 				 			<select class="select-inline" name="Offering2">
@@ -370,23 +368,30 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 			<label class="marketing" for="UserDefined16">Is Knowsley Community College your first choice for Further Education?</label>
 
 			<div class="radio-buttons">
-				<div class="radio-button-input"><input class="radio-buttons" type="radio" name="UserDefined16" value="Yes">Yes</div>
+				<div class="radio-button-input"><input class="radio-buttons" type="radio" name="UserDefined16" value="Yes" required>Yes</div>
 				<div class="radio-button-input"><input class="radio-buttons" type="radio" name="UserDefined16" value="No">No</div>
 			<div>
 
 			<?php
 			if(isset($_POST['UserDefined16']))
-			{ $_SESSION['appform']['contents']['SentMarketingInfo'] == $_POST['UserDefined16']; }
+			{ $_SESSION['appform']['contents']['UserDefined16'] == $_POST['UserDefined16']; }
 			?>
 
 			<label class="marketing" for="SentMarketingInfo">Tick the box if you do NOT want to receive any marketing information from us</label>
-			<input class="input-inline" type="checkbox" name="SentMarketingInfo" value="true" <?php
+			<input class="input-inline" type="checkbox" name="SentMarketingInfo" value="1" />
 
-if($_SESSION['appform']['contents']['SentMarketingInfo'] == 'true') {
-	echo 'checked';
+			<?php
+
+if(isset($_POST['SentMarketingInfo'])){
+    //$stok is checked and value = 1
+    $SentMarketingInfo = $_POST['SentMarketingInfo'];
 }
-
-?>/>
+else{
+    //$stok is nog checked and value=0
+    $SentMarketingInfo=0;
+}
+$SentMarketingInfo = $_SESSION['appform']['contents']['SentMarketingInfo'];
+?>
 
 <?php // Heard about the college ?>
 
@@ -398,8 +403,8 @@ $sql = "SELECT HeardAboutCollegeID, Description
 ?>
 
 	<label class="feedback" for="HeardAboutCollegeID">How did you hear about KCC?</label>
-	<select class="select-inline" type="text" name="HeardAboutCollegeID">
-
+	<select class="select-inline" type="text" name="HeardAboutCollegeID" required="">
+	<option value="">Select</option>
 	<?php
 		foreach($HeardAboutCollege AS $key => $value) {
 				$storedValue = $_SESSION['appform']['contents']['HeardAboutCollegeID'];
@@ -422,22 +427,28 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 <h3>Data Protection</h3>
 <fieldset>
-	<p>Please take time to read through this declaration before proceeding.</p>
-<p>I declare that to the best of my knowledge, the information given in this application is correct. Information provided on this form will be processed solely for the purpose of application to and enrolment on a course at the College.</p>
+	<p>Knowsley Community College is registered under the Data Protection Act 1988. Information we process about you may be used for planning, analysis, marketing and any other purpose deemed necessary. Your information may also be shared with other official organisations such as your school and Local Education Authorities. Please contact enquiries (Tel: 0151 477 5850) if you have any concerns about the use or accuracy of your information.</p>
 
-	<label class="declaration" for="declaration">I agree to the data protection declaration above. Ticking the box serves as your signature</label>
-<input class="input-inline" required type="checkbox" name="StudentDeclaration" value="true" <?php
+<p></p>
 
-if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
-	echo 'checked';
+<p>I agree to the data protection declaration above. Ticking the box serves as your signature</p>
+<input class="input-inline" required type="checkbox" name="StudentDeclaration" value="Yes" required="" <?php
+
+
+if(isset($_POST['StudentDeclaration'])){
+    $StudentDeclaration = $_POST['StudentDeclaration'];
 }
+else{
+    $StudentDeclaration=No;
+}
+$StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
+
+			
 
 ?>/>
 </fieldset>
 
 			 <input class="submit" type="submit" name="submit" value="Apply" />
-
-
 
 	  </form>
 
@@ -472,8 +483,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`Address4`,
 											`PostCodeOut`,
 											`PostCodein`,
-											`InterviewSupportRequirements`,
-											`DisabilityID`,
 											`LastSchool`,
 											`SchoolAttendedFrom`,
 											`SchoolAttendedTo`,
@@ -505,8 +514,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['Address4']."',
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
-											'".$insertData['InterviewSupportRequirements']."',
-											'".$insertData['DisabilityType']."',
 											'".$insertData['LastSchool']."',
 											'".$insertData['SchoolAttendedFrom']."',
 											'".$insertData['SchoolAttendedTo']."',
@@ -568,8 +575,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											`Address4`,
 											`PostCodeOut`,
 											`PostCodein`,
-											`InterviewSupportRequirements`,
-											`DisabilityID`,
 											`LastSchool`,
 											`SchoolAttendedFrom`,
 											`SchoolAttendedTo`,
@@ -601,8 +606,6 @@ if($_SESSION['appform']['contents']['StudentDeclaration'] == 'true') {
 											'".$insertData['Address4']."',
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
-											'".$insertData['InterviewSupportRequirements']."',
-											'".$insertData['DisabilityType']."',
 											'".$insertData['LastSchool']."',
 											'".$insertData['SchoolAttendedFrom']."',
 											'".$insertData['SchoolAttendedTo']."',

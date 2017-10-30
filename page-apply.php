@@ -192,7 +192,7 @@ if($pageID == '1' || empty($pageID)) {
     $EntryLevelCourses = $wpdb->get_results($sql);?>
 
 
-	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
+	  <form class="app-form" method="POST" action="/apply/adults/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 
 	  	<div class="the-content" style="margin-bottom: 1em;">
 		 	
@@ -219,7 +219,7 @@ if($pageID == '1' || empty($pageID)) {
 				 		?>
 
 
-				 		<h1>Select your course choices</h1>
+				 		<h3>Select your course choices</h3>
 				 		<p>Please select a course from the drop-down menu. If you are interested in more than one course, please select more choices (Maximum of 3 courses per application)</p>
 
 				 		<fieldset>
@@ -256,12 +256,9 @@ if($pageID == '1' || empty($pageID)) {
 				 </fieldset>
 		 
 
-		  <h1>Personal Details</h1>
+		  <h3>Personal Details</h3>
 	  
 	  	<fieldset>
-
-	  		<legend>Personal details</legend>
-
 
 			  <label for="Surname">Surname:</label>
 			  	<input class="input-inline" type="text" name="Surname" value="<?=$_SESSION['appform']['contents']['Surname']?>" required/>
@@ -311,8 +308,6 @@ if($pageID == '1' || empty($pageID)) {
 			 	</fieldset>
 			 	<fieldset>
 
-			  <legend>Home address</legend>
-
 			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" />
 			  <label for="Address2">Address line 2</label><input class="input-inline" type="text" name="Address2" value="<?=$_SESSION['appform']['contents']['Address2']?>" />
 			  <label for="Address3">Address line 3</label><input class="input-inline" type="text" name="Address3" value="<?=$_SESSION['appform']['contents']['Address3']?>" />
@@ -322,13 +317,11 @@ if($pageID == '1' || empty($pageID)) {
 			  
 			 </fieldset>
 
-			 <h1>Interview support requirements</h1>
+			 <h3>Interview support requirements</h3>
 
 			 <p>If you have any support requirements for your interview, please provide us with details so we can assist you.</p>
 
 			 <fieldset>
-
-			 	<legend>Support Details</legend>
 
 			  <label for="InterviewSupportRequirements">Interview Support Requirements:</label>
 			  <textarea name="InterviewSupportRequirements"></textarea>
@@ -338,7 +331,7 @@ if($pageID == '1' || empty($pageID)) {
 				 				  <option value="">Please Select</option>
 				 					<?php
 				 					foreach($DisabilityType  AS $key => $value) {
-				 							$storedValue = $_SESSION['appform']['contents']['Ethnicity'];
+				 							$storedValue = $_SESSION['appform']['contents']['DisabilityType'];
 				 							if($storedValue == $value) {
 				 								  $selected = 'selected';
 				 							} else {
@@ -375,11 +368,11 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 	
 		<div class="the-content">
 
-		<h1>Education</h1>
+		<h3>Education</h3>
 
-	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$courseID?>&pageid=3" >
+	  <form class="app-form" method="POST" action="/apply/adults/?courseid=<?=$courseID?>&pageid=3" >
 	  	<fieldset>
-	  		<legend>Secondary school</legend>
+
 	  	  <input type="hidden" name="courseid" value="<?=$courseID?>" />
 			  
 	  	    <div>
@@ -409,7 +402,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 			</fieldset>
 
-			<button type="button"><a href="/apply/?courseid=<?=$courseID?>&pageid=1">Back</a></button>
+			<button type="button"><a href="/apply/adults/?courseid=<?=$courseID?>&pageid=1">Back</a></button>
 			<input class="submit" type="submit" name="submit" value="Next Step" />
 			
 
@@ -425,7 +418,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools";
 
 <div class="the-content">
 
-	  <h1>Qualifications</h1>
+	  <h3>Qualifications</h3>
 
 	  <p>If you have not yet taken your exams, please provide us with your predicted grades. Please include information on all qualifications. ie GCSE, NVQs, BTEC, Diplomas, A levels or any other subjects you may have studied.
 
@@ -433,7 +426,7 @@ Please enter the details of your prior qualifications, choosing from the drop-do
 
 
 
-	  <form class="app-form" method="POST" action="/apply/?courseid=<?=$courseID?>&pageid=4" >
+	  <form class="app-form" method="POST" action="/apply/adults/?courseid=<?=$courseID?>&pageid=4" >
 	  	<fieldset>
 	  	  <input type="hidden" name="courseid" value="<?=$courseID?>" />
 
@@ -503,7 +496,7 @@ $sql = "SELECT Grade FROM Grades";
 			</fieldset>
 
 
-			<button type="button"><a href="/apply/?courseid=<?=$courseID?>&pageid=2">Back</a></button>
+			<button type="button"><a href="/apply/adults/?courseid=<?=$courseID?>&pageid=2">Back</a></button>
 			<input class="submit" type="submit" name="submit" value="Next Step" />
 
 
@@ -520,11 +513,11 @@ $sql = "SELECT Grade FROM Grades";
 
 <div class="the-content">
 
-<h1>Declaration </h1>
+<h3>Declaration </h3>
 <p>Please take time to read through this declaration before proceeding.</p>
 <p>I declare that to the best of my knowledge, the information given in this application is correct. Information provided on this form will be processed solely for the purpose of application to and enrolment on a course at the College.</p>
 
-<form class="app-form" method="POST" action="/apply/?courseid=<?=$courseID?>&pageid=5">
+<form class="app-form" method="POST" action="/apply/adults/?courseid=<?=$courseID?>&pageid=5">
 <fieldset>
 <label class="declaration" for="declaration">I agree to the data protection declaration above. Ticking the box serves as your signature</label>
 <input type="checkbox" name="StudentDeclaration" value="true" <?php
@@ -576,7 +569,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 </fieldset>
 
-			<button type="button"><a href="/apply/?courseid=<?=$courseID?>&pageid=3">Back</a></button>
+			<button type="button"><a href="/apply/adults/?courseid=<?=$courseID?>&pageid=3">Back</a></button>
 			<input class="submit" type="submit" name="submit" value="Submit" />
 </form>
 </div>
@@ -783,7 +776,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 
 	<div class="the-content">
-		<h1>Thank you for your application <i class="fa fa-thumbs-up"></i> </h1>
+		<h2>Thank you for your application <i class="fa fa-thumbs-up"></i> </h2>
 
 		<p>We’re delighted that you’ve chosen to apply to Knowsley Community College, you have applied for the 2018/2019 academic year.</p>
 

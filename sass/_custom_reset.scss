@@ -61,6 +61,7 @@ margin-top: 1em;
 margin-bottom: 1em;
 font-size: 1.1em;
 color: #373737;
+clear: both;
 }
 
 p strong {
@@ -71,6 +72,11 @@ h1, h2, h3, h4 {
 margin: 0;
 font-weight: bold;
 }
+
+.the-content h2, .the-content h3 {
+ clear: both;
+}
+
 .link-text {
 	display: none;
 }

@@ -36,24 +36,14 @@ float: left;
 font-size: 1.5em;
 }
 
-#livesearchbutton {
+#livesearchbutton, #showallcourses {
 width:25%; 
 margin-top: 1em; 
-background: inherit; 
+background: $primary-color;
 border: 0; 
 padding: 1em; 
-border: 1px solid #99cc66; 
+border: 1px solid $secondary-color; 
 color: white;
-}
-
-#showallcourses {
-width:25%; 
-margin-top: 1em; 
-background: inherit; 
-color: white; 
-border: 0; 
-padding: 1em; 
-border: 1px solid #99cc66;
 }
 
 @media screen and (max-width: 1234px) {
@@ -62,10 +52,7 @@ width: 40%;
 }
 }
 
-#showallcourses:hover {
-background: #99cc66;
-}
-#livesearchbutton:hover {
+#showallcourses:hover, #livesearchbutton:hover  {
 background: #99cc66;
 }
 
@@ -167,6 +154,11 @@ background: $secondary-color;
 margin: 0;
 }
 
+.app-form button {
+clear: both;
+float: left;
+}
+
 .app-form label {
 float: left;
 clear: both;
@@ -204,10 +196,14 @@ width: auto;
 
 .app-form .submit {
 display: inline-block;
+float: left;
+clear: both;
 }
 
 .app-form fieldset {
 margin-bottom: 1em;
+float: left;
+clear: both;
 }
 
 .app-form .quali-row {
@@ -233,30 +229,30 @@ float: left;
 width: 100px;
 }
 
-
 select.schoollist {
 text-transform: uppercase !important;
 }
 
 // Parsley Validation
 
-.parsley-errors-list {
-list-style-type: none;
-}
-
 .parsley-errors-list li {
-float: left;
-display: inline-block;
-margin-left: 10px;
+display: none;
 }
 
-input.parsley-error {
-background: $secondary-color;
+input.parsley-error, .parsley-error {
+color: #B94A48;
+background-color: #F2DEDE;
+border: 1px solid #EED3D7;
 }
 
 .parsley-required {
-color: $secondary-color;
-float: left;
+ float: left;
+}
+
+input.parsley-success, select.parsley-success, textarea.parsley-success, .radio-button-input .parsley-success {
+color: #468847;
+background-color: #DFF0D8;
+border: 1px solid #D6E9C6;
 }
 
 .highlight-hover {
@@ -270,7 +266,6 @@ background: $secondary-color !important;
 .page-section-hover-title h3 {
 color: white !important; 
 }
-
 .new-qualification-row {
 float: left;
 display: inline-block;
@@ -355,41 +350,6 @@ color: white;
 .enquire-button a:hover {
 font-weight: bold;
 color: white;
-}
-
-.newsletter-signup {
-float: left;
-background: $primary-color;
-margin-bottom: 1em 0px;
-}
-
-.newsletter-form-signup-bar label {
-font-size: 2em;
-color: white;
-}
-
-.newsletter-form-signup-bar .email-input {
-height: 2em;
-margin-left: gutter();
-width: 35%;
-}
-
-.newsletter-form-signup-bar .submit {
-padding: 0.5em;
-background: $secondary-color;
-color: white;
-}
-
-.newsletter-signup .parsley-errors-list li {
-color: white;
-position: absolute;
-right: 50px;
-width: 250px;
-top: -2em;
-}
-
-.newsletter-signup ul.parsley-errors-list {
-position: relative;
 }
 
 // Featured PDF

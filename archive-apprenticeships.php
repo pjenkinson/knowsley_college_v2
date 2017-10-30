@@ -42,7 +42,7 @@ get_header(); ?>
 
 <section>
 
-<div class="the-content" style="margin-top: 2em;">
+<div class="the-content">
 
 <p>If you are interested in applying for future KCC apprenticeship  vacancies, please email <a href="mailto:EmployerServices@knowsleycollege.ac.uk">EmployerServices@knowsleycollege.ac.uk</a> with your CV attached, noting your area of interest.</p>
 </div>
@@ -60,7 +60,6 @@ get_header(); ?>
 		</div>
 
 		<div class="description">
-			<div class="apprenticeship-image"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail()?></a></div>
 			<p><?php the_excerpt(); ?></p>
 		</div>
 
