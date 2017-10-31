@@ -81,16 +81,25 @@ if( have_rows('flexible_content') ):
 
 <!-- PAGE GRID -->
 
-
 <?php elseif( get_row_layout() == 'page_grid' ):?>
 
+<div class="page-sections-container">
 
-        	<?php while ( have_rows('page_grid') ) : the_row();
-?>
+
+        	<?php while ( have_rows('page_grid') ) : the_row();?>
+
 
  <!-- Thumbnail page section-->
 		<div class="page-sections page-sections-3col">
-			<a href="<?php the_sub_field('page_link'); ?><?php the_sub_field('permalink'); ?>" title="<?php the_sub_field('title'); ?>">
+			<a href="<?php if ( is_page( 'apply' ) ) { // Append course ID to ACF page link or URL ?>
+    
+    <?php the_sub_field('page_link'); ?><?php the_sub_field('permalink'); ?><?php echo '?courseid=' . $courseID ?>" title="<?php the_sub_field('title'); ?>
+
+<?php } else // Use selected page links or URL from ACF ?>
+
+  <?php the_sub_field('page_link'); ?><?php the_sub_field('permalink'); ?>" title="<?php the_sub_field('title'); ?>
+
+">
 			<div class="page-image">
 				<img src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('title'); ?>">
 			</div>
@@ -105,6 +114,8 @@ if( have_rows('flexible_content') ):
 
 
 <?php endwhile;?>
+
+	</div>
 
 
 <!-- QUICK LINKS -->

@@ -237,7 +237,7 @@ if($pageID == '1' || empty($pageID)) {
 				 		<?php
 				 	}
 				 	?>
-				 	<input type="hidden" name="AcademicYearID" value="17/18"/>
+				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 				 	<div>
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
 				 			<select class="select-inline" name="Offering2">

@@ -103,8 +103,7 @@ if($pageID == '1' || empty($pageID)) {
 		$sql = "SELECT factsheetname AS name
          	    FROM fact_sheets
              WHERE id = '".$courseID."'";
-
-    $courses = $wpdb->get_results($sql);
+    	$courses = $wpdb->get_results($sql);
 	  ?>
 
 	  <?php 
@@ -112,7 +111,7 @@ if($pageID == '1' || empty($pageID)) {
 	  $sql = "SELECT OfferingID
          	    FROM Offering
              WHERE CourseInformationID = '".$courseID."'";
-    $offeringid = $wpdb->get_results($sql);
+     $offeringid = $wpdb->get_results($sql);
     ?>
 
 	  <?php 
@@ -120,16 +119,14 @@ if($pageID == '1' || empty($pageID)) {
 		$sql = "SELECT OfferingID, AcademicYearID, Name
          	    FROM Offering
              WHERE CourseInformationID IS NOT NULL";
-
-    $offering = $wpdb->get_results($sql);?>
+        $offering = $wpdb->get_results($sql);?>
 
 
 
 	  <?php 
-							$sql = "SELECT DISTINCT programmearea FROM fact_sheets";
-
-							    $subjects = $wpdb->get_results($sql);
-						?>
+		$sql = "SELECT DISTINCT programmearea FROM fact_sheets";
+		$subjects = $wpdb->get_results($sql);
+	  ?>
 
 
     <?php $sql = "SELECT DisabilityID, Description
