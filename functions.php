@@ -56,6 +56,7 @@ add_filter('wp_title', 'af_titledespacer');
     array(
       'header-menu' => __( 'Primary Menu' ),
       'about-menu' => __( 'About Menu' ),
+      'school-leavers-a-levels' => __( 'A Levels' ),
       'alumni-menu' => __( 'Alumni Menu' ),
       'about-student-support-menu' => __( 'About Student Support' ),
       'about-services' => __( 'Services' ),

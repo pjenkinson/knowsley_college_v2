@@ -57,11 +57,48 @@ $exclude2 = $level['exclude_level_2'];
 $exclude3 = $level['exclude_level_3']; ?>
 
 
+<?php
+    $array = [];
+?>
+
+
+<?php if( have_rows('add_course') ): ?>
+    <?php while( have_rows('add_course') ): the_row(); ?>
+ 
+       <?php  
+
+       $course_id = get_sub_field('course_id');
+
+       $safe_course_id = filter_var($course_id, FILTER_SANITIZE_STRING);
+
+           //The [] syntax tells php to append the value to the existing array
+ 	   $original_array[] = str_split($safe_course_id, 5);
+
+ 	   $result = array();
+	   array_walk_recursive($original_array,function($v, $k) use (&$result){ $result[] = $v; });
+  	   ?>   
+    <?php endwhile; ?>
+<?php endif; ?>
+
+
+<?php if (empty($result)) {
+  
+  $coursesInString = '00000';
+
+ } else {
+
+ $coursesInString = implode(',', $result);
+
+ }
+
+?>
+
+
 <?php 
 
 // Query to auto list courses with programme area selected through Wordpress (ACF)
 
-$sql = 	 "SELECT DISTINCT id,
+$sql = "SELECT DISTINCT id,
                programmearea,
                factsheetname, 
                courseabout,
@@ -76,9 +113,24 @@ $sql = 	 "SELECT DISTINCT id,
 				/* Exclude levels using ACF */
 				AND level != '$exclude1' 
 				AND level != '$exclude2'
-				AND level != '$exclude3'";
+				AND level != '$exclude3'
+		UNION
+		SELECT DISTINCT id,
+               programmearea,
+               factsheetname, 
+               courseabout,
+               entryrequirements,
+               level,
+               course_url
+          FROM fact_sheets 
+          INNER JOIN Offering
+         	   On Offering.CourseInformationID=fact_sheets.id
+         WHERE id IN ($coursesInString) 
+				AND fact_sheets.id = Offering.CourseInformationID
+		ORDER BY level ASC";
 
 $courses = $wpdb->get_results($sql);
+
 
 ?>
 
@@ -107,28 +159,6 @@ $courses = $wpdb->get_results($sql);
 ?>
 
 
-<?php
-    $array = [];
-?>
-
-<?php if( have_rows('add_course') ): ?>
-    <?php while( have_rows('add_course') ): the_row(); ?>
- 
-       <?php  
-
-       $course_id = get_sub_field('course_id');
-
-       $safe_course_id = filter_var($course_id, FILTER_SANITIZE_STRING);
-
-           //The [] syntax tells php to append the value to the existing array
- 	   $array[] = str_split($safe_course_id, 5);
-  	   ?>   
-    <?php endwhile; ?>
-<?php endif; ?>
-
-<?php 
-    print_r($array);
-?>
 
 
 

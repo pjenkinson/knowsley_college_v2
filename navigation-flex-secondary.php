@@ -10,6 +10,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => '16-19' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'A Levels' ): ?>
+	<nav class="nav-secondary">
+	<?php wp_nav_menu( array( 'theme_location' => 'school-leavers-a-levels' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Apprentices' ): ?>
 	<nav class="nav-secondary apprenticeships-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'apprenticeships' ) ); ?>
