@@ -204,9 +204,6 @@ if($pageID == '1' || empty($pageID)) {
 
 	  			<p>Online applications are currently being taken for 2018 entry.</p>
 
-	  			<P>If you are still interested in joining us for this academic year, please call Learner Services on 0151 477 5850.</p>
-			
-			 
 
 		<h3>Personal details</h3>
 	  
