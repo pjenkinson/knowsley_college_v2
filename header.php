@@ -12,7 +12,7 @@
 if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?php else: ?><?php the_title();?><?php endif; ?>">
 <meta name="author" content="Knowsley Community College">
 
-<?php if (is_page_template('cron1.php')) { ?>
+<?php if (is_tag()) { ?>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <?php }?>
 
