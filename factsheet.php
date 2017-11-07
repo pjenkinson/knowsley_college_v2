@@ -82,6 +82,10 @@ jQuery( "#showallcourses" ).click(function() {
 </header>
 
 
+<!-- Gets factsheet ACF values
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<?php $factsheetWP = get_field('factsheet_information'); ?>
+
 
 
 <!-- Main content
@@ -214,13 +218,21 @@ jQuery( "#showallcourses" ).click(function() {
 
 
    
-    <li><a href="#overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
-    <li><a href="#units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
-    <li><a href="#careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
+    <li><a href="#overview" title="Course overview">Course Overview <i class="fa fa-eye" aria-hidden="true"></i></a></li>
+    <li><a href="#units" title="Units">Units <i class="fa fa-list-ol" aria-hidden="true"></i></a></li>
+    <li><a href="#careers"  title="Careers">Careers <i class="fa fa-map-signs" aria-hidden="true"></i></a></li>
     <!--<li><a href="#print">Print <i class="fa fa-print" aria-hidden="true"></i></a></li>-->
-    <li class="apply-tab"><a href="#apply">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
     
-    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php } else {}?>
+    <?php if (!empty($factsheetWP['entry_requirements'])) {?>
+    <li><a href="#entry-requirements" title="Entry requirements">Entry Requirements <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+    <?php }?>
+    <?php if (!empty($factsheetWP['course_fees'])) {?>
+    <li><a href="#course-fees" title="Course fees">Course Fees <i class="fa fa-gbp" aria-hidden="true"></i></a></li>
+    <?php }?>
+    
+    <?php if ($factsheet->programmearea == 'Higher Education') {?><li id="unistats-tab"><a href="#unistats" title="Unistats">Unistats <i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li><?php }?>
+
+    <li class="apply-tab"><a href="#apply">Apply <i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
   </ul>
 
 
@@ -228,6 +240,8 @@ jQuery( "#showallcourses" ).click(function() {
   </div>
 
   <!-- FACTSHEET TABS -->
+
+
 
   <!-- BEGIN OVERVIEW TAB -->
 
@@ -238,14 +252,18 @@ jQuery( "#showallcourses" ).click(function() {
     <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-    <?php if (!empty($factsheet->courseabout)) {?>
+    
 
     <!-- BEGIN ABOUT SECTION-->
 
     <section class="content-snippet <?php if( get_sub_field('separator') ): ?><?php echo 'content-snippet-separator'?><?php endif; ?>">
         <div class="two-col-section-main">
         <h2 class="section-heading section-heading-colour">About</h2>
+        <?php if (!empty($factsheetWP['about'])) {?>
+        <p><?php echo $factsheetWP['about']; ?></p>
+        <?php } else if (!empty($factsheet->courseabout)) {  ?>
         <p><?=$factsheet->courseabout?></p>
+        <?php }?>
         </div>
         <div class="two-col-section-side two-col-section-image">
           <div class="section-image-container">
@@ -261,8 +279,6 @@ jQuery( "#showallcourses" ).click(function() {
 
     <!-- END ABOUT SECTION -->
 
-    <?php } ?>
-
 
     <div class="full-width-container content-snippet content-snippet-separator"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
@@ -272,69 +288,64 @@ jQuery( "#showallcourses" ).click(function() {
         <!-- BEGIN DETAILS -->
 
 
-    <?php if (!empty($factsheet->entryrequirements)) {?>
 
     <h2 class="section-heading">Entry requirements <i class="fa fa-sign-in" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->entryrequirements?></p>
+    <?php if (!empty($factsheetWP['entry_requirements'])) {?>
+        <p><?php echo $factsheetWP['entry_requirements']; ?></p>
+        <?php } else if (!empty($factsheet->courseabout)) {  ?>
+        <p><?=$factsheet->entryrequirements?></p>
+        <?php }?>
 
-    <?php } ?>
-
-    <?php if (!empty($factsheet->keywords)) {?>
 
     <h2 class="section-heading">Finance <i class="fa fa-gbp" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->keywords?></p>
+    <?php if (!empty($factsheetWP['finance'])) {?>
+        <p><?php echo $factsheetWP['finance']; ?></p>
+        <?php } else if (!empty($factsheet->keywords)) {  ?>
+        <p><?=$factsheet->keywords?></p>
+        <?php }?>
 
-    <?php } ?>
+        <?php if (!empty($factsheetWP['assessed'])) {?>
 
+        <h2 class="section-heading">Assessed <i class="fa fa-gbp" aria-hidden="true"></i></h2>
     
+        <p><?php echo $factsheetWP['assessed']; ?></p>
 
-    
+        <?php }?>
+
+
 
 
       </div>
 
 
       <div class="two-col-section-side">
-       
-
-
-     <?php if (!empty($factsheet->duration)) {?>
-
-    
-
-    <?php } else {}; ?>
-
-    <?php if (!empty($factsheet->progression)) {?>
+      
 
     <h2 class="section-heading">Progression and Careers <i class="fa fa-level-up" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->progression?></p>
-
-    <?php } else {}; ?>
-
-    <?php if (!empty($factsheet->location)) {?>
+    <?php if (!empty($factsheetWP['progression_and_careers'])) {?>
+        <p><?php echo $factsheetWP['progression_and_careers']; ?></p>
+        <?php } else if (!empty($factsheet->progression)) {  ?>
+        <p><?=$factsheet->progression?></p>
+        <?php }?>
 
     <h2 class="section-heading">Where you will study <i class="fa fa-map-marker" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->location?></p>
-
-    <?php } else {}; ?>
-
-
-    <?php if (!empty($factsheet->duration)) {?>
+    <?php if (!empty($factsheetWP['location'])) {?>
+        <p><?php echo $factsheetWP['location']; ?></p>
+        <?php } else if (!empty($factsheet->location)) { ?>
+        <p><?=$factsheet->location?></p>
+        <?php }?>
 
     <h2 class="section-heading">Duration <i class="fa fa-calendar" aria-hidden="true"></i></h2>
-    <p><?=$factsheet->duration?></p>
+    <?php if (!empty($factsheetWP['duration'])) {?>
+        <p><?php echo $factsheetWP['duration']; ?></p>
+        <?php } else if (!empty($factsheet->duration)) {  ?>
+        <p><?=$factsheet->duration?></p>
+        <?php }?>
 
-    <?php } ?>
 
       </div>  
 
-
-
-      
-
-
     
-
        <!-- END DETAILS -->
 
        </div>  <!-- End Fixed Container -->
@@ -393,13 +404,19 @@ jQuery( "#showallcourses" ).click(function() {
 
   <h2 class="section-heading">Units you will study include:</h2>
   
-  <ul>
-    <li><?=$factsheet->unit1?></li>
-    <li><?=$factsheet->unit2?></li>
-    <li><?=$factsheet->unit3?></li>
-    <li><?=$factsheet->unit4?></li>
-  </ul>
 
+  <?php if (!empty($factsheetWP['units'])) {?>
+        <?php echo $factsheetWP['units']; ?>
+        <?php } else if (!empty($factsheet->unit1)) {  ?>
+        <ul>
+          <li><?=$factsheet->unit1?></li>
+          <li><?=$factsheet->unit2?></li>
+          <li><?=$factsheet->unit3?></li>
+          <li><?=$factsheet->unit4?></li>
+        </ul>
+
+        <?php }?>
+    
   </div>
 
 
@@ -421,6 +438,11 @@ jQuery( "#showallcourses" ).click(function() {
 
     <h2 class="section-heading">Careers</h2>
 
+
+  <?php if (!empty($factsheetWP['careers'])) {?>
+        <?php echo $factsheetWP['careers']; ?>
+        <?php } else {  ?>
+
     <p>You can look into careers in <?=$factsheet->programmearea?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
 
     <h3>National Careers Service: Job Profiles</h3>
@@ -436,7 +458,7 @@ jQuery( "#showallcourses" ).click(function() {
 
     </ul>
 
-    
+    <?php } ?>
 
      </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
@@ -446,32 +468,81 @@ jQuery( "#showallcourses" ).click(function() {
 
   </div>
 
- <?php /*
 
-  <div id="print" class="tab-section">
 
-    <!-- BEGIN PRINT TAB -->
 
-    <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+
+<?php if (!empty($factsheetWP['entry_requirements'])) {?>
+
+  <div id="entry-requirements" class="tab-section">
+
+    <!-- BEGIN ENTRY REQUIREMENTS TAB -->
+
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
       <div class="fixed-container"> <!-- Begin Fixed Container -->
 
-      <div class="full-width-container content-snippet">
+      <h2 class="section-heading">Entry Requirements</h2>
 
-        <h2 class="section-heading">Print Factsheet</h2>
+      
 
-        <h3><?=$factsheet->name?></h3>
-        <p><a href="#print" onclick="window.print();">Print factsheet <i class="fa fa-print" aria-hidden="true"></i></a></p>
+    
+        <?php echo $factsheetWP['entry_requirements']; ?>
 
-      </div>
+       
 
-      <!-- END PRINT TAB -->
 
-       </div>  <!-- End Fixed Container -->
+      
+
+    </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
 
 
-  </div>
-*/?>
+    </div>
+
+    <!-- END ENTRY REQUIREMENTS TAB -->
+
+   <?php }  ?>
+
+
+
+
+
+
+   <?php if (!empty($factsheetWP['course_fees'])) {?>
+
+  <div id="course-fees" class="tab-section">
+
+    <!-- BEGIN COURSE FEES TAB -->
+
+      <div class="full-width-container content-snippet"> <!-- Begin Full Width Container -->
+      <div class="fixed-container"> <!-- Begin Fixed Container -->
+
+      <h2 class="section-heading">Course Fees</h2>
+
+    
+        <?php echo $factsheetWP['course_fees']; ?>
+
+      
+
+    </div>  <!-- End Fixed Container -->
+    </div>  <!-- End Full Width Container -->
+
+
+    </div>
+
+    <!-- END COURSE FEES TAB -->
+
+   <?php }  ?>
+
+
+
+
+
+
+
+
+
+
 
   <div id="apply" class="tab-section">
 
@@ -482,12 +553,12 @@ jQuery( "#showallcourses" ).click(function() {
 
       <h2 class="section-heading">Apply</h2>
 
-      <p>To apply for <strong><?=$factsheet->name?></strong>, use the online application form or call 0151 477 5850 for more information.</p>
+      <p>To apply for <strong><?=$factsheet->name?></strong>, use the <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply online">online application form</a> or call 0151 477 5850 for more information.</p>
 
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
       <div class="button-default">
-        <a href="/apply/?courseid=<?=$factsheet->id?>">Apply</a>
+        <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply">Apply</a>
       </div>
 
       </div>
