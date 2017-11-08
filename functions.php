@@ -173,7 +173,12 @@ function knowsley_college_scripts() {
 
 	if (is_page_template('page-apply-school-leavers.php') )
 		{
-	wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/inc/touch-punch-min.js', array('jquery'), '20130234', true );
+	wp_enqueue_script( 'picker', get_template_directory_uri() . '/inc/pickadate/picker.js', array('jquery'), '20130276', true );
+	wp_enqueue_script( 'picker-date', get_template_directory_uri() . '/inc/pickadate/picker.date.js', array('jquery'), '20130277', true );
+	wp_enqueue_script( 'picker-legacy', get_template_directory_uri() . '/inc/pickadate/legacy.js', array('jquery'), '20130278', true );
+
+	wp_enqueue_style( 'picker-default-style', get_template_directory_uri() . '/inc/pickadate/themes/default.css' );
+	wp_enqueue_style( 'picker-default-date-style', get_template_directory_uri() . '/inc/pickadate/themes/default.date.css' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

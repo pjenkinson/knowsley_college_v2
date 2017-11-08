@@ -64,7 +64,7 @@ footer h1, footer h2, footer h3, footer h4 {
 $primary-padding: 2em;
 
 // Tables
-table {
+.flexible-content-container table {
 	float: left;
 	clear: both;
 	border-collapse: collapse;
@@ -74,37 +74,37 @@ table {
 	border: none;
 }
 
-table td, table th {
+.flexible-content-container table td, .flexible-content-container table th {
 	text-align: center;
 }
 
-table.apprenticeship-vacancies {
+.flexible-content-container table.apprenticeship-vacancies {
 	width: 100%;
 }
 
-thead tr {
+.flexible-content-container thead tr {
 	background: $primary-color;
 	color: white;
 }
 
-tbody tr:nth-child(even) {
+.flexible-content-container tbody tr:nth-child(even) {
 	background: #ededed;
 }
 
-tbody tr:nth-child(odd) {
+.flexible-content-container tbody tr:nth-child(odd) {
 	background: $off-white;
 }
 
-tfoot tr {
+.flexible-content-container tfoot tr {
 	background: $secondary-color;
 	color: white;
 }
 
-th {
+.flexible-content-container th {
 	text-align: left;
 }
 
-th, td {
+.flexible-content-container th, .flexible-content-container td {
 	padding: 1em !important;
 }
 

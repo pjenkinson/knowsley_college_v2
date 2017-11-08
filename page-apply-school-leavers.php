@@ -17,6 +17,8 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <script>
 
+/*
+
 jQuery( document ).ready(function() {
 
 	bindDatePicker()
@@ -31,6 +33,24 @@ function bindDatePicker() {
         dateFormat: 'yy-mm-dd'
     });
 }
+
+*/
+
+</script>
+
+<script>
+jQuery( document ).ready(function() {
+	jQuery('.datepicker').pickadate({
+		labelMonthNext: 'Go to the next month',
+  		labelMonthPrev: 'Go to the previous month',
+  		labelMonthSelect: 'Pick a month from the dropdown',
+  		labelYearSelect: 'Pick a year from the dropdown',
+  		selectMonths: true,
+  		selectYears: 41,
+  		format: 'yyyy-mm-dd',
+  		formatSubmit: 'yyyy/mm/dd',
+	})
+});
 </script>
 
 
@@ -257,7 +277,7 @@ if($pageID == '1' || empty($pageID)) {
 
 			<label for="DateOfBirth">Date of birth:</label>
 
-			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" placeholder="YYYY-MM-DD" maxlength="10" required/>
+			  <input class="datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" placeholder="YYYY-MM-DD" maxlength="10" required/>
 
 			  
 			  <label for="Address1">Address line 1</label><input class="input-inline" type="text" name="Address1" value="<?=$_SESSION['appform']['contents']['Address1']?>" required />
@@ -748,5 +768,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	</div>
 
 </div>
+
+
+
+
 </main><!-- #main -->
 <?php get_footer(); ?>

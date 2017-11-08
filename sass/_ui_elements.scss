@@ -159,6 +159,11 @@ clear: both;
 float: left;
 }
 
+.app-form .picker button {
+ clear: none;
+ float: none;
+}
+
 .app-form label {
 float: left;
 clear: both;
