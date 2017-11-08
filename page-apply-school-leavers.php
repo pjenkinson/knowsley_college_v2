@@ -33,6 +33,23 @@ function bindDatePicker() {
 }
 </script>
 
+
+<script>
+ jQuery(document).ready(function(){
+ 	
+ 	jQuery("#course-select-options").hide();	
+
+    jQuery("#hide").click(function(){
+        jQuery("#course-select-options").hide(500);
+        event.preventDefault();
+    });
+    jQuery("#show").click(function(){
+        jQuery("#course-select-options").show(500);
+        event.preventDefault();
+    });
+});
+</script>
+
 </header>
 
 <!-- Breadcrumbs
@@ -42,7 +59,7 @@ function bindDatePicker() {
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<?php get_template_part( 'branding-flex' );?>
 
 
 <!-- Page content 
@@ -196,6 +213,12 @@ if($pageID == '1' || empty($pageID)) {
 
     $EntryLevelCourses = $wpdb->get_results($sql);?>
 
+    <?php $sql = "SELECT sid, area
+         	   FROM CollegeAreas
+         	   ORDER BY area ASC";
+
+    $sid = $wpdb->get_results($sql);?>
+
 
 	  <form class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 	  		 <div class="the-content">
@@ -307,12 +330,49 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 
 			
 
-				 		<h3>Course choice</h3>
-				 		<fieldset>
+				 		<h3>Subject and course choice</h3>
+
+
+				 		 <fieldset>
+
+					   	<div>
+							<label class="course-choice" for="sid">Select the subject you are interested in studying:</label>
+							<select class="select-inline" name="sid" required="">
+								<option value="">Please Select</option>
+								<?php
+								foreach($sid AS $key => $value) {
+								$storedValue = $_SESSION['appform']['contents']['sid'];
+								if($storedValue == $value) {
+								$selected = 'selected';
+								} else {
+								$selected = '';
+								}
+								?>
+
+
+								<option value="<?=$value->sid?>">
+								<?=$value->area?> 
+								</option>
+
+
+								<?php
+								}
+								?>
+							</select>
+						</div>
+
+
+						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Show course options</a></div>
+
+						</fieldset>
+
+
+
+				 		<fieldset id="course-select-options">
 				 		  <?php
 					if(!empty($courses)) {
 						?>
-					  <p>You have selected the following courses to apply for,</p>
+					  <p>You have selected the following courses:</p>
 
 					  <ul>
 					  	<li><?=$courses[0]->name?></li>
@@ -324,11 +384,11 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 	} else {
 				 		?>
 				 		
-				 		<p>Which course/subject are you interested in studying?</p>	
+				 		<p>Please select your course choices (Optional):</p>	
 
 				 		<div>
 				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
-				 			<select class="select-inline" name="Offering1" required>
+				 			<select class="select-inline" name="Offering1">
 				 				  <option value="">Please Select</option>
 				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
 
@@ -339,7 +399,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 	?>
 				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 				 	<div>
-				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
+				 		  <label class="course-choice" for="Offering2">Select your second choice course</label>
 				 			<select class="select-inline" name="Offering2">
 				 				  <option value="">Please Select</option>
 				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
@@ -347,13 +407,19 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 			</select>
 				 	</div>
 				 	<div>
-				 			<label class="course-choice" for="Offering3">Select your third choice course (Optional)</label>
+				 			<label class="course-choice" for="Offering3">Select your third choice course</label>
 				 			<select class="select-inline" name="Offering3">
 				 					<option value="">Please Select</option>
 				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
 				 			</select>
 				 	</div>
+
+
+				 	<div class="button-default form-button" id="hide"><a href=""><i class="fa fa-minus" aria-hidden="true"></i> Hide course options</a></div>
+
+
 				 </fieldset>
+
 
 			<h3>Marketing</h3>
 
@@ -419,7 +485,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 </fieldset>	 
 
-<h3>Data Protection</h3>
+<h3>Data protection</h3>
 <fieldset>
 	<p>Knowsley Community College is registered under the Data Protection Act 1988. Information we process about you may be used for planning, analysis, marketing and any other purpose deemed necessary. Your information may also be shared with other official organisations such as your school and Local Education Authorities. Please contact enquiries (Tel: 0151 477 5850) if you have any concerns about the use or accuracy of your information.</p>
 
@@ -462,6 +528,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 										 	`Offering1ID`,
 											`Offering2ID`,
 											`Offering3ID`,
+											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
 											`Surname`,
@@ -478,8 +545,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`PostCodeOut`,
 											`PostCodein`,
 											`LastSchool`,
-											`SchoolAttendedFrom`,
-											`SchoolAttendedTo`,
 											`ParentFirstName`,
 											`ParentSurname`,
 											`ParentPhoneNumber`,
@@ -493,6 +558,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['Offering1']."',
 											'".$insertData['Offering2']."',
 											'".$insertData['Offering3']."',
+											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
 											'".$insertData['Surname']."',
@@ -509,8 +575,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
 											'".$insertData['LastSchool']."',
-											'".$insertData['SchoolAttendedFrom']."',
-											'".$insertData['SchoolAttendedTo']."',
 											'".$insertData['ParentFirstName']."',
 											'".$insertData['ParentSurname']."',
 											'".$insertData['ParentPhoneNumber']."',
@@ -554,6 +618,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 										 	`Offering1ID`,
 											`Offering2ID`,
 											`Offering3ID`,
+											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
 											`Surname`,
@@ -570,8 +635,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`PostCodeOut`,
 											`PostCodein`,
 											`LastSchool`,
-											`SchoolAttendedFrom`,
-											`SchoolAttendedTo`,
 											`ParentFirstName`,
 											`ParentSurname`,
 											`ParentPhoneNumber`,
@@ -585,6 +648,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['Offering1']."',
 											'".$insertData['Offering2']."',
 											'".$insertData['Offering3']."',
+											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
 											'".$insertData['Surname']."',
@@ -601,8 +665,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
 											'".$insertData['LastSchool']."',
-											'".$insertData['SchoolAttendedFrom']."',
-											'".$insertData['SchoolAttendedTo']."',
 											'".$insertData['ParentFirstName']."',
 											'".$insertData['ParentSurname']."',
 											'".$insertData['ParentPhoneNumber']."',

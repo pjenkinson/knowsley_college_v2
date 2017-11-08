@@ -165,8 +165,8 @@ clear: both;
 display: block;
 min-width: 267px;
 width: auto;
-padding: 0.5em;
-padding-left: none;
+padding: 0.5em 0.5em 0.5em 0;
+margin-bottom: 0.5em;
 }
 
 .app-form input {
@@ -201,7 +201,7 @@ clear: both;
 }
 
 .app-form fieldset {
-margin-bottom: 1em;
+margin: 1em 0 1em 0;
 float: left;
 clear: both;
 }
