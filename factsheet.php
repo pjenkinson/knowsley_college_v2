@@ -193,12 +193,19 @@ jQuery( "#showallcourses" ).click(function() {
             <span class="highlight-text"> 
             <?php if (!empty($factsheet->name)) {?>
             <?=$factsheet->level?>
-            <?php } else if {  
+            <?php } else{  
              echo $factsheetWP['level'];
             }?>
            </span>
 
-           <?php if (!empty($factsheet->qualification_type)) {?>
+           
+
+            <?php if ($factsheetWP['qual_type'] == 'A Level') { ?>
+            <?php // DO NOTHING ?>
+
+            <?php } else {  
+
+if (!empty($factsheet->qualification_type)) {?>
             <?=$factsheet->qualification_type?>
             <?php } else {  
              echo $factsheetWP['qual_type'];
@@ -208,7 +215,10 @@ jQuery( "#showallcourses" ).click(function() {
             <?=$factsheet->programmearea?>
             <?php } else {  
              echo $factsheetWP['area'];
-            }?>
+            }
+
+            }
+            ?>
 
 
             </p>
@@ -643,10 +653,14 @@ jQuery( "#showallcourses" ).click(function() {
 
 </div>
 
+<?php if ($factsheetWP['qual_type'] == 'A Level') { ?>
+            <?php $searchvalue = $factsheetWP['area']; ?>
+
+            <?php } else { $searchvalue = $factsheet->programmearea; }?>
   
 <script>
 jQuery(document).ready(function() {
-     jQuery('#livesearch').val('<?=$factsheet->programmearea?>').trigger('keyup'); 
+     jQuery('#livesearch').val('<?php echo $searchvalue ?>').trigger('keyup'); 
 });     
 </script>
 
