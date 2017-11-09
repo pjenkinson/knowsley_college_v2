@@ -1,7 +1,6 @@
 <?php
 /**
 * Template Name: School Leavers Application Page
-* @package knowsley_college
 */
 
 if(!session_id()) {
@@ -13,30 +12,8 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>
 
-<!-- jQuery datepicker 
+<!-- pickadate.js
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<script>
-
-/*
-
-jQuery( document ).ready(function() {
-
-	bindDatePicker()
-
- });
-
-function bindDatePicker() {
-	jQuery( ".datepicker" ).datepicker({
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '1940:2020',
-        dateFormat: 'yy-mm-dd'
-    });
-}
-
-*/
-
-</script>
 
 <script>
 jQuery( document ).ready(function() {
@@ -46,6 +23,7 @@ jQuery( document ).ready(function() {
   		labelMonthSelect: 'Pick a month from the dropdown',
   		labelYearSelect: 'Pick a year from the dropdown',
   		selectMonths: true,
+  		showMonthsShort: true,
   		selectYears: 41,
   		format: 'yyyy-mm-dd',
   		formatSubmit: 'yyyy/mm/dd',
@@ -53,6 +31,8 @@ jQuery( document ).ready(function() {
 });
 </script>
 
+<!-- Show/Hide course options
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script>
  jQuery(document).ready(function(){

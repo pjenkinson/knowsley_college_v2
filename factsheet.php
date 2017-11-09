@@ -184,8 +184,34 @@ jQuery( "#showallcourses" ).click(function() {
 
       <div class="factsheet-title">
           <div class="factsheet-title-bg">
+            <?php if (!empty($factsheet->name)) {?>
             <h1><?=$factsheet->name?></h1>
-            <p><span class="highlight-text"><?=$factsheet->level?></span> <?=$factsheet->qualification_type?> in <?=$factsheet->programmearea?></p>
+            <?php } else {  ?>
+            <h1><?php wp_title('');?></h1>
+             <?php }?>
+            <p>
+            <span class="highlight-text"> 
+            <?php if (!empty($factsheet->name)) {?>
+            <?=$factsheet->level?>
+            <?php } else if {  
+             echo $factsheetWP['level'];
+            }?>
+           </span>
+
+           <?php if (!empty($factsheet->qualification_type)) {?>
+            <?=$factsheet->qualification_type?>
+            <?php } else {  
+             echo $factsheetWP['qual_type'];
+            }?>
+
+            in <?php if (!empty($factsheet->programmearea)) {?>
+            <?=$factsheet->programmearea?>
+            <?php } else {  
+             echo $factsheetWP['area'];
+            }?>
+
+
+            </p>
 
           </div>
       </div>
@@ -443,7 +469,10 @@ jQuery( "#showallcourses" ).click(function() {
         <?php echo $factsheetWP['careers']; ?>
         <?php } else {  ?>
 
-    <p>You can look into careers in <?=$factsheet->programmearea?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
+    <p>You can look into careers in <?php if (!empty($factsheet->programmearea)) {?><?=$factsheet->programmearea?>
+            <?php } else {  
+             echo $factsheetWP['area'];
+            }?>, by visiting <a href="https://nationalcareersservice.direct.gov.uk/job-profiles/home">National Careers Service website <i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
 
     <h3>National Careers Service: Job Profiles</h3>
 
@@ -553,7 +582,11 @@ jQuery( "#showallcourses" ).click(function() {
 
       <h2 class="section-heading">Apply</h2>
 
-      <p>To apply for <strong><?=$factsheet->name?></strong>, use the <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply online">online application form</a> or call 0151 477 5850 for more information.</p>
+      <p>To apply for <?php if (!empty($factsheet->name)) {?>
+            <strong><?=$factsheet->name?></strong>
+            <?php } else {  ?>
+            <strong><?php wp_title('');?></strong>
+             <?php }?>, use the <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply online">online application form</a> or call 0151 477 5850 for more information.</p>
 
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 

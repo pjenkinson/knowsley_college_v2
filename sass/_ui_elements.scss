@@ -296,7 +296,18 @@ list-style-type: none;
 padding: 1em;
 }
 
-// UI Datepicker
+// pickadate
+
+.picker__select--month, .picker__select--year  {
+ width: auto !important;
+}
+
+.app-form .picker button {
+ width: 8em !important;
+}
+
+// jQuery Datepicker
+
 
 .ui-datepicker-header {
 background: $secondary-color;

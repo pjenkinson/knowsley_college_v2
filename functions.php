@@ -141,8 +141,6 @@ function knowsley_college_scripts() {
     'screen, print' // CSS media type
     );
 
-	wp_enqueue_script('jquery-ui-datepicker');
-
 	wp_enqueue_script('jquery-ui-autocomplete');
 
 	wp_enqueue_script('jquery-ui-accordion');
@@ -152,8 +150,6 @@ function knowsley_college_scripts() {
 	wp_enqueue_script( 'knowsley_college-skip-link-focus-fix', get_template_directory_uri() . '/inc/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'matchHeight', get_template_directory_uri() . '/inc/matchHeight/matchHeight.min.js', array(), '20140116', true );
-
-	wp_enqueue_script( 'parsley', get_template_directory_uri() . '/inc/parsley/parsley.min.js', array(), '20130118', true );
 
 	wp_enqueue_script( 'jquery_collapse', get_template_directory_uri() . '/inc/jquery.collapse.js', array(), '20130318', true );
 
@@ -171,11 +167,15 @@ function knowsley_college_scripts() {
 
 	wp_enqueue_script( 'select2-script', get_template_directory_uri() . '/inc/select2/select2.js', array('jquery'), '20130216', true );
 
-	if (is_page_template('page-apply-school-leavers.php') )
+	if (is_page_template('page-apply-school-leavers.php' || 'page-apply.php') )
 		{
 	wp_enqueue_script( 'picker', get_template_directory_uri() . '/inc/pickadate/picker.js', array('jquery'), '20130276', true );
 	wp_enqueue_script( 'picker-date', get_template_directory_uri() . '/inc/pickadate/picker.date.js', array('jquery'), '20130277', true );
 	wp_enqueue_script( 'picker-legacy', get_template_directory_uri() . '/inc/pickadate/legacy.js', array('jquery'), '20130278', true );
+
+    // Parsley (Form Validation)
+	wp_enqueue_script( 'parsley', get_template_directory_uri() . '/inc/parsley/parsley.min.js', array(), '20130118', true );
+
 
 	wp_enqueue_style( 'picker-default-style', get_template_directory_uri() . '/inc/pickadate/themes/default.css' );
 	wp_enqueue_style( 'picker-default-date-style', get_template_directory_uri() . '/inc/pickadate/themes/default.date.css' );

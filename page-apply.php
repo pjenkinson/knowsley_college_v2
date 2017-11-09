@@ -1,7 +1,6 @@
 <?php
 /**
 * Template Name: Apply Page
-* @package knowsley_college
 */
 
 if(!session_id()) {
@@ -12,23 +11,23 @@ get_header(); ?>
 <!-- Scroll to top  -->
 <?php get_template_part( 'navigation', 'scroll' );?>
 
-<!-- jQuery datepicker -->
+<!-- pickadate.js
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
 <script>
-
 jQuery( document ).ready(function() {
-
-	bindDatePicker()
-
- });
-
-function bindDatePicker() {
-	jQuery( ".datepicker" ).datepicker({
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '1940:2020',
-        dateFormat: 'yy-mm-dd'
-    });
-}
+	jQuery('.datepicker').pickadate({
+		labelMonthNext: 'Go to the next month',
+  		labelMonthPrev: 'Go to the previous month',
+  		labelMonthSelect: 'Pick a month from the dropdown',
+  		labelYearSelect: 'Pick a year from the dropdown',
+  		selectMonths: true,
+  		showMonthsShort: true,
+  		selectYears: 41,
+  		format: 'yyyy-mm-dd',
+  		formatSubmit: 'yyyy/mm/dd',
+	})
+});
 </script>
 
 </header>
@@ -197,7 +196,6 @@ if($pageID == '1' || empty($pageID)) {
 	  	<div class="the-content" style="margin-bottom: 1em;">
 		 	
 		  <P>Online applications are currently being taken for 2018 entry.</P>
-		  <p>If you are still interested in joining us for this academic year, please call Learner Services on 0151 477 5850.</p>
 		 </div>
 
 	  				
@@ -267,7 +265,7 @@ if($pageID == '1' || empty($pageID)) {
 			  <label for="Title">Title:</label>
 			  	<input class="input-inline"  type="text" name="Title" value="<?=$_SESSION['appform']['contents']['Title']?>" />
 			  <label for="DateOfBirth">Date of birth:</label>
-			  <input class="input-inline datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" required/>
+			  <input class="datepicker" type="text" name="DateOfBirth" value="<?=$_SESSION['appform']['contents']['DateOfBirth']?>" required/>
 			  <label for="Sex">Gender:</label>
 			  	<select class="select-inline" type="text" name="Sex" required>
   						<option value="male" <?php
@@ -781,12 +779,6 @@ $sql = "SELECT HeardAboutCollegeID, Description
 		<p>We’re delighted that you’ve chosen to apply to Knowsley Community College, you have applied for the 2018/2019 academic year.</p>
 
 		<p>You will soon be contacted by a member of the KCC team to invite you to an Information Evening. You will have an opportunity to find out more about your course and to speak to our tutors. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
-
-		<p>Our enrolment dates for 2017 have now passed; however it's not too late to enrol and there are still limited places available.</p>
- 
-<p>In order to secure your place with us, you must enrol at our Main Campus. Our Learner Services team can help you through the enrolment process. Learner Services is open 8:45am to 5pm Monday to Friday</p>
-
-<p>If you have any questions in the meantime, please call Learner Services on <a href="tel:01514775850">0151 477 5850</a>.</p>
 
 	</div>
 

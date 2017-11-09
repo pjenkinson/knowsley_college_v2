@@ -64,7 +64,16 @@ footer h1, footer h2, footer h3, footer h4 {
 $primary-padding: 2em;
 
 // Tables
-.flexible-content-container table {
+
+#advanced-search-table {
+ width: 100%;
+}
+
+table.stacktable {
+ width: 100%;
+}
+
+.flexible-content-container table, .stacktable table {
 	float: left;
 	clear: both;
 	border-collapse: collapse;
@@ -74,7 +83,7 @@ $primary-padding: 2em;
 	border: none;
 }
 
-.flexible-content-container table td, .flexible-content-container table th {
+.flexible-content-container table td, .flexible-content-container table th, .stacktable table td, .stacktable table th {
 	text-align: center;
 }
 
@@ -82,29 +91,29 @@ $primary-padding: 2em;
 	width: 100%;
 }
 
-.flexible-content-container thead tr {
+.flexible-content-container thead tr, .stacktable thead tr {
 	background: $primary-color;
 	color: white;
 }
 
-.flexible-content-container tbody tr:nth-child(even) {
+.flexible-content-container tbody tr:nth-child(even), .stacktable tbody tr:nth-child(even) {
 	background: #ededed;
 }
 
-.flexible-content-container tbody tr:nth-child(odd) {
+.flexible-content-container tbody tr:nth-child(odd), .stacktable tbody tr:nth-child(odd) {
 	background: $off-white;
 }
 
-.flexible-content-container tfoot tr {
+.flexible-content-container tfoot tr, .stacktable tfoot tr {
 	background: $secondary-color;
 	color: white;
 }
 
-.flexible-content-container th {
+.flexible-content-container th, .stacktable th {
 	text-align: left;
 }
 
-.flexible-content-container th, .flexible-content-container td {
+.flexible-content-container th, .flexible-content-container td, .stacktable th, .stacktable td  {
 	padding: 1em !important;
 }
 
