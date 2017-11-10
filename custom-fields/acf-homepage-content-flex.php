@@ -222,13 +222,10 @@ elseif( get_row_layout() == 'page_grid' ):?>
 	<?php while ( have_rows('campus_info') ) : the_row();?>
 
 	<div class="contact-sections">
-		<div class="page-image">
-			<img src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('title'); ?>">
-			<div class="heading">
-					<h3><?php the_sub_field('title'); ?></h3>
-				</div>
-		</div>
-			<div class="page-description">
+		
+			<div class="contact-details">
+                  <h3><?php the_sub_field('title'); ?></h3>
+
 				<p><i class="fa fa-phone"></i><a href="tel:<?php the_sub_field('telephone'); ?>"><?php the_sub_field('telephone'); ?></a></p>
 				<p><i class="fa fa-envelope"></i></i><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p>
 				<address>

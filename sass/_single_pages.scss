@@ -593,19 +593,17 @@ input[type=checkbox] {
 	margin: 0px;
 }
 
-.contact-sections .page-description {
-	width: 100%;
+.contact-sections {
 	float: left;
 	background: white;
 }
 
-.contact-sections .page-description p {
-	padding: 0px 1em;
+.contact-details {
+	padding: gutter();
 }
 
-.contact-sections .page-description address {
-	padding: 0.5em 1em;
-
+.contact-details address p {
+	margin-top: 0;
 }
 
 .contact-sections .page-image {
@@ -624,19 +622,18 @@ input[type=checkbox] {
 	width: 100%;
 	float: left;
 	background: $primary-color;
-	padding: gutter();
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
 
-.contact-sections .heading h2, .contact-sections  .heading h3 {
-	color: white;
+.contact-sections h2, .contact-sections h3 {
+	color: $primary-color;
 	margin-bottom: 0px;
 	font-size: 1em;
 }
 
-.contact-sections .page-description .sub-heading {
+.contact-sections .sub-heading {
 	width: 100%;
 	float: left;
 	padding: gutter();
@@ -646,13 +643,8 @@ input[type=checkbox] {
 	color: white;
 }
 
-.contact-sections .page-description p a:link, .page-sections .page-description p a:visited, .page-sections .page-description p a:hover  {
+.contact-sections p a:link, .contact-sections p a:visited, .contact-sections p a:hover  {
 	color: $primary-color;
-}
-
-.contact-sections .page-description .heading h3 {
-	color: white;
-	margin-bottom: 0px;
 }
 
 .contact-sections {
@@ -861,7 +853,6 @@ input[type=checkbox] {
 .slider .flickity-prev-next-button:disabled {
   display: none;
 }
-
 /* position outside */
 .slider .flickity-prev-next-button.previous {
   top: 170px;

@@ -26,10 +26,6 @@ ul li {
 	line-height: 1.4em;
 }
 
-.opening-hours ul li {
-	margin-left: 1em;
-}
-
 ul.no-list-style li {
 	list-style-type: none;
 }
@@ -91,7 +87,6 @@ body {
 
 body {
 margin: 0px;
-// font-family: Georgia, Times, 'Times New Roman', serif;
 font-family:'helvetica-light',Arial,sans-serif;
 font-weight: normal;
 }
@@ -174,7 +169,6 @@ address {
 display: inline-block;
 text-decoration: none;
 font-style: normal;
-margin-bottom: gutter();
 }
 
 .wp-content {

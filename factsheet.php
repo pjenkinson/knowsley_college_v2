@@ -342,7 +342,7 @@ if (!empty($factsheet->qualification_type)) {?>
 
         <?php if (!empty($factsheetWP['assessed'])) {?>
 
-        <h2 class="section-heading">Assessed <i class="fa fa-gbp" aria-hidden="true"></i></h2>
+        <h2 class="section-heading">Assessed <i class="fa fa-check-square-o" aria-hidden="true"></i></h2>
     
         <p><?php echo $factsheetWP['assessed']; ?></p>
 
@@ -453,9 +453,6 @@ if (!empty($factsheet->qualification_type)) {?>
 
         <?php }?>
     
-  </div>
-
-
   </div>
 
   
