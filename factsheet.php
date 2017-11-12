@@ -459,7 +459,7 @@ if (!empty($factsheet->qualification_type)) {?>
  </div>  <!-- End Fixed Container -->
     </div>  <!-- End Full Width Container -->
 
-
+ </div>
 
 
   <div id="careers" class="tab-section">
