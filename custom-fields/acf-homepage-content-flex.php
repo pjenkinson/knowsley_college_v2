@@ -275,7 +275,7 @@ function Kirkby() {
   map.setZoom(16);
 }
 function IAMT() {
-  map.setCenter(new google.maps.LatLng(53.4260583, -2.8615826));
+  map.setCenter(new google.maps.LatLng(53.423286, -2.861097));
   map.setZoom(17);
 }
     </script>
@@ -296,9 +296,9 @@ function IAMT() {
     <script>
 
     var locations = [
-      ['<h4>Main Campus</h4>', 53.428737, -2.8593184],
+      ['<h4>Main Campus, Stockbridge Lane</h4>', 53.428737, -2.8593184],
       ['<h4>Kirkby Campus</h4>', 53.4810983, -2.8934299],
-      ['<h4>Main Campus: Institute of Advanced Manufacturing and Technology</h4>', 53.4260583, -2.8615826]
+      ['<h4>Main Campus, Institute of Advanced Manufacturing and Technology</h4>', 53.423517, -2.861301]
     ];
     
     // Setup the different icons and shadows
