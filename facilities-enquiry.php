@@ -15,22 +15,21 @@ get_header(); ?>
 }
 
 </style>
+
 <script>
 jQuery( document ).ready(function() {
-
-	bindDatePicker()
-
- });
-
-function bindDatePicker() {
-	jQuery( ".datepicker" ).datepicker({
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '2017:2020',
-        dateFormat: 'dd-mm-yy',
-        beforeShowDay: jQuery.datepicker.noWeekends
-    });
-}
+	jQuery('.datepicker').pickadate({
+		labelMonthNext: 'Go to the next month',
+  		labelMonthPrev: 'Go to the previous month',
+  		labelMonthSelect: 'Pick a month from the dropdown',
+  		labelYearSelect: 'Pick a year from the dropdown',
+  		selectMonths: true,
+  		showMonthsShort: true,
+  		selectYears: 41,
+  		format: 'yyyy-mm-dd',
+  		formatSubmit: 'yyyy/mm/dd',
+	})
+});
 </script>
 
 <script>
@@ -78,7 +77,7 @@ input[type=checkbox] {
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<?php get_template_part( 'branding-flex' );?>
 
 
 <!-- Page content 
@@ -118,8 +117,6 @@ input[type=checkbox] {
 
 <!-- Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<h2>Facilities Enquiry Form</h2>
 
 <?php $facility = $hireDate = $firstName = $surname = $address1 = $address2 = $address3 = $address4 = $postCode = $telephoneNumber = $email = "";
 
@@ -189,12 +186,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-
+ 
 
 
 <form class="app-form" method="POST" action="" data-parsley-validate>
 
-	<legend>Booking Enquiry</legend>
+	<h3>Booking Enquiry</h3>
 	<fieldset>
 		 <label for="facility"><span class="required-ast" style="color:#e64799;">*</span> Facility:</label>
 			  	<select class="select-inline" type="text" required="" name="facility" required>
@@ -218,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<input id="timePickerTo" type="text" class="time ui-timepicker-input" name="timeTo" autocomplete="off" required>
 
 	</fieldset>		  	 
-	<legend>Your Details</legend>
+	<h3>Your Details</h3>
 	<fieldset>
 	<label for="firstName"><span class="required-ast" style="color:#e64799;">*</span> First Name:</label>
 	<input class="input-inline" type="text" name="firstName" required>
