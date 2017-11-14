@@ -364,6 +364,14 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 
 						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Show course options</a></div>
 
+						<label for="UserDefined17">If required you can use the text area below to input further information about your course/subject choice:</label>
+						<textarea name="UserDefined17" data-parsley-maxlength="1000"></textarea>
+
+						<?php            
+					            $UserDefined17 = htmlspecialchars($_POST['UserDefined17']) ;
+					            $_SESSION['appform']['contents']['UserDefined17'] = $UserDefined17;
+    					?>
+
 						</fieldset>
 
 
@@ -552,7 +560,8 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
-											`UserDefined16`)
+											`UserDefined16`,
+											`UserDefined17`)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
@@ -582,7 +591,8 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
-											'".$insertData['UserDefined16']."' 
+											'".$insertData['UserDefined16']."',
+											'".$insertData['UserDefined17']."'  
 											)";
 
 	$wpdb->query($sql);

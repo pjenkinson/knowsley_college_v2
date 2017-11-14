@@ -121,6 +121,11 @@ margin-top: 2em;
 	margin-top: 2em;
 	clear: both;
 }
+
+.the-content .page-sections-container {
+	margin-top: 0em;
+}
+
 .page-sections-3col, .page-sections-4col {
 	@include span (12 of 12);
 }

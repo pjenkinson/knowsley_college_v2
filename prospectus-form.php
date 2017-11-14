@@ -9,8 +9,30 @@ get_header(); ?>
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php get_template_part( 'navigation', 'scroll' );?>
 
+
+<!-- pickadate.js
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+jQuery( document ).ready(function() {
+	jQuery('.datepicker').pickadate({
+		labelMonthNext: 'Go to the next month',
+  		labelMonthPrev: 'Go to the previous month',
+  		labelMonthSelect: 'Pick a month from the dropdown',
+  		labelYearSelect: 'Pick a year from the dropdown',
+  		selectMonths: true,
+  		showMonthsShort: true,
+  		selectYears: 41,
+  		format: 'yyyy-mm-dd',
+  		formatSubmit: 'yyyy/mm/dd',
+	})
+});
+</script>
+
 	
 </header>
+
+
 
 <!-- Breadcrumbs
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -63,7 +85,7 @@ get_header(); ?>
 <!-- Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<?php $firstName = $surname = $address1 = $address2 = $address3 = $address4 = $postCode = $email = "";
+<?php $firstName = $surname = $address1 = $address2 = $address3 = $address4 = $postCode = $email = $dateOfBirth = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -99,6 +121,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $errors['email'] = "Missing";	 
 	} else {$email = $_POST['email'];}
 
+	if (empty($_POST["dateOfBirth"])) { 
+	  $errors['dateOfBirth'] = "Missing";	 
+	} else {$dateOfBirth = $_POST['dateOfBirth'];}
+
+
 }
 
 
@@ -108,12 +135,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form class="app-form" method="POST" action="" data-parsley-validate>
 	
-	<h3>Request a prospectus</h3>
+	<h3>Prospectus postal request form</h3>
 	<fieldset>
 	<label for="firstName"><span class="required-ast" style="color:#e64799;">*</span> First name:</label>
 	<input class="input-inline" type="text" name="firstName" required>
 	<label for="surname"><span class="required-ast" style="color:#e64799;">*</span> Surname:</label>
 	<input class="input-inline" type="text" name="surname" required>
+	<label for="dateOfBirth"><span class="required-ast" style="color:#e64799;">*</span> Date of birth:</label>
+	<input class="datepicker" type="text" name="dateOfBirth" value="" placeholder="YYYY-MM-DD" maxlength="10" required/>
 	<label for="address1"><span class="required-ast" style="color:#e64799;">*</span> Address line 1</label><input class="input-inline" type="text" name="address1" required/>
 	<label for="address2">Address line 2</label><input class="input-inline" type="text" name="address2"/>
 	<label for="address3">Address line 3</label><input class="input-inline" type="text" name="address3"/>
@@ -124,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	</fieldset>
 
-<input class="submit" type="submit" name="submit" value="Send form" style="clear:both; margin-bottom:1em;">
+<input class="submit" type="submit" name="submit" value="Send request" style="clear:both; margin-bottom:1em;">
 
 </form>
 
@@ -145,6 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			`enquiryDate`,
 			`firstName`,
 			`surname`,
+			`dateOfBirth`,
 			`address1`,
 			`address2`,
 			`address3`,
@@ -156,6 +186,7 @@ VALUES
 			(NOW(),
 			'$firstName',
 			'$surname',
+			'$dateOfBirth',
 			'$address1',
 			'$address2',
 			'$address3',
@@ -170,11 +201,12 @@ $wpdb->query($sql);?>
 
 // Email to Staff
   $to = 'anash@knowsleycollege.ac.uk';
-  $subject = 'KCC prosepctus request';
+  $subject = 'KCC School Leavers Prosepctus 2018 postal request';
   $body .= '<html><body>';
   $body .= '<h2>KCC Prospectus Request</h2>';
   $body .= '<p>First name: ' . $firstName . '</p>'  ;
   $body .= '<p>Surname: ' . $surname . '</p>'  ;
+  $body .= '<p>Surname: ' . $dateOfBirth . '</p>'  ;
   $body .= '<p>Email: ' . $email . '</p>'  ;
   $body .= '<p>Address: ' . $address1 . ',' .  $address2 . ',' . $address3 . ',' . $address4 . '</p>' ;
   $body .= '<p>Postcode: ' . $postCode . '</p>'  ;
@@ -193,10 +225,10 @@ $wpdb->query($sql);?>
 <?php 
 // Email to user
 $to = $email;
-$subject = 'KCC prospectus request';
+$subject = 'KCC School Leavers Prospectus 2018 postal request';
 $body .= '<html><body>';
-$body .= '<h1>KCC prospectus request</h1>';
-$body .= '<p>Hi ' . $firstName . ', thank you for your prospectus request. We will send you a School Leavers Prospectus 2018 in the post. While you are waiting, why not <a href="https://www.knowsleycollege.ac.uk/about/prospectus/" title="KCC School Leavers Prospectus 2018">view the prospectus online</a>.</p>' ;
+$body .= '<h1>KCC School Leavers Prospectus 2018 request</h1>';
+$body .= '<p>Hi ' . $firstName . ', thank you for your prospectus request. We will send you a School Leavers Prospectus 2018 in the post. The School Leavers Prospectus 2018 is available to view or download on our website, <a href="https://www.knowsleycollege.ac.uk/about/prospectus/" title="KCC School Leavers Prospectus 2018">view the prospectus online</a>.</p>' ;
 $body .= '</body></html>';
 $headers = array('Content-Type: text/html; charset=UTF-8'); 
 $headers[]   = 'Reply-To: KCC prospectus request <anash@knowsleycollege.ac.uk>';
@@ -205,7 +237,7 @@ wp_mail( $to, $subject, $body, $headers );
 ?>
 
 <script>
-window.location = 'https://www.knowsleycollege.ac.uk/about/services/facility-hire/form-confirmation/';
+window.location = 'https://www.knowsleycollege.ac.uk/about/prospectus/prospectus-request-confirmation/';
 </script>
 <?php
 

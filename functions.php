@@ -167,7 +167,7 @@ function knowsley_college_scripts() {
 
 	wp_enqueue_script( 'select2-script', get_template_directory_uri() . '/inc/select2/select2.js', array('jquery'), '20130216', true );
 
-	if (is_page_template('page-apply-school-leavers.php' || 'page-apply.php' || 'facilities-enquiry.php') )
+	if (is_page_template('page-apply-school-leavers.php' || 'page-apply.php' || 'facilities-enquiry.php' || 'prospectus-form.php') )
 		{
 	wp_enqueue_script( 'picker', get_template_directory_uri() . '/inc/pickadate/picker.js', array('jquery'), '20130276', true );
 	wp_enqueue_script( 'picker-date', get_template_directory_uri() . '/inc/pickadate/picker.date.js', array('jquery'), '20130277', true );
