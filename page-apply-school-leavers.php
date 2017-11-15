@@ -115,6 +115,7 @@ if(!empty($_POST['submit'])) {
 	  }
 }
 
+
 //Start displaying the pages
 if($pageID == '1' || empty($pageID)) {
 		$sql = "SELECT factsheetname AS name
@@ -368,7 +369,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 						<textarea name="UserDefined17" data-parsley-maxlength="1000"></textarea>
 
 						<?php            
-					            $UserDefined17 = htmlspecialchars($_POST['UserDefined17']) ;
+					            $UserDefined17 = ($_POST['UserDefined17']) ;
 					            $_SESSION['appform']['contents']['UserDefined17'] = $UserDefined17;
     					?>
 
@@ -497,9 +498,9 @@ $sql = "SELECT HeardAboutCollegeID, Description
 <fieldset>
 	<p>Knowsley Community College is registered under the Data Protection Act 1988. Information we process about you may be used for planning, analysis, marketing and any other purpose deemed necessary. Your information may also be shared with other official organisations such as your school and Local Education Authorities. Please contact enquiries (Tel: 0151 477 5850) if you have any concerns about the use or accuracy of your information.</p>
 
-<p></p>
-
 <p>I agree to the data protection declaration above. Ticking the box serves as your signature</p>
+
+
 <input class="input-inline" required type="checkbox" name="StudentDeclaration" value="Yes" required="" <?php
 
 
@@ -727,6 +728,8 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 	
 	?>
+
+
 
 	<?php session_unset();
 	session_destroy();

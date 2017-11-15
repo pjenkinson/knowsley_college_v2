@@ -5,7 +5,8 @@
 * @package knowsley_college
 */
 get_header(); ?>
-	
+
+
 </header>
 
 <?php 
@@ -48,7 +49,7 @@ $currentCategory = get_the_category();
 <p class="post-date"><i class="fa fa-clock-o"></i><?php the_date() ?></p>
 
 <div class="single-featured-image">
-<?php the_post_thumbnail()?>
+<?php the_post_thumbnail('thumbnail', array('class' => 'lazy')); ?>
 </div>
 
 <?php the_content()?>

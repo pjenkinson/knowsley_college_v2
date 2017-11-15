@@ -7,7 +7,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php if ( is_front_page('') ) {echo'Knowsley Community College';} else if ( is_page_template('flexible-course-page.php') ) {wp_title(''); echo ' - Liverpool Courses';} else { wp_title(''); } echo' | Liverpool City Region | KCC'?></title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="<?php if ( is_front_page() ) { echo'We are an innovative and dynamic Further Education College based in the Liverpool City Region. Our track record of high quality education and training from our two campuses, as well as our partner and employer locations, makes us the best choice for education and employment in Liverpool';} else
 if( get_field('meta_description') ): ?><?php the_field('meta_description'); ?><?php else: ?><?php the_title();?><?php endif; ?>">
 <meta name="author" content="Knowsley Community College">
@@ -36,6 +36,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-N2JVK5S');</script>
 <!-- End Google Tag Manager -->
+
+<script>
+	jQuery(document).ready(function( $ ) {
+		
+		 $('.lazy').Lazy({
+	      effect: "fadeIn",
+	      effectTime: 2000,
+	      threshold: 0});
+		
+	});
+</script>
 
 <!-- Google Maps -->
 
