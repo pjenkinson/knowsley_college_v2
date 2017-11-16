@@ -18,7 +18,7 @@ get_header(); ?>
 
 <!-- Main content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main kcc-primary" role="main">
 
 
 <!-- Page content 
@@ -55,7 +55,9 @@ get_header(); ?>
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		
 		<p><?php the_field('type'); ?></p>
+		<?php if( get_field('salary') ): ?>
 		<p>Salary: <?php the_field('salary'); ?></p>
+		<?php endif; ?>
 	
 		</div>
 
@@ -63,7 +65,7 @@ get_header(); ?>
 			<p><?php the_excerpt(); ?></p>
 		</div>
 
-		<p class="apply" style="margin-top: 2em;"><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">Find out more</a></p>
+		<div class="button-default section-button" style="margin-top: 2em;"><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">Find out more</a></div>
 
 	</article>
 

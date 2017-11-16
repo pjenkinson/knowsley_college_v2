@@ -1,56 +1,54 @@
 
 body {
-	font-size: 16px;
+font-size: 16px;
 }
 
 ul, section {
-	padding: 0px;
-	margin: 0px;
+padding: 0px;
+margin: 0px;
 }
 
 ul {
-	margin: 1em 0;
+margin: 1em 0;
 }
 
 ul.two-col {
-	columns: 2;
-   -webkit-columns: 2;
-   -moz-columns: 2;
+columns: 2;
+-webkit-columns: 2;
+-moz-columns: 2;
 }
 ul li {
-	margin: 0px;
-	padding: 0px;
-	padding-bottom: 0.4em;
-	list-style-type: square;
-	list-style-position: inside;
-	line-height: 1.4em;
+margin: 0px;
+padding: 0px;
+padding-bottom: 0.4em;
+list-style-type: square;
+list-style-position: inside;
+line-height: 1.4em;
 }
 
 ul.no-list-style li {
-	list-style-type: none;
+list-style-type: none;
 }
 
 ul.accordion-list li {
-	list-style-type: circle;
-	list-style-position: outside;
-	color: #373737;
-	margin-left: 1em;
+list-style-type: circle;
+list-style-position: outside;
+color: #373737;
+margin-left: 1em;
 }
 
 ul.tab-links-list li:first-of-type {
-	margin-left: 0px;
+margin-left: 0px;
 }
 
 ul.vacancy-details-list li {
-	margin-left: 0px;
+margin-left: 0px;
 }
 
 .wp-content ul li {
- margin-left: 1em;
- list-style-position: outside;
+margin-left: 1em;
+list-style-position: outside;
 }
-
-
 
 p {
 margin-top: 1em;
@@ -69,20 +67,24 @@ margin: 0;
 font-weight: bold;
 }
 
+.the-content h1 {
+margin-bottom: 1em;
+}
+
 .the-content h2, .the-content h3 {
- clear: both;
+clear: both;
 }
 
 .link-text {
-	display: none;
+display: none;
 }
 
 header a:link, header a:visited, header a:active {
-	color: white;
+color: white;
 }
 
 body {
-	background: $body-background;
+background: $body-background;
 }
 
 body {
@@ -92,27 +94,27 @@ font-weight: normal;
 }
 
 main a:link, main a:visited  {
-    color: #3477DB;
-    text-decoration: none;
-    cursor: pointer;
+color: #3477DB;
+text-decoration: none;
+cursor: pointer;
 }
 
 main a:hover, main a:active {
-    color: $primary-color;
-    text-decoration: underline;
+color: $primary-color;
+text-decoration: underline;
 }
 
 footer a:link, footer a:visited, footer a:hover, footer a:active  {
-		color: white;
-    text-decoration: none;
+color: white;
+text-decoration: none;
 }
 
 img {
-	display: block;
+display: block;
 }
 .primary-navigation img, .site-homepage img, .secondary-home-page img {
-	/* Full width responsive images */
-	width: 100%;
+/* Full width responsive images */
+width: 100%;
 }
 
 .wp-page img {
@@ -122,48 +124,48 @@ height: auto;
 }
 
 table {
- max-width: 100%;
- clear: both;
+max-width: 100%;
+clear: both;
 }
 // WP Content - Image alignment
 
 img.alignright {
- float: right;
- margin: 0px 0.5em;
+float: right;
+margin: 0px 0.5em;
 }
 
 img.alignleft {
- float: left;
- margin: 0px 0.5em;
+float: left;
+margin: 0px 0.5em;
 } 
 
 img.align-margin {
-  margin: 0.5em;
+margin: 0.5em;
 }
 
 img.align-nomargintop {
- margin-top: 0px;
+margin-top: 0px;
 }
 
 img.align-marginbottom {
- margin-bottom: 1em;
+margin-bottom: 1em;
 }
 
 img.align-margintop {
- margin-bottom: 0.5em;
+margin-bottom: 0.5em;
 }
 
 $wpAlignRight: max-width 600px;
 
 @include breakpoint($wpAlignRight) {
-	img.alignright, img.alignleft {
-	 float: left;
-	 margin: 0px 0px;
-	 margin-bottom: 1em;
-	 width: 100%;
-	 height: auto;
-	}
- }
+img.alignright, img.alignleft {
+float: left;
+margin: 0px 0px;
+margin-bottom: 1em;
+width: 100%;
+height: auto;
+}
+}
 
 address {
 display: inline-block;
@@ -172,44 +174,44 @@ font-style: normal;
 }
 
 .wp-content {
-	margin-bottom: 0px;
+margin-bottom: 0px;
 }
 
 a.tel {
-	cursor: none;
+cursor: none;
 }
 
 .top-nav a:link, .top-nav a:visited, .top-nav a:active {
-	color: $primary-color;
+color: $primary-color;
 }
 
 .top-nav a:hover {
-	color: white;
+color: white;
 }
 
 .address-line {
-	float: left;
-	clear: both;
+float: left;
+clear: both;
 }
 .address-postcode {
-	float: left;
-	clear: both;
+float: left;
+clear: both;
 }
 
 .factsheet-feature img, .course-category-snippet img {
-	display: block;
-	height: auto;
-	border: none;
+display: block;
+height: auto;
+border: none;
 }
 
 // Font awesome styles
 
 .link-arrow {
-	padding-left: 0.5em;
+padding-left: 0.5em;
 }
 
 .fa {
-	padding-right: 0.5em;
+padding-right: 0.5em;
 }
 
 // Simple Share Buttons - Whatsapp fix 
@@ -217,40 +219,40 @@ a.tel {
 @media (min-width: 400px) and (max-width: 9000px) {
 
 div.ssbp-container ul.ssbp-list  li.ssbp-li--whatsapp  {
-	display: none !important;
+display: none !important;
 }
 
 }
 .single-featured-image  {
-	width: 100%;
-	overflow: hidden;
-	margin-bottom: gutter();
+width: 100%;
+overflow: hidden;
+margin-bottom: gutter();
 }
 .single-featured-image img {
-	width: 100%;
+width: 100%;
 }
 
 .single-featured-image img {
-	height: auto;
+height: auto;
 }
 
 .content-tagline {
-	font-weight: bold;
-	color: $primary-color;
+font-weight: bold;
+color: $primary-color;
 }
 
 .wp-content .metaslider-flex {
-	margin-bottom: 1em;
+margin-bottom: 1em;
 }
 
 .primary-error {
-	color: $primary-color;
+color: $primary-color;
 }
 
 .the-content i.fa {
-  padding-right: 0px;
+padding-right: 0px;
 }
 
 .relative-container {
-  position: relative;
+position: relative;
 }

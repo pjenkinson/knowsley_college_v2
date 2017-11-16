@@ -120,8 +120,6 @@
 
 <?php wp_footer(); ?>
 
-
-
 <script>
 jQuery(document).ready(function() {
   
@@ -179,6 +177,13 @@ if (d.getElementById('unistats-widget-script')) { return; }
 scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
 } (document));
 });
+</script>
+
+<script>
+jQuery( document ).ready(function() {
+  jQuery('.news-item').matchHeight();
+});
+
 </script>
 
 </body>

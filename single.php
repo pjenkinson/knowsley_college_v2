@@ -33,7 +33,7 @@ $currentCategory = get_the_category();
 
 	<section>
 
-	<!-- Page content 
+<!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 
@@ -49,7 +49,8 @@ $currentCategory = get_the_category();
 <p class="post-date"><i class="fa fa-clock-o"></i><?php the_date() ?></p>
 
 <div class="single-featured-image">
-<?php the_post_thumbnail('thumbnail', array('class' => 'lazy')); ?>
+<?php the_post_thumbnail('thumbnail'); ?>
+
 </div>
 
 <?php the_content()?>
@@ -58,10 +59,8 @@ $currentCategory = get_the_category();
 
 </article>
 
-	<!-- Content page heading
+<!-- Content page heading
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-
 
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>

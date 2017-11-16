@@ -27,6 +27,7 @@ jQuery( document ).ready(function() {
   		selectYears: 41,
   		format: 'yyyy-mm-dd',
   		formatSubmit: 'yyyy/mm/dd',
+  		today: ''
 	})
 });
 </script>

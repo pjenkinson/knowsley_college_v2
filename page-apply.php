@@ -23,9 +23,12 @@ jQuery( document ).ready(function() {
   		labelYearSelect: 'Pick a year from the dropdown',
   		selectMonths: true,
   		showMonthsShort: true,
-  		selectYears: 41,
+  		selectYears: 90,
   		format: 'yyyy-mm-dd',
   		formatSubmit: 'yyyy/mm/dd',
+  		min: [1950,1,01],
+  		max: [2022,12,31],
+  		today: ''
 	})
 });
 </script>

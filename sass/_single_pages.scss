@@ -373,8 +373,11 @@ article.content-block {
 
 // Vacancies
 
-
 // Single Vacancies
+
+article.vacancy h1 {
+ margin-bottom: 0.5em;
+}
 
 .vacancy-summary p {
 	display: inline-block;
@@ -451,7 +454,6 @@ article.vacancies {
 	float: left;
 	width: 100%;
 	position: relative;
-	border-bottom: 1px solid $off-white;
 }
 
 .vacancies .title p:first-of-type {
@@ -466,6 +468,10 @@ article.vacancies {
 .vacancies .title h1, .vacancies .title p {
 	color: $primary-color;
 	margin: 0px;
+}
+
+.vacancies h2 {
+	margin-bottom: 1em;
 }
 
 .vacancies .title h1 a:link, .vacancies .title h1 a:hover, .vacancies .title h1 a:active, .vacancies .title h1 a:visited {
@@ -864,7 +870,6 @@ input[type=checkbox] {
   right: 2em;
   position: absolute;
 }
-
 .vacancies-archive {
-	margin-top: 2em;
+	margin-bottom: 2em;
 }

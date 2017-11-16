@@ -37,16 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N2JVK5S');</script>
 <!-- End Google Tag Manager -->
 
-<script>
-	jQuery(document).ready(function( $ ) {
-		
-		 $('.lazy').Lazy({
-	      effect: "fadeIn",
-	      effectTime: 2000,
-	      threshold: 0});
-		
-	});
-</script>
 
 <!-- Google Maps -->
 
