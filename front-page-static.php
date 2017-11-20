@@ -94,8 +94,8 @@ $currentCategory = get_the_category();
   	<div class="fixed-container carousel-content">
 
   		<div class="carousel-caption">
-  			<h2><a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>"><?php the_sub_field('slide_title'); ?></a></h2>
-  			<p><?php the_sub_field('slide_paragraph'); ?></p><div class="button-default"><a href="<?php the_sub_field('slide_link'); ?>" title="<?php the_sub_field('slide_title'); ?>">Find out more</a></div>
+  			<h2><a href="<?php if(get_sub_field('slide_link_custom')) { the_sub_field('slide_link_custom'); } else { the_sub_field('slide_link'); }?>" title="<?php the_sub_field('slide_title'); ?>"><?php the_sub_field('slide_title'); ?></a></h2>
+  			<p><?php the_sub_field('slide_paragraph'); ?></p><div class="button-default"><a href="<?php if(get_sub_field('slide_link_custom')) { the_sub_field('slide_link_custom'); } else { the_sub_field('slide_link'); }?>" title="<?php the_sub_field('slide_title'); ?>">Find out more</a></div>
       </div>
     </div>
     <img src="<?php the_sub_field('slide_image'); ?>" alt="<?php the_sub_field('slide_title'); ?>" title="<?php the_sub_field('slide_title'); ?>">

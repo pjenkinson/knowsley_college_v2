@@ -84,9 +84,15 @@ if(!empty($_POST['submit'])) {
 	  		if(is_array($value)) {
 	  				foreach($value AS $subKey => &$subValue) {
 	  					  $subValue = filter_var($subValue, FILTER_SANITIZE_STRING);
+	  					  // Put apostrophe back in string
+	  					  $textOutput = preg_replace_callback("/(&#39+;)/", function($m) { return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES"); }, $subValue);
+	  					  $subValue = $textOutput;
 	  				}
 	  		} else {
 	  	      $value = filter_var($value, FILTER_SANITIZE_STRING);
+	  	      // Put apostrophe back in string
+	  	      $textOutput = preg_replace_callback("/(&#39+;)/", function($m) { return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES"); }, $value);
+	  		  $value = $textOutput;
 	  	  }
 
 	  	  $_SESSION['appform']['contents'][$key] = $value;
