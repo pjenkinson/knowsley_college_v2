@@ -1,4 +1,4 @@
-// Header
+$homepageSlider-1500: 1500px;
 
 // Primary navigation
 
@@ -313,11 +313,16 @@ padding-top: 1em;
 
 }
 // HOMEPAGE SLIDER
+
 .slider-container {
 	padding: 0;
 	overflow: hidden;
 	clear: both;
 	max-height: 600px;
+	@include breakpoint($homepageSlider-1500) {
+	max-height: 770px;
+}
+
 }
 
 .carousel-cell {
