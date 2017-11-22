@@ -7,7 +7,6 @@ font-size: 2em;
 }
 
 // COURSE FINDER 
-
 .course-finder {
 float: left;
 margin-bottom: 2em;
@@ -200,9 +199,12 @@ width: auto;
 }
 
 .app-form .submit {
-display: inline-block;
-float: left;
-clear: both;
+background: #3477DB;
+color: white;
+height: 50px;
+width: 100px;
+text-shadow:none;
+border: 1px solid #3477DB;
 }
 
 .app-form fieldset {
