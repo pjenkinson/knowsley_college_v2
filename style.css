@@ -4723,10 +4723,41 @@ a.cookiebar-close {
   cursor: pointer;
 }
 
-@media (max-width: 956px) {
-  /* line 516, sass/_header.scss */
-  .slider-container {
-    display: none;
+@media (max-width: 600px) {
+  /* line 519, sass/_header.scss */
+  .carousel-caption .button-default a {
+    background: #99cc66;
+    color: white;
+  }
+
+  /* line 524, sass/_header.scss */
+  .slider-container .fixed-container {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  /* line 531, sass/_header.scss */
+  .carousel-caption {
+    background: #3d3d3c;
+    width: 100%;
+  }
+
+  /* line 536, sass/_header.scss */
+  .carousel-caption h2 {
+    font-size: 2em;
+  }
+
+  /* line 540, sass/_header.scss */
+  .carousel-caption p {
+    font-size: 1em;
+  }
+
+  /* line 544, sass/_header.scss */
+  .is-selected .carousel-caption {
+    top: 0px !important;
+    opacity: 0.9 !important;
   }
 }
 /* line 1, sass/_page_aside.scss */

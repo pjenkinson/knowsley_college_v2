@@ -511,10 +511,39 @@ background-position: 5px 8px;
  cursor: pointer;
 }
 
-@media (max-width: 956px) {
+@media (max-width: 600px) {
 
 .slider-container {
-	display: none;
+}
+
+.carousel-caption .button-default a {
+background: $secondary-color;
+color: white;
+}
+
+.slider-container .fixed-container {
+max-width: 100%;
+width: 100%;
+margin-left: 0%;
+margin-right: 0%;
+}
+
+.carousel-caption {
+ background: $primary-color;
+ width: 100%;
+}
+
+.carousel-caption h2 {
+ font-size: 2em;
+}
+
+.carousel-caption p {
+ font-size: 1em;
+}
+
+.is-selected .carousel-caption {
+ top: 0px !important;
+ opacity: 0.9 !important;
 }
 
 }
