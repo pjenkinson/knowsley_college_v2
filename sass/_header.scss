@@ -511,9 +511,62 @@ background-position: 5px 8px;
  cursor: pointer;
 }
 
+
+
+@media (min-width: 600px)  and (max-width: 800px) {
+
+.carousel-caption h2 {
+ font-size: 2em;
+}
+
+.carousel-caption p {
+ font-size: 1em;
+}
+
+
+}
+
+
 @media (max-width: 600px) {
 
-.slider-container {
+.carousel-caption .button-default {
+ margin-bottom: 2em;
+}
+
+.main-carousel .carousel-content {
+ height: 350px !important;
+}
+
+.slider-container .fixed-container {
+ background: $primary-color;
+}
+
+.carousel-caption {
+-webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;	
+  position: relative;
+}
+
+.flickity-page-dots .dot {
+ margin-right: 0.5em !important;
+ margin-bottom: 0 !important;
+ display: inline !important;
+ float: left !important; 
+ width: 20px !important;
+ height: 20px !important;
+}
+
+.flickity-page-dots {
+ float: left !important; 
+ position: relative !important;
+ margin-top: 0.5em !important;
+ margin-bottom: 0.5em !important;
+}
+
+.flickity-prev-next-button {
+ position: absolute !important;
+ bottom: 0px !important;
 }
 
 .carousel-caption .button-default a {

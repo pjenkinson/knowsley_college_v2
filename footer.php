@@ -127,7 +127,7 @@ jQuery(document).ready(function() {
   // options
   cellAlign: 'left',
   contain: true,
-  draggable: false,
+  draggable: true,
   autoPlay: 6000,
   pauseAutoPlayOnHover: true,
   prevNextButtons: true,
@@ -135,7 +135,8 @@ jQuery(document).ready(function() {
   selectedAttraction: 0.01,
   friction: 0.2,
   imagesLoaded: true,
-  lazyLoad: true
+  lazyLoad: true,
+  bgLazyLoad: true
 });
 
 })
@@ -160,6 +161,7 @@ var flkty = jQuerycarousel.data('flickity');
 jQuerycarousel.on( 'select.flickity', function() {
 
 jQuery( ".carousel-caption" ).addClass( "carousel-animation" );
+
   
 });
 
