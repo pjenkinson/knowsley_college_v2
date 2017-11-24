@@ -1,5 +1,8 @@
 
-
+<?php if( get_field('navigation') == 'No navigation' ): ?>
+	<nav class="nav-secondary">
+  </nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'About KCC' ): ?>
 	<nav class="nav-secondary about-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
