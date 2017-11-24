@@ -79,7 +79,46 @@ jQuery( "#showallcourses" ).click(function() {
 
 </script>
 
+<style>
+#navbar {
+    background-color: #d7d7d7; /* Black background color */
+    position: fixed; /* Make it stick/fixed */
+    bottom: -150px; /* Hide the navbar 50 px outside of the top view */
+    width: 100%; /* Full width */
+    transition: bottom 0.3s; /* Transition effect when sliding down (and up) */
+    z-index: 1000;
+}
+
+/* Style the navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#btn1 {
+  background: #9acb6b;
+  color: white;
+}
+
+.closeThis {
+  display: none;
+}
+
+
+</style>
+
+
 </header>
+
 
 
 <!-- Gets factsheet ACF values
@@ -660,6 +699,21 @@ jQuery(document).ready(function() {
      jQuery('#livesearch').val('<?php echo $searchvalue ?>').trigger('keyup'); 
 });     
 </script>
+
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.bottom = "0";
+  } else {
+    document.getElementById("navbar").style.bottom = "-50px";
+  }
+}
+
+</script>
+
 
 </main><!-- #main -->
 <?php get_footer(); ?>

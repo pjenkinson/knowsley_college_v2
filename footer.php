@@ -188,6 +188,20 @@ jQuery( document ).ready(function() {
 
 </script>
 
+<script>
+function toggleOpen() {
+  jQuery("#navbar").toggleClass("closeThis");
+  jQuery("#navbar").toggleClass("openThis");  
+}
+</script>
+
+<div id="navbar" class="openThis">
+  <div class="fixed-container">
+    <p>Some content here...</p>
+    <p><a id="btn1" href="#" onclick="toggleOpen()">Close</a></p>
+  </div>
+</div>
+
 </body>
 </html>
 	
