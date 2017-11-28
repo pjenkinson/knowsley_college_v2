@@ -5,7 +5,7 @@ $youtube-desktop: 1150px;
 $youtube-tablet-content: 900px;
 $unistats: max-width 735px;
 $factsheet-title: 700px;
-$responsive-tab-links: 332px;
+$responsive-tab-links: 500px;
 
 .text-align-center {
 	text-align: center;
@@ -167,6 +167,7 @@ $responsive-tab-links: 332px;
 float: left;
 width: 100%;
 border-bottom: 1px solid $off-white;
+background: $off-white;
 }
 
 .tab-links-list {
@@ -175,12 +176,9 @@ margin: 0;
 }
 
 .tab-links-container {
-background: white;
+background: $off-white;
 padding: 0;
-padding-top: 1em;
-padding-bottom: 1em;
 }
-
 .tab-list-container {
 padding-left: gutter();
 }
@@ -188,52 +186,59 @@ padding-left: gutter();
 	margin-bottom: 0px;
 }
 .tab-links ul li {
-	list-style-type: none;
 	display: block;
-	clear: both;
-	background: white;
+	background: $off-white;
+ 	width: 100%;
+ 	float: left;
+ 	clear: both;
+ 	padding: 0;
+ 	margin-bottom: 1em;
+ 	border-bottom: $off-white 1px solid;
+	@include breakpoint($responsive-tab-links) { 
+	list-style-type: none;
 	color: $primary-color;
 	padding: 0 0 0 0;
-	@include breakpoint($responsive-tab-links) { 
- 		display: inline-block;
- 		clear: none;
- 		padding: 0 0 0 0;
+ 	border-bottom: none;
+ 	width: auto;
+ 	clear: none;
+ 	margin-bottom: 0;	
 	}
 }
 
-.tab-links ul li a:link, .tab-links ul li a:visited,  {
+.ui-tabs-nav li a {
+	display: inline-block;
+	padding: 1em 0.5em 1em 0.5em;
+	width: auto;
+	color: white;
+}
+
+.ui-tabs-nav li a i {
+ 
+}
+
+.tab-links ul li a:link  {
 	font-size: 1.2em;
 	color: $primary-color;
 }
 
+.tab-links ul li a:hover {
+ background: $secondary-color;
+ color: white;
+}
+
+.tab-links ul li:last-of-type {
+ margin-bottom: 0;
+ border-bottom: none;
+}
+
 #tabs .ui-tabs-active a {
- color: $links !important;
+ color: white;
+ background: $secondary-color;
 }
 
 .tab-section {
 	float: left;
 	width: 100%;
-}
-.share-bar {
-	float: left;
-	width: 100%;
-	background: $primary-color;
-	color: white;
-	padding: 0.5em;
-	display: none; 
-}
-
-.share-bar ul li {
-	display: inline-block;
-	float: left;
-}
-
-.share-bar ul li a {
-	padding: 1em 0.5em;
-}
-
-.share-bar ul li a:link, .share-bar ul li a:visited, .share-bar ul li a:active  {
-	color: white;
 }
 
 // jQuery UI tabs
@@ -251,16 +256,6 @@ padding-left: gutter();
  color: white;
  line-height: 0;
  padding-bottom: 0;
-}
-
-.ui-tabs-nav li a {
-	padding: 0.5em 0.5em 0 0.5em;
-	width: auto;
-	color: white;
-}
-
-.ui-tabs-nav li a:first-of-type {
-	padding-left: 0;
 }
 
 .ui-tabs-nav li a:link, .ui-tabs-nav li a:visited, .ui-tabs-nav li a:hover {
