@@ -176,8 +176,11 @@ margin: 0;
 }
 
 .tab-links-container {
-background: $off-white;
+background: white;
 padding: 0;
+@include breakpoint($responsive-tab-links) { 
+background: $off-white;
+}
 }
 .tab-list-container {
 padding-left: gutter();
@@ -187,12 +190,12 @@ padding-left: gutter();
 }
 .tab-links ul li {
 	display: block;
-	background: $off-white;
+	background: white;
  	width: 100%;
  	float: left;
  	clear: both;
  	padding: 0;
- 	margin-bottom: 1em;
+ 	margin-bottom: 0;
  	border-bottom: $off-white 1px solid;
 	@include breakpoint($responsive-tab-links) { 
 	list-style-type: none;
@@ -201,15 +204,19 @@ padding-left: gutter();
  	border-bottom: none;
  	width: auto;
  	clear: none;
- 	margin-bottom: 0;	
+ 	margin-bottom: 0;
+ 	background: $off-white;	
 	}
 }
 
 .ui-tabs-nav li a {
 	display: inline-block;
 	padding: 1em 0.5em 1em 0.5em;
-	width: auto;
+	width: 100%;
 	color: white;
+	@include breakpoint($responsive-tab-links) { 
+	width: auto;
+	}
 }
 
 .ui-tabs-nav li a i {
