@@ -23,6 +23,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'adults' ) ); ?>
 	</nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Adults 2018' ): ?>
+	<nav class="nav-secondary adults-2018">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018' ) ); ?>
+	</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Employers' ): ?>
 	<nav class="nav-home">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers' ) ); ?>

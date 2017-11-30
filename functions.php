@@ -65,6 +65,7 @@ add_filter('wp_title', 'af_titledespacer');
       '16-19' => __( '16-19' ),
       '16-19-subject' => __( '16-19 - Courses' ),
       'adult-subject' => __( 'Adult - Courses' ),
+      'adults-2018' => __( 'Adults 2018' ),
       'apprenticeships' => __( 'Apprenticeships' ),
       'employers' => __( 'Employers' ),
       'employers-training' => __( 'Employers Training' ),
