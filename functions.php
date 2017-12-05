@@ -67,6 +67,7 @@ add_filter('wp_title', 'af_titledespacer');
       'adult-subject' => __( 'Adult - Courses' ),
       'adults-2018' => __( 'Adults 2018' ),
       'apprenticeships' => __( 'Apprenticeships' ),
+      'eduroam' => __( 'Eduroam' ),
       'employers' => __( 'Employers' ),
       'employers-training' => __( 'Employers Training' ),
       'employers-case-studies' => __( 'Employers Case Studies' ),

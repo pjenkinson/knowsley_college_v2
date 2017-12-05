@@ -28,6 +28,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018' ) ); ?>
 	</nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Eduroam' ): ?>
+	<nav class="nav-secondary eduroam-nav">
+	<?php wp_nav_menu( array( 'theme_location' => 'eduroam' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Employers' ): ?>
 	<nav class="nav-home">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers' ) ); ?>

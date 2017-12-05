@@ -68,6 +68,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'policies' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Eduroam' ): ?>
+	<nav class="nav-secondary eduroam-nav">
+	<?php wp_nav_menu( array( 'theme_location' => 'eduroam' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Employers Training' ): ?>
 	<nav class="nav-secondary employers-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers-training' ) ); ?>
