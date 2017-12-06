@@ -11,7 +11,8 @@
              UNION
              SELECT programmearea, id, factsheetname, location, duration, course_url, level
              FROM fact_sheets_custom
-              LIMIT 100";
+             WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
+             LIMIT 100";
      $courses = $wpdb->get_results($sql);
      foreach ($courses as $courses) {
           $results[] = array('id' => $courses->id, 

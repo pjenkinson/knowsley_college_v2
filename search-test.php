@@ -11,6 +11,7 @@
               UNION
               SELECT CONCAT (factsheetname, ' - ', level) as factsheetname, id, course_url
               FROM fact_sheets_custom
+              WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
               LIMIT 20";
      $courses = $wpdb->get_results($sql);
      foreach ($courses as $courses) {
