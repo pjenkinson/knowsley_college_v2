@@ -71,6 +71,7 @@ add_filter('wp_title', 'af_titledespacer');
       'employers' => __( 'Employers' ),
       'employers-training' => __( 'Employers Training' ),
       'employers-case-studies' => __( 'Employers Case Studies' ),
+      'adults-gcse' => __( 'Adult GCSE' ),
       'adults' => __( 'Adults' ),
       'contact' => __( 'Contact' ),
       'external-access' => __( 'External Access' ),

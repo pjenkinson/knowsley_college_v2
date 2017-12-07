@@ -43,6 +43,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'employers-case-studies' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Adult GCSE' ): ?>
+	<nav class="nav-secondary adults-gcse">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-gcse' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Higher Education' ): ?>
 	<nav class="nav-home higher-education-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'higher-education' ) ); ?>

@@ -83,6 +83,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'employers-case-studies' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Adult GCSE' ): ?>
+	<nav class="nav-secondary adults-gcse">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-gcse' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'School Leavers Courses' ): ?>
 	<nav class="nav-secondary school-leavers-nav">
 	<?php wp_nav_menu( array( 'theme_location' => '16-19-subject' ) ); ?>

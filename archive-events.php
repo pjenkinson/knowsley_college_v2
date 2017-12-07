@@ -30,8 +30,6 @@ get_header(); ?>
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<?php get_template_part( 'content', 'featured-banner-archive' );?>
-
 <div class="fixed-container">
 
 
@@ -53,14 +51,13 @@ get_header(); ?>
 	<a href="<?php the_permalink(); ?>" alt="<?php the_field('event_title')?> - <?php the_field('event_date')?>">
 	<div class="slt-image">
 		<img src="<?php the_field('event_image')?>" alt="<?php the_field('event_title')?>">
-		<p class="slt-member-name"><?php the_field('event_date')?></p>
 	</div>
 	</a>
 
 	<div class="slt-info">
-		<p class="slt-member-title"><a href="<?php the_permalink(); ?>" alt="<?php the_field('event_title')?>"><?php the_title('')?></a></p>
+		<p class="slt-member-title"><a href="<?php the_permalink(); ?>" alt="<?php the_field('event_title')?>"><?php the_title('')?> - <?php the_field('event_date')?></a></p>
 		<p class="slt-member-info"><?php the_field('event_excerpt')?></p>
-		<p class="slt-member-info"><i class="fa fa-clock-o"></i> <?php the_field('event_time')?></p>
+		<p class="slt-member-info"><i class="fa fa-clock-o"></i><?php the_field('event_date')?> - <?php the_field('event_time')?></p>
 	</div>
 </article>
 
