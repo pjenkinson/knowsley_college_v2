@@ -589,7 +589,10 @@ if (!empty($factsheet->qualification_type)) {?>
 
       <h2 class="section-heading">Apply</h2>
 
-      <p>To apply for <?php if (!empty($factsheet->name)) {?>
+      <?php if (!empty($factsheetWP['apply'])) {?>
+        <?php echo $factsheetWP['apply']; ?>
+        <?php } else {  ?>
+        <p>To apply for <?php if (!empty($factsheet->name)) {?>
             <strong><?=$factsheet->name?></strong>
             <?php } else {  ?>
             <strong><?php wp_title('');?></strong>
@@ -597,6 +600,12 @@ if (!empty($factsheet->qualification_type)) {?>
 
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
+
+        <?php }?>
+
+
+
+      
       <div class="button-default">
         <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply">Apply</a>
       </div>
