@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: School Leavers Application Page
+* Template Name: Adult Applications - January
 */
 
 if(!session_id()) {
@@ -24,7 +24,7 @@ jQuery( document ).ready(function() {
   		labelYearSelect: 'Pick a year from the dropdown',
   		selectMonths: true,
   		showMonthsShort: true,
-  		selectYears: 41,
+  		selectYears: 100,
   		format: 'yyyy-mm-dd',
   		formatSubmit: 'yyyy/mm/dd',
   		today: ''
@@ -219,6 +219,13 @@ if($pageID == '1' || empty($pageID)) {
 
     $EntryLevelCourses = $wpdb->get_results($sql);?>
 
+    <?php $sql = "SELECT factsheetname, level, id
+         	   FROM fact_sheets_custom
+         	   WHERE programmearea != 'A Levels'
+         	   ORDER BY level ASC";
+
+    $JanuaryCourses = $wpdb->get_results($sql);?>
+
     <?php $sql = "SELECT sid, area
          	   FROM CollegeAreas
          	   ORDER BY area ASC";
@@ -226,12 +233,12 @@ if($pageID == '1' || empty($pageID)) {
     $sid = $wpdb->get_results($sql);?>
 
 
-	  <form class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
+	  <form class="app-form" method="POST" action="/apply/january-adults-application-form/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 	  		 <div class="the-content">
 
-	  			<h2 class="section-heading">School Leavers Application Form</h2>
+	  			<h2 class="section-heading">January 2018 Adult Application Form</h2>
 
-	  			<p>Online applications are currently being taken for 2018 entry.</p>
+	  			<p>Online applications are currently being taken for January 2018 entry.</p>
 
 
 		<h3>Personal details</h3>
@@ -282,48 +289,6 @@ if($pageID == '1' || empty($pageID)) {
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="Email" value="<?=$_SESSION['appform']['contents']['Email']?>" required/>		 
 
 
-			  
-
-
-
-<?php 
-$sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
-
-    $schools = $wpdb->get_results($sql);
-?>
-			  
-	  	    <div>
-			  	<label for="LastSchool">Name of your current school/college? </label>
-			  	<select class="select-inline schoollist" type="text" name="LastSchool" required>
-			  			<option value="">Select</option>
-						<?php
-													foreach($schools AS $key => $value) {
-															$storedValue = $_SESSION['appform']['contents']['LastSchool'];
-															if($storedValue == $value) {
-																  $selected = 'selected';
-															} else {
-																	$selected = '';
-															}
-														  ?>
-														  <option value="<?=$value->OrganisationID?>" <?=$selected?>><?=$value->Name?></option>
-														  <?php
-													}
-												?>
-			  	</select>
-
-
-			  	<label for="ParentFirstName">Parent/Carer First name:</label>
-			  	<input class="input-inline" type="text" name="ParentFirstName" value="<?=$_SESSION['appform']['contents']['ParentFirstName']?>" placeholder="Parent/Carer First Name" required/>
-			  <label for="ParentSurname">Parent/Carer Surname:</label>
-			  	<input class="input-inline" type="text" name="ParentSurname" value="<?=$_SESSION['appform']['contents']['ParentSurname']?>" placeholder="Parent/Carer Surname" required/>	
-
-			  	 <label for="ParentPhoneNumber">Parent/Carer Contact Number:</label>
-			  	<input class="input-inline" type="text" name="ParentPhoneNumber" value="<?=$_SESSION['appform']['contents']['ParentPhoneNumber']?>" required />
-
-			  <label for="ParentEmailAddress">Parent/Carer Email:</label>
-			  	<input class="input-inline" type="email" data-parsley-type="email" name="ParentEmailAddress" value="<?=$_SESSION['appform']['contents']['ParentEmailAddress']?>" required/>	
-
-
 
 	  	 	 <input type="hidden" name="courseid" value="<?=$courseID?>" />
 
@@ -367,22 +332,6 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 							</select>
 						</div>
 
-
-						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Show course options</a></div>
-
-						<label for="UserDefined17">If required you can use the text area below to input further information about your course/subject choice:</label>
-						<textarea name="UserDefined17" data-parsley-maxlength="1000"><?=$courses[0]->name?></textarea>
-
-						<?php            
-					            $UserDefined17 = ($_POST['UserDefined17']) ;
-					            $_SESSION['appform']['contents']['UserDefined17'] = $UserDefined17;
-    					?>
-
-						</fieldset>
-
-
-
-				 		<fieldset id="course-select-options">
 				 		  <?php
 					if(!empty($courses)) {
 						?>
@@ -398,13 +347,11 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 	} else {
 				 		?>
 				 		
-				 		<p>Please select your course choices (Optional):</p>	
-
 				 		<div>
-				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
-				 			<select class="select-inline" name="Offering1">
+				 			<label class="course-choice" for="Offering1">Select a course (January 2018 Adult Courses)</label>
+				 			<select class="select-inline" name="Offering1" required="">
 				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 				  <?php include( locate_template( 'course-select-options-jan.php', false, false ) );?> 
 
 				 			</select>
 				 		</div>
@@ -412,24 +359,20 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 	}
 				 	?>
 				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
-				 	<div>
-				 		  <label class="course-choice" for="Offering2">Select your second choice course</label>
-				 			<select class="select-inline" name="Offering2">
-				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				
 
-				 			</select>
-				 	</div>
-				 	<div>
-				 			<label class="course-choice" for="Offering3">Select your third choice course</label>
-				 			<select class="select-inline" name="Offering3">
-				 					<option value="">Please Select</option>
-				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
-				 			</select>
-				 	</div>
+						<label for="UserDefined17">If required you can use the text area below to input further information about your course/subject choice:</label>
+						<textarea name="UserDefined17" data-parsley-maxlength="1000"><?=$courses[0]->name?></textarea>
+
+						<?php            
+					            $UserDefined17 = ($_POST['UserDefined17']) ;
+					            $_SESSION['appform']['contents']['UserDefined17'] = $UserDefined17;
+    					?>
 
 
-				 	<div class="button-default form-button" id="hide"><a href=""><i class="fa fa-minus" aria-hidden="true"></i> Hide course options</a></div>
+
+
+				 		
 
 
 				 </fieldset>
@@ -537,11 +480,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 	$insertData = $_SESSION['appform']['contents'];
 
-	$sql = "INSERT INTO `application_request`
+	$sql = "INSERT INTO `application_request_jan`
 										 (`RequestDate`, /* New */
 										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -558,11 +499,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`Address4`,
 											`PostCodeOut`,
 											`PostCodein`,
-											`LastSchool`,
-											`ParentFirstName`,
-											`ParentSurname`,
-											`ParentPhoneNumber`,
-											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
@@ -571,8 +507,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -589,11 +523,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['Address4']."',
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
-											'".$insertData['LastSchool']."',
-											'".$insertData['ParentFirstName']."',
-											'".$insertData['ParentSurname']."',
-											'".$insertData['ParentPhoneNumber']."',
-											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
@@ -603,27 +532,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 	$wpdb->query($sql);
 
-	//get_template_part( 'page', 'applyEmail' );
-	include (locate_template('page-applyEmail.php')); 
-
-	$applicationID = $wpdb->insert_id;
-
-	for ($i=0; $i < count($insertData['qualification']); $i++) { 
-			$sql ="INSERT INTO `applications_qualifications`
-												(`application_id`,
-											  `qualification`,
-												`subject`,
-												`grade`,
-												`dateawarded`)
-												VALUES
-												('".$applicationID."',
-												'".$insertData['qualification'][$i]."',
-												'".$insertData['subject'][$i]."',
-												'".$insertData['grade'][$i]."',
-												'".$insertData['dateawarded'][$i]."')";
-
-			$wpdb->query($sql);
-	}
 
 	// Insert runs again to backup data
 
@@ -632,8 +540,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	$sql = "INSERT INTO `application_request_backup`
 										 (`RequestDate`, /* New */
 										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -650,11 +556,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`Address4`,
 											`PostCodeOut`,
 											`PostCodein`,
-											`LastSchool`,
-											`ParentFirstName`,
-											`ParentSurname`,
-											`ParentPhoneNumber`,
-											`ParentEmailAddress`,
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
@@ -662,8 +563,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -680,11 +579,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['Address4']."',
 											'".$insertData['PostCodeOut']."',
 											'".$insertData['PostCodein']."',
-											'".$insertData['LastSchool']."',
-											'".$insertData['ParentFirstName']."',
-											'".$insertData['ParentSurname']."',
-											'".$insertData['ParentPhoneNumber']."',
-											'".$insertData['ParentEmailAddress']."',
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
@@ -693,24 +587,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 	$wpdb->query($sql);
 
-	$applicationIDBackup = $wpdb->insert_id;
-
-	for ($i=0; $i < count($insertData['qualification']); $i++) { 
-			$sql ="INSERT INTO `applications_qualifications_backup`
-												(`application_id`,
-											  `qualification`,
-												`subject`,
-												`grade`,
-												`dateawarded`)
-												VALUES
-												('".$applicationID."',
-												'".$insertData['qualification'][$i]."',
-												'".$insertData['subject'][$i]."',
-												'".$insertData['grade'][$i]."',
-												'".$insertData['dateawarded'][$i]."')";
-
-			$wpdb->query($sql);
-	}
 
 	// Browser Info
 
