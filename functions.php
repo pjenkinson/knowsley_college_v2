@@ -66,6 +66,7 @@ add_filter('wp_title', 'af_titledespacer');
       '16-19-subject' => __( '16-19 - Courses' ),
       'adult-subject' => __( 'Adult - Courses' ),
       'adults-2018' => __( 'Adults 2018' ),
+      'adults-2018-courses' => __( 'Adults 2018 Courses' ),
       'apprenticeships' => __( 'Apprenticeships' ),
       'eduroam' => __( 'Eduroam' ),
       'employers' => __( 'Employers' ),

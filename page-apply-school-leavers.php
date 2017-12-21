@@ -404,7 +404,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
 				 			<select class="select-inline" name="Offering1">
 				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 				  <?php include( locate_template( 'course-select-options-1.php', false, false ) );?> 
 
 				 			</select>
 				 		</div>
@@ -416,7 +416,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 		  <label class="course-choice" for="Offering2">Select your second choice course</label>
 				 			<select class="select-inline" name="Offering2">
 				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 				  <?php include( locate_template( 'course-select-options-2.php', false, false ) );?> 
 
 				 			</select>
 				 	</div>
@@ -424,7 +424,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 			<label class="course-choice" for="Offering3">Select your third choice course</label>
 				 			<select class="select-inline" name="Offering3">
 				 					<option value="">Please Select</option>
-				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 					<?php include( locate_template( 'course-select-options-3.php', false, false ) );?> 
 				 			</select>
 				 	</div>
 
@@ -740,8 +740,12 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	session_destroy();
 	?>
 	<div class="the-content">
-		<h1>Thank you for your application</h1>
-		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
+		<h2>Thank you for submitting your application for Knowsley Community College. </h2>
+ 
+		<p>The College is currently closed for the Christmas period (from Friday 22nd December – Monday 8th January).</p>
+ 
+		<p>Upon our return, a member of our admissions team will be in touch to progress with your application.</p>
+
 	</div>
   			
 

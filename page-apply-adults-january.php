@@ -294,6 +294,8 @@ if($pageID == '1' || empty($pageID)) {
 
 	  	 	 <input type="hidden" name="Ethnicity" value="99" />
 
+	  	 	 <input type="hidden" name="ApplicationTypeID" value="139" />
+
 			  	<!-- END OF PERSONAL DETAILS -->
 
 			  </fieldset>
@@ -358,6 +360,14 @@ if($pageID == '1' || empty($pageID)) {
 				 		<?php
 				 	}
 				 	?>
+				 	<div>
+				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
+				 			<select class="select-inline" name="Offering2">
+				 				  <option value="">Please Select</option>
+				 				  <?php include( locate_template( 'course-select-options-jan-2.php', false, false ) );?> 
+
+				 			</select>
+				 	</div>
 				 	<input type="hidden" name="AcademicYearID" value="18/19"/>
 				
 
@@ -483,6 +493,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	$sql = "INSERT INTO `application_request_jan`
 										 (`RequestDate`, /* New */
 										 	`Offering1ID`,
+										 	`Offering2ID`,
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -503,10 +514,12 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
 											`UserDefined16`,
-											`UserDefined17`)
+											`UserDefined17`,
+											`ApplicationTypeID`)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
+											'".$insertData['Offering2']."',
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -527,7 +540,8 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
 											'".$insertData['UserDefined16']."',
-											'".$insertData['UserDefined17']."'  
+											'".$insertData['UserDefined17']."',
+											'".$insertData['ApplicationTypeID']."'  
 											)";
 
 	$wpdb->query($sql);
@@ -540,6 +554,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	$sql = "INSERT INTO `application_request_backup`
 										 (`RequestDate`, /* New */
 										 	`Offering1ID`,
+										 	`Offering2ID`,
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -559,10 +574,11 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
-											`UserDefined16`)
+											`UserDefined16`,`UserDefined17`,`ApplicationTypeID`)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
+											'".$insertData['Offering2']."',
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -582,7 +598,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
-											'".$insertData['UserDefined16']."'  
+											'".$insertData['UserDefined16']."',
+											'".$insertData['UserDefined17']."',
+											'".$insertData['ApplicationTypeID']."'   
 											)";
 
 	$wpdb->query($sql);
@@ -616,8 +634,13 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	session_destroy();
 	?>
 	<div class="the-content">
-		<h1>Thank you for your application</h1>
-		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
+
+		<h2>Thank you for submitting your application for Knowsley Community College. </h2>
+ 
+<p>The College is currently closed for the Christmas period (from Friday 22nd December – Monday 8th January).</p>
+ 
+<p>Upon our return, a member of our admissions team will be in touch to progress with your application.</p>
+
 	</div>
   			
 

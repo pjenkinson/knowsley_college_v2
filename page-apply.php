@@ -237,7 +237,7 @@ if($pageID == '1' || empty($pageID)) {
 				 			<label class="course-choice" for="Offering1">Select your first choice course</label>
 				 			<select class="select-inline" name="Offering1" required>
 				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 				  <?php include( locate_template( 'course-select-options-1.php', false, false ) );?> 
 
 				 			</select>
 				 		</div>
@@ -249,7 +249,7 @@ if($pageID == '1' || empty($pageID)) {
 				 		  <label class="course-choice" for="Offering2">Select your second choice course (Optional)</label>
 				 			<select class="select-inline" name="Offering2">
 				 				  <option value="">Please Select</option>
-				 				  <?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 				  <?php include( locate_template( 'course-select-options-2.php', false, false ) );?> 
 
 				 			</select>
 				 	</div>
@@ -257,7 +257,7 @@ if($pageID == '1' || empty($pageID)) {
 				 			<label class="course-choice" for="Offering3">Select your third choice course (Optional)</label>
 				 			<select class="select-inline" name="Offering3">
 				 					<option value="">Please Select</option>
-				 					<?php include( locate_template( 'course-select-options.php', false, false ) );?> 
+				 					<?php include( locate_template( 'course-select-options-3.php', false, false ) );?> 
 				 			</select>
 				 	</div>
 				 </fieldset>
@@ -783,11 +783,13 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 
 	<div class="the-content">
-		<h2>Thank you for your application <i class="fa fa-thumbs-up"></i> </h2>
+		
+		<h2>Thank you for submitting your application for Knowsley Community College. </h2>
+ 
+		<p>The College is currently closed for the Christmas period (from Friday 22nd December – Monday 8th January).</p>
+ 
+		<p>Upon our return, a member of our admissions team will be in touch to progress with your application.</p>
 
-		<p>We’re delighted that you’ve chosen to apply to Knowsley Community College, you have applied for the 2018/2019 academic year.</p>
-
-		<p>You will soon be contacted by a member of the KCC team to invite you to an Information Evening. You will have an opportunity to find out more about your course and to speak to our tutors. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
 
 	</div>
 

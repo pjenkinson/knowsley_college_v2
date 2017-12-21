@@ -33,6 +33,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018' ) ); ?>
 	</nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Adults 2018 Courses' ): ?>
+	<nav class="nav-secondary adults-2018-courses">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018-courses' ) ); ?>
+	</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Employers' ): ?>
 	<nav class="nav-secondary">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers' ) ); ?>
