@@ -33,6 +33,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018-courses' ) ); ?>
 	</nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Adults Finance' ): ?>
+	<nav class="nav-secondary adults-finance">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-finance' ) ); ?>
+	</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Eduroam' ): ?>
 	<nav class="nav-secondary eduroam-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'eduroam' ) ); ?>

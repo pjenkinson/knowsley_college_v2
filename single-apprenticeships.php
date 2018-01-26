@@ -61,8 +61,6 @@ $currentCategory = get_the_category();
 
 <?php the_content();?>
 
-<p class="apply"><a href="tel:01514775757">Call: 0151 477 5757</a></p>
-
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 

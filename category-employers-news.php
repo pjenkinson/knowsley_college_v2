@@ -89,11 +89,13 @@ jQuery(function() {
 <?php if ($wp_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
   <nav class="prev-next-posts">
     <div class="prev-posts-link">
-      <?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); // display older posts link ?>
+      <?php echo get_next_posts_link( 'More News' );  ?>
     </div>
+    <?php if ( is_paged() ) {?>
     <div class="next-posts-link">
-      <?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?>
+      <?php echo get_previous_posts_link( 'Previous' ); ?>
     </div>
+    <?php }?>
   </nav>
 <?php } ?>
 

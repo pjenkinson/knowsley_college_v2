@@ -11,7 +11,7 @@ get_header(); ?>
 jQuery(document).ready(function() {
 	
 jQuery(function() {
-    jQuery('.featured-article').matchHeight();
+    jQuery('.featured-news-snippet').matchHeight();
 });
 
 jQuery(function() {
@@ -188,37 +188,45 @@ $currentCategory = get_the_category();
 <div class="fixed-container">
 
 <div class="featured-news-container">
-<h2 class="section-heading">Latest News and Events</h2>
-<p class="content-snippet-intro">Stay up to date with KCC <a href="<?php echo site_url(); ?>/news">News</a> and <a href="<?php echo site_url(); ?>/events">Events</a>.</p>
+<h2 class="section-heading">Events</h2>
+
+<p></p>
 
 <div class="featured-news">
 
 <?php 
 
-// If 0 event posts, display news post
 
-$events = get_posts( array('post_type' => 'events', 'posts_per_page' => -1) );
 
-if($events) {
-$the_query = new WP_Query( array( 'post_type' => 'events' , 'showposts' => '1' , 'orderby' => 'date', 'order' => 'ASC' ));
-$noevents = 'a';
-} 
 
-else { ?>
-<?php
-$the_query = new WP_Query( array( 'category_name' => 'news' , 'showposts' => '1', 'offset' => '2'));
+$news_args = array( 'category_name' => 'news' , 'posts_per_page' => '3', 'post_status' => 'publish');
 
-} 
-?>
+$event_args = array('post_type' => 'events' ,  'posts_per_page' => '3' , 'orderby' => 'date', 'order' => 'ASC', 'post_status' => 'publish' );
 
-<?php
+$the_query_events = new WP_Query($event_args);
+
+$the_query_news = new WP_Query($news_args);
+
+$id = get_the_ID();
+
+$count_pages = wp_count_posts( $post_type = 'events' );
+
+
+if ($count_pages < 3){?>
+
+<p>Count = <?php echo 'less than'?></p>	
+
+<?php }
+
+
+
 // The Loop
-while ( $the_query->have_posts() ) :
-$the_query->the_post();
+if ( $the_query_events->have_posts() )
+ while($the_query_events->have_posts()) {
+ 	$the_query_events->the_post(); 
 ?>
 
-<?php // Get the Event ID
-$id = get_the_ID(); ?>
+
 
 <!-- EVENT -->
 
@@ -232,39 +240,46 @@ $id = get_the_ID(); ?>
 	<div class="featured-news-heading event-featured-heading">
 	<h3><?php the_title(); ?></h3>
 	</div>
-	<?php // If events post, replace news icon with events icon and text
-	if ($noevents == 'a') {?>
   <div class="featured-post-date">
 	<p>Event  <i class="fa fa-calendar"></i> <?php the_field('event_date', $id); ?></p>
 	</div>
-	<?php } else {?>
-  <div class="featured-post-date">
-	<p><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></p>
-  </div>
-	<?php }?>
+
 	</div>
 	</a>
 </div>
 
-<?php
-endwhile;
+<?php  } else { echo'hello';}
+         
+
 // Restore original Query & Post Data
 wp_reset_query();
 wp_reset_postdata();
 ?>
 
+</div>
+
+<p class="content-snippet-intro"><a href="<?php echo site_url(); ?>/events">More events</a> <i class="fa fa-calendar"></i></p>
+
+
+<h2 class="section-heading">News and Successes</h2>
+
+<p></p>
+
+<div class="featured-news">
+
+
 <!-- NEWS -->
 
-<?php
-// Query for displaying the latest post, larger image and main focus of news page.
-$the_query = new WP_Query( array( 'category_name' => 'news' , 'showposts' => '3'));
-?>
+
 
 <?php
 // The Loop
-while ( $the_query->have_posts() ) :
-$the_query->the_post();
+while ( $the_query_news->have_posts() ) :
+$the_query_news->the_post();
 ?>
+
+
+
 
 <div class="featured-news-snippet featured-article">
 	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
@@ -294,9 +309,9 @@ wp_reset_query();
 wp_reset_postdata();
 ?>
 
-
-
 </div>
+
+<p class="content-snippet-intro"><a href="<?php echo site_url(); ?>/news">More news</a> <i class="fa fa-clock-o"></i></p>
 
 </section>
 

@@ -1,82 +1,88 @@
- // WP STATIC HOMEPAGE
+// WP STATIC HOMEPAGE
 
 $news_snippet_tablet: 700px;
 
- // NEWS SNIPPETS
-
+// NEWS SNIPPETS
 .featured-news-container {
-	margin-top: 2em;
+margin-top: 2em;
 }
-
 .featured-news {
-	@include span (12 of 12);
+@include span (12 of 12);
 }
 
 .featured-news-snippet {
-  @include span (12 of 12);
-  margin-bottom: gutter();
-  background: white;
+@include gallery (12 of 12);
+margin-bottom: gutter();
+background: white;
 } 
 
+.featured-news-snippet:last-child {
+display: block;
+}
+
 @include breakpoint ($news_snippet_tablet) {
- .featured-news-snippet {
-  @include gallery (6 of 12);
-  }
+.featured-news-snippet {
+@include gallery (6 of 12);
+}
+
+.featured-news-snippet:last-child {
+display: none;
+}
+
 }
 
 @include breakpoint ($larger_desktop) {
-	.featured-news-snippet {
-  @include gallery (4 of 12);
-  }
-  .featured-news-snippet:last-of-type {
-  	display: none;
-  }
-
+.featured-news-snippet {
+@include gallery (4 of 12);
+}
+.featured-news-snippet:last-child {
+display: block;
+}
 }
 
 .featured-events-snippet {
-	background: $primary-color;
+background: $primary-color;
 }
 
 .featured-events-snippet h2, .featured-events-snippet p {
-	color: white;
+color: white;
 }
 
 .featured-news-heading {
-	float: left;
-	@include span (12 of 12);
-	padding: 1em gutter();
+float: left;
+@include span (12 of 12);
+padding: 1em gutter();
 }
 
 .news-section {
-	background: $off-white;
+background: $off-white;
 }
 
 @include breakpoint ($larger_desktop) {
 
 .learners-container {
-	@include span (12 of 12);
-	clear: both;
+@include span (12 of 12);
+clear: both;
 }
 
 .learner-item {
-	@include gallery(3 of 12);
-   position: relative;
-   overflow: hidden;
+@include gallery(3 of 12);
+position: relative;
+overflow: hidden;
 }
 
 .learner-item img:hover {
-	opacity: 0.7;
-	-webkit-transition: opacity 2s; /* Safari */
-  transition: opacity 2s;
-  -webkit-backface-visibility: hidden;
+opacity: 0.7;
+-webkit-transition: opacity 2s; /* Safari */
+transition: opacity 2s;
+-webkit-backface-visibility: hidden;
 }
 
 .section-image-container img:hover, .home-section-3col img:hover {
-	opacity: 0.7;
-	-webkit-transition: opacity 2s; /* Safari */
-  transition: opacity 2s;
-  -webkit-backface-visibility: hidden;
+opacity: 0.7;
+-webkit-transition: opacity 2s; /* Safari */
+transition: opacity 2s;
+-webkit-backface-visibility: hidden;
 }
 
 }
@@ -84,358 +90,358 @@ $news_snippet_tablet: 700px;
 @include breakpoint ($desktop) {
 
 .learner-item img {
-	max-height: 148px;
-	height: auto;
+max-height: 148px;
+height: auto;
 }
 
 // Homepage sections
 
 .section-image-container {
-	overflow: hidden;
+overflow: hidden;
 }
 
 .metaslider .caption {
-	font-size: 1em;
+font-size: 1em;
 }
 
 }
 
 // Homepaege sections
 .about-section, .employers-section, .resources-section, .download-prospectus {
-	background: $off-white;
-	border-top: 2px solid $grey;
+background: $off-white;
+border-top: 2px solid $grey;
 }
 
 .download-prospectus h2, .download-prospectus p, .employers-section h2, .employers-section p {
-	color: $primary-color;
+color: $primary-color;
 }
 
 // Homepage sections
 
 h2.section-heading {
-	border-bottom: 1px solid $primary-color;
-	font-size: 2em;
+border-bottom: 1px solid $primary-color;
+font-size: 2em;
 }
 
 .employers-section h2.section-heading, .download-prospectus, h2.section-heading {
-	border-bottom: 1px solid white;
+border-bottom: 1px solid white;
 }
 
 .news-section .section-heading, .services-section {
-	text-align: center;
+text-align: center;
 }
 
 .courses-section p, .news-section p {
-	text-align: center;
+text-align: center;
 }
 
 .section-sub-heading {
-	text-align: center;
-	font-size: 1.17em;
-	color: $primary-color;
+text-align: center;
+font-size: 1.17em;
+color: $primary-color;
 }
 
 .featured-news-container {
-	@include span (12 of 12);
-	clear: both;
+@include span (12 of 12);
+clear: both;
 }
 
 .featured-news-container img {
-	display: block;
-	height: auto;
+display: block;
+height: auto;
 }
 
 .featured-post-date {
-	float: left;
-	width: 100%;
-	text-align: center;
+float: left;
+width: 100%;
+text-align: center;
 }
 
 .featured-post-date p {
-	display: inline-block;
+display: inline-block;
 }
 
 .homepage-featured-news-image {
-	float: left;
-	width: 100%;
-	overflow: hidden;
+float: left;
+width: 100%;
+overflow: hidden;
 }
 
 .homepage-featured-news-image img:hover {
-	opacity: 0.7;
-	-webkit-transition: opacity 2s; /* Safari */
-  transition: opacity 2s;
+opacity: 0.7;
+-webkit-transition: opacity 2s; /* Safari */
+transition: opacity 2s;
 }
 
 .resources-container {
-	width: 100%;
-	float: left;
-	clear: both;
+width: 100%;
+float: left;
+clear: both;
 }
 
 .resources-section h2 {
-	font-size: 2em;
-	padding-bottom: 0;
-	margin-bottom: 0;
+font-size: 2em;
+padding-bottom: 0;
+margin-bottom: 0;
 }
 
 .resources-snippet .cover-image {
- width: 100%;
- float: left;
+width: 100%;
+float: left;
 }
 .resources-snippet .title {
-	width: 100%;
-	float: left;
-	background: $secondary-color;
+width: 100%;
+float: left;
+background: $secondary-color;
 }
 
 // Slider container
 .promo-slider-container {
-	max-height: 400px;
-	overflow: hidden;
-	@media (max-width: 1180px) {
-  	display: none;
+max-height: 400px;
+overflow: hidden;
+@media (max-width: 1180px) {
+display: none;
 }
 }
 
 .promo-slider-overlap .fixed-container {
-	position: relative;
-	height: 2em;
-	clear: both;
+position: relative;
+height: 2em;
+clear: both;
 }
 
 .promo-slider-overlap .fixed-container::after {
-  content: '';
-  background: #ffffff;
-  padding: 2em 4em;
-  display: inline-block;
-  float: left;
-  position: absolute;
-  left: -40px;
-  top: 0;
+content: '';
+background: #ffffff;
+padding: 2em 4em;
+display: inline-block;
+float: left;
+position: absolute;
+left: -40px;
+top: 0;
 
-    @media (max-width: 1263px) {
-  	display: none;
+@media (max-width: 1263px) {
+display: none;
 }
 
 }
 
 .promo-slider-overlap  {
 
-	@media (max-width: 1263px) {
-  	background: white !important;
+@media (max-width: 1263px) {
+background: white !important;
 }
 
 }
 
 .promo-slider-overlap .fixed-container::before {
-	content: '';
-  background: #ffffff;
-  padding: 2em 4em;
-  display: inline-block;
-  float: left;
-  position: absolute;
-  right: -40px;
-  top: 0;
+content: '';
+background: #ffffff;
+padding: 2em 4em;
+display: inline-block;
+float: left;
+position: absolute;
+right: -40px;
+top: 0;
 
-  @media (max-width: 1263px) {
-  display: none;
-  background: white;
+@media (max-width: 1263px) {
+display: none;
+background: white;
 }
 
 }
 
 .slider-container {
-	background: $off-white;
+background: $off-white;
 }
 
 .slider {
-	float: left;
-	max-height: 400px !important; // Includes dot navigation
+float: left;
+max-height: 400px !important; // Includes dot navigation
 }
 
 .metaslider {
-    position: relative;
-    z-index: 0;
+position: relative;
+z-index: 0;
 }
 
 .metaslider  .caption {
-	padding: 0px !important;
-	line-height: normal!important;
+padding: 0px !important;
+line-height: normal!important;
 }
 .metaslider .caption-wrap {
-	  font-size: 2.2em !important; 
-	  padding: 0.5em !important;
-	  background: none !important;
-    max-width: 80% !important;
-    bottom: auto;
-    position: absolute;
-    left: 0;
-    color: $secondary-color;
-    margin: 0;
-    display: block;
-    opacity: 1 !important;
+font-size: 2.2em !important; 
+padding: 0.5em !important;
+background: none !important;
+max-width: 80% !important;
+bottom: auto;
+position: absolute;
+left: 0;
+color: $secondary-color;
+margin: 0;
+display: block;
+opacity: 1 !important;
 }
 
 .metaslider .caption-wrap:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background: rgba(153, 204, 102, 1);
-  border-bottom: 10px solid $secondary-color !important;
-  -webkit-transform: skew(-8deg);
-    transform: skew(-8deg);
-    -ms-transform: skew(-8deg, 0);
-  -webkit-backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: -10px;
-  z-index: 1000;
- }
+content: '';
+width: 100%;
+height: 100%;
+background: rgba(153, 204, 102, 1);
+border-bottom: 10px solid $secondary-color !important;
+-webkit-transform: skew(-8deg);
+transform: skew(-8deg);
+-ms-transform: skew(-8deg, 0);
+-webkit-backface-visibility: hidden;
+position: absolute;
+top: 0;
+right: 0;
+left: -10px;
+z-index: 1000;
+}
 
 .metaslider .caption {
-	padding: 0px;
-	word-wrap: break-word;
-  z-index: 2000;
-  position: relative;
-  color: $primary-color;
+padding: 0px;
+word-wrap: break-word;
+z-index: 2000;
+position: relative;
+color: $primary-color;
 }
 
 .metaslider .caption a:link, .metaslider .caption a:visited, .metaslider .caption a:focus {
- text-decoration: none;
- color: white;
+text-decoration: none;
+color: white;
 }
 
 .metaslider .caption a:hover {
-	color: white;
-	text-decoration: underline;
+color: white;
+text-decoration: underline;
 }
 
 .flex-control-nav {
-	width: auto !important;
-	text-align: right !important;
-	right: 0 !important;
-	bottom: 0px !important;
-	line-height: 0px !important;
-	z-index: 100 !important;
-	padding-right: 1em !important;
-	background: $primary-color;
-	padding: 0.5em !important;
-	border: solid 2px $secondary-color !important;
+width: auto !important;
+text-align: right !important;
+right: 0 !important;
+bottom: 0px !important;
+line-height: 0px !important;
+z-index: 100 !important;
+padding-right: 1em !important;
+background: $primary-color;
+padding: 0.5em !important;
+border: solid 2px $secondary-color !important;
 }
 
 .flex-control-nav li a {
-	text-indent: 9999px !important;
+text-indent: 9999px !important;
 }
 
 .flex-control-paging li a.flex-active {
-	background: $secondary-color !important;
+background: $secondary-color !important;
 }
 
 .slides li img:hover {
-	opacity: 0.7;
-	-webkit-transition: opacity 2s; /* Safari */
-  transition: opacity 2s;
+opacity: 0.7;
+-webkit-transition: opacity 2s; /* Safari */
+transition: opacity 2s;
 }
 
 .resources h2 a:link, .resources h2 a:hover, .resources h2 a:visited {
-	color: $primary-color;
+color: $primary-color;
 }
 // Download Prospectus
 
 
 .download-prospectus p {
-	margin: 0px;
+margin: 0px;
 }
 
 .two-col-section-main h2.section-heading {
-	text-align: left;
+text-align: left;
 }
 
 .two-col-section-prospectus-description h2.section-heading {
-	text-align: left;
+text-align: left;
 }
 
 .prospectus-container img {
-	width: auto;
+width: auto;
 }
 
 .download-button {
-  background: $primary-color;
-  margin-top: 10px;
-  color: white;
-  padding: 10px;
-  border: 2px solid $secondary-color;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+background: $primary-color;
+margin-top: 10px;
+color: white;
+padding: 10px;
+border: 2px solid $secondary-color;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 }
 
 .download-button a, .download-button a:link, .download-button a:visited  {
-	color: white;
+color: white;
 }
 
 .download-button:hover {
-	background: $secondary-color;
+background: $secondary-color;
 }
 .prospectus-container img:hover {
-  border: 2px solid $secondary-color;
+border: 2px solid $secondary-color;
 }
 
 .site-homepage .owl-carousel {
-	background: white;
+background: white;
 }
 .grid-section-white {
- background: white;
+background: white;
 }
 
 .grid-section-white .page-sections .page-description .heading {
- background: $off-white;
+background: $off-white;
 }
 
 .content-snippet-intro a:link, .content-snippet-intro a:visited, .content-snippet-intro a:focus {
- text-decoration: underline;
+text-decoration: underline;
 }
 
 .homepage-live-search {
-	background: $primary-color;
+background: $primary-color;
 }
 .homepage-live-search-container {
-	height: auto;
-	padding-bottom: 2em;
+height: auto;
+padding-bottom: 2em;
 }
 .live-search-browse-list li  {
-	float: left;
-	display: inline-block;
-	color: white;
-	padding-right: 2em;
+float: left;
+display: inline-block;
+color: white;
+padding-right: 2em;
 }
 
 .live-search-browse-list a:link, .live-search-browse-list a:visited  {
-	color: white;
+color: white;
 }
 .select2-selection__arrow {
-	display: none;
+display: none;
 }
 .section-image-container img {
-	float: left;
-	width: 100%;
-	height: auto;
+float: left;
+width: 100%;
+height: auto;
 }
 .select2-selection__placeholder {
-	font-size: 1em;
+font-size: 1em;
 }
 .select2-selection__rendered {
-  padding: 1em;
+padding: 1em;
 }
 .select2-search__field {
-  width: 100%;
+width: 100%;
 }
 .select2-container .select2-selection--single  {
-  height: auto !important;
+height: auto !important;
 }
 li.select2-results__option {
-	list-style: none;
+list-style: none;
 }

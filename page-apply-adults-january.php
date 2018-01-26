@@ -637,9 +637,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 		<h2>Thank you for submitting your application for Knowsley Community College. </h2>
  
-		<p>The College is currently closed for the Christmas period (from Friday 22nd December – Monday 8th January).</p>
- 
-		<p>Upon our return, a member of our admissions team will be in touch to progress with your application.</p>
+		<p>You will soon be contacted by a member of the KCC team to invite you to an interview. If you have any questions in the meantime, please call our Learner Services Department on <a href="tel:01514775850">0151 477 5850</a>.</p>
 
 	</div>
   			
