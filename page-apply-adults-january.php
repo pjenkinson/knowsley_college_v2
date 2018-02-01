@@ -219,9 +219,11 @@ if($pageID == '1' || empty($pageID)) {
 
     $EntryLevelCourses = $wpdb->get_results($sql);?>
 
-    <?php $sql = "SELECT factsheetname, level, id
-         	   FROM fact_sheets_custom
-         	   WHERE programmearea != 'A Levels'
+    <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
+         	   FROM Offering
+         	   INNER JOIN fact_sheets
+         	   On Offering.CourseInformationID=fact_sheets.id         	   
+         	   WHERE id in (15214, 15213, 15212, 15211, 15210)
          	   ORDER BY level ASC";
 
     $JanuaryCourses = $wpdb->get_results($sql);?>
