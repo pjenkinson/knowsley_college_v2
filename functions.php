@@ -60,6 +60,7 @@ add_filter('wp_title', 'af_titledespacer');
       'alumni-menu' => __( 'Alumni Menu' ),
       'about-student-support-menu' => __( 'About Student Support' ),
       'about-services' => __( 'Services' ),
+      'services-hair-beauty-salon' => __( 'Hair and Beauty Salon' ),
       'about-partners' => __( 'Partners' ),
       'higher-education' => __( 'Higher Education' ),
       '16-19' => __( '16-19' ),

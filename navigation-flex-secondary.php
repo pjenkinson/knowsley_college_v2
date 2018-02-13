@@ -108,6 +108,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'about-services' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Hair and Beauty Salon' ): ?>
+	<nav class="nav-secondary services-hair-beauty-salon-nav">
+	<?php wp_nav_menu( array( 'theme_location' => 'services-hair-beauty-salon' ) ); ?>
+</nav>
+<?php endif; ?>
 <?php if( get_field('navigation') == 'Partners' ): ?>
 	<nav class="nav-secondary partners-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'about-partners' ) ); ?>
