@@ -153,6 +153,10 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'supported-learning' ) ); ?>
 </nav>
 <?php endif; ?>
-
+<?php if( get_field('navigation') == 'Safeguarding' ): ?>
+	<nav class="nav-secondary safeguarding">
+	<?php wp_nav_menu( array( 'theme_location' => 'safeguarding' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
