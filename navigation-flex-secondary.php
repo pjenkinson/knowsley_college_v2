@@ -47,7 +47,8 @@
 	<nav class="nav-secondary">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers' ) ); ?>
   </nav>
-<?php endif; ?>
+<?php endif; 
+
 <?php if( get_field('navigation') == 'Higher Education' ): ?>
 	<nav class="nav-secondary higher-education-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'higher-education' ) ); ?>
@@ -156,6 +157,11 @@
 <?php if( get_field('navigation') == 'Safeguarding' ): ?>
 	<nav class="nav-secondary safeguarding">
 	<?php wp_nav_menu( array( 'theme_location' => 'safeguarding' ) ); ?>
+</nav>
+<?php endif; ?>
+<?php if( get_field('navigation') == 'Free IT' ): ?>
+	<nav class="nav-secondary free-it">
+	<?php wp_nav_menu( array( 'theme_location' => 'Free IT' ) ); ?>
 </nav>
 <?php endif; ?>
 

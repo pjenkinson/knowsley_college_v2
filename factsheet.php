@@ -438,7 +438,7 @@ if (!empty($factsheet->qualification_type)) {?>
   <div class="full-width-container content-snippet">  
   <!-- BEGIN UNITS TAB -->
 
-  <h2 class="section-heading">Units you will study include:</h2>
+  <h2 class="section-heading">What you will study</h2>
   
 
   <?php if (!empty($factsheetWP['units'])) {?>

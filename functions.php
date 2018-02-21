@@ -78,6 +78,7 @@ add_filter('wp_title', 'af_titledespacer');
       'adults' => __( 'Adults' ),
       'contact' => __( 'Contact' ),
       'external-access' => __( 'External Access' ),
+      'free-it' => __( 'Free IT' ),
       'governors' => __( 'governors' ),
       'vacancies' => __( 'vacancies' ),
       'workworld' => __( 'workworld' ),

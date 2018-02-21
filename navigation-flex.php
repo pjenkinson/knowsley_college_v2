@@ -148,6 +148,11 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'safeguarding' ) ); ?>
 </nav>
 <?php endif; ?>
+<?php if( get_field('navigation') == 'Free IT' ): ?>
+	<nav class="nav-home free-it">
+	<?php wp_nav_menu( array( 'theme_location' => 'Free IT' ) ); ?>
+</nav>
+<?php endif; ?>
 
 
 
