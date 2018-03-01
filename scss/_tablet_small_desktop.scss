@@ -1,6 +1,4 @@
-
-
- //This applies from 1080px onwards 
+//This applies from 1080px onwards 
 @include breakpoint ($tablet-small-desktop) {
 
 // GRIDS & CONTAINERS
@@ -11,14 +9,9 @@
 	@include span (12 of 12);
 }
 
-.featured-news-snippet {
-	@include span (4 of 12);
-}
-
 .latest-news-snippet-container {
 	@include span (12 of 12);
 }
-
 .two-col-section-main {
 	@include span (6 of 12);
 }
@@ -168,9 +161,6 @@
 	@include gallery (6 of 12 before);
 }
 
-.featured-news-snippet {
-	@include span (12 of 12);
-}
 
 }
 

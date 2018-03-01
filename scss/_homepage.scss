@@ -11,7 +11,7 @@ margin-top: 2em;
 }
 
 .featured-news-snippet {
-@include gallery (12 of 12);
+@include span (12 of 12);
 margin-bottom: gutter();
 background: white;
 } 
@@ -396,11 +396,9 @@ background: white;
 .grid-section-white {
 background: white;
 }
-
 .grid-section-white .page-sections .page-description .heading {
 background: $off-white;
 }
-
 .content-snippet-intro a:link, .content-snippet-intro a:visited, .content-snippet-intro a:focus {
 text-decoration: underline;
 }

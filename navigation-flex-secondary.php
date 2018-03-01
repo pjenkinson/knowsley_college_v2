@@ -47,8 +47,7 @@
 	<nav class="nav-secondary">
 	<?php wp_nav_menu( array( 'theme_location' => 'employers' ) ); ?>
   </nav>
-<?php endif; 
-
+<?php endif;?>
 <?php if( get_field('navigation') == 'Higher Education' ): ?>
 	<nav class="nav-secondary higher-education-nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'higher-education' ) ); ?>

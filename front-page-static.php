@@ -144,40 +144,42 @@ $currentCategory = get_the_category();
 <div class="learners-container">
 
 	<div class="learner-item">
-	<a href="<?php the_field('16_19_permalink', 'option'); ?>">
+	<a href="<?php the_field('panel_1_page_link'); ?>">
 			<div class="learner-item-image">
-			<img alt="School Leavers" src="<?php the_field('16_19_image', 'option'); ?>">
+			<img alt="School Leavers" src="<?php the_field('panel_1_image'); ?>">
 			</div>
-			<h3><?php the_field('16_19_title', 'option'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
+			<h3><?php the_field('panel_1_title'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
 	</a>
 	</div>
 
 	<div class="learner-item">
-	<a href="<?php the_field('apprenticeships_permalink', 'option'); ?>">
+	<a href="<?php the_field('panel_2_page_link'); ?>">
 			<div class="learner-item-image">
-			<img alt="Apprenticeships" src="<?php the_field('apprenticeships_image', 'option'); ?>">
+			<img alt="School Leavers" src="<?php the_field('panel_2_image'); ?>">
 			</div>
-			<h3><?php the_field('apprenticeships_title', 'option'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
+			<h3><?php the_field('panel_2_title'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
 	</a>
 	</div>
 
 	<div class="learner-item">
-	<a href="<?php the_field('adults_permalink', 'option'); ?>">
+	<a href="<?php the_field('panel_3_page_link'); ?>">
 			<div class="learner-item-image">
-			<img alt="Adults" src="<?php the_field('adults_image', 'option'); ?>">
+			<img alt="School Leavers" src="<?php the_field('panel_3_image'); ?>">
 			</div>
-			<h3><?php the_field('adults_title', 'option'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
+			<h3><?php the_field('panel_3_title'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
 	</a>
 	</div>
 
 	<div class="learner-item">
-	<a href="<?php the_field('higher_education_permalink', 'option'); ?>">
+	<a href="<?php the_field('panel_4_page_link'); ?>">
 			<div class="learner-item-image">
-			<img alt="Higher Education" src="<?php the_field('higher_education_image', 'option'); ?>">
+			<img alt="School Leavers" src="<?php the_field('panel_4_image'); ?>">
 			</div>
-			<h3><?php the_field('higher_education_title', 'option'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
+			<h3><?php the_field('panel_4_title'); ?><i class="fa fa-arrow-circle-o-right link-arrow"></i></h3>
 	</a>
 	</div>
+
+	
 		
 </div>
 
@@ -197,8 +199,6 @@ $currentCategory = get_the_category();
 <?php 
 
 
-
-
 $news_args = array( 'category_name' => 'news' , 'posts_per_page' => '3', 'post_status' => 'publish');
 
 $event_args = array('post_type' => 'events' ,  'posts_per_page' => '3' , 'orderby' => 'date', 'order' => 'ASC', 'post_status' => 'publish' );
@@ -208,17 +208,6 @@ $the_query_events = new WP_Query($event_args);
 $the_query_news = new WP_Query($news_args);
 
 $id = get_the_ID();
-
-$count_pages = wp_count_posts( $post_type = 'events' );
-
-
-if ($count_pages < 3){?>
-
-<p>Count = <?php echo 'less than'?></p>	
-
-<?php }
-
-
 
 // The Loop
 if ( $the_query_events->have_posts() )
