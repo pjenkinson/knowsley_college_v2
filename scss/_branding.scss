@@ -3,8 +3,6 @@
 $primary-color: #3d3d3c; // Slate
 $secondary-color: #99cc66; // Green
 $para-text: #373737; // Paragraph Text
-$higher-education: #68478d; // Higher Education
-$higher-education-secondary: #df8250; // Higher Education Secondary
 $links: #6d9837; // Green links
 $secondary-color-tint: #d83a89;
 $box-shadow: 0 4px 6px 1px rgba(50, 50, 50, 0.14);
@@ -324,101 +322,6 @@ color: $secondary-color;
 }
 .secondary-page, .body-background, .single-vacancy-page, .one-col-page {
 	background: $off-white;
-}
-
-// HIGHER EDUCATION (KNOWSLEY UNIVERSITY CENTRE) ---------------------------------------------------->
-
-// Content Snippets
-
-.higher-education .button-default a:link, .higher-education .button-default a:visited {
-	color: $higher-education;
-	border: 2px solid $higher-education;
-	background: white;
-}
-
-.higher-education .button-default a:hover, .higher-education .button-default a:focus {
-  background: $higher-education-secondary;
-  border: 2px solid $higher-education-secondary;
-  color: white;
-}
-
-// Featured Content Snippets
-
-.site-static section.higher-education {
-	background: $higher-education;
-}
-
-.site-static section.higher-education .button-default a:link, .site-static section.higher-education .button-default a:visited {
-	border: 2px solid white;
-	background: $higher-education;
-	color: white;
-}
-
-.site-static section.higher-education .button-default a:hover {
-  background: $higher-education-secondary;
-  border: 2px solid $higher-education-secondary;
-  color: white;
-}
-
-.site-static section.higher-education h2, section.higher-education p {
-	color: white;
-}
-
-.site-static section.higher-education h2.section-heading {
-	border-bottom: 1px solid $off-white;
-}
-
-
-
-// Featured Banner
-
-.higher-education .featured-banner .banner-heading {
-background:rgba(104, 71, 141, 0.9);
-border-top: solid 2px $higher-education-secondary;
-}
-
-.breadcrumbs-higher-education {
-border-top: 2px solid $higher-education;
-}
-.he-background {
-background: $higher-education;
-}
-
-footer.higher-education {
-border-top: 40px solid $higher-education-secondary;
-background: $higher-education;
-}
-
-footer.higher-education address a:link, footer address a:visited {
-text-decoration: none;
-}
-footer.higher-education address a:active, footer address a:hover {
-color: $higher-education-secondary;
-}
-
-footer.higher-education a:link {
-color: white;
-}
-footer.higher-education a:hover {
-color: $higher-education-secondary;
-}
-
-.higher-education h2 {
-	color: $higher-education;
-}
-
-// Menu
-.higher-education .nav-home {
-	background: $off-white !important;
-}
-
-
-.higher-education .mega-menu-toggle .mega-toggle-block-1:before, .higher-education .mega-menu-toggle .mega-toggle-block-1:after {
-	color: $higher-education !important;
-}
-
-.mega-menu-toggle .mega-toggle-block-1:after, .mega-menu-toggle .mega-toggle-block-1:before   {
- color: #666666 !important;
 }
 
 // LEE STAFFORD ---------------------------------------------------->
@@ -964,7 +867,6 @@ color: $primary-color;
   background: $nla;
   color: white;
 }
-
 // Featured Content Snippets
 .site-static section.nla {
 	background: $nla;

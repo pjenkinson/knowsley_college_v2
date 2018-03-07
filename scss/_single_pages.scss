@@ -495,7 +495,7 @@ article p.apply a {
 	border-bottom: none;
 }
 
-#mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {
+#mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {
 	border-bottom: none;
 }
 
@@ -787,12 +787,6 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.higher-education hr.dotted {
-  border-style: dashed;
-  color: $higher-education;
-  margin-bottom: 2em;
-}
-
 .lee-stafford  hr.dotted {
   border-style: dashed;
   color: $lee-stafford;
@@ -821,7 +815,6 @@ input[type=checkbox] {
 .slider {
 	position: relative;
 }
-
 .slider .carousel-cell {
    width: 100%; /* full width */
   height: auto; /* height of carousel */

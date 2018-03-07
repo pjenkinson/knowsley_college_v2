@@ -218,73 +218,6 @@ footer.kcc-home a:active, footer.kcc-home a:hover {
 .secondary-page, .body-background, .single-vacancy-page, .one-col-page {
   background: #d7d7d7; }
 
-.higher-education .button-default a:link, .higher-education .button-default a:visited {
-  color: #68478d;
-  border: 2px solid #68478d;
-  background: white; }
-
-.higher-education .button-default a:hover, .higher-education .button-default a:focus {
-  background: #df8250;
-  border: 2px solid #df8250;
-  color: white; }
-
-.site-static section.higher-education {
-  background: #68478d; }
-
-.site-static section.higher-education .button-default a:link, .site-static section.higher-education .button-default a:visited {
-  border: 2px solid white;
-  background: #68478d;
-  color: white; }
-
-.site-static section.higher-education .button-default a:hover {
-  background: #df8250;
-  border: 2px solid #df8250;
-  color: white; }
-
-.site-static section.higher-education h2, section.higher-education p {
-  color: white; }
-
-.site-static section.higher-education h2.section-heading {
-  border-bottom: 1px solid #d7d7d7; }
-
-.higher-education .featured-banner .banner-heading {
-  background: rgba(104, 71, 141, 0.9);
-  border-top: solid 2px #df8250; }
-
-.breadcrumbs-higher-education {
-  border-top: 2px solid #68478d; }
-
-.he-background {
-  background: #68478d; }
-
-footer.higher-education {
-  border-top: 40px solid #df8250;
-  background: #68478d; }
-
-footer.higher-education address a:link, footer address a:visited {
-  text-decoration: none; }
-
-footer.higher-education address a:active, footer address a:hover {
-  color: #df8250; }
-
-footer.higher-education a:link {
-  color: white; }
-
-footer.higher-education a:hover {
-  color: #df8250; }
-
-.higher-education h2 {
-  color: #68478d; }
-
-.higher-education .nav-home {
-  background: #d7d7d7 !important; }
-
-.higher-education .mega-menu-toggle .mega-toggle-block-1:before, .higher-education .mega-menu-toggle .mega-toggle-block-1:after {
-  color: #68478d !important; }
-
-.mega-menu-toggle .mega-toggle-block-1:after, .mega-menu-toggle .mega-toggle-block-1:before {
-  color: #666666 !important; }
-
 .lee-stafford .button-default a:link, .lee-stafford .button-default a:visited {
   color: #410099;
   border: 2px solid #410099;
@@ -1159,18 +1092,14 @@ li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, li.mega-menu-it
 li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
   background: #99cc66 !important; }
 
-#mega-menu-wrap-higher-education #mega-menu-wrap-higher-education > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
-  background: #68478d !important;
-  color: #FFFFFF !important; }
-
 #mega-menu-wrap-employers #mega-menu-wrap-employers > li.mega-menu-item.mega-current-page-ancestor > a:hover.mega-menu-link {
   background: #4a0d66 !important;
   color: #FFFFFF !important; }
 
-#mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-higher-education .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle, #mega-menu-wrap-supported-learning .mega-menu-toggle {
+#mega-menu-wrap-about-menu .mega-menu-toggle, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19 .mega-menu-toggle, #mega-menu-wrap-16-19-subject .mega-menu-toggle, #mega-menu-wrap-employers .mega-menu-toggle, #mega-menu-wrap-external-access .mega-menu-toggle, #mega-menu-wrap-policies .mega-menu-toggle, #mega-menu-wrap-governors .mega-menu-toggle, #mega-menu-wrap-supported-learning .mega-menu-toggle {
   text-align: left; }
 
-#mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-higher-education .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before, #mega-menu-wrap-supported-learning .mega-menu-toggle:before {
+#mega-menu-wrap-about-menu .mega-menu-toggle:before, #mega-menu-wrap-about-student-support-menu .mega-menu-toggle:before, #mega-menu-wrap-16-19 .mega-menu-toggle:before, #mega-menu-wrap-16-19-subject .mega-menu-toggle:before, #mega-menu-wrap-apprenticeships .mega-menu-toggle:before, #mega-menu-wrap-adults .mega-menu-toggle:before, #mega-menu-wrap-employers .mega-menu-toggle:before, #mega-menu-wrap-contact .mega-menu-toggle:before, #mega-menu-wrap-external-access .mega-menu-toggle:before, #mega-menu-wrap-policies .mega-menu-toggle:before, #mega-menu-wrap-governors .mega-menu-toggle:before, #mega-menu-wrap-supported-learning .mega-menu-toggle:before {
   float: right !important; }
 
 #mega-menu-wrap-about-menu .mega-menu-toggle:after {
@@ -1203,10 +1132,6 @@ li.mega-menu-item.mega-current-menu-item > a.mega-menu-link:hover {
 
 #mega-menu-wrap-apprenticeships .mega-menu-toggle:after {
   content: "Apprentices" !important;
-  float: left; }
-
-#mega-menu-wrap-higher-education .mega-menu-toggle:after {
-  content: "Higher Education" !important;
   float: left; }
 
 #mega-menu-wrap-contact .mega-menu-toggle:after {
@@ -4281,7 +4206,7 @@ article p.apply a {
 #mega-menu-wrap-about-menu #mega-menu-about-menu > li.mega-menu-item:last-of-type {
   border-bottom: none; }
 
-#mega-menu-wrap-higher-education #mega-menu-higher-education.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {
+#mega-menu-wrap-16-19 #mega-menu-16-19.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-apprenticeships #mega-menu-apprenticeships.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-adults #mega-menu-adults.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-employers #mega-menu-employers.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-contact #mega-menu-contact.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about #mega-menu-about.mega-menu-vertical > li.mega-menu-item:last-of-type, #mega-menu-wrap-about-student-support-menu #mega-menu-about-student-support-menu.mega-menu-vertical > li.mega-menu-item:last-of-type {
   border-bottom: none; }
 
 .responsive-google-map iframe {
@@ -4521,11 +4446,6 @@ input[type=checkbox] {
 .subject-download img:hover {
   background: #99cc66;
   cursor: pointer; }
-
-.higher-education hr.dotted {
-  border-style: dashed;
-  color: #68478d;
-  margin-bottom: 2em; }
 
 .lee-stafford hr.dotted {
   border-style: dashed;
