@@ -53,17 +53,17 @@ get_header(); ?>
 <!-- Start of loop
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+<h1><?php single_tag_title(); ?></h1>
+
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
-
-<h1>News: <?php single_tag_title(); ?></h1>
-
-<p>News stories from Knowsley Community College with the tag: Music</p>
+<a href="<?php the_permalink() ?>">
 
 <h2><?php the_title(); ?></h2>
-<p><a href="<?php the_permalink() ?>">
-<?php the_excerpt_rss(); ?></a></p>
 </a>
+
+<p><?php the_excerpt(); ?></p>
 
 
 <?php endwhile; else: ?>

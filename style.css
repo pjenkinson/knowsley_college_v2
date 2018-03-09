@@ -218,117 +218,6 @@ footer.kcc-home a:active, footer.kcc-home a:hover {
 .secondary-page, .body-background, .single-vacancy-page, .one-col-page {
   background: #d7d7d7; }
 
-.lee-stafford .button-default a:link, .lee-stafford .button-default a:visited {
-  color: #410099;
-  border: 2px solid #410099;
-  background: white; }
-
-.lee-stafford .button-default a:hover, .lee-stafford .button-default a:focus {
-  background: #ee1199;
-  color: white;
-  border: 2px solid #ee1199; }
-
-.site-static section.lee-stafford {
-  background: #ee1199; }
-
-.site-static section.lee-stafford .button-default a:link, .site-static section.lee-stafford .button-default a:visited {
-  border: 2px solid white;
-  background: #ee1199;
-  color: white; }
-
-.site-static section.lee-stafford .button-default a:hover, .site-static section.lee-stafford .button-default a:focus {
-  background: #410099;
-  border: 2px solid #410099;
-  color: white; }
-
-.site-static section.lee-stafford h2, section.lee-stafford p {
-  color: white; }
-
-.lee-stafford .featured-banner .banner-heading {
-  background: rgba(238, 17, 153, 0.8);
-  border-top: solid 2px #ee1199; }
-
-footer.lee-stafford {
-  border-top: 40px solid #ee1199; }
-
-footer.lee-stafford address a:link, footer address a:visited {
-  text-decoration: none; }
-
-footer.lee-stafford address a:active, footer address a:hover {
-  color: #ee1199; }
-
-footer.lee-stafford a:active, footer.lee-stafford a:hover {
-  color: #ee1199; }
-
-ul.service-opening-times li {
-  padding: 0.5em 0.5em 0.5em 0em;
-  border-bottom: 1px solid #d7d7d7;
-  list-style: none; }
-
-.lee-stafford #accordion h3 {
-  background: #410099; }
-
-.lee-stafford #accordion h3.ui-state-active {
-  background: #ee1199; }
-
-.lee-stafford #accordion h3:hover {
-  background: #ee1199; }
-
-.kcc-live .featured-banner .banner-heading {
-  background: rgba(32, 35, 37, 0.8);
-  border-top: solid 2px #202325; }
-
-.kcc-live .section-button a:link, .button a:visited {
-  background: #202325; }
-
-.kcc-live .section-button a:hover, .button a:focus {
-  background: #e72e88; }
-
-footer.kcc-live {
-  border-top: 40px solid #e72e88;
-  background: #202325; }
-
-footer.kcc-live address a:link, footer address a:visited {
-  text-decoration: none; }
-
-footer.kcc-live address a:active, footer address a:hover {
-  color: #e72e88; }
-
-footer.kcc-live a:active, footer.kcc-live a:hover {
-  color: #e72e88; }
-
-.studio-115 .featured-banner .banner-heading {
-  background: rgba(247, 148, 30, 0.9);
-  border-top: solid 2px #bd2029; }
-
-.studio-115 .section-button a:link, .button a:visited {
-  background: #bd2029; }
-
-.studio-115 .section-button a:hover, .button a:focus {
-  background: #f7941e; }
-
-footer.studio-115 {
-  border-top: 40px solid #f7941e; }
-
-footer.studio-115 address a:link, footer address a:visited {
-  text-decoration: none; }
-
-footer.studio-115 address a:active, footer address a:hover {
-  color: #f7941e; }
-
-footer.studio-115 a:active, footer.studio-115 a:hover {
-  color: #f7941e; }
-
-.studio-115 .quote-box {
-  background: #bd2029;
-  border: 2px solid #f7941e; }
-
-.studio-115 .flex-control-nav {
-  border: solid 2px #bd2029 !important; }
-
-.studio-115 .flex-control-paging li a.flex-active {
-  background: #bd2029 !important; }
-
 .employers .button-default a:link, .employers .button-default a:visited {
   color: #4a0d66;
   border: 2px solid #4a0d66;
@@ -4446,11 +4335,6 @@ input[type=checkbox] {
 .subject-download img:hover {
   background: #99cc66;
   cursor: pointer; }
-
-.lee-stafford hr.dotted {
-  border-style: dashed;
-  color: #ee1199;
-  margin-bottom: 2em; }
 
 .section-panels-bg {
   background: #d7d7d7; }

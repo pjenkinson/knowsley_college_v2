@@ -786,13 +786,6 @@ input[type=checkbox] {
   background: $secondary-color;
   cursor: pointer;
 }
-
-.lee-stafford  hr.dotted {
-  border-style: dashed;
-  color: $lee-stafford;
-  margin-bottom: 2em;
-}
-
 .section-panels-bg {
 	background: $off-white;
 }
@@ -811,7 +804,6 @@ input[type=checkbox] {
 	display: none;
 }
 }
-
 .slider {
 	position: relative;
 }
@@ -835,7 +827,6 @@ input[type=checkbox] {
 .slider .flickity-prev-next-button svg {
 	margin-top: 4px;
 }
-
 /* arrow color */
 .slider .flickity-prev-next-button .arrow {
   fill: white;
@@ -844,7 +835,6 @@ input[type=checkbox] {
 .slider .flickity-prev-next-button:hover .arrow {
   fill: $secondary-color;
 }
-
 .slider .flickity-prev-next-button.no-svg {
   color: white;
 }

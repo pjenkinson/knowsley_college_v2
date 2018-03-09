@@ -121,7 +121,6 @@ jQuery(document).ready(function() {
 
 
 <div class="search-results-pages full-width-container">
-<h2>Pages</h2>
 
 
 <?php if ( have_posts() ) : ?>
@@ -141,6 +140,36 @@ jQuery(document).ready(function() {
 				 */
 				get_template_part( 'content', 'search' );
 				?>
+
+				<?php if(has_tag('Course')) {?>
+
+					<article class="the-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<h2><?php if(has_tag('Course')) {?>
+					<span class="highlight">COURSE:</span>
+					<?php } ?>
+
+					<?php the_title() ?></h2>
+					<p><?php echo $postType; ?> <?php if ($postType == "Page"){?><i class="fas fa-file"></i><?php } ?></p>
+
+					<p>
+					<?php if( get_field('meta_description') ): 
+					the_field('meta_description'); 
+					endif; ?>
+					</p>
+
+					<p><?php the_tags(); ?></p>
+
+
+
+
+					</article><!-- #post-## -->
+
+						
+				<?php } ?>
+
+
+
+
 
 			<?php endwhile; ?>
 
