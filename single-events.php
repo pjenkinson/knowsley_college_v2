@@ -48,8 +48,8 @@ $currentCategory = get_the_category();
 <span class='st_sharethis_large' displayText='ShareThis'></span>
 
 <div class="single-events-details">
-<p><i class="fa fa-calendar-o"></i> <?php the_field('event_date') ?></p>
-<p><i class="fa fa-clock-o"></i> <?php the_field('event_time') ?></p>
+<p><i class="fa fa-calendar"></i> Event</p>
+<p><strong>Starts:</strong> <?php the_field('start_date') ?><br/> <strong>Ends:</strong> <?php the_field('end_date') ?></p>
 </div>
 
 <div class="single-featured-image">

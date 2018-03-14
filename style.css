@@ -3864,10 +3864,6 @@ article.single-article img.auto {
 h1.single-events-title {
   margin-bottom: 0px; }
 
-.single-events-details p {
-  display: inline-block;
-  margin-right: 3.7037%; }
-
 .secondary-page .quote-box p:first-of-type {
   padding: 1em; }
 
@@ -4963,23 +4959,6 @@ aside {
     aside {
       border-bottom: none; } }
 
-/*
-@media (min-width: 0px) and (max-width: 1139px) {
-
-.nav-secondary .mega-menu-toggle {
-	background: white !important;
-}
-
-.nav-home .mega-menu-toggle {
-	background: $off-white !important;
-}
-
-}
-
-#mega-menu-wrap-higher-education {
-	background: $off-white !important;
-}
-*/
 #mega-menu-wrap-16-19-subject .mega-menu-toggle .mega-toggle-block-right {
   margin-right: 0; }
 

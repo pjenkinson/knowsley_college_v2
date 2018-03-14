@@ -190,37 +190,25 @@ jQuery( "#showallcourses" ).click(function() {
             <h1><?php wp_title('');?></h1>
              <?php }?>
             <p>
-            <span class="highlight-text"> 
-            <?php if (!empty($factsheet->name)) {?>
-            <?=$factsheet->level?>
-            <?php } else{  
-             echo $factsheetWP['level'];
-            }?>
-           </span>
 
-           
-
-            <?php if ($factsheetWP['qual_type'] == 'A Level') { ?>
-            <?php // DO NOTHING ?>
-
-            <?php } else {  
-
-if (!empty($factsheet->qualification_type)) {?>
-            <?=$factsheet->qualification_type?>
-            <?php } else {  
-             echo $factsheetWP['qual_type'];
-            }?>
-
-            in <?php if (!empty($factsheet->programmearea)) {?>
-            <?=$factsheet->programmearea?>
-            <?php } else {  
-             echo $factsheetWP['area'];
-            }
-
+            <?php if (!empty($factsheet->programmearea)) {?>
+               <?=$factsheet->programmearea?>
+            <?php 
+            } else {?>
+              <?php echo $factsheetWP['area'] ?>
+            <?php
             }
             ?>
 
-
+            <?php if (!empty($factsheet->level)) {?>
+               | <?=$factsheet->level?>
+            <?php 
+            } elseif (!empty($factsheetWP->level))  {
+              echo '|' . $factsheetWP['level'] ;
+            } else {
+            }
+            ?>
+           
             </p>
 
           </div>
@@ -659,8 +647,13 @@ if (!empty($factsheet->qualification_type)) {?>
 
 </div>
 
-<?php if ($factsheetWP['qual_type'] == 'A Level') { ?>
-            <?php $searchvalue = $factsheetWP['area']; ?>
+<?php $searchvalue = $factsheet->programmearea; ?>
+
+<?php $searchvaluewp = json_decode(json_encode($factsheetWP['area']),true);?>
+
+<?php if (!empty($searchvaluewp)) { ?>
+
+            <?php $searchvalue = $searchvaluewp;  ?>
 
             <?php } else { $searchvalue = $factsheet->programmearea; }?>
   

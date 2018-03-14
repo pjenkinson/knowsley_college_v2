@@ -41,36 +41,51 @@ get_header(); ?>
 
 <section class="archive-events">
 
-<!-- Events - * update to sort by date *
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<?php query_posts( 'posts_per_page=-1&post_type=events&order=ASC' );?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php
 
-<article class="slt-profile slt-profile-1col">
-	<a href="<?php the_permalink(); ?>" alt="<?php the_field('event_title')?> - <?php the_field('event_date')?>">
-	<div class="slt-image">
-		<img src="<?php the_field('event_image')?>" alt="<?php the_field('event_title')?>">
-	</div>
-	</a>
-
-	<div class="slt-info">
-		<p class="slt-member-title"><a href="<?php the_permalink(); ?>" alt="<?php the_field('event_title')?>"><?php the_title('')?> - <?php the_field('event_date')?></a></p>
-		<p class="slt-member-info"><?php the_field('event_excerpt')?></p>
-		
-		<p class="slt-member-info"><i class="fa fa-clock-o"></i><?php the_field('event_date')?>
-			<?php if( get_field('event_time') ): ?> - <?php the_field('event_time')?><?php endif; ?>
-		</p>
-	</div>
-</article>
+// find date time now
+$date_now = date('Y-m-d H:i:s');
 
 
-<?php endwhile; else : ?>
-	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+// query events
+$posts = get_posts(array(
+	'posts_per_page'	=> -1,
+	'post_type'			=> 'events',
+	'meta_query' 		=> array(
+	        'key'			=> 'start_date',
+	        'compare'		=> '>',
+	        'value'			=> $date_now,
+	        'type'			=> 'DATETIME'
+	),
+	'order'				=> 'ASC',
+	'orderby'			=> 'meta_value',
+	'meta_key'			=> 'start_date',
+	'meta_type'			=> 'DATETIME'
+));
+
+if( $posts ): ?>
+
+		<?php foreach( $posts as $p ): ?>
+
+		<article class="slt-profile slt-profile-1col">
+		<a href="<?php the_permalink($p->ID); ?>" alt="<?php echo $p->post_title;?> - <?php the_field('event_date', $p->ID); ?>">
+		<div class="slt-image">
+		<img src="<?php the_field('event_image', $p->ID); ?>" alt="<?php the_field('event_title', $p->ID); ?>">
+		</div>
+		</a>
+
+		<div class="slt-info">
+		<p class="slt-member-title"><a href="<?php the_permalink($p->ID); ?>" alt="<?php echo $p->post_title;?>"><?php echo $p->post_title;?></a></p>
+		<p><strong><?php the_field('start_date', $p->ID)?></strong></p>
+		<p class="slt-member-info"><?php the_field('event_excerpt', $p->ID); ?></p>
+
+		</div>
+		</article>
+
+		<?php endforeach; ?>
+
 <?php endif; ?>
-
-
-
 
 
 </div>

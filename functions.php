@@ -372,5 +372,4 @@ function tags_support_query($wp_query) {
 // tag hooks
 add_action('init', 'tags_support_all');
 add_action('pre_get_posts', 'tags_support_query');
-
 ?>

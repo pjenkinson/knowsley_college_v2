@@ -201,44 +201,86 @@ $currentCategory = get_the_category();
 
 $news_args = array( 'category_name' => 'news' , 'posts_per_page' => '3', 'post_status' => 'publish');
 
-$event_args = array('post_type' => 'events' ,  'posts_per_page' => '3' , 'orderby' => 'date', 'order' => 'ASC', 'post_status' => 'publish' );
-
-$the_query_events = new WP_Query($event_args);
-
 $the_query_news = new WP_Query($news_args);
 
 $id = get_the_ID();
 
-// The Loop
-if ( $the_query_events->have_posts() )
- while($the_query_events->have_posts()) {
- 	$the_query_events->the_post(); 
+// find date time now
+$date_now = date('Y-m-d H:i:s');
+
+
+// query events
+$eventPosts = get_posts(array(
+	'posts_per_page'	=> 3,
+	'post_type'			=> 'events',
+	'meta_query' 		=> array(
+		'key'			=> 'start_date',
+		'compare'		=> '>',
+		'value'			=> $date_now,
+		'type'			=> 'DATETIME'
+	),
+	'order'				=> 'ASC',
+	'orderby'			=> 'meta_value',
+	'meta_key'			=> 'start_date',
+	'meta_type'			=> 'DATETIME'
+));
+
+
 ?>
 
 
 
-<!-- EVENT -->
+<?php 
+$latest_blog_posts = new WP_Query (array ( 'posts_per_page'	=> 3,
+'post_type'			=> 'events',
+'meta_query' 		=> array(
+	'key'			=> 'start_date',
+	'compare'		=> '>',
+	'value'			=> $date_now,
+	'type'			=> 'DATETIME'
+),
+'order'				=> 'ASC',
+'orderby'			=> 'meta_value',
+'meta_key'			=> 'start_date',
+'meta_type'			=> 'DATETIME' ));
+
+if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();?>
+
+
+
 
 <div class="featured-news-snippet featured-events-snippet featured-article">
-	<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
-	<div class="featured-news-snippet-details">
-	
-	<div class="homepage-featured-news-image">
-		<?php the_post_thumbnail();?>
-	</div>
-	<div class="featured-news-heading event-featured-heading">
-	<h3><?php the_title(); ?></h3>
-	</div>
-  <div class="featured-post-date">
-	<p>Event  <i class="fa fa-calendar"></i> <?php the_field('event_date', $id); ?></p>
-	</div>
+<a href="<?php the_permalink($p->ID); ?>" title="<?php the_title($p->ID); ?>">
+<div class="featured-news-snippet-details">
 
-	</div>
-	</a>
+<div class="homepage-featured-news-image">
+<?php the_post_thumbnail(); ?>
+</div>
+<div class="featured-news-heading event-featured-heading">
+<h3><?php the_title()?></h3>
+</div>
+<div class="featured-post-date">
+<p>Event  <i class="fa fa-calendar"></i> <?php the_field('event_date', $id); ?></p>
 </div>
 
-<?php  } else { echo'hello';}
-         
+</div>
+</a>
+</div>
+
+
+
+
+
+
+
+
+
+<?php     
+endwhile; endif;
+?>
+
+
+<?php          
 
 // Restore original Query & Post Data
 wp_reset_query();
