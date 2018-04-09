@@ -198,8 +198,19 @@ foreach($courses AS $course) {
 	<!--Include ID of 16-19 course factsheet page -->
 	<div class="course-buttons">
 		<div class="button-default"><a href="/<?=$course->course_url?>">Course information</a></div>
+
+		<?php if( get_field('enable_apply_button') ): ?>
   		<div class="button-default"><a href="/apply/?courseid=<?=$course->id?>">Apply</a></div>
+	  <?php endif; ?>
   	</div>
+
+	  <?php if( get_field('enable_apply_info') ): ?>
+	  <div class="full-width-container" style="margin-top:1em;">
+	  <?php the_field('apply_information');?>
+	  </div>
+
+	<?php endif; ?>
+
   </article>
 	<?php
 }

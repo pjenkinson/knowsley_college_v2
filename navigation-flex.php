@@ -23,14 +23,9 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'adults' ) ); ?>
 	</nav>
 <?php endif; ?>
-<?php if( get_field('navigation') == 'Adults 2018' ): ?>
-	<nav class="nav-secondary adults-2018">
-	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018' ) ); ?>
-	</nav>
-<?php endif; ?>
-<?php if( get_field('navigation') == 'Adults 2018 Courses' ): ?>
-	<nav class="nav-secondary adults-2018-courses">
-	<?php wp_nav_menu( array( 'theme_location' => 'adults-2018-courses' ) ); ?>
+<?php if( get_field('navigation') == 'Adults Spring' ): ?>
+	<nav class="nav-secondary adults-spring">
+	<?php wp_nav_menu( array( 'theme_location' => 'adults-spring' ) ); ?>
 	</nav>
 <?php endif; ?>
 <?php if( get_field('navigation') == 'Adults Finance' ): ?>
