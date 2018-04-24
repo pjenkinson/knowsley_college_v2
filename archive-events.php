@@ -25,22 +25,16 @@ get_header(); ?>
 <!-- Page content 
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div class="full-width-container secondary-page">
+<div class="full-width-container news-page">
 
 <!-- Featured banner
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+
 <div class="fixed-container">
-
-
-<aside>
-<nav class="nav-secondary about-nav">
-	<?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
-</nav>
-</aside>
-
 <section class="archive-events">
 
+<h2>Next Event</h2>
 
 <?php
 
@@ -50,7 +44,7 @@ $date_now = date('Y-m-d H:i:s');
 
 // query events
 $posts = get_posts(array(
-	'posts_per_page'	=> -1,
+	'posts_per_page'	=> 1,
 	'post_type'			=> 'events',
 	'meta_query' 		=> array(
 	        'key'			=> 'start_date',
@@ -87,20 +81,78 @@ if( $posts ): ?>
 
 <?php endif; ?>
 
-
-</div>
-
-	
 	</section>
 
+
+    	<section class="news-section">
+
+		<h2>Upcoming Events</h2>
+
+
+<div class="news-posts-container">
+
+
+<?php
+
+// find date time now
+$date_now = date('Y-m-d H:i:s');
+
+
+// query events
+$posts = get_posts(array(
+	'posts_per_page'	=> '10',
+	'post_type'			=> 'events',
+	'meta_query' 		=> array(
+	        'key'			=> 'start_date',
+	        'compare'		=> '>',
+	        'value'			=> $date_now,
+	        'type'			=> 'DATETIME'
+	),
+	'order'				=> 'ASC',
+	'orderby'			=> 'meta_value',
+	'meta_key'			=> 'start_date',
+	'meta_type'			=> 'DATETIME'
+));
+
+if( $posts ): ?>
+
+		<?php foreach( $posts as $p ): ?>
+
+
+  	<article class="news-item news-item-3col">
 		
+			<a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
+			<div class="small-news-thumb">
+				<?php if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+				} else { ?>
+				<img src="<?php the_field('event_image', $p->ID); ?>" alt="<?php the_field('event_title', $p->ID); ?>">
+				<?php } ?>
+			</div>
+			
+			<div class="small-news-content">
+				<h1><?php the_field('event_title', $p->ID); ?></h1>
+				<p><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></p>
+			</div>
+			</a>
+
+      </article>
+
+	<?php endforeach; ?>
+
+<?php endif; ?>
+
+  
 
 
-	</div>
 
+	</section>
+
+</div>
 </div>
 
 
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 
 
 
