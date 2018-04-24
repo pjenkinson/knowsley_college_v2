@@ -509,8 +509,7 @@ jQuery( "#showallcourses" ).click(function() {
 
       
 
-    
-        <?php echo $factsheetWP['entry_requirements']; ?>
+    <?php echo $factsheetWP['entry_requirements']; ?>
 
        
 
@@ -579,6 +578,7 @@ jQuery( "#showallcourses" ).click(function() {
 
       <?php if (!empty($factsheetWP['apply'])) {?>
         <?php echo $factsheetWP['apply']; ?>
+
         <?php } else {  ?>
         <p>To apply for <?php if (!empty($factsheet->name)) {?>
             <strong><?=$factsheet->name?></strong>
@@ -588,15 +588,20 @@ jQuery( "#showallcourses" ).click(function() {
 
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
+      
 
         <?php }?>
 
+<?php if( get_field('enable_apply_button') ): ?>
+<div class="button-default">
+        <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply">Apply</a>
+      </div>
+	
+<?php endif; ?>
 
 
       
-      <div class="button-default">
-        <a href="/apply/?courseid=<?=$factsheet->id?>" title ="Apply">Apply</a>
-      </div>
+      
 
       </div>
 
