@@ -35,78 +35,7 @@ get_header(); ?>
 <div class="fixed-container">
 <section class="archive-events">
 
-<?php         
-$paged = $wp_query->get( 'paged' );
- 
-if ( ! $paged || $paged < 2 ) {?>
-
-
-<h2 style="text-align:center;">Next Event</h2>
-
-<?php 
-// find date time now
-$date_now = date('Y-m-d H:i:s');
-
-
-// query events
-$posts = get_posts(array(
-	'posts_per_page'	=> 1,
-	'post_type'			=> 'events',
-	'meta_query' 		=> array(
-	        'key'			=> 'start_date',
-	        'compare'		=> '>',
-	        'value'			=> $date_now,
-	        'type'			=> 'DATETIME'
-	),
-	'order'				=> 'ASC',
-	'orderby'			=> 'meta_value',
-	'meta_key'			=> 'start_date',
-	'meta_type'			=> 'DATETIME'
-));
-
-if( $posts ): ?>
-
-		<?php foreach( $posts as $p ): ?>
-
-		<article class="slt-profile slt-profile-1col">
-		<a href="<?php the_permalink($p->ID); ?>" alt="<?php echo $p->post_title;?> - <?php the_field('event_date', $p->ID); ?>">
-		<div class="slt-image">
-		<img src="<?php the_field('event_image', $p->ID); ?>" alt="<?php the_field('event_title', $p->ID); ?>">
-		</div>
-		</a>
-
-		<div class="slt-info">
-		<p class="slt-member-title"><a href="<?php the_permalink($p->ID); ?>" alt="<?php echo $p->post_title;?>"><?php echo $p->post_title;?></a></p>
-		<p><i class="fa fa-calendar" aria-hidden="true"></i> <?php the_field('start_date', $p->ID)?></p>
-		<p class="slt-member-info"><?php the_field('event_excerpt', $p->ID); ?></p>
-
-		</div>
-		</article>
-
-		<?php endforeach; ?>
-
-<?php endif; ?>
-
-	</section>
-
-<?php } else {
-   echo 'This is a paginated page.';
-}
-?>
-
-
-
-
-
-
-
-    	<section class="news-section">
-
-		<h2 style="text-align:center;">Upcoming Events</h2>
-
-
 <?php
-wp_reset_query();
 
 // find date time now
 $date_now = date('Y-m-d H:i:s');
@@ -114,9 +43,8 @@ $date_now = date('Y-m-d H:i:s');
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
-	'posts_per_page' => 3,
+	'posts_per_page' => 9,
   	'paged'          => $paged,
-	'offset' => 1,
 	'post_type'			=> 'events',
 	'meta_query' 		=> array(
 	        'key'			=> 'start_date',
@@ -163,43 +91,32 @@ $Eventposts = new WP_Query( $args );
 <?php endwhile; ?>
 <!-- end of the loop -->
 
+<?php 
+$prev_link = get_previous_posts_link(__('&laquo; Older Entries'));
+$next_link = get_next_posts_link(__('Newer Entries &raquo;'));
+?>
 
 <nav class="prev-next-posts">
 
-    <?php if ( ! $paged || $paged < 2 ) {?>
-
-	 <div class="next-posts-link">
-	<?php echo get_next_posts_link('More'); ?>
-    </div>
-    
-	<? } else {?>
-
+	<?php if ($prev_link) {?>
 	<div class="prev-posts-link">
-	<?php echo get_previous_posts_link('Latest events'); ?>
+	<i class="fa fa-angle-double-left" style="color: white;"></i> <?php echo get_previous_posts_link('Previous'); ?>
     </div>
-
+	<?php }?>
+    
+	<?php if ($next_link) {?>
 	<div class="next-posts-link">
-	<?php echo get_next_posts_link('More'); ?>
-    </div>
- 
-<?php } ?>
-	
+	<?php echo get_next_posts_link('Next'); ?> <i class="fa fa-angle-double-right" style="color: white;"></i>
+	</div>
+    <?php }?>
+ 	
    
   </nav>
   
  
-
-
-<?php wp_reset_postdata(); ?>
-
 <?php else : ?>
-<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<p><?php esc_html_e( 'No events to display' ); ?></p>
 <?php endif; ?>
-
-
-
-
-
 
 	</section>
 
