@@ -226,7 +226,7 @@ if($pageID == '1' || empty($pageID)) {
     $sid = $wpdb->get_results($sql);?>
 
 
-	  <form class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
+	  <form id="school-leavers-application-form" category class="app-form" method="POST" action="/apply/school-leavers/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 	  		 <div class="the-content">
 
 	  			<h2 class="section-heading">School Leavers Application Form</h2>
@@ -752,8 +752,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 ?>
 
 
-
-
 <?php endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 
@@ -768,8 +766,6 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	</div>
 
 </div>
-
-
 
 
 </main><!-- #main -->
