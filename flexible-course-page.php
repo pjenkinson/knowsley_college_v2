@@ -42,7 +42,23 @@ get_header(); ?>
 <?php get_template_part( 'navigation', 'flex-secondary' );?>
 </aside>
 
+
+
+
+
+
 <section class="course-list">
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+<article class="the-content" style="padding-top: 0px; padding-bottom: 0px;">
+<?php the_content();?>
+</article>
+<?php 
+endwhile; else: ?>
+<p>Sorry, no posts matched your criteria.</p>
+<?php endif; ?>
+
+
 
 <?php 
 	  $sectionProgramme = get_field( "programme_area" ); // Get programme area from ACF input
@@ -177,10 +193,6 @@ $courses = $wpdb->get_results($sql);
 
 
 
-
-<?php 
-//the_content();
-?>
 
 
 

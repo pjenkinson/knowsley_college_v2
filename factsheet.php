@@ -588,8 +588,6 @@ jQuery( "#showallcourses" ).click(function() {
 
       <p>Once your application has been processed, you will be contacted and given a date for your Interview Evening. Learner Services Advisers and course tutors will be available to speak with you and provide advice, guidance and information about College life.</p>
 
-      
-
         <?php }?>
 
 <?php if( get_field('enable_apply_button') ): ?>

@@ -260,7 +260,7 @@ if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts
 <h3><?php the_title()?></h3>
 </div>
 <div class="featured-post-date">
-<p>Event  <i class="fa fa-calendar"></i> <?php the_field('event_date', $id); ?></p>
+<p>Event  <i class="fa fa-calendar"></i> <?php the_field('start_date', $post->ID); ?></p>
 </div>
 
 </div>
