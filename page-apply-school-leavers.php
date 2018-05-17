@@ -367,8 +367,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 							</select>
 						</div>
 
-
-						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Show course options</a></div>
+						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Select a course (Optional)</a></div>
 
 						<label for="UserDefined17">If required you can use the text area below to input further information about your course/subject choice:</label>
 						<textarea name="UserDefined17" data-parsley-maxlength="1000"><?=$courses[0]->name?></textarea>
