@@ -6,7 +6,7 @@
  if(isset($_GET['term'])) {
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT programmearea, id
-               FROM fact_sheets
+               FROM fact_sheets_live
               WHERE programmearea LIKE '%".$searchTerm."%'.
               LIMIT 20";
      $courses = $wpdb->get_results($sql);

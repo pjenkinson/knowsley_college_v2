@@ -6,7 +6,7 @@
  if(isset($_GET['term'])) {
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT CONCAT (factsheetname, ' - ', level) as factsheetname, id, course_url
-               FROM fact_sheets
+               FROM fact_sheets_live
               WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
               UNION
               SELECT CONCAT (factsheetname, ' - ', level) as factsheetname, id, course_url

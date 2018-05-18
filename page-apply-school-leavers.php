@@ -124,7 +124,7 @@ if(!empty($_POST['submit'])) {
 //Start displaying the pages
 if($pageID == '1' || empty($pageID)) {
 		$sql = "SELECT factsheetname AS name
-         	    FROM fact_sheets
+         	    FROM fact_sheets_live
              WHERE id = '".$courseID."'";
     	$courses = $wpdb->get_results($sql);
 	  ?>
@@ -147,7 +147,7 @@ if($pageID == '1' || empty($pageID)) {
 
 
 	  <?php 
-		$sql = "SELECT DISTINCT programmearea FROM fact_sheets";
+		$sql = "SELECT DISTINCT programmearea FROM fact_sheets_live";
 		$subjects = $wpdb->get_results($sql);
 	  ?>
 
@@ -159,16 +159,16 @@ if($pageID == '1' || empty($pageID)) {
 
      <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   ORDER BY level ASC";
 
     $allCourses = $wpdb->get_results($sql);?>
 
      <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Level 1'
          	   ORDER BY level ASC";
 
@@ -176,8 +176,8 @@ if($pageID == '1' || empty($pageID)) {
 
      <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Level 2'
          	   ORDER BY level ASC";
 
@@ -185,8 +185,8 @@ if($pageID == '1' || empty($pageID)) {
 
     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Level 3'
          	   ORDER BY level ASC";
 
@@ -194,8 +194,8 @@ if($pageID == '1' || empty($pageID)) {
 
     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Level 4'
          	   ORDER BY level ASC";
 
@@ -203,8 +203,8 @@ if($pageID == '1' || empty($pageID)) {
 
     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Level 5'
          	   ORDER BY level ASC";
 
@@ -212,8 +212,8 @@ if($pageID == '1' || empty($pageID)) {
 
     <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID, qualification_type
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   WHERE level = 'Entry Level 1' or level = 'Entry Level 2' or level = 'Entry 3'
          	   ORDER BY level ASC";
 

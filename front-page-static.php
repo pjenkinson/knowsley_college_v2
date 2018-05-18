@@ -43,7 +43,7 @@ jQuery(function() {
                  unit3,
                  unit4,
                  kiscode
-            FROM fact_sheets
+            FROM fact_sheets_live
            WHERE id = '".$factsheetID."'";
 
   $factsheet = $wpdb->get_results($sql);

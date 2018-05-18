@@ -10,7 +10,7 @@ $sql = "SELECT id,
                level,
                progression, 
                location
-          FROM fact_sheets
+          FROM fact_sheets_live
          WHERE id = '".$factsheetID."'";
 
 $factsheet = $wpdb->get_results($sql);

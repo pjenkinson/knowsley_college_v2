@@ -165,7 +165,7 @@ jQuery( "#showallcourses" ).click(function() {
                  course_url,
                  keywords,
                  qualification_type
-            FROM fact_sheets
+            FROM fact_sheets_live
            WHERE id = '".$factsheetID."' ";
 
   $factsheet = $wpdb->get_results($sql);

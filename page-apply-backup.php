@@ -103,7 +103,7 @@ if(!empty($_POST['submit'])) {
 //Start displaying the pages
 if($pageID == '1' || empty($pageID)) {
 		$sql = "SELECT factsheetname AS name
-         	    FROM fact_sheets
+         	    FROM fact_sheets_live
              WHERE id = '".$courseID."'";
 
     $courses = $wpdb->get_results($sql);
@@ -129,7 +129,7 @@ if($pageID == '1' || empty($pageID)) {
 	  <?php get_template_part( 'apply/apply', 'steps1' );?>
 
 	  <?php 
-							$sql = "SELECT DISTINCT programmearea FROM fact_sheets";
+							$sql = "SELECT DISTINCT programmearea FROM fact_sheets_live";
 
 							    $subjects = $wpdb->get_results($sql);
 						?>
@@ -146,8 +146,8 @@ if($pageID == '1' || empty($pageID)) {
 
      <?php $sql = "SELECT OfferingID, AcademicYearID, Name, factsheetname, level, id, CourseInformationID
          	   FROM Offering
-         	   INNER JOIN fact_sheets
-         	   On Offering.CourseInformationID=fact_sheets.id
+         	   INNER JOIN fact_sheets_live
+         	   On Offering.CourseInformationID=fact_sheets_live.id
          	   ORDER BY factsheetname ASC";
 
     $allCourses = $wpdb->get_results($sql);?>

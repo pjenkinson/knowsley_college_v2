@@ -6,7 +6,7 @@
 
 <?php
 $sql = "SELECT id, programmearea AS name 
-          FROM fact_sheets 
+          FROM fact_sheets_live 
       GROUP BY programmearea
       ORDER BY programmearea ASC";
 

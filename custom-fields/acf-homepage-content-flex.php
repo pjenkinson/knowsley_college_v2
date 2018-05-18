@@ -169,7 +169,7 @@ elseif( get_row_layout() == 'page_grid' ):?>
                  unit3,
                  unit4,
                  kiscode
-            FROM fact_sheets
+            FROM fact_sheets_live
            WHERE programmearea = '$acfprogarea'";
 
   $factsheets = $wpdb->get_results($sql);

@@ -6,11 +6,7 @@
  if(isset($_GET['term'])) {
  $searchTerm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
      $sql = "SELECT programmearea, id, factsheetname, location, duration, course_url, level
-             FROM fact_sheets
-             WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
-             UNION
-             SELECT programmearea, id, factsheetname, location, duration, course_url, level
-             FROM fact_sheets_custom
+             FROM fact_sheets_live
              WHERE factsheetname LIKE '%".$searchTerm."%' OR programmearea LIKE '%".$searchTerm."%'
              LIMIT 100";
      $courses = $wpdb->get_results($sql);

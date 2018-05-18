@@ -28,9 +28,9 @@
   // Course Choice 1
 
     $sql = "SELECT factsheetname, OfferingID
-            FROM fact_sheets
+            FROM fact_sheets_live
             INNER JOIN Offering
-            On fact_sheets.id=Offering.CourseInformationID
+            On fact_sheets_live.id=Offering.CourseInformationID
             WHERE OfferingID = $courseChoice1";
 
     $CourseNameFromID1 = $wpdb->get_results($sql);
@@ -40,9 +40,9 @@
   // Course Choice 2
 
     $sql = "SELECT factsheetname, OfferingID
-            FROM fact_sheets
+            FROM fact_sheets_live
             INNER JOIN Offering
-            On fact_sheets.id=Offering.CourseInformationID
+            On fact_sheets_live.id=Offering.CourseInformationID
             WHERE OfferingID = $courseChoice2";
 
     $CourseNameFromID2 = $wpdb->get_results($sql);
@@ -53,9 +53,9 @@
   // Course Choice 3
 
     $sql = "SELECT factsheetname, OfferingID
-            FROM fact_sheets
+            FROM fact_sheets_live
             INNER JOIN Offering
-            On fact_sheets.id=Offering.CourseInformationID
+            On fact_sheets_live.id=Offering.CourseInformationID
             WHERE OfferingID = $courseChoice3";
 
     $CourseNameFromID3 = $wpdb->get_results($sql);
