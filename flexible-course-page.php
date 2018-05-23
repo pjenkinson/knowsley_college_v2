@@ -122,10 +122,7 @@ $sql = "SELECT DISTINCT id,
                level,
                course_url
           FROM fact_sheets_live 
-          INNER JOIN Offering
-         	   On Offering.CourseInformationID=fact_sheets_live.id
          WHERE programmearea = '$sectionProgramme'
-				AND fact_sheets_live.id=Offering.CourseInformationID
 				/* Exclude levels using ACF */
 				AND level != '$exclude1' 
 				AND level != '$exclude2'
@@ -139,10 +136,8 @@ $sql = "SELECT DISTINCT id,
                level,
                course_url
           FROM fact_sheets_live 
-          INNER JOIN Offering
-         	   On Offering.CourseInformationID=fact_sheets_live.id
          WHERE id IN ($coursesInString) 
-				AND fact_sheets_live.id = Offering.CourseInformationID
+				AND fact_sheets_live.id = id
 		ORDER BY level ASC";
 
 $courses = $wpdb->get_results($sql);
