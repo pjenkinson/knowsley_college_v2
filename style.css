@@ -734,6 +734,7 @@ main.nla a:hover, main.nla a:focus {
 
 .app-form fieldset {
   margin: 1em 0 1em 0;
+  border: 2px solid #E9E9E9;
   float: left;
   clear: both; }
 

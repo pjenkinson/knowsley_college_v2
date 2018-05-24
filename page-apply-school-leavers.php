@@ -498,6 +498,158 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 </fieldset>	 
 
+<h2>How We Use Your Personal Information</h2>
+ 
+ <p>This privacy notice is issued by the Education and Skills Funding Agency (ESFA), on behalf of the Secretary of State for the Department of Education (DfE). It is to inform learners how their personal information will be used by the DfE, the ESFA (an executive agency of the DfE) and any successor bodies to these organisations. For the purposes of the relevant data protection legislation, the DfE is the data controller for personal data processed by the ESFA. </p>
+ 
+ <p>Your personal information is used by the DfE to exercise its functions and to meet its statutory responsibilities, including under the Apprenticeships, Skills, Children and Learning Act 2009 and to create and maintain a unique learner number (ULN) and a personal learning record (PLR). Your information will be securely destroyed, after it is no longer required for these purposes. Your information may be shared with third parties for education, training, employment and well-being related purposes, including for research.</p>
+ 
+ <p>This will only take place where the law allows it and the sharing is in compliance with the data protection legislation. The English European Social Fund (ESFA) Managing Authority (or agents acting on its behalf) may contact you in order for them to carry out research and evaluation to inform the effectiveness of training.</p>
+  
+ <fieldset>
+
+ <p><strong>You can agree to be contacted for other purposes by ticking any of the following boxes:</strong></p>
+
+
+<!-- GDPR | Purpose of contact -->
+
+
+<!-- GDPR | Learning opportunities -->
+
+<?php
+			if(isset($_POST['RestrictedUseAllowLearningOpportunities']))
+			{ $_SESSION['appform']['contents']['RestrictedUseAllowLearningOpportunities'] == $_POST['RestrictedUseAllowLearningOpportunities']; }
+			?>
+
+			<label class="marketing" for="RestrictedUseAllowLearningOpportunities">Courses or learning opportunities</label>
+			<input class="input-inline" type="checkbox" name="RestrictedUseAllowLearningOpportunities" value="1" />
+
+			<?php
+
+if(isset($_POST['RestrictedUseAllowLearningOpportunities'])){
+    //$stok is checked and value = 1
+    $LearningOpportunities = $_POST['RestrictedUseAllowLearningOpportunities'];
+}
+else{
+    //$stok is nog checked and value=0
+    $LearningOpportunities=0;
+}
+$LearningOpportunities = $_SESSION['appform']['contents']['RestrictedUseAllowLearningOpportunities'];
+?>
+
+<!-- GDPR | Surveys and research -->
+
+<?php
+			if(isset($_POST['RestrictedUseAllowResearch']))
+			{ $_SESSION['appform']['contents']['RestrictedUseAllowResearch'] == $_POST['RestrictedUseAllowLearningOpportunities']; }
+			?>
+
+			<label class="marketing" for="RestrictedUseAllowResearch">Surveys and research
+</label>
+			<input class="input-inline" type="checkbox" name="RestrictedUseAllowResearch" value="1" />
+
+			<?php
+
+if(isset($_POST['RestrictedUseAllowResearch'])){
+    //$stok is checked and value = 1
+    $Research = $_POST['RestrictedUseAllowResearch'];
+}
+else{
+    //$stok is nog checked and value=0
+    $Research=0;
+}
+$Research = $_SESSION['appform']['contents']['RestrictedUseAllowResearch'];
+?>
+
+
+  
+ <p><strong>Indicate a preferred method of contact:</strong></p>
+
+<!-- GDPR | Method of contact -->
+
+
+<!-- GDPR | Allow contact by post -->
+
+<?php
+			if(isset($_POST['RestrictedUseAllowContactByPost']))
+			{ $_SESSION['appform']['contents']['RestrictedUseAllowContactByPost'] == $_POST['RestrictedUseAllowContactByPost']; }
+			?>
+
+			<label class="marketing" for="RestrictedUseAllowContactByPost">By Post</label>
+			<input style="display:inline-block;float:left;" class="input-inline" type="checkbox" name="RestrictedUseAllowContactByPost" value="1" />
+
+			<?php
+
+if(isset($_POST['RestrictedUseAllowContactByPost'])){
+    //$stok is checked and value = 1
+    $AllowContactByPost = $_POST['RestrictedUseAllowContactByPost'];
+}
+else{
+    //$stok is nog checked and value=0
+    $AllowContactByPost=0;
+}
+$AllowContactByPost = $_SESSION['appform']['contents']['RestrictedUseAllowContactByPost'];
+?>
+
+<!-- GDPR | Allow contact by telephone -->
+
+<?php
+			if(isset($_POST['RestrictedUseAllowContactByTelephone']))
+			{ $_SESSION['appform']['contents']['RestrictedUseAllowContactByTelephone'] == $_POST['RestrictedUseAllowContactByTelephone']; }
+			?>
+
+			<label class="marketing" for="RestrictedUseAllowContactByTelephone">By telephone</label>
+			<input style="display:inline-block;float:left;"  class="input-inline" type="checkbox" name="RestrictedUseAllowContactByTelephone" value="1" />
+
+			<?php
+
+if(isset($_POST['RestrictedUseAllowContactByTelephone'])){
+    //$stok is checked and value = 1
+    $AllowContactByTelephone = $_POST['RestrictedUseAllowContactByTelephone'];
+}
+else{
+    //$stok is nog checked and value=0
+    $AllowContactByTelephone=0;
+}
+$AllowContactByTelephone = $_SESSION['appform']['contents']['RestrictedUseAllowContactByTelephone'];
+?>
+
+
+<!-- GDPR | Allow contact by email -->
+
+<?php
+			if(isset($_POST['RestrictedUseAllowContactByEmail']))
+			{ $_SESSION['appform']['contents']['RestrictedUseAllowContactByEmail'] == $_POST['RestrictedUseAllowContactByEmail']; }
+			?>
+
+			<label class="marketing" for="RestrictedUseAllowContactByEmail">By Email</label>
+			<input class="input-inline" type="checkbox" name="RestrictedUseAllowContactByEmail" value="1" />
+
+			<?php
+
+if(isset($_POST['RestrictedUseAllowContactByEmail'])){
+    //$stok is checked and value = 1
+    $AllowContactByEmail = $_POST['RestrictedUseAllowContactByEmail'];
+}
+else{
+    //$stok is nog checked and value=0
+    $AllowContactByEmail=0;
+}
+$AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowContactByEmail'];
+?>
+
+  
+ <p>Further information about use of and access to your personal data, details of organisations with whom we regularly share data, are available at:</p>
+
+ <p><a href="https://www.gov.uk/government/publications/esfa-privacy-notice">ESFA Privacy Notice <i class="fa fa-external-link" aria-hidden="true"></i>
+</a></p>
+
+</fieldset>
+
+
+
+
+
 <h3>Data protection</h3>
 <fieldset>
 	<p>Knowsley Community College is registered under the Data Protection Act 1988. Information we process about you may be used for planning, analysis, marketing and any other purpose deemed necessary. Your information may also be shared with other official organisations such as your school and Local Education Authorities. Please contact enquiries (Tel: 0151 477 5850) if you have any concerns about the use or accuracy of your information.</p>
@@ -520,6 +672,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 ?>/>
 </fieldset>
+
 
 			 <input class="submit" type="submit" name="submit" value="Apply" />
 
@@ -566,7 +719,13 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
 											`UserDefined16`,
-											`UserDefined17`)
+											`UserDefined17`,
+											`RestrictedUseAllowLearningOpportunities`,
+											`RestrictedUseAllowResearch`,
+											`RestrictedUseAllowContactByPost`,
+											`RestrictedUseAllowContactByTelephone`,
+											`RestrictedUseAllowContactByEmail`
+											)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
@@ -597,7 +756,12 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
 											'".$insertData['UserDefined16']."',
-											'".$insertData['UserDefined17']."'  
+											'".$insertData['UserDefined17']."',
+											'".$insertData['RestrictedUseAllowLearningOpportunities']."',
+											'".$insertData['RestrictedUseAllowResearch']."',
+											'".$insertData['RestrictedUseAllowContactByPost']."',
+											'".$insertData['RestrictedUseAllowContactByTelephone']."',
+											'".$insertData['RestrictedUseAllowContactByEmail']."'
 											)";
 
 	$wpdb->query($sql);
@@ -657,7 +821,14 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
-											`UserDefined16`)
+											`UserDefined16`,
+											`UserDefined17`,
+											`RestrictedUseAllowLearningOpportunities`,
+											`RestrictedUseAllowResearch`,
+											`RestrictedUseAllowContactByPost`,
+											`RestrictedUseAllowContactByTelephone`,
+											`RestrictedUseAllowContactByEmail`
+											)
 											VALUES
 											(NOW(),
 											'".$insertData['Offering1']."',
@@ -687,7 +858,13 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
-											'".$insertData['UserDefined16']."'  
+											'".$insertData['UserDefined16']."',
+											'".$insertData['UserDefined17']."',
+											'".$insertData['RestrictedUseAllowLearningOpportunities']."',
+											'".$insertData['RestrictedUseAllowResearch']."',
+											'".$insertData['RestrictedUseAllowContactByPost']."',
+											'".$insertData['RestrictedUseAllowContactByTelephone']."',
+											'".$insertData['RestrictedUseAllowContactByEmail']."'
 											)";
 
 	$wpdb->query($sql);
