@@ -44,12 +44,6 @@ function af_titledespacer($title) {
 
 add_filter('wp_title', 'af_titledespacer');
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
 	// This theme uses wp_nav_menu() in one location.
 	function register_my_menus() {
   register_nav_menus(

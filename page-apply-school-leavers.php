@@ -323,26 +323,28 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 			  <label for="ParentEmailAddress">Parent/Carer Email:</label>
 			  	<input class="input-inline" type="email" data-parsley-type="email" name="ParentEmailAddress" value="<?=$_SESSION['appform']['contents']['ParentEmailAddress']?>" required/>	
 
-
+			<!-- END OF PERSONAL DETAILS -->
 
 	  	 	 <input type="hidden" name="courseid" value="<?=$courseID?>" />
 
 	  	 	 <input type="hidden" name="Ethnicity" value="99" />
 
-			  	<!-- END OF PERSONAL DETAILS -->
+			<input type="hidden" name="SourceOfApplication" value="KCC" />
+
+			<!-- END OF PERSONAL DETAILS -->
 
 			  </fieldset>
 
 
 			
 
-				 		<h3>Subject and course choice</h3>
+				 		<h3>Course choices</h3>
 
 
 				 		 <fieldset>
 
 					   	<div>
-							<label class="course-choice" for="sid">Select the subject you are interested in studying:</label>
+							<label class="course-choice" for="sid">Select course/subject you are interested in studying</label>
 							<select class="select-inline" name="sid" required="">
 								<option value="">Please Select</option>
 								<?php
@@ -367,9 +369,12 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 							</select>
 						</div>
 
+						<!-- 
 						<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Select a course (Optional)</a></div>
+						-->
 
-						<label for="UserDefined17">If required you can use the text area below to input further information about your course/subject choice:</label>
+						<label for="UserDefined17">If required, please provide further details of your course choice below.<br> <strong>If the course/subject you are interested in, is not listed, you can use the text area below to provide details about the course you would like to study.</strong></label>
+
 						<textarea name="UserDefined17" data-parsley-maxlength="1000"><?=$courses[0]->name?></textarea>
 
 						<?php            
@@ -379,7 +384,9 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 
 						</fieldset>
 
+						<!-- Course Selection Options -->	
 
+					<?php /*	
 
 				 		<fieldset id="course-select-options">
 				 		  <?php
@@ -396,6 +403,8 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 				 		<?php
 				 	} else {
 				 		?>
+
+						
 				 		
 				 		<p>Please select your course choices (Optional):</p>	
 
@@ -430,6 +439,7 @@ $sql = "SELECT OrganisationID, Name FROM Schools ORDER BY Name";
 
 				 	<div class="button-default form-button" id="hide"><a href=""><i class="fa fa-minus" aria-hidden="true"></i> Hide course options</a></div>
 
+					*/ ?>
 
 				 </fieldset>
 
@@ -498,7 +508,7 @@ $sql = "SELECT HeardAboutCollegeID, Description
 
 </fieldset>	 
 
-<h2>How We Use Your Personal Information</h2>
+<h2>How we use your personal information</h2>
  
  <p>This privacy notice is issued by the Education and Skills Funding Agency (ESFA), on behalf of the Secretary of State for the Department of Education (DfE). It is to inform learners how their personal information will be used by the DfE, the ESFA (an executive agency of the DfE) and any successor bodies to these organisations. For the purposes of the relevant data protection legislation, the DfE is the data controller for personal data processed by the ESFA. </p>
  
@@ -690,10 +700,10 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 	$insertData = $_SESSION['appform']['contents'];
 
 	$sql = "INSERT INTO `application_request`
-										 (`RequestDate`, /* New */
-										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
+										 (`RequestDate`, 
+										/*  `Offering1ID`, 
+										  	`Offering2ID`, 
+											`Offering3ID`,  */
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -701,6 +711,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`DateOfBirth`,
 											`Sex`,
 											`EthnicGroupID`,
+											`SourceOfApplication`,
 											`Tel`,
 											`MobileTel`,
 											`Email`,
@@ -728,9 +739,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											)
 											VALUES
 											(NOW(),
-											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
+										 /* '".$insertData['Offering1']."',
+										 	'".$insertData['Offering2']."', 
+										 	'".$insertData['Offering3']."',  */
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -738,6 +749,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['DateOfBirth']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
+											'".$insertData['SourceOfApplication']."',
 											'".$insertData['Tel']."',
 											'".$insertData['MobileTel']."',
 											'".$insertData['Email']."',
@@ -794,9 +806,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 
 	$sql = "INSERT INTO `application_request_backup`
 										 (`RequestDate`, /* New */
-										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
+										/*  `Offering1ID`, Course selection options removed from form 
+										    `Offering2ID`, 
+											`Offering3ID`, */
 											`sid`,
 											`AcademicYearID`,
 											`FirstForename`,
@@ -804,6 +816,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											`DateOfBirth`,
 											`Sex`,
 											`EthnicGroupID`,
+											`SourceOfApplication`,
 											`Tel`,
 											`MobileTel`,
 											`Email`,
@@ -831,9 +844,9 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											)
 											VALUES
 											(NOW(),
-											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
+										/*	'".$insertData['Offering1']."', 
+											'".$insertData['Offering2']."', 
+											'".$insertData['Offering3']."', */ 
 											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['FirstForename']."',
@@ -841,6 +854,7 @@ $StudentDeclaration = $_SESSION['appform']['contents']['StudentDeclaration'];
 											'".$insertData['DateOfBirth']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
+											'".$insertData['SourceOfApplication']."',
 											'".$insertData['Tel']."',
 											'".$insertData['MobileTel']."',
 											'".$insertData['Email']."',

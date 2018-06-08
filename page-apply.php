@@ -127,12 +127,6 @@ if($pageID == '1' || empty($pageID)) {
 
 	  <?php get_template_part( 'apply/apply', 'steps1' );?>
 
-	  <?php 
-							$sql = "SELECT DISTINCT programmearea FROM fact_sheets_live";
-
-							    $subjects = $wpdb->get_results($sql);
-						?>
-
 		<?php $sql = "SELECT EthnicGroupID, Description
          	   FROM EthnicGroup";
 
@@ -199,6 +193,13 @@ if($pageID == '1' || empty($pageID)) {
 
     $EntryLevelCourses = $wpdb->get_results($sql);?>
 
+	<?php $sql = "SELECT sid, area
+         	   FROM CollegeAreas
+         	   ORDER BY area ASC";
+
+    $sid = $wpdb->get_results($sql);?>
+
+
 
 	  <form class="app-form" method="POST" action="/apply/adults/?courseid=<?=$CourseID?>&pageid=2" data-parsley-validate>
 
@@ -210,7 +211,10 @@ if($pageID == '1' || empty($pageID)) {
 	  				
 			  <div class="the-content">
 
+			  <!-- Course choices -->
+
 			  	<?php
+				  /*
 					if(!empty($courses)) {
 						?>
 					  <p>You have selected the following courses to apply for,</p>
@@ -218,9 +222,7 @@ if($pageID == '1' || empty($pageID)) {
 					  <ul>
 					  	<li><?=$courses[0]->name?></li>
 					 	</ul>
-					 	<input type="hidden" name="Offering1" value="<?=$offeringid[0]->OfferingID?>" />
-					 	<input type="hidden" name="AcademicYearID" value="18/19"/>
-
+					 	
 				 		<?php
 				 	} else {
 				 		?>
@@ -261,7 +263,12 @@ if($pageID == '1' || empty($pageID)) {
 				 			</select>
 				 	</div>
 				 </fieldset>
-		 
+				 */?>
+
+	
+		<input type="hidden" name="Offering1" value="<?=$offeringid[0]->OfferingID?>" />
+		<input type="hidden" name="AcademicYearID" value="18/19"/>
+		<input type="hidden" name="SourceOfApplication" value="KCCA" />
 
 		  <h3>Personal Details</h3>
 	  
@@ -323,6 +330,52 @@ if($pageID == '1' || empty($pageID)) {
 			  <input class="input-inline postcodein" name="PostCodein" maxlength="3" value="<?=$_SESSION['appform']['contents']['PostCodein']?>" required></input>
 			  
 			 </fieldset>
+
+			 <h3>Course choices</h3>
+
+
+<fieldset>
+
+ <div>
+  <label class="course-choice" for="sid">Select course/subject you are interested in studying</label>
+  <select class="select-inline" name="sid" required="">
+	  <option value="">Please Select</option>
+	  <?php
+	  foreach($sid AS $key => $value) {
+	  $storedValue = $_SESSION['appform']['contents']['sid'];
+	  if($storedValue == $value) {
+	  $selected = 'selected';
+	  } else {
+	  $selected = '';
+	  }
+	  ?>
+
+
+	  <option value="<?=$value->sid?>">
+	  <?=$value->area?> 
+	  </option>
+
+
+	  <?php
+	  }
+	  ?>
+  </select>
+</div>
+
+<!-- 
+<div class="button-default form-button" id="show"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Select a course (Optional)</a></div>
+-->
+
+<label for="UserDefined17">If required, please provide further details of your course choice below.<br> <strong>If the course/subject you are interested in, is not listed, you can use the text area below to provide details about the course you would like to study.</strong></label>
+
+<textarea name="UserDefined17" data-parsley-maxlength="1000"><?=$courses[0]->name?></textarea>
+
+<?php            
+	  $UserDefined17 = ($_POST['UserDefined17']) ;
+	  $_SESSION['appform']['contents']['UserDefined17'] = $UserDefined17;
+?>
+
+</fieldset>
 
 			 <h3>Interview support requirements</h3>
 
@@ -738,10 +791,11 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 	$insertData = $_SESSION['appform']['contents'];
 
 	$sql = "INSERT INTO `application_request`
-										 (`RequestDate`, /* New */
-										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
+										 (`RequestDate`, 
+										/*  '".$insertData['Offering1']."',
+										 	'".$insertData['Offering2']."', 
+										 	'".$insertData['Offering3']."',  */
+											`sid`,
 											`AcademicYearID`,
 											`Title`,
 											`FirstForename`,
@@ -749,6 +803,7 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`DateOfBirth`,
 											`Sex`,
 											`EthnicGroupID`,
+											`SourceOfApplication`,
 											`Tel`,
 											`MobileTel`,
 											`Email`,
@@ -766,6 +821,8 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
+											`UserDefined16`,
+											`UserDefined17`,
 											`RestrictedUseAllowLearningOpportunities`,
 											`RestrictedUseAllowResearch`,
 											`RestrictedUseAllowContactByPost`,
@@ -773,9 +830,10 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`RestrictedUseAllowContactByEmail`)
 											VALUES
 											(NOW(),
-											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
+										/*  '".$insertData['Offering1']."',
+										 	'".$insertData['Offering2']."', 
+										 	'".$insertData['Offering3']."',  */
+											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['Title']."',
 											'".$insertData['FirstForename']."',
@@ -783,6 +841,7 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											'".$insertData['DateOfBirth']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
+											'".$insertData['SourceOfApplication']."',
 											'".$insertData['Tel']."',
 											'".$insertData['MobileTel']."',
 											'".$insertData['Email']."',
@@ -800,6 +859,8 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
+											'".$insertData['UserDefined16']."',
+											'".$insertData['UserDefined17']."',
 											'".$insertData['RestrictedUseAllowLearningOpportunities']."',
 											'".$insertData['RestrictedUseAllowResearch']."',
 											'".$insertData['RestrictedUseAllowContactByPost']."',
@@ -836,10 +897,11 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 	$insertDataBackup = $_SESSION['appform']['contents'];
 
 	$sql = "INSERT INTO `application_request_backup`
-										 (`RequestDate`, /* New */
-										 	`Offering1ID`,
-											`Offering2ID`,
-											`Offering3ID`,
+										 (`RequestDate`, 
+										/*  '".$insertData['Offering1']."',
+										 	'".$insertData['Offering2']."', 
+										 	'".$insertData['Offering3']."',  */
+											`sid`,
 											`AcademicYearID`,
 											`Title`,
 											`FirstForename`,
@@ -847,6 +909,7 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`DateOfBirth`,
 											`Sex`,
 											`EthnicGroupID`,
+											`SourceOfApplication`,
 											`Tel`,
 											`MobileTel`,
 											`Email`,
@@ -864,6 +927,8 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`StudentDeclaration`,
 											`SentMarketingInfo`,
 											`HeardAboutCollegeID`,
+											`UserDefined16`,
+											`UserDefined17`,
 											`RestrictedUseAllowLearningOpportunities`,
 											`RestrictedUseAllowResearch`,
 											`RestrictedUseAllowContactByPost`,
@@ -871,9 +936,10 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											`RestrictedUseAllowContactByEmail`)
 											VALUES
 											(NOW(),
-											'".$insertData['Offering1']."',
-											'".$insertData['Offering2']."',
-											'".$insertData['Offering3']."',
+										/*  '".$insertData['Offering1']."',
+										 	'".$insertData['Offering2']."', 
+										 	'".$insertData['Offering3']."',  */
+											'".$insertData['sid']."',
 											'".$insertData['AcademicYearID']."',
 											'".$insertData['Title']."',
 											'".$insertData['FirstForename']."',
@@ -881,6 +947,7 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											'".$insertData['DateOfBirth']."',
 											'".$insertData['Sex']."',
 											'".$insertData['Ethnicity']."',
+											'".$insertData['SourceOfApplication']."',
 											'".$insertData['Tel']."',
 											'".$insertData['MobileTel']."',
 											'".$insertData['Email']."',
@@ -898,6 +965,8 @@ $AllowContactByEmail = $_SESSION['appform']['contents']['RestrictedUseAllowConta
 											'".$insertData['StudentDeclaration']."',
 											'".$insertData['SentMarketingInfo']."',
 											'".$insertData['HeardAboutCollegeID']."',
+											'".$insertData['UserDefined16']."',
+											'".$insertData['UserDefined17']."',
 											'".$insertData['RestrictedUseAllowLearningOpportunities']."',
 											'".$insertData['RestrictedUseAllowResearch']."',
 											'".$insertData['RestrictedUseAllowContactByPost']."',
